@@ -68,6 +68,26 @@ a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* ================================================================
+   V5 NAVIGATION
+   ================================================================ */
+.v5-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,10,12,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(250,250,247,0.06);transition:transform 0.3s ease}
+.v5-nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.v5-nav-brand{font-family:var(--serif);font-size:1.3rem;font-weight:600;font-style:italic;color:var(--paper);letter-spacing:0.02em}
+.v5-nav-links{display:none;align-items:center;gap:32px}
+@media(min-width:768px){.v5-nav-links{display:flex}}
+.v5-nav-links a{font-size:0.85rem;font-weight:400;color:rgba(250,250,247,0.6);transition:color 0.3s;letter-spacing:0.01em}
+.v5-nav-links a:hover{color:var(--paper)}
+.v5-nav-cta{background:var(--violet)!important;color:#fff!important;padding:10px 24px!important;border-radius:8px!important;font-weight:500!important;font-size:0.85rem!important;transition:background 0.3s,transform 0.2s!important}
+.v5-nav-cta:hover{background:#6D28D9!important;transform:translateY(-1px)}
+.v5-nav-toggle{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--paper)}
+.v5-nav-toggle svg{width:22px;height:22px}
+@media(min-width:768px){.v5-nav-toggle{display:none}}
+.v5-nav-mobile{display:none;flex-direction:column;padding:16px 24px 24px;gap:8px;background:rgba(10,10,12,0.95);border-bottom:1px solid rgba(250,250,247,0.06)}
+.v5-nav-mobile.open{display:flex}
+.v5-nav-mobile a{padding:12px 0;font-size:0.95rem;color:rgba(250,250,247,0.7);border-bottom:1px solid rgba(250,250,247,0.04)}
+.v5-nav-mobile a:last-child{border-bottom:none;margin-top:8px}
+
+/* ================================================================
    LAYOUT
    ================================================================ */
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -216,6 +236,7 @@ p{max-width:65ch}
   font-weight:500;
   position:relative;
   overflow:hidden;
+  box-shadow:0 4px 24px rgba(124,58,237,0.4),0 0 60px rgba(124,58,237,0.15);
 }
 .btn-shimmer::after{
   content:'';
@@ -276,7 +297,7 @@ p{max-width:65ch}
   align-items:center;
   background:var(--ink);
   overflow:hidden;
-  padding:120px 24px 80px;
+  padding:140px 24px 80px;
 }
 
 /* Hero background video */
@@ -1472,6 +1493,30 @@ footer{
 <!-- Skip to content -->
 <a href="#hero" class="skip-to-content" tabindex="0">Skip to content</a>
 
+<!-- Navigation -->
+<nav class="v5-nav" id="v5Nav">
+  <div class="v5-nav-inner">
+    <a href="#hero" class="v5-nav-brand">SWG</a>
+    <div class="v5-nav-links">
+      <a href="#hero">Home</a>
+      <a href="#how-we-work">Process</a>
+      <a href="#situations">Problems</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="assessment.html" class="v5-nav-cta">Start the Review</a>
+    </div>
+    <button class="v5-nav-toggle" id="v5NavToggle" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="v5-nav-mobile" id="v5NavMobile">
+    <a href="#hero">Home</a>
+    <a href="#how-we-work">Process</a>
+    <a href="#situations">Problems</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="assessment.html" class="v5-nav-cta">Start the Review</a>
+  </div>
+</nav>
+
 <!-- SWG Score Widget -->
 <div class="swg-score-widget" id="swgScoreWidget">
   <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
@@ -1509,7 +1554,7 @@ footer{
     </h1>
     <p class="hero-subtitle">Strategy, operations, technology, and marketing — connected to one plan, built in the right order.</p>
     <div class="hero-cta-wrap">
-      <a href="assessment.html" class="btn btn-gradient-border">Start Your Free Business Review</a>
+      <a href="assessment.html" class="btn btn-shimmer">Start Your Free Business Review</a>
       <span class="hero-cta-sub">Takes 8&ndash;10 minutes</span>
     </div>
   </div>
@@ -1836,6 +1881,20 @@ footer{
       headline.appendChild(document.createTextNode(' '));
     }
   });
+})();
+
+// ── V5 Nav toggle ──
+(function(){
+  var toggle = document.getElementById('v5NavToggle');
+  var mobile = document.getElementById('v5NavMobile');
+  if(toggle && mobile){
+    toggle.addEventListener('click', function(){
+      mobile.classList.toggle('open');
+    });
+    mobile.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ mobile.classList.remove('open'); });
+    });
+  }
 })();
 
 // ── Mouse-following orb ──

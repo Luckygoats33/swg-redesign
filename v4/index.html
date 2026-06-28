@@ -401,12 +401,224 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .back-to-top:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
+<style>
+/* ── SWG Score Widget ── */
+.swg-score-widget {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  z-index: 9998;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e4e4e7;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.swg-score-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: none;
+  border-radius: 0 16px 16px 0;
+  padding: 5px 14px 5px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  min-width: 110px;
+  height: 32px;
+  box-sizing: border-box;
+}
+.swg-score-pill:hover,
+.swg-score-pill:focus-visible {
+  background: rgba(24, 24, 27, 0.98);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.swg-score-pill:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+.swg-score-avg {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.swg-score-avg-val { color: #fff; }
+.swg-score-avg-max { color: #71717a; font-weight: 400; }
+.swg-score-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.swg-score-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+.swg-score-panel {
+  background: rgba(24, 24, 27, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: none;
+  border-radius: 0 0 12px 0;
+  width: 240px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+.swg-score-widget.swg-score--open .swg-score-panel {
+  max-height: 340px;
+  opacity: 1;
+  padding: 10px 14px 14px;
+}
+.swg-score-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.swg-score-row:last-child { margin-bottom: 0; }
+.swg-score-label {
+  width: 48px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #a1a1aa;
+}
+.swg-score-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.swg-score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+.swg-score-num {
+  width: 26px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+.swg-score-help {
+  position: relative;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #71717a;
+  cursor: help;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.swg-score-help:hover,
+.swg-score-help:focus-visible {
+  background: rgba(255,255,255,0.16);
+  color: #d4d4d8;
+}
+.swg-score-help:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 1px;
+}
+.swg-score-tooltip {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #e4e4e7;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  width: max-content;
+  max-width: 280px;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.swg-score-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #1a1a1a;
+}
+.swg-score-help:hover .swg-score-tooltip,
+.swg-score-help:focus .swg-score-tooltip {
+  display: block;
+}
+@media (max-width: 767px) {
+  .swg-score-pill {
+    min-width: 0;
+    padding: 4px 10px 4px 8px;
+    gap: 0;
+    height: 28px;
+    border-radius: 0 12px 12px 0;
+  }
+  .swg-score-dots { display: none; }
+  .swg-score-avg { font-size: 12px; }
+  .swg-score-panel { width: 220px; }
+  .swg-score-tooltip {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+  .swg-score-tooltip::before {
+    left: auto;
+    right: 8px;
+    transform: none;
+  }
+}
+</style>
 </head>
 <body>
 
 <div style="width:100%;background:#C45D3E;text-align:center;padding:6px 16px;font-family:'DM Serif Display',serif;font-size:13px;color:#F5F1EB;letter-spacing:0.02em;line-height:1.2">Now accepting Q3 2026 clients</div>
 
 <div style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif"><span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span><a href="../v1.html" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1</a><a href="../v2/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a><a href="../v3/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">3</a><a href="../v4/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:#C45D3E;color:#fff;text-decoration:none">4</a><a href="../v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a></div>
+
+<!-- SWG Score Widget -->
+<div class="swg-score-widget" id="swgScoreWidget">
+  <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
+    <span class="swg-score-avg">
+      <span class="swg-score-avg-val" id="swgAvgVal">0.0</span><span class="swg-score-avg-max">/10</span>
+    </span>
+    <span class="swg-score-dots" id="swgDots"></span>
+  </div>
+  <div class="swg-score-panel" id="swgPanel" role="region" aria-label="Score details"></div>
+</div>
 
 <a href="#main" class="skip">Skip to content</a>
 
@@ -944,6 +1156,84 @@ window.SWG_SCORES = {
 };
 </script>
 <!-- AUDIT: UI 8.5/10, UX 8.0/10, Mobile 7.5/10, SEO 9.0/10, Design 8.5/10 -->
+
+<!-- SWG Score Widget Script -->
+<script>
+(function () {
+  'use strict';
+  function scoreColor(s) {
+    if (s >= 9)   return '#22C55E';
+    if (s >= 7)   return '#3B82F6';
+    if (s >= 5)   return '#EAB308';
+    return '#EF4444';
+  }
+  function dotColor(s) {
+    if (s >= 8) return '#22C55E';
+    if (s >= 6) return '#EAB308';
+    return '#EF4444';
+  }
+  var LABELS = { ui: 'UI', ux: 'UX', mobile: 'Mobile', seo: 'SEO', design: 'Design' };
+  var KEYS = ['ui', 'ux', 'mobile', 'seo', 'design'];
+  var widget = document.getElementById('swgScoreWidget');
+  var pill   = document.getElementById('swgScorePill');
+  var dots   = document.getElementById('swgDots');
+  var panel  = document.getElementById('swgPanel');
+  var avgEl  = document.getElementById('swgAvgVal');
+  var isOpen = false;
+  function toggle() {
+    isOpen = !isOpen;
+    widget.classList.toggle('swg-score--open', isOpen);
+    pill.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  pill.addEventListener('click', toggle);
+  pill.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (isOpen && !widget.contains(e.target)) { toggle(); }
+  });
+  function render() {
+    var scores = window.SWG_SCORES || {};
+    var total = 0, count = 0;
+    dots.innerHTML = '';
+    KEYS.forEach(function (k) {
+      var s = (scores[k] && scores[k].score) || 0;
+      total += s; count++;
+      var d = document.createElement('span');
+      d.className = 'swg-score-dot';
+      d.style.background = dotColor(s);
+      d.title = LABELS[k] + ': ' + s;
+      dots.appendChild(d);
+    });
+    var avg = count ? (total / count) : 0;
+    avgEl.textContent = avg.toFixed(1);
+    panel.innerHTML = '';
+    KEYS.forEach(function (k) {
+      var data = scores[k] || { score: 0, reason: 'Not yet scored.' };
+      var s = data.score, reason = data.reason || 'Not yet scored.';
+      var row = document.createElement('div'); row.className = 'swg-score-row';
+      var label = document.createElement('span'); label.className = 'swg-score-label'; label.textContent = LABELS[k];
+      var barWrap = document.createElement('div'); barWrap.className = 'swg-score-bar-wrap';
+      var barFill = document.createElement('div'); barFill.className = 'swg-score-bar-fill';
+      barFill.style.width = (s * 10) + '%'; barFill.style.background = scoreColor(s);
+      barWrap.appendChild(barFill);
+      var num = document.createElement('span'); num.className = 'swg-score-num';
+      num.textContent = s.toFixed(1); num.style.color = scoreColor(s);
+      var help = document.createElement('span'); help.className = 'swg-score-help';
+      help.setAttribute('tabindex', '0'); help.setAttribute('role', 'button');
+      help.setAttribute('aria-label', LABELS[k] + ' score explanation'); help.textContent = '?';
+      var tip = document.createElement('span'); tip.className = 'swg-score-tooltip'; tip.textContent = reason;
+      help.appendChild(tip);
+      row.appendChild(label); row.appendChild(barWrap); row.appendChild(num); row.appendChild(help);
+      panel.appendChild(row);
+    });
+  }
+  window.updateScoreWidget = render;
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', render); }
+  else { setTimeout(render, 0); }
+})();
+</script>
+
 <button class="back-to-top" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14V4"/><path d="M4 8l5-5 5 5"/></svg>
 </button>
