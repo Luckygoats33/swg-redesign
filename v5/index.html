@@ -342,7 +342,6 @@ p{max-width:65ch}
 .hero-mesh-orb{
   position:absolute;
   border-radius:50%;
-  filter:blur(100px);
   will-change:transform;
 }
 .hero-mesh-orb:nth-child(1){
@@ -387,7 +386,6 @@ p{max-width:65ch}
   width:100px;height:100px;
   border-radius:50%;
   background:radial-gradient(circle,rgba(124,58,237,0.4),transparent 70%);
-  filter:blur(60px);
   pointer-events:none;
   z-index:1;
   opacity:0.4;
@@ -1032,7 +1030,7 @@ p{max-width:65ch}
   -webkit-mask-composite:xor;
   mask-composite:exclude;
   opacity:0;
-  transition:opacity 0.4s ease;
+  transition:opacity 0.3s var(--ease);
   pointer-events:none;
 }
 .outcome-card:hover::before{opacity:1}
@@ -1272,12 +1270,80 @@ footer{
 /* ================================================================
    FAQ ACCORDION (V5 DARK)
    ================================================================ */
-.v5-faq-item{transition:border-color 0.3s ease}
-.v5-faq-item:hover{border-color:rgba(124,58,237,0.25)!important}
-.v5-faq-item.v5-faq-open{border-color:rgba(124,58,237,0.3)!important;background:rgba(124,58,237,0.04)!important}
+.v5-faq-section{padding:100px 24px;background:var(--ink)}
+.v5-faq-header{text-align:center;margin-bottom:56px}
+.v5-faq-header-label{font-family:var(--outfit);font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--violet);margin-bottom:12px}
+.v5-faq-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-style:italic;color:var(--paper)}
+.v5-faq-wrap{max-width:720px;margin:0 auto}
+.v5-faq-item{background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden;transition:border-color 0.3s ease}
+.v5-faq-item:hover{border-color:rgba(124,58,237,0.25)}
+.v5-faq-item.v5-faq-open{border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.04)}
+.v5-faq-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px}
 .v5-faq-trigger:focus-visible{outline:2px solid var(--violet);outline-offset:-2px;border-radius:12px}
+.v5-faq-icon{flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease}
 .v5-faq-item.v5-faq-open .v5-faq-vline{opacity:0;transform:rotate(90deg)}
 .v5-faq-vline{transition:opacity 0.3s ease,transform 0.3s ease;transform-origin:center}
+.v5-faq-body{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease),padding 0.4s var(--ease);padding:0 24px}
+.v5-faq-body p{font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px}
+
+/* ================================================================
+   MID-PAGE CTA
+   ================================================================ */
+.cta-mid{padding:80px 24px;text-align:center;background:var(--ink)}
+.cta-mid h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;color:var(--paper);margin-bottom:24px}
+
+/* ================================================================
+   SERVICES SECTION
+   ================================================================ */
+.v5-services{background:var(--paper);padding:100px 24px}
+.v5-services-inner{max-width:1200px;margin:0 auto}
+.v5-services .label{color:var(--violet);letter-spacing:0.15em;font-size:11px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.v5-services h2{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem);color:var(--ink);margin-bottom:64px}
+.v5-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 32px;color:var(--ink)}
+.v5-services-grid h3{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-bottom:8px}
+.v5-services-grid p{font-size:0.95rem;color:var(--stone);line-height:1.7}
+@media(max-width:768px){
+  .v5-services-grid{grid-template-columns:1fr;gap:40px}
+}
+
+/* ================================================================
+   HERO METRIC (desktop 2-col layout)
+   ================================================================ */
+.hero-metric{display:none}
+.hero-metric-number{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(80px,10vw,120px);
+  color:var(--paper);
+  line-height:1;
+  text-shadow:0 0 60px rgba(124,58,237,0.4),0 0 120px rgba(124,58,237,0.2);
+}
+.hero-metric-label{
+  font-family:var(--outfit);
+  font-variant:small-caps;
+  font-size:1rem;
+  letter-spacing:0.1em;
+  color:var(--stone);
+  margin-top:8px;
+}
+@media(min-width:1024px){
+  .hero-content{
+    max-width:1100px;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    align-items:center;
+    gap:48px;
+    text-align:left;
+  }
+  .hero-subtitle{margin:0 0 48px}
+  .hero-cta-wrap{align-items:flex-start}
+  .hero-metric{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+}
 
 @media(prefers-reduced-motion:reduce){
   .hero-mesh-orb,.cta-bg-grad,.cta-particles::after{animation:none}
@@ -1568,13 +1634,19 @@ footer{
   </video>
 
   <div class="hero-content">
-    <h1 class="hero-headline" id="heroHeadline">
-      We help growing companies solve the business problems behind growth.
-    </h1>
-    <p class="hero-subtitle">Strategy, operations, technology, and marketing — connected to one plan, built in the right order.</p>
-    <div class="hero-cta-wrap">
-      <a href="assessment.html" class="btn btn-shimmer">Start Your Free Business Review</a>
-      <span class="hero-cta-sub">Takes 8&ndash;10 minutes</span>
+    <div class="hero-text">
+      <h1 class="hero-headline" id="heroHeadline">
+        We help growing companies solve the business problems behind growth.
+      </h1>
+      <p class="hero-subtitle">Strategy, operations, technology, and marketing — connected to one plan, built in the right order.</p>
+      <div class="hero-cta-wrap">
+        <a href="assessment.html" class="btn btn-shimmer">Start Your Free Business Review</a>
+        <span class="hero-cta-sub">Takes 8&ndash;10 minutes</span>
+      </div>
+    </div>
+    <div class="hero-metric" aria-hidden="true">
+      <div class="hero-metric-number">30+</div>
+      <div class="hero-metric-label">Industries Served</div>
     </div>
   </div>
 
@@ -1721,6 +1793,25 @@ footer{
 
 
 <!-- =====================================================================
+     SERVICES SECTION
+     ===================================================================== -->
+<section class="v5-services">
+  <div class="v5-services-inner">
+    <p class="label">What We Cover</p>
+    <h2>Every system. One connected strategy.</h2>
+    <div class="v5-services-grid">
+      <div><h3>Website &amp; Conversion</h3><p>UX audits, page speed, checkout flow, mobile optimization, and A/B testing infrastructure.</p></div>
+      <div><h3>Marketing &amp; Acquisition</h3><p>Paid media, SEO, content strategy, email sequences, and attribution modeling.</p></div>
+      <div><h3>Operations &amp; CRM</h3><p>Process mapping, tool consolidation, reporting dashboards, and workflow automation.</p></div>
+      <div><h3>Technology &amp; Data</h3><p>Stack audit, integration architecture, analytics setup, and data pipeline design.</p></div>
+      <div><h3>Team &amp; Hiring</h3><p>Role scoping, vendor evaluation, onboarding systems, and capacity planning.</p></div>
+      <div><h3>Revenue &amp; Pricing</h3><p>Pricing architecture, bundle strategy, margin analysis, and retention modeling.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
      COMMON SITUATIONS — ACCORDION
      ===================================================================== -->
 <section class="situations-section" id="situations">
@@ -1796,9 +1887,9 @@ footer{
 <!-- =====================================================================
      MID-PAGE CTA
      ===================================================================== -->
-<section style="padding:80px 24px;text-align:center;background:var(--ink)">
+<section class="cta-mid">
   <div class="wrap">
-    <p style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;color:var(--paper);margin-bottom:24px">Ready to find out what's really holding your growth back?</p>
+    <h2>Ready to find out what's really holding your growth back?</h2>
     <a href="assessment.html" class="btn-shimmer">Get Your Free Growth Map</a>
   </div>
 </section>
@@ -1832,65 +1923,65 @@ footer{
 <!-- =====================================================================
      FAQ SECTION
      ===================================================================== -->
-<section class="sec" id="faq" style="padding:100px 24px;background:var(--ink)">
+<section class="v5-faq-section" id="faq">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:56px">
-      <div style="font-family:var(--outfit);font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--violet);margin-bottom:12px">What past clients asked before saying yes</div>
-      <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-style:italic;color:var(--paper)">Frequently asked questions</h2>
+    <div class="v5-faq-header">
+      <div class="v5-faq-header-label">What past clients asked before saying yes</div>
+      <h2>Frequently asked questions</h2>
     </div>
-    <div style="max-width:720px;margin:0 auto" id="v5Faq">
-      <div class="v5-faq-item" style="background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden">
-        <button class="v5-faq-trigger" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px" aria-expanded="false">
+    <div class="v5-faq-wrap" id="v5Faq">
+      <div class="v5-faq-item">
+        <button class="v5-faq-trigger" aria-expanded="false">
           <span>Who is the best fit?</span>
-          <span class="v5-faq-icon" style="flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
+          <span class="v5-faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
         </button>
-        <div class="v5-faq-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1),padding 0.4s cubic-bezier(0.16,1,0.3,1);padding:0 24px">
-          <p style="font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px">Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution.</p>
+        <div class="v5-faq-body">
+          <p>Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution.</p>
         </div>
       </div>
-      <div class="v5-faq-item" style="background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden">
-        <button class="v5-faq-trigger" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px" aria-expanded="false">
+      <div class="v5-faq-item">
+        <button class="v5-faq-trigger" aria-expanded="false">
           <span>Do we need to know what service we want?</span>
-          <span class="v5-faq-icon" style="flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
+          <span class="v5-faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
         </button>
-        <div class="v5-faq-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1),padding 0.4s cubic-bezier(0.16,1,0.3,1);padding:0 24px">
-          <p style="font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px">No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth.</p>
+        <div class="v5-faq-body">
+          <p>No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth.</p>
         </div>
       </div>
-      <div class="v5-faq-item" style="background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden">
-        <button class="v5-faq-trigger" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px" aria-expanded="false">
+      <div class="v5-faq-item">
+        <button class="v5-faq-trigger" aria-expanded="false">
           <span>What can the roadmap include?</span>
-          <span class="v5-faq-icon" style="flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
+          <span class="v5-faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
         </button>
-        <div class="v5-faq-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1),padding 0.4s cubic-bezier(0.16,1,0.3,1);padding:0 24px">
-          <p style="font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px">Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support.</p>
+        <div class="v5-faq-body">
+          <p>Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support.</p>
         </div>
       </div>
-      <div class="v5-faq-item" style="background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden">
-        <button class="v5-faq-trigger" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px" aria-expanded="false">
+      <div class="v5-faq-item">
+        <button class="v5-faq-trigger" aria-expanded="false">
           <span>Do you execute after the strategy?</span>
-          <span class="v5-faq-icon" style="flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
+          <span class="v5-faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
         </button>
-        <div class="v5-faq-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1),padding 0.4s cubic-bezier(0.16,1,0.3,1);padding:0 24px">
-          <p style="font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px">Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed.</p>
+        <div class="v5-faq-body">
+          <p>Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed.</p>
         </div>
       </div>
-      <div class="v5-faq-item" style="background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden">
-        <button class="v5-faq-trigger" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px" aria-expanded="false">
+      <div class="v5-faq-item">
+        <button class="v5-faq-trigger" aria-expanded="false">
           <span>How long does an engagement take?</span>
-          <span class="v5-faq-icon" style="flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
+          <span class="v5-faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
         </button>
-        <div class="v5-faq-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1),padding 0.4s cubic-bezier(0.16,1,0.3,1);padding:0 24px">
-          <p style="font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px">A Business Review typically takes 2-3 weeks. A Focused Build is 4-12 weeks depending on scope. Ongoing Support is month-to-month with no lock-in.</p>
+        <div class="v5-faq-body">
+          <p>A Business Review typically takes 2-3 weeks. A Focused Build is 4-12 weeks depending on scope. Ongoing Support is month-to-month with no lock-in.</p>
         </div>
       </div>
-      <div class="v5-faq-item" style="background:rgba(250,250,247,0.03);border:1px solid rgba(250,250,247,0.08);border-radius:12px;margin-bottom:8px;overflow:hidden">
-        <button class="v5-faq-trigger" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:var(--outfit);font-size:0.95rem;font-weight:400;color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px" aria-expanded="false">
+      <div class="v5-faq-item">
+        <button class="v5-faq-trigger" aria-expanded="false">
           <span>What industries do you work with?</span>
-          <span class="v5-faq-icon" style="flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
+          <span class="v5-faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="v5-faq-vline"/></svg></span>
         </button>
-        <div class="v5-faq-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1),padding 0.4s cubic-bezier(0.16,1,0.3,1);padding:0 24px">
-          <p style="font-size:0.9rem;color:rgba(250,250,247,0.6);line-height:1.75;font-weight:300;padding-bottom:20px">We have worked across 30+ industries including health and wellness, construction, professional services, e-commerce, SaaS, and manufacturing.</p>
+        <div class="v5-faq-body">
+          <p>We have worked across 30+ industries including health and wellness, construction, professional services, e-commerce, SaaS, and manufacturing.</p>
         </div>
       </div>
     </div>

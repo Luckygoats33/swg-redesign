@@ -47,6 +47,8 @@
   --sans:'Source Sans 3',sans-serif;
   --ease:cubic-bezier(0.16,1,0.3,1);
   --ease-out:cubic-bezier(0.33,1,0.68,1);
+  --shadow-card:0 16px 48px rgba(0,0,0,0.06);
+  --shadow-card-hover:0 24px 56px rgba(0,0,0,0.1);
 }
 html{overflow-x:hidden}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
@@ -78,7 +80,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .btn-terra{background:var(--terra);color:#fff}
 .btn-terra::after{content:'';position:absolute;top:0;left:0;width:0;height:100%;background:rgba(0,0,0,0.15);transition:width 0.4s var(--ease);z-index:-1}
 .btn-terra:hover::after{width:100%}
-.btn-terra:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,93,62,0.3)}
+.btn-terra:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,93,62,0.3);will-change:transform}
 .btn-outline{border:1.5px solid rgba(245,241,235,0.3);color:var(--parchment);background:none}
 .btn-outline:hover{border-color:rgba(245,241,235,0.7);transform:translateY(-2px)}
 .btn-outline-dark{border:1.5px solid var(--terra);color:var(--terra);background:none}
@@ -223,7 +225,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 @media(min-width:640px){.services__grid{grid-template-columns:repeat(2,1fr);gap:20px}}
 @media(min-width:1024px){.services__grid{grid-template-columns:repeat(3,1fr);gap:24px}}
 .service-card{background:var(--cream);border-radius:8px;padding:36px 32px;border-top:3px solid transparent;transition:all 0.4s var(--ease);position:relative}
-.service-card:hover{transform:translateY(-4px);border-top-color:var(--terra);box-shadow:0 20px 48px rgba(0,0,0,0.08)}
+.service-card:hover{transform:translateY(-4px);border-top-color:var(--terra);box-shadow:var(--shadow-card-hover)}
 .service-card--tall{min-height:280px}
 @media(min-width:640px){.service-card--tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}}
 .service-card--accent{background:var(--forest);color:var(--parchment)}
@@ -279,13 +281,14 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .cases__track{display:flex;gap:24px;padding:0 24px 24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--terra) transparent}
 @media(min-width:768px){.cases__track{padding:0 48px 24px;gap:28px}}
 @media(min-width:1200px){.cases__track{padding:0 64px 24px}}
+@media(min-width:1024px){.cases__track{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;overflow:visible;scroll-snap-type:none}}
 .cases__track::-webkit-scrollbar{height:4px}
 .cases__track::-webkit-scrollbar-track{background:rgba(245,241,235,0.05)}
 .cases__track::-webkit-scrollbar-thumb{background:var(--terra);border-radius:4px}
 
 .case-card{flex:0 0 85%;max-width:420px;background:rgba(245,241,235,0.04);border:1px solid rgba(245,241,235,0.08);border-radius:12px;padding:40px 36px;scroll-snap-align:start;transition:all 0.4s var(--ease);position:relative;overflow:hidden}
 @media(min-width:640px){.case-card{flex:0 0 45%}}
-@media(min-width:1024px){.case-card{flex:0 0 32%}}
+@media(min-width:1024px){.case-card{flex:none;max-width:none}}
 .case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--terra),var(--gold));opacity:0.8}
 .case-card:hover{background:rgba(245,241,235,0.07);border-color:rgba(245,241,235,0.15);transform:translateY(-4px)}
 .case-card__industry{font-family:var(--sans);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:20px}
@@ -356,17 +359,13 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .footer__cta .btn{font-size:11px;padding:14px 28px;min-height:44px}
 
 /* ===== INTERACTIVE ENHANCEMENTS ===== */
-.service-card{will-change:transform,box-shadow}
-.service-card:hover{transform:translateY(-6px);border-top-color:var(--terra);box-shadow:0 24px 56px rgba(0,0,0,0.1),0 0 0 1px rgba(196,93,62,0.08)}
-.service-card--accent:hover{box-shadow:0 24px 56px rgba(0,0,0,0.2),0 0 0 1px rgba(196,93,62,0.15)}
-.case-card{will-change:transform}
-.case-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.2)}
-.testimonial{will-change:transform}
-.testimonial:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.06)}
+.service-card:hover{transform:translateY(-6px);border-top-color:var(--terra);box-shadow:var(--shadow-card-hover),0 0 0 1px rgba(196,93,62,0.08);will-change:transform}
+.service-card--accent:hover{box-shadow:var(--shadow-card-hover),0 0 0 1px rgba(196,93,62,0.15)}
+.case-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover);will-change:transform}
+.testimonial:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover);will-change:transform}
 .outcome__number{transition:color 0.4s var(--ease),transform 0.3s var(--ease)}
 .outcome:hover .outcome__number{color:var(--terra);transform:scale(1.06)}
 .outcome:hover .outcome__number::after{background:var(--gold)}
-.btn-terra{will-change:transform,box-shadow}
 
 /* ===== REVEAL ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease)}
@@ -410,6 +409,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .cases__scroll-cue{display:block;text-align:right;font-size:12px;color:rgba(245,241,235,0.4);font-family:var(--sans);margin-top:8px;padding:0 24px}
 @media(min-width:768px){.cases__scroll-cue{padding:0 48px}}
 @media(min-width:1200px){.cases__scroll-cue{padding:0 64px}}
+@media(min-width:1024px){.cases__scroll-cue{display:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -833,6 +833,14 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL PULL-QUOTE ===== -->
+  <section style="padding:80px 24px;max-width:900px;margin:0 auto">
+    <blockquote style="font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-style:italic;color:var(--parchment);line-height:1.6;border-left:4px solid var(--terra);padding-left:32px;margin:0">
+      "SWG didn't just find problems — they sequenced the fixes so each one compounded. Within 90 days, our systems were finally working together instead of against each other."
+      <footer style="margin-top:24px;font-family:'Source Sans 3',sans-serif;font-size:0.95rem;font-style:normal;color:var(--stone);font-weight:400">— Growth-stage founder, SaaS</footer>
+    </blockquote>
   </section>
 
   <!-- ===== PROCESS TIMELINE ===== -->
