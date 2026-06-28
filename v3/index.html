@@ -336,6 +336,85 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
 .back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+
+/* ━━ ASSESSMENT MODAL ━━ */
+.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(26,26,46,0.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;pointer-events:none;transition:opacity 0.35s var(--ease);display:flex;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal{width:100%;max-width:960px;max-height:80vh;background:var(--white);overflow:hidden;position:relative;display:flex;flex-direction:column;border-radius:20px;box-shadow:0 40px 120px rgba(26,26,46,0.4);transform:translateY(30px) scale(0.97);transition:transform 0.4s var(--ease)}
+.modal-overlay.open .modal{transform:none}
+@media(max-width:767px){.modal-overlay{padding:0;align-items:flex-end}.modal{max-height:94vh;max-width:100%;border-radius:20px 20px 0 0}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--deep-navy);flex-shrink:0}
+@media(min-width:768px){.modal-head{padding:20px 32px}}
+.modal-head h3{font-size:1rem;color:#fff;font-family:var(--heading);font-weight:700;letter-spacing:-0.02em}
+.modal-close{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.3s,transform 0.3s var(--ease);flex-shrink:0}
+.modal-close:hover{background:rgba(255,255,255,0.18);transform:rotate(90deg)}
+.modal-close:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.modal-close svg{width:16px;height:16px;stroke:#fff}
+.modal-inner{display:flex;flex:1;overflow:hidden}
+.modal-sidebar{display:none;width:260px;flex-shrink:0;background:var(--deep-navy);padding:32px 24px;flex-direction:column;gap:24px}
+@media(min-width:768px){.modal-sidebar{display:flex}}
+.modal-sidebar-info{font-family:var(--body);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.04em;color:var(--accent)}
+.modal-sidebar-info span{display:block;font-family:var(--heading);font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-0.03em;margin-top:4px;text-transform:none}
+.modal-sidebar-info p{font-size:0.78rem;font-family:var(--body);color:rgba(255,255,255,0.4);line-height:1.6;margin-top:8px;text-transform:none;letter-spacing:0;font-weight:400}
+.modal-steps-nav{display:flex;flex-direction:column;gap:4px}
+.modal-step-btn{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;font-family:var(--body);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s var(--ease);border:none;background:none;text-align:left;min-height:44px;width:100%;position:relative}
+.modal-step-btn:hover{background:rgba(255,255,255,0.04)}
+.modal-step-btn.active{background:rgba(37,99,235,0.15);color:#fff}
+.modal-step-btn.done{color:rgba(255,255,255,0.7)}
+.modal-step-btn.locked:hover::after{content:attr(data-tooltip);position:absolute;left:105%;top:50%;transform:translateY(-50%);background:rgba(26,26,46,0.95);color:#fff;padding:4px 10px;border-radius:6px;font-size:11px;white-space:nowrap;pointer-events:none;z-index:10}
+.modal-step-num{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);transition:all 0.3s;flex-shrink:0}
+.modal-step-btn.active .modal-step-num{background:var(--accent);color:#fff}
+.modal-step-btn.done .modal-step-num{background:rgba(37,99,235,0.15);color:var(--accent)}
+.modal-sidebar-progress{margin-top:auto}
+.modal-progress-bar{height:4px;border-radius:4px;background:rgba(255,255,255,0.08);overflow:hidden}
+.modal-progress-fill{height:100%;border-radius:4px;background:var(--accent);transition:width 0.5s var(--ease);width:20%}
+.modal-progress-text{font-family:var(--body);font-weight:500;font-size:9px;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,0.3);margin-top:6px}
+.modal-body{padding:28px 20px 24px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+@media(min-width:768px){.modal-body{padding:36px 40px 32px}}
+.modal-mobile-progress{display:flex;gap:4px;margin-bottom:20px}
+@media(min-width:768px){.modal-mobile-progress{display:none}}
+.modal-mobile-dot{flex:1;height:3px;border-radius:3px;background:rgba(37,99,235,0.1);transition:background 0.4s var(--ease)}
+.modal-mobile-dot.active{background:var(--accent)}
+.modal-mobile-dot.done{background:var(--deep-navy)}
+.m-step{display:none;animation:mStepIn 0.4s var(--ease)}
+.m-step.active{display:block}
+@keyframes mStepIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){@keyframes mStepIn{from,to{opacity:1;transform:none}}}
+.m-step-header{margin-bottom:24px}
+.m-step-header .m-step-num{font-family:var(--body);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:0.04em;color:var(--accent);margin-bottom:8px}
+.m-step-header h4{font-size:clamp(1.2rem,2vw,1.6rem);margin-bottom:6px;font-family:var(--heading);font-weight:700;letter-spacing:-0.03em;color:var(--deep-navy)}
+.m-step-header p{font-size:0.88rem;color:var(--slate);line-height:1.6}
+.m-field{margin-bottom:20px}
+.m-field:last-child{margin-bottom:0}
+.m-field label{display:block;font-weight:500;font-size:0.9rem;margin-bottom:8px;color:var(--deep-navy)}
+.m-field .m-hint{display:block;font-size:0.76rem;color:var(--slate);margin-bottom:6px}
+.m-field input[type="text"],.m-field input[type="email"],.m-field input[type="url"],.m-field textarea,.m-field select{width:100%;padding:12px 14px;border:1.5px solid rgba(37,99,235,0.1);border-radius:10px;background:var(--white);font-family:var(--body);font-size:16px;transition:border-color 0.3s,box-shadow 0.3s;-webkit-appearance:none;min-height:48px;color:var(--deep-navy)}
+.m-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 4.5l3 3 3-3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.m-field input:focus,.m-field textarea:focus,.m-field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,0.12)}
+.m-field textarea{resize:vertical;min-height:80px;line-height:1.6}
+.m-form-grid{display:grid;grid-template-columns:1fr;gap:20px 0}
+@media(min-width:480px){.m-form-grid{grid-template-columns:1fr 1fr;gap:20px 16px}}
+.m-opts{display:flex;flex-direction:column;gap:4px}
+.m-opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;cursor:pointer;transition:all 0.2s;min-height:48px;-webkit-tap-highlight-color:transparent;font-size:0.88rem;border:1.5px solid transparent}
+.m-opt:hover{background:rgba(37,99,235,0.03)}
+.m-opt.selected{background:rgba(37,99,235,0.06);border-color:var(--accent)}
+.m-opt input{width:18px;height:18px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
+.m-check-grid{display:grid;grid-template-columns:1fr;gap:4px}
+@media(min-width:480px){.m-check-grid{grid-template-columns:1fr 1fr}}
+.m-scale{display:flex;gap:6px;flex-wrap:wrap}
+.m-scale-btn{padding:10px 18px;border-radius:8px;font-family:var(--body);font-weight:500;font-size:12px;border:1.5px solid rgba(37,99,235,0.1);background:var(--white);cursor:pointer;transition:all 0.2s;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--deep-navy)}
+.m-scale-btn:hover{border-color:var(--accent)}
+.m-scale-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.m-scale-labels{display:flex;justify-content:space-between;font-size:0.72rem;color:var(--slate);margin-top:4px}
+.modal-nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(37,99,235,0.08)}
+.modal-nav .btn{min-height:48px}
+.m-success{text-align:center;padding:48px 20px}
+.m-success-icon{width:68px;height:68px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
+.m-success-icon svg{width:30px;height:30px;color:#fff}
+.m-success h4{font-size:1.3rem;margin-bottom:10px;font-family:var(--heading);color:var(--deep-navy)}
+.m-success p{font-size:0.9rem;color:var(--slate);line-height:1.7;max-width:400px;margin:0 auto}
+.m-field-invalid{outline:2px solid #EF4444 !important;outline-offset:1px}
+.m-field-invalid:focus{outline-color:var(--accent) !important}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -568,9 +647,9 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       <a href="implementation.html">Implementation</a>
       <a href="engagements.html">Pricing</a>
       <a href="case-studies.html">Case Studies</a>
-      <a href="assessment.html">Assessment</a>
+      <a href="#assess" onclick="openAssessModal();return false">Assessment</a>
     </div>
-    <a href="assessment.html" class="btn btn-primary nav-cta"><span>Start the Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="#assess" onclick="openAssessModal();return false" class="btn btn-primary nav-cta"><span>Start the Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -582,8 +661,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   <a href="implementation.html" onclick="closeMobile()">Implementation</a>
   <a href="engagements.html" onclick="closeMobile()">Pricing</a>
   <a href="case-studies.html" onclick="closeMobile()">Case Studies</a>
-  <a href="assessment.html" onclick="closeMobile()">Assessment</a>
-  <a href="assessment.html" class="btn btn-primary"><span>Start the Review</span></a>
+  <a href="#assess" onclick="closeMobile();openAssessModal();return false">Assessment</a>
+  <a href="#assess" onclick="closeMobile();openAssessModal();return false" class="btn btn-primary"><span>Start the Review</span></a>
 </div>
 
 <!-- ━━ MAIN ━━ -->
@@ -598,7 +677,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
         <h1>We help growing companies solve the business problems behind <em>growth.</em></h1>
         <p class="body-lg">SWG diagnoses the real bottlenecks in your business, then builds the systems to fix them -- website, CRM, AI workflows, marketing, and reporting -- all connected to one strategy.</p>
         <div class="hero-buttons">
-          <a href="assessment.html" class="btn btn-primary btn-ripple"><span>Start the Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#assess" onclick="openAssessModal();return false" class="btn btn-primary btn-ripple"><span>Start the Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="#how" class="btn btn-outline"><span>See how we work</span></a>
         </div>
       </div>
@@ -914,7 +993,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       <h2 class="r d1">Start your business review.</h2>
       <p class="body-lg r d2">The review takes 8-10 minutes. It gives us enough to understand your situation and come back with a recommendation -- not a sales pitch.</p>
       <div class="cta-buttons r d3">
-        <a href="assessment.html" class="btn btn-primary btn-ripple"><span>Begin Assessment</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#assess" onclick="openAssessModal();return false" class="btn btn-primary btn-ripple"><span>Begin Assessment</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="engagements.html" class="btn btn-outline"><span>View Pricing</span></a>
       </div>
     </div>
@@ -947,7 +1026,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       </div>
       <div class="footer-col">
         <h5>Start</h5>
-        <a href="assessment.html">Start Review</a>
+        <a href="#assess" onclick="openAssessModal();return false">Start Review</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1246,6 +1325,412 @@ window.SWG_SCORES = {
     else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
   }, {passive:true});
   btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
+
+<!-- ━━ ASSESSMENT MODAL ━━ -->
+<div class="modal-overlay" id="assessOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Business Assessment">
+    <div class="modal-head">
+      <h3>Business Assessment</h3>
+      <button class="modal-close" id="modalClose" aria-label="Close assessment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-inner">
+      <aside class="modal-sidebar">
+        <div class="modal-sidebar-info">
+          Estimated Time
+          <span>8&ndash;10 min</span>
+          <p>Complete this assessment to start your business review. We review every submission personally.</p>
+        </div>
+        <div class="modal-steps-nav" id="modalStepsNav">
+          <button class="modal-step-btn active" data-step="0"><span class="modal-step-num">01</span>Company</button>
+          <button class="modal-step-btn" data-step="1"><span class="modal-step-num">02</span>Growth</button>
+          <button class="modal-step-btn" data-step="2"><span class="modal-step-num">03</span>Systems</button>
+          <button class="modal-step-btn" data-step="3"><span class="modal-step-num">04</span>Goals</button>
+          <button class="modal-step-btn" data-step="4"><span class="modal-step-num">05</span>Fit</button>
+        </div>
+        <div class="modal-sidebar-progress">
+          <div class="modal-progress-bar"><div class="modal-progress-fill" id="modalProgressFill"></div></div>
+          <div class="modal-progress-text" id="modalProgressText">Step 1 of 5</div>
+        </div>
+      </aside>
+
+      <div class="modal-body" id="modalBody">
+        <div class="modal-mobile-progress" id="modalMobileProgress">
+          <div class="modal-mobile-dot active" data-step="0"></div>
+          <div class="modal-mobile-dot" data-step="1"></div>
+          <div class="modal-mobile-dot" data-step="2"></div>
+          <div class="modal-mobile-dot" data-step="3"></div>
+          <div class="modal-mobile-dot" data-step="4"></div>
+        </div>
+
+        <!-- Step 1: Company Snapshot -->
+        <div class="m-step active" data-step="0">
+          <div class="m-step-header">
+            <div class="m-step-num">Section 01</div>
+            <h4>Company Snapshot</h4>
+            <p>Basic information about your company and your role in it.</p>
+          </div>
+          <div class="m-form-grid">
+            <div class="m-field"><label for="m_companyName">Company name</label><input type="text" id="m_companyName" name="m_company_name" placeholder="Acme Corp"></div>
+            <div class="m-field"><label for="m_website">Website URL</label><input type="url" id="m_website" name="m_website" placeholder="https://example.com"></div>
+            <div class="m-field"><label for="m_yourName">Your name</label><input type="text" id="m_yourName" name="m_your_name" placeholder="Jane Smith"></div>
+            <div class="m-field"><label for="m_yourEmail">Your email</label><input type="email" id="m_yourEmail" name="m_email" placeholder="jane@example.com"></div>
+          </div>
+          <div class="m-field"><label for="m_role">Your role</label>
+            <select id="m_role" name="m_role"><option value="" disabled selected>Select your role</option><option value="owner_founder">Owner / Founder</option><option value="ceo_president">CEO / President</option><option value="coo">COO</option><option value="cmo">CMO</option><option value="sales_leader">Sales Leader</option><option value="department_lead">Department Lead</option><option value="other">Other</option></select>
+          </div>
+          <div class="m-field"><label for="m_decisions">Do you make or influence strategic and budget decisions?</label>
+            <select id="m_decisions" name="m_decisions"><option value="" disabled selected>Select one</option><option value="yes_final">Yes, I make the final decisions</option><option value="yes_influence">Yes, I strongly influence decisions</option><option value="part_of_team">I am part of the decision-making team</option><option value="no">No, someone else decides</option></select>
+          </div>
+          <div class="m-form-grid">
+            <div class="m-field"><label for="m_revenue">Estimated annual revenue</label>
+              <select id="m_revenue" name="m_revenue"><option value="" disabled selected>Select range</option><option value="under_1m">Under $1M</option><option value="1m_3m">$1M &ndash; $3M</option><option value="3m_5m">$3M &ndash; $5M</option><option value="5m_10m">$5M &ndash; $10M</option><option value="10m_25m">$10M &ndash; $25M</option><option value="25m_plus">$25M+</option></select>
+            </div>
+            <div class="m-field"><label for="m_employees">Number of employees</label>
+              <select id="m_employees" name="m_employees"><option value="" disabled selected>Select range</option><option value="1_5">1 &ndash; 5</option><option value="6_15">6 &ndash; 15</option><option value="16_30">16 &ndash; 30</option><option value="31_50">31 &ndash; 50</option><option value="51_100">51 &ndash; 100</option><option value="101_250">101 &ndash; 250</option><option value="250_plus">250+</option></select>
+            </div>
+          </div>
+          <div class="m-form-grid">
+            <div class="m-field"><label for="m_industry">Industry</label><input type="text" id="m_industry" name="m_industry" placeholder="e.g. Health & Wellness, SaaS, Professional Services"></div>
+            <div class="m-field"><label for="m_years">How long have you been operating?</label>
+              <select id="m_years" name="m_years"><option value="" disabled selected>Select range</option><option value="under_1">Under 1 year</option><option value="1_3">1 &ndash; 3 years</option><option value="3_5">3 &ndash; 5 years</option><option value="5_10">5 &ndash; 10 years</option><option value="10_plus">10+ years</option></select>
+            </div>
+          </div>
+          <div class="modal-nav"><div></div><button class="btn btn-primary" onclick="mGoStep(1)"><span>Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div>
+        </div>
+
+        <!-- Step 2: Growth Bottlenecks -->
+        <div class="m-step" data-step="1">
+          <div class="m-step-header">
+            <div class="m-step-num">Section 02</div>
+            <h4>Growth Bottlenecks</h4>
+            <p>Help us understand where the friction is.</p>
+          </div>
+          <div class="m-field"><label>Which of these describe your current situation? <span class="m-hint">Select all that apply.</span></label>
+            <div class="m-check-grid">
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="grown_fast"> We have grown fast and operations are struggling to keep up</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="revenue_plateaued"> Revenue has plateaued</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="sales_slowed"> Sales have slowed down</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="marketing_unclear"> Marketing is unclear or inconsistent</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="website_outdated"> Website is outdated or underperforming</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="team_accountability"> Team accountability is a problem</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="no_systems"> No real systems or processes in place</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="leadership_overwhelmed"> Leadership is overwhelmed</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="crm_messy"> CRM is messy or unused</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="ai_needs_plan"> We know we need AI but do not have a plan</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="preparing_expansion"> Preparing for expansion</label>
+              <label class="m-opt"><input type="checkbox" name="m_situation" value="preparing_exit"> Preparing for exit or acquisition</label>
+            </div>
+          </div>
+          <div class="m-field"><label for="m_obstacle">What is the single biggest obstacle to your growth right now?</label><textarea id="m_obstacle" name="m_obstacle" placeholder="Describe the core issue in your own words..."></textarea></div>
+          <div class="m-field"><label for="m_disconnected">Where do you feel most disconnected?</label>
+            <select id="m_disconnected" name="m_disconnected"><option value="" disabled selected>Select one</option><option value="marketing_sales">Between marketing and sales</option><option value="strategy_execution">Between strategy and execution</option><option value="leadership_team">Between leadership and team</option><option value="tools_results">Between tools and results</option><option value="spend_revenue">Between spend and revenue</option><option value="other">Other</option></select>
+          </div>
+          <div class="m-field"><label for="m_atRisk">What is at risk if nothing changes in the next 12 months?</label><textarea id="m_atRisk" name="m_at_risk" placeholder="Revenue loss, market share, team morale, missed opportunity..."></textarea></div>
+          <div class="modal-nav">
+            <button class="btn btn-outline" onclick="mGoStep(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span>Back</span></button>
+            <button class="btn btn-primary" onclick="mGoStep(2)"><span>Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Step 3: Systems & Structure -->
+        <div class="m-step" data-step="2">
+          <div class="m-step-header">
+            <div class="m-step-num">Section 03</div>
+            <h4>Systems &amp; Structure</h4>
+            <p>What tools and infrastructure are you currently working with?</p>
+          </div>
+          <div class="m-field"><label>Which of these tools are you actively using? <span class="m-hint">Select all that apply.</span></label>
+            <div class="m-check-grid">
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="crm"> CRM (HubSpot, Salesforce, etc.)</label>
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="email"> Email marketing (Klaviyo, Mailchimp, etc.)</label>
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="pm"> Project management (Asana, Monday, ClickUp, etc.)</label>
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="paid_ads"> Paid advertising (Meta, Google, etc.)</label>
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="analytics"> Analytics / Reporting (GA4, dashboards, etc.)</label>
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="ai"> AI tools (ChatGPT, Claude, etc.)</label>
+              <label class="m-opt"><input type="checkbox" name="m_tools" value="none"> None of the above</label>
+            </div>
+          </div>
+          <div class="m-field"><label>How connected are your tools and systems?</label><span class="m-hint">1 = completely disconnected, 5 = fully integrated</span>
+            <div class="m-scale" id="mScaleTools">
+              <button class="m-scale-btn" data-value="1" onclick="mSetScale('mScaleTools',this)">1</button>
+              <button class="m-scale-btn" data-value="2" onclick="mSetScale('mScaleTools',this)">2</button>
+              <button class="m-scale-btn" data-value="3" onclick="mSetScale('mScaleTools',this)">3</button>
+              <button class="m-scale-btn" data-value="4" onclick="mSetScale('mScaleTools',this)">4</button>
+              <button class="m-scale-btn" data-value="5" onclick="mSetScale('mScaleTools',this)">5</button>
+            </div>
+            <div class="m-scale-labels"><span>Disconnected</span><span>Fully integrated</span></div>
+          </div>
+          <div class="m-field"><label for="m_bottleneckPerson">What depends too heavily on one person?</label><textarea id="m_bottleneckPerson" name="m_bottleneck_person" placeholder="Sales, approvals, client communication, reporting..."></textarea></div>
+          <div class="modal-nav">
+            <button class="btn btn-outline" onclick="mGoStep(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span>Back</span></button>
+            <button class="btn btn-primary" onclick="mGoStep(3)"><span>Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Step 4: Goals & Success -->
+        <div class="m-step" data-step="3">
+          <div class="m-step-header">
+            <div class="m-step-num">Section 04</div>
+            <h4>Goals &amp; Success</h4>
+            <p>Where are you trying to go, and what would make this engagement successful?</p>
+          </div>
+          <div class="m-field"><label for="m_goals24">Where do you want to be in 24 months?</label><textarea id="m_goals24" name="m_goals_24" placeholder="Revenue target, team size, market position, lifestyle..."></textarea></div>
+          <div class="m-field"><label>What would make this engagement successful? <span class="m-hint">Select all that apply.</span></label>
+            <div class="m-check-grid">
+              <label class="m-opt"><input type="checkbox" name="m_success" value="roadmap"> A clear strategic roadmap</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="website"> A high-performing website</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="marketing"> Marketing that generates leads</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="crm"> CRM that works and gets used</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="ai"> AI workflows implemented properly</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="revenue"> Revenue growth</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="ops_clarity"> Operational clarity</label>
+              <label class="m-opt"><input type="checkbox" name="m_success" value="team_alignment"> Team alignment and accountability</label>
+            </div>
+          </div>
+          <div class="m-field"><label for="m_successWords">Describe success in your own words.</label><textarea id="m_successWords" name="m_success_words" placeholder="What does it look like when things are working?"></textarea></div>
+          <div class="m-field"><label for="m_whyNow">Why now?</label><textarea id="m_whyNow" name="m_why_now" placeholder="What happened recently that made this urgent?"></textarea></div>
+          <div class="modal-nav">
+            <button class="btn btn-outline" onclick="mGoStep(2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span>Back</span></button>
+            <button class="btn btn-primary" onclick="mGoStep(4)"><span>Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Step 5: Fit & Next Step -->
+        <div class="m-step" data-step="4">
+          <div class="m-step-header">
+            <div class="m-step-num">Section 05</div>
+            <h4>Fit &amp; Next Step</h4>
+            <p>Help us understand your budget range, preferred engagement path, and what brought you here.</p>
+          </div>
+          <div class="m-field"><label>Budget range for this engagement</label>
+            <div class="m-opts">
+              <label class="m-opt"><input type="radio" name="m_budget" value="under_10k"> Under $10,000</label>
+              <label class="m-opt"><input type="radio" name="m_budget" value="10k_30k"> $10,000 &ndash; $30,000</label>
+              <label class="m-opt"><input type="radio" name="m_budget" value="30k_75k"> $30,000 &ndash; $75,000</label>
+              <label class="m-opt"><input type="radio" name="m_budget" value="75k_plus"> $75,000+</label>
+            </div>
+          </div>
+          <div class="m-field"><label>Which engagement path interests you most?</label>
+            <div class="m-opts">
+              <label class="m-opt"><input type="radio" name="m_engagement" value="business_review"> Business Review &mdash; diagnose before building</label>
+              <label class="m-opt"><input type="radio" name="m_engagement" value="focused_build"> Focused Build &mdash; website, CRM, or marketing project</label>
+              <label class="m-opt"><input type="radio" name="m_engagement" value="ongoing_support"> Ongoing Support &mdash; fractional operations or growth partner</label>
+              <label class="m-opt"><input type="radio" name="m_engagement" value="not_sure"> Not sure yet</label>
+            </div>
+          </div>
+          <div class="m-field"><label for="m_reachOut">What specific problem made you reach out now?</label><textarea id="m_reachOut" name="m_reach_out" placeholder="Be specific. The more detail, the more useful our review will be."></textarea></div>
+          <div class="m-field"><label for="m_alreadyTried">What have you already tried?</label><textarea id="m_alreadyTried" name="m_already_tried" placeholder="Agencies, freelancers, internal efforts, tools..."></textarea></div>
+          <div class="m-field"><label for="m_anythingElse">Anything else we should know?</label><textarea id="m_anythingElse" name="m_anything_else" placeholder="Timeline constraints, team dynamics, priorities..."></textarea></div>
+          <div class="modal-nav">
+            <button class="btn btn-outline" onclick="mGoStep(3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform:rotate(180deg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span>Back</span></button>
+            <button class="btn btn-primary" onclick="mSubmitForm()"><span>Submit Assessment</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div class="m-step" data-step="success">
+          <div class="m-success">
+            <div class="m-success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>Assessment submitted.</h4>
+            <p>We will review your responses personally and reach out within 2 business days. If your situation is urgent, reply to the confirmation email.</p>
+            <button class="btn btn-primary" style="margin-top:32px" onclick="closeAssessModal()"><span>Close</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var overlay = document.getElementById('assessOverlay');
+  var modalBody = document.getElementById('modalBody');
+  var mCurrentStep = 0;
+  var mTotalSteps = 5;
+  var mCompleted = {};
+  var mStepNames = ['Company Snapshot','Growth Bottlenecks','Systems & Structure','Goals & Success','Fit & Next Step'];
+
+  // Open / Close
+  window.openAssessModal = function(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Reset to step 0 if form was completed
+    var successStep = overlay.querySelector('.m-step[data-step="success"]');
+    if(successStep && successStep.classList.contains('active')){
+      mCurrentStep = 0;
+      mCompleted = {};
+      overlay.querySelectorAll('.m-step').forEach(function(s){ s.classList.remove('active'); });
+      overlay.querySelector('.m-step[data-step="0"]').classList.add('active');
+      mUpdateUI();
+      // Show sidebar and mobile progress again
+      var sb = overlay.querySelector('.modal-sidebar');
+      if(sb) sb.style.display = '';
+      var mp = document.getElementById('modalMobileProgress');
+      if(mp) mp.style.display = '';
+    }
+  };
+  window.closeAssessModal = function(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  // Close button
+  document.getElementById('modalClose').addEventListener('click', closeAssessModal);
+
+  // Click overlay to close
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeAssessModal();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) closeAssessModal();
+  });
+
+  // Step validation
+  function mValidateStep(stepIndex){
+    var stepEl = overlay.querySelector('.m-step[data-step="' + stepIndex + '"]');
+    if(!stepEl) return true;
+    var valid = true;
+    stepEl.querySelectorAll('.m-field-invalid').forEach(function(el){ el.classList.remove('m-field-invalid'); });
+    var existingErr = stepEl.querySelector('.m-validation-error');
+    if(existingErr) existingErr.remove();
+
+    // Text/email/url inputs
+    stepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="url"]').forEach(function(input){
+      if(!input.value.trim()){ input.classList.add('m-field-invalid'); valid = false; }
+    });
+    // Selects
+    stepEl.querySelectorAll('select').forEach(function(sel){
+      if(!sel.value){ sel.classList.add('m-field-invalid'); valid = false; }
+    });
+    // Checkbox groups
+    var cbGroups = {};
+    stepEl.querySelectorAll('input[type="checkbox"]').forEach(function(cb){
+      if(!cbGroups[cb.name]) cbGroups[cb.name] = [];
+      cbGroups[cb.name].push(cb);
+    });
+    for(var gn in cbGroups){
+      if(!cbGroups[gn].some(function(cb){ return cb.checked; })){
+        var container = cbGroups[gn][0].closest('.m-check-grid') || cbGroups[gn][0].closest('.m-opts');
+        if(container) container.classList.add('m-field-invalid');
+        valid = false;
+      }
+    }
+    // Radio groups
+    var rbGroups = {};
+    stepEl.querySelectorAll('input[type="radio"]').forEach(function(rb){
+      if(!rbGroups[rb.name]) rbGroups[rb.name] = [];
+      rbGroups[rb.name].push(rb);
+    });
+    for(var rn in rbGroups){
+      if(!rbGroups[rn].some(function(rb){ return rb.checked; })){
+        var rContainer = rbGroups[rn][0].closest('.m-opts');
+        if(rContainer) rContainer.classList.add('m-field-invalid');
+        valid = false;
+      }
+    }
+
+    if(!valid){
+      var errDiv = document.createElement('div');
+      errDiv.className = 'm-validation-error';
+      errDiv.style.cssText = 'color:#EF4444;font-size:0.85rem;font-weight:500;margin-bottom:16px;padding:10px 14px;background:rgba(239,68,68,0.08);border-radius:8px;font-family:var(--body)';
+      errDiv.textContent = 'Please fill in all required fields';
+      stepEl.querySelector('.m-step-header').after(errDiv);
+      var firstInvalid = stepEl.querySelector('.m-field-invalid');
+      if(firstInvalid) firstInvalid.scrollIntoView({ behavior:'smooth', block:'center' });
+    }
+    return valid;
+  }
+
+  // Navigate steps
+  window.mGoStep = function(n){
+    if(n < 0 || n >= mTotalSteps) return;
+    if(n > mCurrentStep){
+      if(!mValidateStep(mCurrentStep)) return;
+      mCompleted[mCurrentStep] = true;
+    }
+    overlay.querySelectorAll('.m-step').forEach(function(s){ s.classList.remove('active'); });
+    overlay.querySelector('.m-step[data-step="' + n + '"]').classList.add('active');
+    mCurrentStep = n;
+    mUpdateUI();
+    modalBody.scrollTo({ top:0, behavior:'smooth' });
+  };
+
+  // Update sidebar, progress, mobile dots
+  function mUpdateUI(){
+    overlay.querySelectorAll('.modal-step-btn').forEach(function(btn, i){
+      btn.classList.remove('active','done','locked');
+      btn.removeAttribute('data-tooltip');
+      if(i === mCurrentStep) btn.classList.add('active');
+      else if(mCompleted[i]) btn.classList.add('done');
+      else if(i > mCurrentStep && !mCompleted[i]){
+        btn.classList.add('locked');
+        btn.setAttribute('data-tooltip','Complete ' + mStepNames[mCurrentStep] + ' first');
+      }
+    });
+    var pct = ((mCurrentStep + 1) / mTotalSteps) * 100;
+    document.getElementById('modalProgressFill').style.width = pct + '%';
+    document.getElementById('modalProgressText').textContent = 'Step ' + (mCurrentStep + 1) + ' of ' + mTotalSteps;
+    overlay.querySelectorAll('.modal-mobile-dot').forEach(function(dot, i){
+      dot.classList.remove('active','done');
+      if(i === mCurrentStep) dot.classList.add('active');
+      else if(mCompleted[i]) dot.classList.add('done');
+    });
+  }
+
+  // Scale buttons
+  window.mSetScale = function(groupId, btn){
+    document.querySelectorAll('#' + groupId + ' .m-scale-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+  };
+
+  // Submit
+  window.mSubmitForm = function(){
+    if(!mValidateStep(mCurrentStep)) return;
+    mCompleted[mCurrentStep] = true;
+    overlay.querySelectorAll('.m-step').forEach(function(s){ s.classList.remove('active'); });
+    overlay.querySelector('.m-step[data-step="success"]').classList.add('active');
+    var sb = overlay.querySelector('.modal-sidebar');
+    if(sb) sb.style.display = 'none';
+    var mp = document.getElementById('modalMobileProgress');
+    if(mp) mp.style.display = 'none';
+  };
+
+  // Sidebar step click
+  overlay.querySelectorAll('.modal-step-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var step = parseInt(btn.dataset.step);
+      if(isNaN(step)) return;
+      if(mCompleted[step] || step === mCurrentStep || step < mCurrentStep) mGoStep(step);
+    });
+  });
+
+  // Checkbox highlight
+  overlay.querySelectorAll('.m-opt input[type="checkbox"]').forEach(function(cb){
+    cb.addEventListener('change', function(){
+      cb.closest('.m-opt').classList.toggle('selected', cb.checked);
+      var container = cb.closest('.m-check-grid') || cb.closest('.m-opts');
+      if(container) container.classList.remove('m-field-invalid');
+    });
+  });
+  overlay.querySelectorAll('.m-opt input[type="radio"]').forEach(function(rb){
+    rb.addEventListener('change', function(){
+      rb.closest('.m-opts').querySelectorAll('.m-opt').forEach(function(o){ o.classList.remove('selected'); });
+      rb.closest('.m-opt').classList.add('selected');
+      var container = rb.closest('.m-opts');
+      if(container) container.classList.remove('m-field-invalid');
+    });
+  });
+
+  // Clear validation on input
+  overlay.querySelectorAll('input[type="text"], input[type="email"], input[type="url"], select').forEach(function(el){
+    el.addEventListener('input', function(){ el.classList.remove('m-field-invalid'); });
+    el.addEventListener('change', function(){ el.classList.remove('m-field-invalid'); });
+  });
 })();
 </script>
 </body>
