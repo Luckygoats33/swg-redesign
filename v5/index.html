@@ -815,6 +815,7 @@ p{max-width:65ch}
 
 /* Desktop: 3-column grid */
 @media(min-width:768px){
+  .how-section{padding:80px 0 72px}
   .how-track{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -826,8 +827,17 @@ p{max-width:65ch}
     flex:none;
     width:auto;
     max-width:none;
+    min-height:320px;
+    padding:40px 32px;
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.6s ease,transform 0.6s ease,border-color 0.3s ease;
   }
+  .how-card.card-visible{opacity:1;transform:translateY(0)}
+  .how-card:nth-child(2){transition-delay:0.15s}
+  .how-card:nth-child(3){transition-delay:0.3s}
   .how-dots{display:none}
+  .how-subtitle{margin-bottom:40px}
 }
 
 /* ================================================================
@@ -1864,6 +1874,20 @@ footer{
   }, {threshold:0.05, rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(el){ observer.observe(el); });
   groups.forEach(function(g){ observer.observe(g); });
+
+  // Staggered card reveal for how-we-work section on desktop
+  if(window.innerWidth >= 768){
+    var cards = document.querySelectorAll('.how-card');
+    var cardObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('card-visible');
+          cardObs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    cards.forEach(function(c){ cardObs.observe(c); });
+  }
 })();
 
 // ── Problem Diagram: Animate on scroll ──

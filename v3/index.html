@@ -187,13 +187,29 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .hero-illustration:hover .hero-node{transform:translate(-50%,-50%) scale(1.1);box-shadow:0 12px 48px rgba(37,99,235,0.35)}
 .hero-node svg{width:28px;height:28px;color:#fff}
 
+/* Central node pulsing ring */
+.hero-node::before{content:'';position:absolute;inset:-12px;border-radius:20px;border:2px solid rgba(37,99,235,0.2);animation:nodePulse 2.5s ease-in-out infinite;pointer-events:none}
+.hero-node::after{content:'';position:absolute;inset:-24px;border-radius:28px;border:1px solid rgba(37,99,235,0.08);animation:nodePulse 2.5s ease-in-out infinite 0.5s;pointer-events:none}
+@keyframes nodePulse{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.15);opacity:0.2}}
+
+/* Data flow dots along connectors */
+.hero-connector::after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:var(--accent);animation:dataFlow 2.5s ease-in-out infinite;box-shadow:0 0 6px rgba(37,99,235,0.4)}
+.hero-connector-1::after{top:-2px;left:-1px;animation-delay:0s}
+.hero-connector-2::after{top:-2px;right:-1px;animation-delay:0.8s}
+.hero-connector-3::after{top:-1px;left:0;animation-delay:1.6s}
+@keyframes dataFlow{0%{transform:translateY(0);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(100%);opacity:0}}
+.hero-connector-3::after{animation-name:dataFlowH}
+@keyframes dataFlowH{0%{transform:translateX(0);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(100%);opacity:0}}
+
 /* Floating labels */
-.hero-float-label{position:absolute;background:var(--white);border:1px solid rgba(37,99,235,0.12);border-radius:10px;padding:8px 14px;font-family:var(--body);font-size:11px;font-weight:600;color:var(--deep-navy);letter-spacing:0.02em;box-shadow:var(--card-shadow);transition:transform 0.4s var(--ease);white-space:nowrap}
+.hero-float-label{position:absolute;background:var(--white);border:1px solid rgba(37,99,235,0.12);border-radius:10px;padding:8px 14px;font-family:var(--body);font-size:11px;font-weight:600;color:var(--deep-navy);letter-spacing:0.02em;box-shadow:var(--card-shadow);transition:transform 0.4s var(--ease),box-shadow 0.3s var(--ease);white-space:nowrap;animation:floatBob 4s ease-in-out infinite}
+.hero-float-label:hover{box-shadow:0 8px 24px rgba(37,99,235,0.15);border-color:var(--accent);transform:scale(1.1)!important}
 .hero-illustration:hover .hero-float-label{transform:scale(1.05)}
-.hero-float-label-1{top:2%;left:55%}
-.hero-float-label-2{bottom:18%;left:2%}
-.hero-float-label-3{top:20%;right:-5%}
-.hero-float-label-4{bottom:5%;right:15%}
+@keyframes floatBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-float-label-1{top:2%;left:55%;animation-delay:0s}
+.hero-float-label-2{bottom:18%;left:2%;animation-delay:1s}
+.hero-float-label-3{top:20%;right:-5%;animation-delay:2s}
+.hero-float-label-4{bottom:5%;right:15%;animation-delay:3s}
 @media(max-width:1023px){
   .hero-float-label-3{right:0}
   .hero-float-label-4{right:5%}
@@ -248,6 +264,16 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .acc-quote{font-style:italic;color:var(--deep-navy);font-weight:500;font-size:0.95rem;line-height:1.55}
 .acc-answer{font-size:0.88rem;color:var(--slate);line-height:1.75}
 .acc-answer-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);margin-bottom:4px}
+
+/* ━━ PRINCIPLE CARDS ━━ */
+.principle-card{background:var(--white);border:1px solid rgba(37,99,235,0.08);border-radius:16px;padding:36px 32px;position:relative;transition:all 0.4s var(--ease);overflow:hidden}
+.principle-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(37,99,235,0.06),transparent,rgba(124,58,237,0.04),transparent);animation:rotateBorder 8s linear infinite;pointer-events:none}
+@keyframes rotateBorder{to{transform:rotate(360deg)}}
+.principle-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 48px rgba(37,99,235,0.12)}
+.principle-num{font-family:var(--heading);font-size:2rem;font-weight:700;color:rgba(37,99,235,0.15);margin-bottom:16px;line-height:1}
+.principle-card:hover .principle-num{color:var(--accent)}
+.principle-card h4{color:var(--deep-navy);font-size:1.1rem;margin-bottom:12px}
+.principle-card p{font-size:0.88rem;color:var(--slate);line-height:1.75}
 
 /* ━━ PROCESS — Horizontal Scroll Timeline ━━ */
 .timeline-scroll{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:20px 0 40px;margin:-20px 0}
@@ -431,6 +457,10 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .sec-decorated::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border:2px solid rgba(37,99,235,0.05);border-radius:50%;pointer-events:none;animation:geoDrift2 24s ease-in-out infinite}
 @keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(1.1)}}
 @keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(20px,-15px) rotate(10deg)}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(37,99,235,0.05)}50%{box-shadow:0 0 40px rgba(37,99,235,0.12)}}
+.gradient-text{background:linear-gradient(135deg,var(--accent),#7C3AED,var(--accent-hover),var(--accent));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 6s ease-in-out infinite}
+.sec-glow{animation:glowPulse 4s ease-in-out infinite}
 .d7{transition-delay:0.42s}.d8{transition-delay:0.48s}.d9{transition-delay:0.54s}
 
 /* ━━ REQUEST GRID ━━ */
@@ -865,7 +895,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <section class="sec sec-light" id="problem">
   <div class="wrap">
     <div class="eyebrow r">The core problem</div>
-    <h2 class="r d1" style="max-width:680px">Your systems are disconnected. That is the bottleneck.</h2>
+    <h2 class="r d1 gradient-text" style="max-width:680px">Your systems are disconnected. That is the bottleneck.</h2>
     <p class="body-lg r d2" style="margin-top:16px">Most companies buy tools, hire people, and launch campaigns in isolation. Each piece works on its own. But nothing compounds because nothing is connected.</p>
     <div class="flip-grid">
       <div class="flip-card r d1">
@@ -936,7 +966,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <section class="sec sec-white" id="what">
   <div class="wrap">
     <div class="eyebrow r">What SWG does</div>
-    <h2 class="r d1">Diagnose. Sequence. Execute.</h2>
+    <h2 class="r d1 gradient-text">Diagnose. Sequence. Execute.</h2>
     <div class="phase-grid">
       <div class="phase-block r d1">
         <div class="phase-block-num">01</div>
@@ -1120,8 +1150,52 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
               </div>
             </div>
           </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <h4>"We already spent five or six figures and still don't have something usable."</h4>
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-panel-inner">
+                <div>
+                  <div class="acc-answer-label">Usually means</div>
+                  <p class="acc-answer">The previous build needs an audit: what failed, what is salvageable, what needs to be rebuilt, and what decisions come next.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <a href="problems.html" class="sec-link r d3">See all problems <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4B. HOW SWG WORKS — Operating Principles -->
+<section class="sec sec-white" id="principles">
+  <div class="wrap">
+    <div class="eyebrow r">How SWG works</div>
+    <h2 class="r d1" style="max-width:720px">Four principles that guide every engagement.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;margin-top:48px">
+      <div class="principle-card r d1">
+        <div class="principle-num">01</div>
+        <h4>One view of the business</h4>
+        <p>We start by understanding your company, customers, team, tools, revenue model, and growth targets — before recommending anything.</p>
+      </div>
+      <div class="principle-card r d2">
+        <div class="principle-num">02</div>
+        <h4>The real constraint gets named</h4>
+        <p>Is it marketing, offer clarity, follow-up, reporting, ownership, or handoffs? We identify the actual bottleneck, not just the symptom.</p>
+      </div>
+      <div class="principle-card r d3">
+        <div class="principle-num">03</div>
+        <h4>The next build has a sequence</h4>
+        <p>We give you an order of operations: what to fix first, what to build next, and what to leave alone for now.</p>
+      </div>
+      <div class="principle-card r d4">
+        <div class="principle-num">04</div>
+        <h4>Strategy turns into shipped work</h4>
+        <p>We build the systems, campaigns, automations, assets, and reporting — not just the plan.</p>
       </div>
     </div>
   </div>
@@ -1804,6 +1878,81 @@ window.SWG_SCORES = {
     else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
   }, {passive:true});
   btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  // ━━ Mouse tilt on hero illustration ━━
+  (function(){
+    var illust = document.querySelector('.hero-illustration');
+    if(!illust || window.innerWidth < 768) return;
+    illust.addEventListener('mousemove', function(e){
+      var rect = illust.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      illust.style.transform = 'perspective(800px) rotateX(' + (-y * 8) + 'deg) rotateY(' + (x * 8) + 'deg)';
+    });
+    illust.addEventListener('mouseleave', function(){
+      illust.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+      illust.style.transition = 'transform 0.6s ease';
+      setTimeout(function(){ illust.style.transition = ''; }, 600);
+    });
+  })();
+
+  // ━━ Floating particles in hero ━━
+  (function(){
+    var hero = document.querySelector('.hero');
+    if(!hero || window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0';
+    hero.style.position = 'relative';
+    hero.insertBefore(canvas, hero.firstChild);
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    function resize(){ canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+    for(var i = 0; i < 40; i++){
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 0.5,
+        dx: (Math.random() - 0.5) * 0.3,
+        dy: (Math.random() - 0.5) * 0.3,
+        a: Math.random() * 0.3 + 0.05
+      });
+    }
+    function draw(){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(function(p){
+        p.x += p.dx; p.y += p.dy;
+        if(p.x < 0) p.x = canvas.width;
+        if(p.x > canvas.width) p.x = 0;
+        if(p.y < 0) p.y = canvas.height;
+        if(p.y > canvas.height) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(37,99,235,' + p.a + ')';
+        ctx.fill();
+      });
+      // Draw connecting lines for nearby particles
+      for(var i = 0; i < particles.length; i++){
+        for(var j = i + 1; j < particles.length; j++){
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx*dx + dy*dy);
+          if(dist < 120){
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(37,99,235,' + (0.06 * (1 - dist/120)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
 })();
 </script>
 
