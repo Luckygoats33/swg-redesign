@@ -417,10 +417,149 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .m-field-invalid:focus{outline-color:var(--accent) !important}
 </style>
 <style>
+/* ━━ ANNOUNCEMENT BAR ━━ */
+.announce-bar{background:var(--accent);color:#fff;text-align:center;padding:9px 16px;font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.03em;position:relative;overflow:hidden}
+.announce-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);background-size:200% 100%;animation:announceShimmer 3s ease-in-out infinite}
+@keyframes announceShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.announce-bar span{position:relative;z-index:1}
+.announce-bar .pulse-dot{width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;margin-right:8px;vertical-align:middle;animation:pulseDot 2s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.5)}50%{box-shadow:0 0 0 5px rgba(255,255,255,0)}}
+
+/* ━━ ENHANCED SECTION DECORATIONS ━━ */
+.sec-decorated{position:relative;overflow:hidden}
+.sec-decorated::before{content:'';position:absolute;top:-80px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(37,99,235,0.04);pointer-events:none;animation:geoDrift1 20s ease-in-out infinite}
+.sec-decorated::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border:2px solid rgba(37,99,235,0.05);border-radius:50%;pointer-events:none;animation:geoDrift2 24s ease-in-out infinite}
+@keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(1.1)}}
+@keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(20px,-15px) rotate(10deg)}}
+.d7{transition-delay:0.42s}.d8{transition-delay:0.48s}.d9{transition-delay:0.54s}
+
+/* ━━ REQUEST GRID ━━ */
+.request-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:48px}
+.request-card{position:relative;grid-column:span 4;min-height:220px;padding:28px 24px;border-radius:16px;background:var(--white);border:1px solid rgba(37,99,235,0.08);box-shadow:var(--card-shadow);transition:all 0.5s var(--ease);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.request-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow-hover);border-color:var(--accent)}
+.request-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-hover));transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease)}
+.request-card:hover::after{transform:scaleX(1)}
+.request-wide{grid-column:span 6}
+.request-rescue{grid-column:span 12;background:var(--deep-navy);color:#fff;border-color:rgba(255,255,255,0.08)}
+.request-rescue:hover{border-color:rgba(124,58,237,0.4)}
+.req-label{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:auto;display:block}
+.request-rescue .req-label{color:rgba(124,58,237,0.7)}
+.request-card h3{margin:12px 0 16px;font-size:clamp(0.95rem,1.5vw,1.15rem)}
+.request-rescue h3{color:#fff}
+.req-detail{padding-top:14px;border-top:1px solid rgba(37,99,235,0.08)}
+.request-rescue .req-detail{border-top-color:rgba(255,255,255,0.08)}
+.req-detail-label{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;display:block}
+.request-rescue .req-detail-label{color:rgba(124,58,237,0.7)}
+.req-detail p{font-size:0.84rem;color:var(--slate);line-height:1.65;margin:0}
+.request-rescue .req-detail p{color:rgba(255,255,255,0.55)}
+@media(max-width:767px){.request-card,.request-wide,.request-rescue{grid-column:span 12}}
+
+/* ━━ WORK ORDER BOARD ━━ */
+.wo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:48px;padding:14px;border-radius:20px;background:var(--deep-navy);box-shadow:0 32px 80px rgba(26,26,46,0.25);position:relative;overflow:hidden}
+.wo-grid::before{content:'';position:absolute;top:-40px;right:-30px;width:200px;height:200px;border-radius:50%;background:rgba(37,99,235,0.08);pointer-events:none;animation:geoDrift1 18s ease-in-out infinite}
+.wo-card{padding:24px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.6);transition:all 0.5s var(--ease);position:relative;z-index:1}
+.wo-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(37,99,235,0.3)}
+.wo-card:nth-child(2),.wo-card:nth-child(3){background:var(--white);color:var(--deep-navy);border-color:transparent}
+.wo-card:nth-child(2):hover,.wo-card:nth-child(3):hover{box-shadow:0 12px 36px rgba(37,99,235,0.15)}
+.wo-num{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;display:block}
+.wo-card:nth-child(1) .wo-num,.wo-card:nth-child(4) .wo-num{color:rgba(124,58,237,0.6)}
+.wo-card h3{margin-bottom:10px;font-size:clamp(0.95rem,1.4vw,1.15rem)}
+.wo-card:nth-child(1) h3,.wo-card:nth-child(4) h3{color:#fff}
+.wo-card p,.wo-card li{font-size:0.84rem;line-height:1.7;margin:0}
+.wo-card ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.wo-card li{position:relative;padding-left:16px}
+.wo-card li::before{content:'';position:absolute;top:0.6em;left:0;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.artifact-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.artifact-pill{padding:5px 10px;border-radius:7px;font-size:10px;font-weight:600;background:rgba(37,99,235,0.06);color:var(--accent);border:1px solid rgba(37,99,235,0.1);letter-spacing:0.02em}
+@media(max-width:767px){.wo-grid{grid-template-columns:1fr}}
+
+/* ━━ ROADMAP CARDS ━━ */
+.roadmap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.roadmap-card{padding:28px 22px;border-radius:16px;background:var(--white);border:1px solid rgba(37,99,235,0.06);box-shadow:var(--card-shadow);transition:all 0.5s var(--ease);position:relative;overflow:hidden}
+.roadmap-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow-hover);border-color:var(--accent)}
+.roadmap-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:linear-gradient(180deg,var(--accent),var(--accent-hover));transition:height 0.6s var(--ease)}
+.roadmap-card:hover::before{height:100%}
+.rm-num{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(37,99,235,0.06);color:var(--accent);font-family:var(--heading);font-weight:700;font-size:15px;margin-bottom:28px;transition:all 0.4s var(--ease)}
+.roadmap-card:hover .rm-num{background:var(--accent);color:#fff;transform:scale(1.1)}
+.roadmap-card h3{margin-bottom:8px;font-size:1.05rem}
+.roadmap-card p{font-size:0.84rem;color:var(--slate);line-height:1.7;margin:0}
+@media(max-width:767px){.roadmap-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.roadmap-grid{grid-template-columns:1fr}}
+
+/* ━━ SERVICES GRID ━━ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.svc-card{padding:32px 24px;border-radius:16px;background:var(--white);border:1px solid rgba(37,99,235,0.06);box-shadow:var(--card-shadow);transition:all 0.5s var(--ease);position:relative;overflow:hidden}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow-hover);border-color:var(--accent)}
+.svc-card::before{content:'';display:block;width:44px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-hover));margin-bottom:24px;transition:width 0.5s var(--ease)}
+.svc-card:hover::before{width:68px}
+.svc-card:nth-child(2)::before{background:linear-gradient(90deg,#EF4444,var(--accent))}
+.svc-card:nth-child(3)::before{background:linear-gradient(90deg,#F59E0B,#22C55E)}
+.svc-card:nth-child(4)::before{background:linear-gradient(90deg,#06B6D4,var(--accent))}
+.svc-card:nth-child(5)::before{background:linear-gradient(90deg,var(--deep-navy),#F59E0B)}
+.svc-card:nth-child(6)::before{background:linear-gradient(90deg,#22C55E,#EF4444)}
+.svc-card h3{margin-bottom:8px;font-size:clamp(1.05rem,1.5vw,1.2rem)}
+.svc-card p{font-size:0.86rem;color:var(--slate);line-height:1.7;margin:0}
+@media(max-width:767px){.services-grid{grid-template-columns:1fr}}
+
+/* ━━ PROOF CARDS ━━ */
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.proof-card{padding:28px 22px;border-radius:16px;background:var(--white);border:1px solid rgba(37,99,235,0.06);box-shadow:var(--card-shadow);transition:all 0.5s var(--ease);position:relative;overflow:hidden}
+.proof-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow-hover);border-color:var(--accent)}
+.proof-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-hover))}
+.proof-label{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-hover);margin-bottom:6px;display:block}
+.proof-card h4{font-size:0.95rem;margin-bottom:6px}
+.proof-card p{font-size:0.84rem;color:var(--slate);line-height:1.65;margin:0}
+@media(max-width:767px){.proof-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.proof-grid{grid-template-columns:1fr}}
+
+/* ━━ FAQ ━━ */
+.faq-layout{display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:start}
+.faq-copy{position:sticky;top:120px}
+.faq-copy h2{margin-bottom:16px}
+.faq-list-v3{display:grid;gap:8px}
+.faq-btn{width:100%;padding:18px 22px;border-radius:14px;background:var(--white);border:1px solid rgba(37,99,235,0.08);text-align:left;cursor:pointer;transition:all 0.3s var(--ease);font-family:var(--body)}
+.faq-btn:hover{border-color:rgba(37,99,235,0.2);box-shadow:0 4px 16px rgba(37,99,235,0.06)}
+.faq-btn.open{border-color:var(--accent);box-shadow:0 8px 24px rgba(37,99,235,0.1)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q span{font-family:var(--heading);font-weight:600;font-size:0.95rem;color:var(--deep-navy);line-height:1.4}
+.faq-q b{font-family:var(--heading);font-size:1.2rem;color:var(--accent);flex-shrink:0;transition:transform 0.3s var(--ease);width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(37,99,235,0.06)}
+.faq-btn.open .faq-q b{transform:rotate(45deg);background:var(--accent);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease),margin 0.4s var(--ease);margin-top:0}
+.faq-btn.open .faq-a{max-height:200px;margin-top:14px}
+.faq-a p{font-size:0.88rem;color:var(--slate);line-height:1.7;margin:0}
+@media(max-width:767px){.faq-layout{grid-template-columns:1fr}.faq-copy{position:static}}
+
+/* ━━ PRICING ━━ */
+.pricing-layout{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center}
+.pricing-stack{display:grid;gap:10px}
+.pricing-card{padding:22px;border-radius:14px;background:var(--white);border:1px solid rgba(37,99,235,0.08);box-shadow:var(--card-shadow);transition:all 0.4s var(--ease)}
+.pricing-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow-hover);transform:translateY(-3px)}
+.pc-label{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;display:block}
+.pc-price{font-family:var(--heading);font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--deep-navy);letter-spacing:-0.03em;margin-bottom:4px}
+.pricing-card p{font-size:0.86rem;color:var(--slate);line-height:1.6;margin:0}
+.pricing-note{display:inline-flex;margin:6px 0 20px;padding:10px 14px;border-radius:10px;border:1px solid rgba(37,99,235,0.1);background:var(--white);font-family:var(--body);font-size:12px;font-weight:500;color:var(--slate);line-height:1.4}
+@media(max-width:767px){.pricing-layout{grid-template-columns:1fr}}
+
+/* Card shimmer hover */
+.shimmer-hover{position:relative;overflow:hidden}
+.shimmer-hover::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:none;pointer-events:none}
+.shimmer-hover:hover::before{left:100%;transition:left 0.7s var(--ease)}
+
+/* Animated gradient border for dark sections */
+.gradient-border-wrap{position:relative;border-radius:20px;padding:2px}
+.gradient-border-wrap::before{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent-hover),#22C55E,var(--accent));background-size:300% 300%;animation:gradientBorder 8s ease infinite;z-index:0}
+@keyframes gradientBorder{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.gradient-border-wrap>.wo-grid{position:relative;z-index:1}
+
+/* Nav adjustment for announcement bar */
+.nav{top:72px}
+.nav.scrolled{top:0}
+</style>
+<style>
 /* ── SWG Score Widget ── */
 .swg-score-widget {
   position: fixed;
-  top: 44px;
+  top: 80px;
   left: 0;
   z-index: 9998;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -620,6 +759,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 </head>
 <body>
 
+<div class="announce-bar"><span><span class="pulse-dot"></span>Now accepting Q3 2026 clients</span></div>
+
 <div style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif"><span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span><a href="../v1.html" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1</a><a href="../v2/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a><a href="../v3/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:#3B82F6;color:#fff;text-decoration:none">3</a><a href="../v4/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">4</a><a href="../v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a></div>
 
 
@@ -816,6 +957,77 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   </div>
 </section>
 
+<!-- 3B. REQUEST DIAGNOSTIC — What you ask for vs. what we fix -->
+<section class="sec sec-light sec-decorated" id="requests">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="eyebrow r">What you ask for vs. what we usually fix</div>
+      <h2 class="r d1" style="max-width:780px;margin:0 auto">The first request is often tactical. The work underneath is where growth gets unstuck.</h2>
+    </div>
+    <div class="request-grid">
+      <div class="request-card request-wide r d1 shimmer-hover">
+        <span class="req-label">Website request</span>
+        <h3>"We need the site to finally match the company."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>Positioning, offer clarity, proof, service architecture, conversion paths, and analytics need to catch up.</p>
+        </div>
+      </div>
+      <div class="request-card request-wide r d2 shimmer-hover">
+        <span class="req-label">Paid media request</span>
+        <h3>"We are spending, but it is not converting."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>The audience, landing page, offer, tracking, follow-up, and sales handoff are not working as one path.</p>
+        </div>
+      </div>
+      <div class="request-card r d3 shimmer-hover">
+        <span class="req-label">AI request</span>
+        <h3>"We need AI automation."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>The process, inputs, review rules, owner, and human approval path need to be defined before tools help.</p>
+        </div>
+      </div>
+      <div class="request-card r d4 shimmer-hover">
+        <span class="req-label">CRM request</span>
+        <h3>"Our CRM is messy."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>Stages, ownership, source tracking, follow-up rules, pipeline hygiene, and reporting are not agreed on.</p>
+        </div>
+      </div>
+      <div class="request-card r d5 shimmer-hover">
+        <span class="req-label">Marketing request</span>
+        <h3>"We are active everywhere, but nothing compounds."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>Content, email, social, SEO, paid media, proof capture, and campaign measurement need one operating rhythm.</p>
+        </div>
+      </div>
+      <div class="request-card r d3 shimmer-hover">
+        <span class="req-label">Operations request</span>
+        <h3>"The team is still doing too much by hand."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>Intake, approvals, handoffs, content review, reporting, and accountability need cleaner workflows and automation.</p>
+        </div>
+      </div>
+      <div class="request-card request-rescue r d4 shimmer-hover">
+        <span class="req-label">Rescue request</span>
+        <h3>"We already spent five or six figures and still do not have something usable."</h3>
+        <div class="req-detail">
+          <span class="req-detail-label">Usually means</span>
+          <p>The build needs a calm audit: what failed, what can be salvaged, what should be rebuilt, and what the next decision should be.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="r d5">
+      <a href="problems.html" class="sec-link">See all problems we solve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <!-- 4. SITUATIONS — Accordion -->
 <section class="sec sec-white" id="situations">
   <div class="wrap">
@@ -967,12 +1179,128 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   </div>
 </section>
 
-<!-- 6. OUTCOMES — Animated Counters -->
+<!-- 6. FROM REQUEST TO RESULT — Work Order Board -->
+<section class="sec sec-white sec-decorated" id="work-order">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="eyebrow r">From request to result</div>
+      <h2 class="r d1" style="max-width:800px;margin:0 auto">A messy request becomes a scoped, built, approved, and operated system.</h2>
+    </div>
+    <div class="gradient-border-wrap r d2">
+      <div class="wo-grid">
+        <div class="wo-card">
+          <span class="wo-num">01 Messy request</span>
+          <h3>Launch the new offer before the conference.</h3>
+          <p>Leads are getting lost. The site is outdated. AI can help, but humans need approval before anything goes live.</p>
+        </div>
+        <div class="wo-card">
+          <span class="wo-num">02 Scope sheet</span>
+          <h3>Goal, owner, deadline, risk, and budget are made visible.</h3>
+          <ul>
+            <li>Audience and offer clarified</li>
+            <li>Website, CRM, paid media, social, AI, follow-up, and reporting mapped</li>
+            <li>Approvals and launch path assigned</li>
+          </ul>
+        </div>
+        <div class="wo-card">
+          <span class="wo-num">03 Build layer</span>
+          <h3>The services become connected artifacts.</h3>
+          <div class="artifact-pills">
+            <span class="artifact-pill">Landing page</span>
+            <span class="artifact-pill">CRM route</span>
+            <span class="artifact-pill">AI review flow</span>
+            <span class="artifact-pill">Email follow-up</span>
+            <span class="artifact-pill">Dashboard</span>
+            <span class="artifact-pill">Proof capture</span>
+          </div>
+        </div>
+        <div class="wo-card">
+          <span class="wo-num">04 Operate</span>
+          <h3>The system keeps producing decisions.</h3>
+          <p>Leads route, follow-up sends, proof is captured, performance is reviewed, and the next action is clear.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. WHAT THE REVIEW PRODUCES — Roadmap -->
+<section class="sec sec-light sec-decorated" id="roadmap">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="eyebrow r">What the review produces</div>
+      <h2 class="r d1" style="max-width:820px;margin:0 auto">Before the next build, everyone should know what the work is supposed to change.</h2>
+    </div>
+    <div class="roadmap-grid">
+      <div class="roadmap-card r d1">
+        <div class="rm-num">1</div>
+        <h3>Constraint map.</h3>
+        <p>Where the business is stuck across offer, audience, sales, operations, technology, AI, marketing, and reporting.</p>
+      </div>
+      <div class="roadmap-card r d2">
+        <div class="rm-num">2</div>
+        <h3>Priority sequence.</h3>
+        <p>What to fix now, what to build next, what can wait, and which decisions need leadership approval.</p>
+      </div>
+      <div class="roadmap-card r d3">
+        <div class="rm-num">3</div>
+        <h3>Build scope.</h3>
+        <p>The assets, workflows, campaigns, dashboards, automations, and responsibilities required to make the plan real.</p>
+      </div>
+      <div class="roadmap-card r d4">
+        <div class="rm-num">4</div>
+        <h3>Operating rhythm.</h3>
+        <p>The cadence for reviews, approvals, reporting, optimization, and the next round of useful decisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. IMPLEMENTATION — Services Grid -->
+<section class="sec sec-white" id="implementation">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="eyebrow r">What we can build</div>
+      <h2 class="r d1" style="max-width:720px;margin:0 auto">You can still find the specific services you need.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card r d1">
+        <h3>Websites + offers</h3>
+        <p>Positioning, service pages, landing pages, case studies, forms, tracking, and conversion paths.</p>
+      </div>
+      <div class="svc-card r d2">
+        <h3>AI workflows</h3>
+        <p>Drafting, summarization, intake, routing, review queues, approvals, and human-in-the-loop controls.</p>
+      </div>
+      <div class="svc-card r d3">
+        <h3>CRM + sales systems</h3>
+        <p>Lead capture, ownership, stages, follow-up, tags, source tracking, and pipeline visibility.</p>
+      </div>
+      <div class="svc-card r d4">
+        <h3>Marketing execution</h3>
+        <p>Email, SMS, content, social, SEO, paid traffic, launch calendars, and campaign measurement.</p>
+      </div>
+      <div class="svc-card r d5">
+        <h3>Operations cleanup</h3>
+        <p>Process mapping, handoffs, SOPs, team workflows, approval paths, and internal accountability.</p>
+      </div>
+      <div class="svc-card r d6">
+        <h3>Proof + reporting</h3>
+        <p>Dashboards, case-study capture, weekly decision views, KPI definitions, and next-action reporting.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="r d7">
+      <a href="implementation.html" class="sec-link">See full implementation details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. OUTCOMES — Proof Strip -->
 <section class="sec sec-light" id="outcomes">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:48px">
-      <div class="eyebrow r" style="justify-content:center">Outcomes</div>
-      <h2 class="r d1">Measurable results, not vague promises.</h2>
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="eyebrow r">What should feel different</div>
+      <h2 class="r d1" style="max-width:820px;margin:0 auto">The business has clearer decisions, cleaner systems, and fewer expensive guesses.</h2>
     </div>
     <div class="outcomes-grid">
       <div class="outcome-card r d1">
@@ -981,11 +1309,125 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
         <h4>Client retention rate</h4>
         <p>Clients stay because the systems work. Not because of contracts -- because of results.</p>
       </div>
+      <div class="outcome-card r d2">
+        <span class="outcome-label">Speed</span>
+        <div class="counter-num" data-target="30" data-suffix="+" data-prefix="">0</div>
+        <h4>Industries served</h4>
+        <p>From wellness and construction to SaaS and professional services. Growth problems are structural, not vertical.</p>
+      </div>
+      <div class="outcome-card r d3">
+        <span class="outcome-label">Alignment</span>
+        <div class="counter-num" data-target="3" data-suffix="x">0</div>
+        <h4>Faster to first decision</h4>
+        <p>Companies with a constraint map and priority sequence reach their first useful decision 3x faster.</p>
+      </div>
+      <div class="outcome-card r d4">
+        <span class="outcome-label">Systems</span>
+        <div class="counter-num" data-target="100" data-suffix="%">0%</div>
+        <h4>Connected by design</h4>
+        <p>Every build connects to one strategy. Website, CRM, marketing, and reporting move as one system.</p>
+      </div>
+    </div>
+    <div class="proof-grid" style="margin-top:32px">
+      <div class="proof-card r d1">
+        <span class="proof-label">Alignment</span>
+        <h4>Executive clarity</h4>
+        <p>Leadership can see which growth problems are strategic, operational, marketing, or technology problems.</p>
+      </div>
+      <div class="proof-card r d2">
+        <span class="proof-label">Roadmap</span>
+        <h4>Prioritized action</h4>
+        <p>The team has a practical sequence instead of a wishlist of disconnected services and AI ideas.</p>
+      </div>
+      <div class="proof-card r d3">
+        <span class="proof-label">Systems</span>
+        <h4>Cleaner execution</h4>
+        <p>Leads, approvals, campaigns, reporting, and operations move through a visible operating layer.</p>
+      </div>
+      <div class="proof-card r d4">
+        <span class="proof-label">Scale</span>
+        <h4>Profitable growth</h4>
+        <p>The business can grow with less founder drag because the work is documented, routed, and measured.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 7. CTA — Clean with ripple button -->
+<!-- 10. FAQ -->
+<section class="sec sec-white" id="faq">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-copy r">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions before the first review.</h2>
+        <p class="body-lg" style="max-width:420px">We lead with the business problem, then recommend the clearest next step for strategy, implementation, and measurable execution.</p>
+      </div>
+      <div class="faq-list-v3 r d2">
+        <button type="button" class="faq-btn open">
+          <div class="faq-q"><span>Who is the best fit?</span><b>+</b></div>
+          <div class="faq-a"><p>Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution.</p></div>
+        </button>
+        <button type="button" class="faq-btn">
+          <div class="faq-q"><span>Do we need to know what service we want?</span><b>+</b></div>
+          <div class="faq-a"><p>No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth.</p></div>
+        </button>
+        <button type="button" class="faq-btn">
+          <div class="faq-q"><span>What can the roadmap include?</span><b>+</b></div>
+          <div class="faq-a"><p>Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support.</p></div>
+        </button>
+        <button type="button" class="faq-btn">
+          <div class="faq-q"><span>Do you execute after the strategy?</span><b>+</b></div>
+          <div class="faq-a"><p>Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed.</p></div>
+        </button>
+        <button type="button" class="faq-btn">
+          <div class="faq-q"><span>How long does an engagement take?</span><b>+</b></div>
+          <div class="faq-a"><p>A Business Review typically takes 2-3 weeks. A Focused Build is 4-12 weeks depending on scope. Ongoing Support is month-to-month with no lock-in.</p></div>
+        </button>
+        <button type="button" class="faq-btn">
+          <div class="faq-q"><span>What industries do you work with?</span><b>+</b></div>
+          <div class="faq-a"><p>We have worked across 30+ industries including health and wellness, construction, professional services, e-commerce, SaaS, and manufacturing. The growth problems are structural, not vertical.</p></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. PRICING -->
+<section class="sec sec-light sec-decorated" id="pricing">
+  <div class="wrap">
+    <div class="pricing-layout">
+      <div class="r">
+        <div class="eyebrow">Ways to work together</div>
+        <h2 style="margin-bottom:16px">Start with the business. Build what it needs.</h2>
+        <p class="body-lg" style="margin-bottom:16px">SWG diagnoses the business, finds the operating gaps, builds the roadmap, then implements the right systems in the right order.</p>
+        <div class="pricing-note">Larger operating-system, company ERP, or custom app builds are scoped separately.</div>
+        <a href="#assess" onclick="openAssessModal();return false" class="btn btn-primary btn-ripple" style="margin-top:8px"><span>Start the Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="pricing-stack r d2">
+        <div class="pricing-card">
+          <span class="pc-label">Business Review</span>
+          <div class="pc-price">$5K -- $10K</div>
+          <p>Diagnosis, priorities, roadmap, recommended sequence.</p>
+        </div>
+        <div class="pricing-card">
+          <span class="pc-label">Focused Build</span>
+          <div class="pc-price">$10K -- $50K+</div>
+          <p>Website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch.</p>
+        </div>
+        <div class="pricing-card">
+          <span class="pc-label">Ongoing Support</span>
+          <div class="pc-price">From $7.5K/mo</div>
+          <p>Ongoing execution, reporting, optimization, and support.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="r d3">
+      <a href="engagements.html" class="sec-link">See full engagement details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 12. CTA — Clean with ripple button -->
 <section class="cta-section" id="cta">
   <div class="wrap">
     <div class="cta-inner">
@@ -1221,6 +1663,43 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       setTimeout(function(){ ripple.remove(); }, 600);
     });
   });
+
+  // ━━ FAQ V3 toggle ━━
+  var faqBtns = document.querySelectorAll('.faq-btn');
+  faqBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var wasOpen = btn.classList.contains('open');
+      // Close all
+      faqBtns.forEach(function(other){ other.classList.remove('open'); });
+      // Toggle current
+      if(!wasOpen) btn.classList.add('open');
+    });
+  });
+
+  // ━━ Parallax floating shapes on scroll ━━
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!prefersReducedMotion){
+    var decoratedSections = document.querySelectorAll('.sec-decorated');
+    if(decoratedSections.length){
+      var lastScroll = 0;
+      var ticking = false;
+      function updateParallax(){
+        var scrollY = window.scrollY;
+        decoratedSections.forEach(function(sec){
+          var rect = sec.getBoundingClientRect();
+          if(rect.top < window.innerHeight && rect.bottom > 0){
+            var offset = (rect.top / window.innerHeight) * 30;
+            var before = sec.querySelector(':scope');
+            sec.style.setProperty('--parallax-y', offset + 'px');
+          }
+        });
+        ticking = false;
+      }
+      window.addEventListener('scroll', function(){
+        if(!ticking){ requestAnimationFrame(updateParallax); ticking = true; }
+      }, {passive:true});
+    }
+  }
 
 })();
 </script>
@@ -1730,6 +2209,14 @@ window.SWG_SCORES = {
   overlay.querySelectorAll('input[type="text"], input[type="email"], input[type="url"], select').forEach(function(el){
     el.addEventListener('input', function(){ el.classList.remove('m-field-invalid'); });
     el.addEventListener('change', function(){ el.classList.remove('m-field-invalid'); });
+  });
+
+  // Auto-open modal if URL hash is #assess
+  if(window.location.hash === '#assess'){
+    setTimeout(function(){ openAssessModal(); }, 400);
+  }
+  window.addEventListener('hashchange', function(){
+    if(window.location.hash === '#assess') openAssessModal();
   });
 })();
 </script>

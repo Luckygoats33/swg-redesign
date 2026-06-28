@@ -92,7 +92,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .divider--left{margin:0}
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:36px;left:0;right:0;z-index:1000;background:var(--forest-95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.4s var(--ease)}
+.nav{position:fixed;top:62px;left:0;right:0;z-index:1000;background:var(--forest-95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.4s var(--ease)}
 .nav--shadow{box-shadow:0 1px 0 rgba(245,241,235,0.08);top:0}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px;height:72px}
 @media(min-width:768px){.nav__inner{padding:0 48px}}
@@ -172,11 +172,15 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .hero__ring-2{position:absolute;bottom:20%;left:5%;width:60px;height:60px;border:1.5px dashed var(--gold);border-radius:50%;opacity:0.1;animation:ringSpin 25s linear infinite reverse}
 
 /* ===== CLIENT LOGOS ===== */
-.logos{padding:40px 0;background:var(--parchment);border-bottom:1px solid var(--forest-10)}
-.logos__track{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:32px 48px}
-@media(min-width:768px){.logos__track{gap:32px 64px}}
-.logos__item{font-family:var(--serif);font-size:clamp(0.95rem,1.4vw,1.15rem);color:var(--forest);opacity:0.18;white-space:nowrap;letter-spacing:0.01em;transition:opacity 0.4s var(--ease)}
-.logos__item:hover{opacity:0.35}
+.logos{padding:48px 0 44px;background:var(--cream);position:relative;border-bottom:1px solid var(--forest-10)}
+.logos::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--gold));opacity:0.5}
+.logos__label{text-align:center;margin-bottom:24px;display:block;font-size:12px}
+.logos__track{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px 40px}
+@media(min-width:768px){.logos__track{gap:20px 56px}}
+.logos__item{font-family:var(--serif);font-size:clamp(1.1rem,1.7vw,1.35rem);color:var(--forest);opacity:0.55;white-space:nowrap;letter-spacing:0.02em;font-weight:400;transition:all 0.4s var(--ease);position:relative;padding:6px 0}
+.logos__item:hover{opacity:1;color:var(--terra)}
+.logos__item::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:var(--terra);transition:all 0.4s var(--ease);opacity:0}
+.logos__item:hover::after{left:0;right:0;opacity:0.6}
 
 /* ===== PROBLEM SECTION ===== */
 .problem{padding:120px 0;position:relative;overflow:hidden}
@@ -352,6 +356,19 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .footer__cta p{font-family:var(--sans);font-size:1rem;color:rgba(245,241,235,0.4);margin-bottom:16px}
 .footer__cta .btn{font-size:11px;padding:14px 28px;min-height:44px}
 
+/* ===== INTERACTIVE ENHANCEMENTS ===== */
+.service-card{will-change:transform,box-shadow}
+.service-card:hover{transform:translateY(-6px);border-top-color:var(--terra);box-shadow:0 24px 56px rgba(0,0,0,0.1),0 0 0 1px rgba(196,93,62,0.08)}
+.service-card--accent:hover{box-shadow:0 24px 56px rgba(0,0,0,0.2),0 0 0 1px rgba(196,93,62,0.15)}
+.case-card{will-change:transform}
+.case-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.2)}
+.testimonial{will-change:transform}
+.testimonial:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.06)}
+.outcome__number{transition:color 0.4s var(--ease),transform 0.3s var(--ease)}
+.outcome:hover .outcome__number{color:var(--terra);transform:scale(1.06)}
+.outcome:hover .outcome__number::after{background:var(--gold)}
+.btn-terra{will-change:transform,box-shadow}
+
 /* ===== REVEAL ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease)}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -375,7 +392,8 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   .hero__ring,.hero__ring-2{animation:none!important}
   .process__step-fill{transition:none}
   .diagram-circle,.diagram-circle-fill,.diagram-line,.diagram-center,.diagram-label{transition:none}
-  .service-card,.case-card,.btn{transition:none}
+  .service-card,.case-card,.btn,.testimonial,.outcome__number,.logos__item{transition:none}
+  .service-card,.case-card,.testimonial,.btn-terra{will-change:auto}
   html{scroll-behavior:auto}
 }
 .back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(194,97,63,0.3)}
@@ -386,6 +404,8 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 </style>
 </head>
 <body>
+
+<div style="width:100%;background:#C45D3E;text-align:center;padding:6px 16px;font-family:'DM Serif Display',serif;font-size:13px;color:#F5F1EB;letter-spacing:0.02em;line-height:1.2">Now accepting Q3 2026 clients</div>
 
 <div style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif"><span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span><a href="../v1.html" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1</a><a href="../v2/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a><a href="../v3/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">3</a><a href="../v4/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:#C45D3E;color:#fff;text-decoration:none">4</a><a href="../v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a></div>
 
@@ -459,8 +479,9 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   </section>
 
   <!-- ===== CLIENT LOGOS ===== -->
-  <section class="logos" aria-label="Trusted by growing companies across 30+ industries">
+  <section class="logos" aria-label="Companies we work with">
     <div class="wrap">
+      <span class="label logos__label">Companies we work with</span>
       <div class="logos__track">
         <span class="logos__item">CamoToe</span>
         <span class="logos__item">Nature's Turn</span>
@@ -758,7 +779,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   window.addEventListener('scroll', function(){
     if(!ticking){
       requestAnimationFrame(function(){
-        nav.classList.toggle('nav--shadow', window.scrollY > 36);
+        nav.classList.toggle('nav--shadow', window.scrollY > 62);
         ticking = false;
       });
       ticking = true;
