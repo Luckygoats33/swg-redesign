@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>Business Growth Consulting &amp; Strategy | SWG &mdash; Support Wellness Global</title>
+<meta name="description" content="SWG is a business consulting firm for founder-led companies. We diagnose growth bottlenecks, then build the systems — website, CRM, AI workflows, marketing, and reporting — connected to one strategy.">
+<link rel="canonical" href="https://supportwellnessglobal.com/v6/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Business Growth Consulting &amp; Strategy | SWG">
+<meta property="og:description" content="We help growing companies solve the business problems behind growth. Strategy, operations, technology, and marketing support for founder-led companies.">
+<meta property="og:url" content="https://supportwellnessglobal.com/v6/">
+<meta property="og:image" content="https://supportwellnessglobal.com/og-image.jpg">
+<meta property="og:site_name" content="Support Wellness Global">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Business Growth Consulting &amp; Strategy | SWG">
+<meta name="twitter:description" content="We help growing companies solve the business problems behind growth.">
+<meta name="twitter:image" content="https://supportwellnessglobal.com/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237C3AED'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='12' fill='white'%3ESWG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Support Wellness Global","alternateName":"SWG","url":"https://supportwellnessglobal.com","foundingDate":"2020","description":"Business consulting firm for founder-led and operator-led companies. Strategy, operations, technology, and marketing support.","numberOfEmployees":{"@type":"QuantitativeValue","minValue":5,"maxValue":20},"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@supportwellnessglobal.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is the best fit?","acceptedAnswer":{"@type":"Answer","text":"Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution."}},{"@type":"Question","name":"Do we need to know what service we want?","acceptedAnswer":{"@type":"Answer","text":"No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth."}},{"@type":"Question","name":"What can the roadmap include?","acceptedAnswer":{"@type":"Answer","text":"Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support."}},{"@type":"Question","name":"Do you execute after the strategy?","acceptedAnswer":{"@type":"Answer","text":"Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed."}},{"@type":"Question","name":"How long does an engagement take?","acceptedAnswer":{"@type":"Answer","text":"A Business Review typically takes 2-3 weeks. A Focused Build is 4-12 weeks depending on scope. Ongoing Support is month-to-month with no lock-in."}},{"@type":"Question","name":"What industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"We have worked across 30+ industries including health and wellness, construction, professional services, e-commerce, SaaS, and manufacturing."}}]}
+</script>
+
+<style>
+/* ================================================================
+   RESET
+   ================================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root{
+  --bg:#09090B;
+  --surface:#18181B;
+  --surface-2:#27272A;
+  --paper:#FAFAFA;
+  --text:#E4E4E7;
+  --text-muted:#A1A1AA;
+  --text-dim:#71717A;
+  --violet:#7C3AED;
+  --violet-dark:#6D28D9;
+  --violet-glow:rgba(124,58,237,0.35);
+  --violet-subtle:rgba(124,58,237,0.08);
+  --cyan:#06B6D4;
+  --cyan-glow:rgba(6,182,212,0.3);
+  --cyan-subtle:rgba(6,182,212,0.08);
+  --border:rgba(255,255,255,0.06);
+  --border-hover:rgba(124,58,237,0.3);
+  --grotesk:'Space Grotesk',system-ui,sans-serif;
+  --inter:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --ease-out:cubic-bezier(0,0,0.2,1);
+}
+
+/* ================================================================
+   BASE
+   ================================================================ */
+html{overflow-x:hidden}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  font-family:var(--inter);
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  line-height:1.7;
+  font-size:16px;
+  font-weight:400;
+  cursor:default;
+}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ================================================================
+   SCROLL PROGRESS BAR
+   ================================================================ */
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:3px;
+  background:linear-gradient(90deg,var(--violet),var(--cyan));
+  z-index:10000;
+  transition:none;
+  pointer-events:none;
+}
+
+/* ================================================================
+   CURSOR DOT FOLLOWER
+   ================================================================ */
+.cursor-dot{
+  position:fixed;
+  top:0;left:0;
+  width:10px;height:10px;
+  background:var(--violet);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  mix-blend-mode:screen;
+  opacity:0.8;
+  transition:width 0.2s ease,height 0.2s ease,background 0.2s ease,opacity 0.2s ease;
+  transform:translate(-50%,-50%);
+  will-change:left,top;
+}
+.cursor-dot.cursor-hover{
+  width:18px;height:18px;
+  background:var(--cyan);
+  opacity:1;
+}
+@media(max-width:768px){.cursor-dot{display:none}}
+@media(pointer:coarse){.cursor-dot{display:none}}
+
+/* ================================================================
+   VERSION SWITCHER
+   ================================================================ */
+.version-bar{
+  width:100%;
+  background:rgba(9,9,11,0.97);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:2px 0 2px 6px;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1001;
+}
+.vb-right{
+  display:flex;align-items:center;gap:6px;padding-right:12px;
+}
+.version-bar .vb-label{
+  font-size:9px;font-weight:700;
+  color:rgba(250,250,247,0.35);
+  text-transform:uppercase;letter-spacing:0.08em;
+  margin-right:6px;font-family:var(--inter);
+}
+.version-bar a{
+  width:28px;height:24px;border-radius:5px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;font-family:var(--inter);
+  text-decoration:none;
+  background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);
+  transition:background 0.2s ease,color 0.2s ease;
+}
+.version-bar a:hover{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7)}
+.version-bar a.active{background:var(--violet);color:#fff}
+
+/* ================================================================
+   Q3 BAR
+   ================================================================ */
+.q3-bar{
+  width:100%;
+  background:linear-gradient(90deg,var(--violet),#8B5CF6,var(--violet));
+  background-size:200% 100%;
+  animation:q3Shimmer 3s ease infinite;
+  text-align:center;padding:8px 16px;
+  font-family:var(--inter);font-size:12px;font-weight:500;
+  color:#fff;letter-spacing:0.02em;
+  position:fixed;top:36px;left:0;right:0;z-index:1000;
+}
+@keyframes q3Shimmer{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+
+/* ================================================================
+   LAYOUT
+   ================================================================ */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.wrap{padding:0 48px}}
+@media(min-width:1200px){.wrap{padding:0 64px}}
+
+/* ================================================================
+   TYPOGRAPHY
+   ================================================================ */
+h1,h2,h3{font-family:var(--grotesk);line-height:1.1;letter-spacing:-0.03em;font-weight:700}
+h1{font-size:clamp(2.6rem,5.5vw,4.5rem)}
+h2{font-size:clamp(2rem,4vw,3.2rem)}
+h3{font-size:clamp(1.15rem,1.6vw,1.4rem)}
+p{max-width:65ch}
+
+.label{
+  font-family:var(--inter);font-weight:600;font-size:11px;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:var(--violet);
+}
+
+/* ================================================================
+   TEXT REVEAL ON SCROLL
+   ================================================================ */
+.text-reveal{
+  clip-path:inset(0 100% 0 0);
+  transition:clip-path 0.8s var(--ease);
+}
+.text-reveal.revealed{
+  clip-path:inset(0 0% 0 0);
+}
+
+/* ================================================================
+   SCROLL REVEAL SYSTEM
+   ================================================================ */
+.reveal{
+  opacity:0;transform:translateY(30px);
+  transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);
+  will-change:opacity,transform;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-children .reveal-child{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.5s var(--ease),transform 0.5s var(--ease);
+  will-change:opacity,transform;
+}
+.reveal-children.visible .reveal-child{opacity:1;transform:translateY(0)}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+.v6-nav{
+  position:fixed;top:68px;left:0;right:0;z-index:999;
+  background:rgba(9,9,11,0.8);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:transform 0.3s ease;
+}
+.v6-nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:60px;
+}
+.v6-nav-brand{
+  font-family:var(--grotesk);font-size:1.4rem;font-weight:700;
+  color:var(--paper);letter-spacing:-0.02em;
+  background:linear-gradient(135deg,#fff,var(--violet));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.v6-nav-links{display:none;align-items:center;gap:32px}
+@media(min-width:768px){.v6-nav-links{display:flex}}
+.v6-nav-links a{
+  font-size:0.85rem;font-weight:400;
+  color:var(--text-dim);
+  transition:color 0.3s;letter-spacing:0.01em;
+  position:relative;padding:4px 0;
+}
+.v6-nav-links a::after{
+  content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;
+  background:var(--violet);border-radius:1px;
+  transition:width 0.3s var(--ease);
+}
+.v6-nav-links a:hover{color:var(--paper)}
+.v6-nav-links a:hover::after{width:100%}
+.v6-nav-links a.nav-active{color:var(--paper)}
+.v6-nav-links a.nav-active::after{width:100%}
+.v6-nav-cta{
+  background:var(--violet)!important;color:#fff!important;
+  padding:10px 24px!important;border-radius:8px!important;
+  font-weight:600!important;font-size:0.85rem!important;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.3s!important;
+}
+.v6-nav-cta::after{display:none!important}
+.v6-nav-cta:hover{
+  background:var(--violet-dark)!important;
+  transform:translateY(-1px);
+  box-shadow:0 4px 20px var(--violet-glow);
+}
+.v6-nav-toggle{
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  color:var(--paper);
+}
+.v6-nav-toggle svg{width:22px;height:22px}
+@media(min-width:768px){.v6-nav-toggle{display:none}}
+.v6-nav-mobile{
+  display:none;flex-direction:column;padding:16px 24px 24px;gap:8px;
+  background:rgba(9,9,11,0.97);border-bottom:1px solid var(--border);
+}
+.v6-nav-mobile.open{display:flex}
+.v6-nav-mobile a{
+  padding:12px 0;font-size:0.95rem;color:var(--text-muted);
+  border-bottom:1px solid var(--border);
+}
+.v6-nav-mobile a:last-child{border-bottom:none;margin-top:8px}
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 32px;font-family:var(--inter);font-weight:600;
+  font-size:0.88rem;letter-spacing:0.01em;border-radius:10px;
+  transition:all 0.3s var(--ease);min-height:48px;cursor:pointer;
+  text-decoration:none;position:relative;overflow:hidden;
+}
+.btn-violet{background:var(--violet);color:#fff;border:none}
+.btn-violet:hover{
+  background:var(--violet-dark);transform:translateY(-2px);
+  box-shadow:0 8px 32px var(--violet-glow);
+}
+
+/* Magnetic button wrapper */
+.magnetic-wrap{display:inline-block;position:relative}
+
+/* Primary shimmer CTA */
+.btn-shimmer{
+  background:var(--violet);color:#fff;border:none;
+  padding:18px 48px;font-size:1rem;font-weight:600;
+  position:relative;overflow:hidden;border-radius:12px;
+  box-shadow:0 4px 24px rgba(124,58,237,0.4),0 0 60px rgba(124,58,237,0.15);
+  transition:all 0.3s var(--ease);
+}
+.btn-shimmer::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+  animation:shimmerSweep 3s ease-in-out infinite;
+}
+@keyframes shimmerSweep{
+  0%{left:-100%}
+  50%,100%{left:150%}
+}
+.btn-shimmer:hover{
+  background:var(--violet-dark);transform:translateY(-2px);
+  box-shadow:0 12px 40px var(--violet-glow);
+}
+
+/* Ghost/outline button */
+.btn-ghost{
+  background:transparent;color:var(--paper);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:14px 32px;border-radius:10px;font-weight:500;
+  transition:all 0.3s var(--ease);
+}
+.btn-ghost:hover{
+  border-color:var(--violet);color:var(--violet);
+  box-shadow:0 0 20px var(--violet-subtle);
+}
+
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  background:var(--bg);overflow:hidden;
+  padding:180px 24px 80px;
+}
+#heroCanvas{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at 30% 40%,rgba(124,58,237,0.12),transparent 60%),
+              radial-gradient(ellipse at 70% 60%,rgba(6,182,212,0.08),transparent 50%);
+  pointer-events:none;
+}
+.hero-content{
+  position:relative;z-index:2;max-width:1100px;width:100%;
+  text-align:center;
+}
+@media(min-width:1024px){
+  .hero-content{
+    display:grid;grid-template-columns:1.2fr 0.8fr;
+    align-items:center;gap:48px;text-align:left;
+  }
+}
+.hero-headline{margin-bottom:28px}
+.hero-headline .word{
+  display:inline-block;opacity:0;transform:translateY(20px);
+  animation:wordIn 0.5s var(--ease) forwards;
+}
+@keyframes wordIn{to{opacity:1;transform:translateY(0)}}
+
+.hero-subtitle{
+  font-size:clamp(1rem,1.4vw,1.15rem);color:var(--text-muted);
+  font-weight:400;line-height:1.8;max-width:560px;
+  margin:0 auto 48px;opacity:0;
+  animation:fadeUp 0.8s var(--ease) 1.2s forwards;
+}
+@media(min-width:1024px){.hero-subtitle{margin:0 0 48px}}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero-cta-wrap{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  opacity:0;animation:fadeUp 0.8s var(--ease) 1.5s forwards;
+}
+@media(min-width:1024px){.hero-cta-wrap{align-items:flex-start}}
+.hero-cta-sub{font-size:0.78rem;color:var(--text-dim);font-weight:400}
+
+/* Hero metric (right side) */
+.hero-metric{display:none}
+.hero-metric-number{
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(80px,10vw,120px);
+  color:var(--paper);line-height:1;
+  text-shadow:0 0 60px rgba(124,58,237,0.4),0 0 120px rgba(124,58,237,0.2);
+}
+.hero-metric-label{
+  font-family:var(--inter);font-size:1rem;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--text-dim);margin-top:8px;font-weight:500;
+}
+@media(min-width:1024px){
+  .hero-metric{
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+  }
+}
+
+/* Scroll indicator */
+.scroll-indicator{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp 0.6s var(--ease) 2s forwards;
+}
+.scroll-indicator span{
+  font-size:10px;text-transform:uppercase;letter-spacing:0.14em;
+  color:var(--text-dim);font-weight:500;
+}
+.scroll-chevron{
+  width:24px;height:24px;stroke:var(--text-dim);
+  animation:bounceChevron 2s ease-in-out infinite;
+}
+@keyframes bounceChevron{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ================================================================
+   CLIENT LOGOS MARQUEE
+   ================================================================ */
+.logos-section{
+  background:linear-gradient(180deg,var(--surface) 0%,#1E1B2E 50%,var(--surface) 100%);
+  padding:56px 0;
+  border-top:1px solid rgba(124,58,237,0.15);
+  border-bottom:1px solid rgba(124,58,237,0.15);
+  overflow:hidden;
+}
+.logos-label{
+  text-align:center;margin-bottom:36px;
+  color:var(--text-muted);font-weight:500;font-size:13px;
+}
+.marquee-wrap{
+  position:relative;width:100%;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.marquee-track{
+  display:flex;gap:80px;width:max-content;
+  animation:marquee 30s linear infinite;will-change:transform;
+}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-track span{
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(1.1rem,1.8vw,1.4rem);
+  color:#fff;opacity:0.65;white-space:nowrap;
+  letter-spacing:0.02em;transition:opacity 0.3s ease,color 0.3s ease;
+  cursor:default;padding:12px 0;
+}
+.marquee-track span:hover{opacity:1;color:var(--violet)}
+.logo-pill{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;padding:14px 28px!important;transition:all 0.3s ease;
+}
+.logo-pill:hover{background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.25)}
+
+/* ================================================================
+   STATS SECTION
+   ================================================================ */
+.stats-section{
+  padding:80px 0;background:var(--bg);
+  border-bottom:1px solid var(--border);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:32px;
+  max-width:900px;margin:0 auto;
+}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+.stat-item{text-align:center;padding:24px 16px}
+.stat-number{
+  font-family:var(--grotesk);font-weight:700;
+  font-size:clamp(2.5rem,5vw,3.5rem);
+  line-height:1;margin-bottom:8px;
+  background:linear-gradient(135deg,var(--paper),var(--violet));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.stat-label{
+  font-size:0.85rem;color:var(--text-dim);font-weight:400;
+  letter-spacing:0.02em;
+}
+
+/* ================================================================
+   THE PROBLEM SECTION
+   ================================================================ */
+.problem-section{
+  background:var(--paper);color:#09090B;
+  padding:100px 0 120px;position:relative;
+}
+.problem-grid{
+  display:grid;grid-template-columns:1fr;gap:64px;align-items:center;
+}
+@media(min-width:1024px){.problem-grid{grid-template-columns:1fr 1fr;gap:80px}}
+.problem-text h2{color:#09090B;margin-bottom:32px}
+.problem-text p{
+  font-size:1.05rem;color:var(--surface-2);line-height:1.85;
+  margin-bottom:20px;font-weight:400;
+}
+.problem-text p:last-child{margin-bottom:0}
+
+/* Interactive SVG diagram */
+.problem-diagram{
+  display:flex;align-items:center;justify-content:center;
+  min-height:340px;position:relative;
+}
+.problem-diagram svg{
+  width:100%;max-width:420px;height:auto;
+}
+.diagram-line{
+  stroke:var(--violet);stroke-width:1.5;fill:none;
+  stroke-dasharray:200;stroke-dashoffset:200;
+  transition:stroke-dashoffset 1s var(--ease);
+}
+.diagram-active .diagram-line{stroke-dashoffset:0}
+.diagram-node-circle{
+  fill:rgba(124,58,237,0.06);stroke:var(--violet);stroke-width:1.5;
+  transition:fill 0.3s ease,filter 0.3s ease,r 0.3s ease;
+  cursor:pointer;
+}
+.diagram-node-circle:hover{
+  fill:rgba(124,58,237,0.2);
+  filter:drop-shadow(0 0 12px rgba(124,58,237,0.5));
+}
+.diagram-active .diagram-node-circle{fill:rgba(124,58,237,0.12)}
+.diagram-node-text{
+  font-family:var(--inter);font-size:10px;font-weight:600;
+  fill:#09090B;text-anchor:middle;dominant-baseline:central;
+  letter-spacing:0.04em;pointer-events:none;
+}
+.diagram-hub-circle{
+  fill:var(--violet);transition:filter 0.5s ease;cursor:pointer;
+}
+.diagram-hub-circle:hover{
+  filter:drop-shadow(0 0 24px rgba(124,58,237,0.6));
+}
+.diagram-active .diagram-hub-circle{
+  filter:drop-shadow(0 0 20px rgba(124,58,237,0.5));
+}
+.diagram-hub-text{
+  font-family:var(--grotesk);font-size:12px;font-weight:700;
+  fill:#fff;text-anchor:middle;dominant-baseline:central;
+  letter-spacing:0.06em;pointer-events:none;
+}
+/* SVG tooltip */
+.diagram-tooltip{
+  position:absolute;
+  background:rgba(9,9,11,0.95);color:#fff;
+  font-family:var(--inter);font-size:12px;font-weight:400;
+  padding:8px 14px;border-radius:8px;
+  border:1px solid rgba(124,58,237,0.3);
+  pointer-events:none;opacity:0;
+  transition:opacity 0.2s ease;
+  z-index:10;white-space:nowrap;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+.diagram-tooltip.show{opacity:1}
+
+/* ================================================================
+   HOW WE WORK — 3D TILT CARDS
+   ================================================================ */
+.how-section{
+  background:var(--bg);color:var(--paper);
+  padding:100px 0;overflow:hidden;
+}
+.how-section h2{color:var(--paper);margin-bottom:16px}
+.how-subtitle{
+  color:var(--text-muted);font-size:1rem;font-weight:400;
+  margin-bottom:56px;max-width:500px;
+}
+.how-grid{
+  display:grid;grid-template-columns:1fr;gap:24px;
+}
+@media(min-width:768px){.how-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
+
+.how-card{
+  min-height:380px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:16px;padding:48px 36px;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:border-color 0.3s ease,box-shadow 0.3s ease;
+  transform-style:preserve-3d;
+}
+.how-card:hover{
+  border-color:var(--border-hover);
+  box-shadow:0 20px 60px rgba(124,58,237,0.15);
+}
+.how-card-num{
+  font-family:var(--grotesk);font-size:clamp(5rem,8vw,7rem);
+  font-weight:700;color:rgba(124,58,237,0.06);
+  position:absolute;top:16px;right:28px;line-height:1;
+  pointer-events:none;
+}
+.how-card h3{
+  color:var(--paper);margin-bottom:16px;
+  font-size:clamp(1.5rem,2.5vw,1.9rem);
+}
+.how-card p{
+  color:var(--text-dim);font-size:0.95rem;
+  font-weight:400;line-height:1.8;max-width:480px;
+}
+
+/* Card micro-animations */
+.how-card-anim{
+  position:absolute;top:32px;left:36px;
+  width:120px;height:80px;opacity:0.4;
+}
+.scan-lines{position:relative;width:100%;height:100%;overflow:hidden}
+.scan-line{
+  position:absolute;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--violet),transparent);
+  animation:scanLine 3s ease-in-out infinite;opacity:0.6;
+}
+.scan-line:nth-child(1){top:10%;animation-delay:0s}
+.scan-line:nth-child(2){top:40%;animation-delay:0.8s}
+.scan-line:nth-child(3){top:70%;animation-delay:1.6s}
+@keyframes scanLine{
+  0%{transform:translateX(-100%);opacity:0}
+  50%{opacity:0.8}
+  100%{transform:translateX(100%);opacity:0}
+}
+.cascade-blocks{display:flex;gap:6px;align-items:flex-end;height:100%}
+.cascade-block{
+  width:16px;background:var(--cyan);border-radius:3px;opacity:0.5;
+  animation:cascadeUp 2s var(--ease) infinite;
+}
+.cascade-block:nth-child(1){height:20%;animation-delay:0s}
+.cascade-block:nth-child(2){height:40%;animation-delay:0.15s}
+.cascade-block:nth-child(3){height:60%;animation-delay:0.3s}
+.cascade-block:nth-child(4){height:80%;animation-delay:0.45s}
+.cascade-block:nth-child(5){height:100%;animation-delay:0.6s}
+@keyframes cascadeUp{
+  0%{opacity:0.15;transform:scaleY(0.3)}
+  50%{opacity:0.6;transform:scaleY(1)}
+  100%{opacity:0.15;transform:scaleY(0.3)}
+}
+.assemble-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:4px;width:72px;height:72px;
+}
+.assemble-cell{
+  background:var(--violet);border-radius:2px;opacity:0;
+  animation:assembleIn 2.5s var(--ease) infinite;
+}
+.assemble-cell:nth-child(1){animation-delay:0s}
+.assemble-cell:nth-child(2){animation-delay:0.12s}
+.assemble-cell:nth-child(3){animation-delay:0.24s}
+.assemble-cell:nth-child(4){animation-delay:0.36s}
+.assemble-cell:nth-child(5){animation-delay:0.48s}
+.assemble-cell:nth-child(6){animation-delay:0.6s}
+.assemble-cell:nth-child(7){animation-delay:0.72s}
+.assemble-cell:nth-child(8){animation-delay:0.84s}
+.assemble-cell:nth-child(9){animation-delay:0.96s}
+@keyframes assembleIn{
+  0%{opacity:0;transform:scale(0)}
+  30%{opacity:0.6;transform:scale(1)}
+  70%{opacity:0.6;transform:scale(1)}
+  100%{opacity:0;transform:scale(0)}
+}
+
+/* ================================================================
+   SERVICES SECTION
+   ================================================================ */
+.services-section{background:var(--paper);color:#09090B;padding:100px 24px}
+.services-inner{max-width:1200px;margin:0 auto}
+.services-section .label{color:var(--violet);margin-bottom:12px}
+.services-section h2{color:#09090B;margin-bottom:64px}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr;gap:16px}}
+.service-card{
+  background:#fff;border:1px solid rgba(0,0,0,0.06);
+  border-radius:14px;padding:36px 28px;
+  transition:all 0.3s var(--ease);
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(124,58,237,0.12);
+  border-color:rgba(124,58,237,0.2);
+}
+.service-card h3{
+  color:#09090B;margin-bottom:8px;font-size:1.2rem;
+}
+.service-card p{
+  font-size:0.92rem;color:var(--text-dim);line-height:1.7;
+}
+.service-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--violet-subtle);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.service-icon svg{width:20px;height:20px;stroke:var(--violet);fill:none;stroke-width:1.5}
+
+/* ================================================================
+   SITUATIONS — ACCORDION
+   ================================================================ */
+.situations-section{
+  background:var(--paper);color:#09090B;padding:100px 0 120px;
+}
+.situations-section h2{color:#09090B;text-align:center;margin-bottom:64px}
+.accordion{max-width:760px;margin:0 auto}
+.accordion-item{
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  transition:background 0.4s ease;
+}
+.accordion-item.open{background:rgba(124,58,237,0.03)}
+.accordion-trigger{
+  width:100%;display:flex;align-items:center;gap:20px;
+  padding:28px 8px;cursor:pointer;background:none;border:none;
+  text-align:left;font-family:var(--inter);min-height:48px;
+  transition:gap 0.3s ease;
+}
+.accordion-trigger:hover{gap:24px}
+.accordion-num{
+  font-family:var(--grotesk);font-size:clamp(1.4rem,2vw,1.8rem);
+  font-weight:700;color:var(--violet);min-width:48px;
+  transition:transform 0.3s var(--ease);
+}
+.accordion-trigger:hover .accordion-num{transform:scale(1.15)}
+.accordion-title{
+  font-family:var(--grotesk);font-size:clamp(1rem,1.4vw,1.15rem);
+  color:#09090B;flex:1;line-height:1.3;font-weight:500;
+}
+.accordion-icon{
+  width:20px;height:20px;flex-shrink:0;position:relative;margin-right:8px;
+}
+.accordion-icon::before,.accordion-icon::after{
+  content:'';position:absolute;background:var(--text-dim);
+  border-radius:1px;transition:transform 0.3s ease,opacity 0.3s ease;
+}
+.accordion-icon::before{width:100%;height:2px;top:50%;left:0;transform:translateY(-50%)}
+.accordion-icon::after{width:2px;height:100%;left:50%;top:0;transform:translateX(-50%)}
+.accordion-item.open .accordion-icon::after{
+  transform:translateX(-50%) rotate(90deg);opacity:0;
+}
+.accordion-body{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.5s var(--ease),padding 0.5s var(--ease);
+  padding:0 8px 0 76px;
+}
+.accordion-item.open .accordion-body{
+  padding:0 8px 28px 76px;
+}
+.accordion-body p{
+  font-size:0.95rem;color:var(--surface-2);line-height:1.75;
+  font-weight:400;opacity:0;transform:translateY(8px);
+  transition:opacity 0.3s ease 0.1s,transform 0.3s ease 0.1s;
+}
+.accordion-item.open .accordion-body p{opacity:1;transform:translateY(0)}
+
+/* ================================================================
+   MID-PAGE CTA
+   ================================================================ */
+.cta-mid{
+  padding:100px 24px;text-align:center;
+  background:linear-gradient(180deg,var(--bg) 0%,#110B20 100%);
+  position:relative;overflow:hidden;
+}
+.cta-mid::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%,rgba(124,58,237,0.1),transparent 70%);
+  pointer-events:none;
+}
+.cta-mid h2{
+  font-family:var(--grotesk);font-size:clamp(1.5rem,3vw,2.4rem);
+  color:var(--paper);margin-bottom:32px;position:relative;z-index:1;
+}
+
+/* ================================================================
+   OUTCOMES SECTION
+   ================================================================ */
+.outcomes-section{
+  background:var(--bg);color:var(--paper);
+  padding:100px 0 120px;position:relative;
+}
+.outcomes-section h2{color:var(--paper);text-align:center;margin-bottom:72px}
+.outcomes-grid{
+  display:grid;grid-template-columns:1fr;gap:24px;
+  max-width:920px;margin:0 auto;
+}
+@media(min-width:768px){.outcomes-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
+.outcome-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:16px;padding:40px 32px;text-align:center;
+  position:relative;overflow:hidden;
+  transition:border-color 0.3s ease,transform 0.3s var(--ease);
+}
+.outcome-card::before{
+  content:'';position:absolute;inset:-1px;border-radius:16px;padding:1px;
+  background:linear-gradient(135deg,rgba(124,58,237,0.4),rgba(6,182,212,0.3),transparent 60%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity 0.3s var(--ease);pointer-events:none;
+}
+.outcome-card:hover::before{opacity:1}
+.outcome-card:hover{transform:translateY(-4px);border-color:var(--border-hover)}
+.outcome-card-value{
+  font-family:var(--grotesk);font-size:clamp(1.4rem,2.5vw,1.8rem);
+  font-weight:700;color:var(--paper);margin-bottom:8px;line-height:1.2;
+}
+.outcome-card-label{
+  font-size:0.85rem;color:var(--text-dim);font-weight:400;line-height:1.6;
+}
+
+/* ================================================================
+   FAQ SECTION
+   ================================================================ */
+.faq-section{padding:100px 24px;background:var(--bg)}
+.faq-header{text-align:center;margin-bottom:56px}
+.faq-header .label{margin-bottom:12px}
+.faq-header h2{color:var(--paper)}
+.faq-wrap{max-width:720px;margin:0 auto}
+.faq-item{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:12px;margin-bottom:8px;overflow:hidden;
+  transition:border-color 0.3s ease;
+}
+.faq-item:hover{border-color:rgba(124,58,237,0.25)}
+.faq-item.faq-open{border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.04)}
+.faq-trigger{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:20px 24px;background:none;border:none;cursor:pointer;
+  font-family:var(--inter);font-size:0.95rem;font-weight:400;
+  color:var(--paper);text-align:left;line-height:1.4;gap:16px;min-height:48px;
+}
+.faq-trigger:focus-visible{outline:2px solid var(--violet);outline-offset:-2px;border-radius:12px}
+.faq-icon{flex-shrink:0;width:20px;height:20px;position:relative;transition:transform 0.3s ease}
+.faq-item.faq-open .faq-vline{opacity:0;transform:rotate(90deg)}
+.faq-vline{transition:opacity 0.3s ease,transform 0.3s ease;transform-origin:center}
+.faq-body{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.4s var(--ease),padding 0.4s var(--ease);
+  padding:0 24px;
+}
+.faq-body p{
+  font-size:0.9rem;color:var(--text-muted);line-height:1.75;
+  font-weight:300;padding-bottom:20px;
+}
+
+/* ================================================================
+   CTA SECTION (FINAL)
+   ================================================================ */
+.cta-section{
+  position:relative;background:var(--bg);
+  padding:140px 24px;text-align:center;overflow:hidden;
+}
+.cta-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.cta-bg-grad{
+  position:absolute;width:200%;height:200%;top:-50%;left:-50%;
+  background:radial-gradient(ellipse at 30% 50%,rgba(124,58,237,0.15),transparent 50%),
+              radial-gradient(ellipse at 70% 50%,rgba(6,182,212,0.1),transparent 50%);
+  animation:ctaBgDrift 15s ease-in-out infinite;will-change:transform;
+}
+@keyframes ctaBgDrift{
+  0%,100%{transform:translate(0,0) rotate(0deg)}
+  33%{transform:translate(5%,3%) rotate(2deg)}
+  66%{transform:translate(-3%,-2%) rotate(-1deg)}
+}
+.cta-content{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-section h2{color:var(--paper);margin-bottom:20px}
+.cta-section .cta-desc{
+  color:var(--text-muted);font-size:1.05rem;font-weight:400;
+  margin:0 auto 48px;max-width:480px;line-height:1.7;
+}
+.cta-sub{font-size:0.78rem;color:var(--text-dim);margin-top:20px;font-weight:300}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+footer{
+  background:var(--bg);border-top:1px solid var(--border);
+  padding:64px 0 40px;color:var(--text-dim);
+}
+.footer-inner{display:flex;flex-direction:column;gap:40px}
+@media(min-width:768px){
+  .footer-inner{flex-direction:row;justify-content:space-between;align-items:flex-start}
+}
+.footer-brand{max-width:320px}
+.footer-brand .footer-logo{
+  font-family:var(--grotesk);font-size:1.5rem;font-weight:700;
+  color:var(--paper);letter-spacing:-0.02em;display:block;margin-bottom:12px;
+}
+.footer-brand p{font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.35);line-height:1.7}
+.footer-links{display:flex;gap:48px;flex-wrap:wrap}
+.footer-col-title{
+  font-family:var(--inter);font-weight:600;font-size:11px;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:rgba(255,255,255,0.25);margin-bottom:16px;
+}
+.footer-nav{display:flex;flex-direction:column;gap:8px}
+.footer-nav a{
+  font-size:0.88rem;font-weight:400;color:rgba(255,255,255,0.45);
+  min-height:44px;display:flex;align-items:center;
+  position:relative;transition:color 0.3s ease;
+}
+.footer-nav a::after{
+  content:'';position:absolute;bottom:8px;left:0;width:0;height:1px;
+  background:var(--violet);transition:width 0.3s var(--ease);
+}
+.footer-nav a:hover{color:var(--violet)}
+.footer-nav a:hover::after{width:100%}
+.footer-copy{
+  font-size:0.72rem;color:rgba(255,255,255,0.2);
+  margin-top:48px;padding-top:24px;
+  border-top:1px solid var(--border);text-align:center;
+}
+
+/* ================================================================
+   BACK TO TOP
+   ================================================================ */
+.back-to-top{
+  position:fixed;bottom:24px;right:24px;width:48px;height:48px;
+  border-radius:50%;background:var(--violet);color:#fff;border:none;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;
+  box-shadow:0 4px 20px var(--violet-glow);
+}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--violet-dark);transform:translateY(-2px);box-shadow:0 8px 28px var(--violet-glow)}
+
+/* ================================================================
+   ACCESSIBILITY
+   ================================================================ */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-to-content{
+  position:absolute;top:-100px;left:16px;padding:8px 16px;
+  background:var(--violet);color:#fff;z-index:10000;border-radius:4px;
+  font-weight:500;text-decoration:none;font-family:var(--inter);font-size:13px;
+  transition:top 0.2s;
+}
+.skip-to-content:focus{top:8px}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-children .reveal-child{opacity:1;transform:none;transition:none}
+  .text-reveal{clip-path:none;transition:none}
+  .hero-headline .word{animation:none;opacity:1;transform:none}
+  .hero-subtitle,.hero-cta-wrap,.scroll-indicator{animation:none;opacity:1;transform:none}
+  .marquee-track{animation:none}
+  .scan-line,.cascade-block,.assemble-cell{animation:none;opacity:0.4}
+  .scroll-chevron{animation:none}
+  .btn-shimmer::after{animation:none}
+  .cta-bg-grad{animation:none}
+  .q3-bar{animation:none}
+  .cursor-dot{display:none}
+  .scroll-progress{display:none}
+  #heroCanvas{display:none}
+  .how-card{transition:border-color 0.3s ease!important}
+  .stat-number{transition:none!important}
+}
+</style>
+
+<!-- SWG Score Widget CSS -->
+<style>
+.swg-score-widget{position:relative;z-index:9998;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.4;color:#e4e4e7;user-select:none;-webkit-user-select:none}
+.swg-score-pill{display:flex;align-items:center;gap:8px;background:rgba(24,24,27,0.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:5px 14px 5px 12px;cursor:pointer;transition:background 0.2s ease,box-shadow 0.2s ease;outline:none;min-width:110px;height:32px;box-sizing:border-box}
+.swg-score-pill:hover,.swg-score-pill:focus-visible{background:rgba(24,24,27,0.98);box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.swg-score-pill:focus-visible{outline:2px solid #3B82F6;outline-offset:2px}
+.swg-score-avg{font-weight:700;font-size:14px;letter-spacing:-0.01em;white-space:nowrap}
+.swg-score-avg-val{color:#fff}
+.swg-score-avg-max{color:#71717a;font-weight:400}
+.swg-score-dots{display:flex;gap:4px;align-items:center}
+.swg-score-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;transition:background 0.2s ease}
+.swg-score-panel{position:absolute;top:100%;left:0;background:rgba(24,24,27,0.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.08);border-radius:0 12px 12px 12px;width:240px;max-height:0;overflow:hidden;opacity:0;transition:max-height 0.25s ease,opacity 0.2s ease,padding 0.25s ease;padding:0 14px;box-sizing:border-box}
+.swg-score-widget.swg-score--open .swg-score-panel{max-height:340px;opacity:1;padding:10px 14px 14px}
+.swg-score-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.swg-score-row:last-child{margin-bottom:0}
+.swg-score-label{width:48px;flex-shrink:0;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:#a1a1aa}
+.swg-score-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.swg-score-bar-fill{height:100%;border-radius:3px;transition:width 0.4s ease,background 0.3s ease}
+.swg-score-num{width:26px;text-align:right;font-size:12px;font-weight:600;color:#fff;flex-shrink:0}
+.swg-score-help{position:relative;flex-shrink:0;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#71717a;cursor:help;transition:background 0.15s ease,color 0.15s ease}
+.swg-score-help:hover,.swg-score-help:focus-visible{background:rgba(255,255,255,0.16);color:#d4d4d8}
+.swg-score-help:focus-visible{outline:2px solid #3B82F6;outline-offset:1px}
+.swg-score-tooltip{display:none;position:absolute;top:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#e4e4e7;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:8px 10px;font-size:12px;font-weight:400;line-height:1.4;width:max-content;max-width:280px;z-index:10;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,0.4);text-transform:none;letter-spacing:0}
+.swg-score-tooltip::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid #1a1a1a}
+.swg-score-help:hover .swg-score-tooltip,.swg-score-help:focus .swg-score-tooltip{display:block}
+@media(max-width:767px){
+  .swg-score-pill{min-width:0;padding:4px 10px 4px 8px;gap:0;height:28px;border-radius:0 12px 12px 0}
+  .swg-score-dots{display:none}
+  .swg-score-avg{font-size:12px}
+  .swg-score-panel{width:220px}
+  .swg-score-tooltip{left:auto;right:0;transform:none}
+  .swg-score-tooltip::before{left:auto;right:8px;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Cursor Dot Follower -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- Version Switcher + Score Widget -->
+<div class="version-bar">
+  <div class="swg-score-widget" id="swgScoreWidget">
+    <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
+      <span class="swg-score-avg">
+        <span class="swg-score-avg-val" id="swgAvgVal">0.0</span><span class="swg-score-avg-max">/10</span>
+      </span>
+      <span class="swg-score-dots" id="swgDots"></span>
+    </div>
+    <div class="swg-score-panel" id="swgPanel" role="region" aria-label="Score details"></div>
+  </div>
+  <div class="vb-right">
+    <span class="vb-label">Version</span>
+    <a href="../v1.html">1</a>
+    <a href="../v2/">2</a>
+    <a href="../v3/">3</a>
+    <a href="../v4/">4</a>
+    <a href="../v5/">5</a>
+    <a href="./" class="active">6</a>
+  </div>
+</div>
+
+<!-- Q3 Client Bar -->
+<div class="q3-bar">Now accepting Q3 2026 clients</div>
+
+<div style="height:68px" aria-hidden="true"></div>
+
+<!-- Skip to content -->
+<a href="#hero" class="skip-to-content" tabindex="0">Skip to content</a>
+
+<!-- Navigation -->
+<nav class="v6-nav" id="v6Nav">
+  <div class="v6-nav-inner">
+    <a href="#hero" class="v6-nav-brand">SWG</a>
+    <div class="v6-nav-links" id="navLinks">
+      <a href="#hero" data-section="hero">Home</a>
+      <a href="#how-we-work" data-section="how-we-work">Process</a>
+      <a href="#situations" data-section="situations">Problems</a>
+      <a href="#outcomes" data-section="outcomes">Outcomes</a>
+      <a href="#faq" data-section="faq">FAQ</a>
+      <a href="assessment.html" class="v6-nav-cta">Start the Review</a>
+    </div>
+    <button class="v6-nav-toggle" id="v6NavToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="v6-nav-mobile" id="v6NavMobile">
+    <a href="#hero">Home</a>
+    <a href="#how-we-work">Process</a>
+    <a href="#situations">Problems</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="#faq">FAQ</a>
+    <a href="assessment.html" class="v6-nav-cta">Start the Review</a>
+  </div>
+</nav>
+
+<!-- Score widget moved into version bar above -->
+
+
+<!-- =====================================================================
+     HERO SECTION — Canvas Particle Background
+     ===================================================================== -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-headline" id="heroHeadline">
+        We help growing companies solve the business problems behind growth.
+      </h1>
+      <p class="hero-subtitle">Strategy, operations, technology, and marketing — connected to one plan, built in the right order.</p>
+      <div class="hero-cta-wrap">
+        <div class="magnetic-wrap" data-magnetic>
+          <a href="assessment.html" class="btn btn-shimmer">Start Your Free Business Review</a>
+        </div>
+        <span class="hero-cta-sub">Takes 8&ndash;10 minutes</span>
+      </div>
+    </div>
+    <div class="hero-metric" aria-hidden="true">
+      <div class="hero-metric-number">30+</div>
+      <div class="hero-metric-label">Industries Served</div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>Scroll</span>
+    <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     CLIENT LOGOS MARQUEE
+     ===================================================================== -->
+<section class="logos-section" aria-label="Trusted clients">
+  <p class="label logos-label">Trusted by growing companies across 30+ industries</p>
+  <div class="marquee-wrap">
+    <div class="marquee-track" aria-hidden="true">
+      <span class="logo-pill">CamoToe</span>
+      <span class="logo-pill">Nature's Turn</span>
+      <span class="logo-pill">SharkGroup</span>
+      <span class="logo-pill">Ballast Gym</span>
+      <span class="logo-pill">Holy Wagyu Meats</span>
+      <span class="logo-pill">Tru North Construction</span>
+      <span class="logo-pill">CamoToe</span>
+      <span class="logo-pill">Nature's Turn</span>
+      <span class="logo-pill">SharkGroup</span>
+      <span class="logo-pill">Ballast Gym</span>
+      <span class="logo-pill">Holy Wagyu Meats</span>
+      <span class="logo-pill">Tru North Construction</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     STATS SECTION — Animated Counters
+     ===================================================================== -->
+<section class="stats-section" id="stats">
+  <div class="wrap">
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-item">
+        <div class="stat-number" data-target="30" data-suffix="+">0</div>
+        <div class="stat-label">Industries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="120" data-suffix="+">0</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="97" data-suffix="%">0</div>
+        <div class="stat-label">Client Retention</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="6" data-suffix="x">0</div>
+        <div class="stat-label">Average ROI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     THE PROBLEM SECTION — Interactive SVG Diagram
+     ===================================================================== -->
+<section class="problem-section" id="problems">
+  <div class="wrap">
+    <div class="problem-grid">
+      <div class="problem-text reveal">
+        <p class="label" style="margin-bottom:20px">The core problem</p>
+        <h2 class="text-reveal">Growth stalls when systems are disconnected.</h2>
+        <p>Most companies past $1M have the pieces: paid media, a CRM, a website, maybe some AI tools. Each one was built to solve a specific problem at a specific moment.</p>
+        <p>But nobody connected them. The ad spend drives traffic to a website that doesn't convert. The CRM captures leads but doesn't nurture them. Reporting looks backward while the business moves forward.</p>
+        <p>Growth leaks through the gaps between systems. SWG finds the gaps, sequences the fixes, and builds the connective tissue that turns separate tools into one growth engine.</p>
+      </div>
+      <div class="problem-diagram reveal" id="problemDiagram">
+        <div class="diagram-tooltip" id="diagramTooltip"></div>
+        <svg viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing disconnected business systems connecting to SWG hub">
+          <line class="diagram-line" x1="200" y1="180" x2="120" y2="60" style="transition-delay:0.2s"/>
+          <line class="diagram-line" x1="200" y1="180" x2="300" y2="60" style="transition-delay:0.35s"/>
+          <line class="diagram-line" x1="200" y1="180" x2="60" y2="180" style="transition-delay:0.5s"/>
+          <line class="diagram-line" x1="200" y1="180" x2="340" y2="180" style="transition-delay:0.65s"/>
+          <line class="diagram-line" x1="200" y1="180" x2="120" y2="300" style="transition-delay:0.8s"/>
+          <line class="diagram-line" x1="200" y1="180" x2="300" y2="300" style="transition-delay:0.95s"/>
+
+          <g class="diagram-node" data-tip="UX audits, page speed, conversion optimization">
+            <circle class="diagram-node-circle" cx="120" cy="60" r="32"/>
+            <text class="diagram-node-text" x="120" y="60">Website</text>
+          </g>
+          <g class="diagram-node" data-tip="Lead scoring, pipeline management, automation">
+            <circle class="diagram-node-circle" cx="300" cy="60" r="32"/>
+            <text class="diagram-node-text" x="300" y="60">CRM</text>
+          </g>
+          <g class="diagram-node" data-tip="Paid media, attribution, creative testing">
+            <circle class="diagram-node-circle" cx="60" cy="180" r="32"/>
+            <text class="diagram-node-text" x="60" y="180">Ads</text>
+          </g>
+          <g class="diagram-node" data-tip="Sequences, flows, deliverability, segmentation">
+            <circle class="diagram-node-circle" cx="340" cy="180" r="32"/>
+            <text class="diagram-node-text" x="340" y="180">Email</text>
+          </g>
+          <g class="diagram-node" data-tip="Workflow automation, chatbots, content generation">
+            <circle class="diagram-node-circle" cx="120" cy="300" r="32"/>
+            <text class="diagram-node-text" x="120" y="300">AI</text>
+          </g>
+          <g class="diagram-node" data-tip="Dashboards, KPIs, attribution, data pipelines">
+            <circle class="diagram-node-circle" cx="300" cy="300" r="32"/>
+            <text class="diagram-node-text" x="300" y="300">Reports</text>
+          </g>
+
+          <circle class="diagram-hub-circle" cx="200" cy="180" r="28" data-tip="SWG connects all your systems into one growth engine"/>
+          <text class="diagram-hub-text" x="200" y="180">SWG</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     HOW WE WORK — 3D Tilt Cards
+     ===================================================================== -->
+<section class="how-section" id="how-we-work">
+  <div class="wrap">
+    <p class="label reveal" style="margin-bottom:16px">How we work</p>
+    <h2 class="reveal text-reveal">Diagnose. Sequence. Build.</h2>
+    <p class="how-subtitle reveal">Three phases, one connected outcome. Every engagement follows the same discipline.</p>
+
+    <div class="how-grid" id="howGrid">
+      <!-- Card 1: Diagnose -->
+      <div class="how-card reveal" data-tilt>
+        <div class="how-card-anim" aria-hidden="true">
+          <div class="scan-lines">
+            <div class="scan-line"></div>
+            <div class="scan-line"></div>
+            <div class="scan-line"></div>
+          </div>
+        </div>
+        <span class="how-card-num" aria-hidden="true">01</span>
+        <h3>Diagnose</h3>
+        <p>We audit your full stack — website, marketing, CRM, operations, reporting — to find where growth is leaking. Not a surface-level review. A forensic look at how your systems connect and where they don't.</p>
+      </div>
+      <!-- Card 2: Sequence -->
+      <div class="how-card reveal" data-tilt>
+        <div class="how-card-anim" aria-hidden="true">
+          <div class="cascade-blocks">
+            <div class="cascade-block"></div>
+            <div class="cascade-block"></div>
+            <div class="cascade-block"></div>
+            <div class="cascade-block"></div>
+            <div class="cascade-block"></div>
+          </div>
+        </div>
+        <span class="how-card-num" aria-hidden="true">02</span>
+        <h3>Sequence</h3>
+        <p>Most companies try to fix everything at once. We build a prioritized roadmap that sequences fixes by impact — what to build first, what to build next, and what to leave alone for now.</p>
+      </div>
+      <!-- Card 3: Build -->
+      <div class="how-card reveal" data-tilt>
+        <div class="how-card-anim" aria-hidden="true">
+          <div class="assemble-grid">
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+            <div class="assemble-cell"></div>
+          </div>
+        </div>
+        <span class="how-card-num" aria-hidden="true">03</span>
+        <h3>Build</h3>
+        <p>We build it. Website, email flows, ad campaigns, AI automations, dashboards — all connected to the strategy. No handoff to another vendor. Same team, end to end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     SERVICES SECTION
+     ===================================================================== -->
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <p class="label">What We Cover</p>
+    <h2 class="text-reveal">Every system. One connected strategy.</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3>Website &amp; Conversion</h3>
+        <p>UX audits, page speed, checkout flow, mobile optimization, and A/B testing infrastructure.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Marketing &amp; Acquisition</h3>
+        <p>Paid media, SEO, content strategy, email sequences, and attribution modeling.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3>Operations &amp; CRM</h3>
+        <p>Process mapping, tool consolidation, reporting dashboards, and workflow automation.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Technology &amp; Data</h3>
+        <p>Stack audit, integration architecture, analytics setup, and data pipeline design.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Team &amp; Hiring</h3>
+        <p>Role scoping, vendor evaluation, onboarding systems, and capacity planning.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Revenue &amp; Pricing</h3>
+        <p>Pricing architecture, bundle strategy, margin analysis, and retention modeling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     COMMON SITUATIONS — ACCORDION
+     ===================================================================== -->
+<section class="situations-section" id="situations">
+  <div class="wrap">
+    <p class="label reveal" style="text-align:center;margin-bottom:16px">Sound familiar?</p>
+    <h2 class="reveal text-reveal" style="text-align:center">This is where most companies get stuck.</h2>
+    <div class="accordion reveal" id="accordion">
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-num">01</span>
+          <span class="accordion-title">"We're spending on ads but can't tell what's working."</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-body" role="region">
+          <p>Attribution is broken, creative is stale, or the landing experience doesn't match the promise. We fix the measurement layer first, then rebuild the funnel from click to conversion.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-num">02</span>
+          <span class="accordion-title">"Our website looks fine but doesn't convert."</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-body" role="region">
+          <p>The site was designed for aesthetics, not for the buyer journey. Structure, copy, and trust signals need rework. We redesign around conversion, not vanity.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-num">03</span>
+          <span class="accordion-title">"We have a CRM but nobody uses it."</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-body" role="region">
+          <p>The CRM was set up generically. When it's wired to actual workflows and automations — lead scoring, task routing, email triggers — people use it because it makes their jobs easier.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-num">04</span>
+          <span class="accordion-title">"We need AI but don't know where to start."</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-body" role="region">
+          <p>There are 3-5 manual processes burning hours every week that AI could handle today. We identify the highest-ROI automations and build them into your existing stack.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-num">05</span>
+          <span class="accordion-title">"We outgrew our systems but can't stop to rebuild."</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-body" role="region">
+          <p>You need incremental modernization, not a rip-and-replace. We build alongside the running business, migrating systems one piece at a time without disrupting operations.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-num">06</span>
+          <span class="accordion-title">"We have data everywhere but no single view."</span>
+          <span class="accordion-icon" aria-hidden="true"></span>
+        </button>
+        <div class="accordion-body" role="region">
+          <p>Reporting is siloed by platform. One connected dashboard that pulls from ads, CRM, website, and email changes how you make decisions — and how fast you make them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     MID-PAGE CTA
+     ===================================================================== -->
+<section class="cta-mid">
+  <div class="wrap" style="position:relative;z-index:1">
+    <h2 class="text-reveal">Ready to find out what's really holding your growth back?</h2>
+    <div class="magnetic-wrap" data-magnetic>
+      <a href="assessment.html" class="btn btn-shimmer">Get Your Free Growth Map</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     OUTCOMES SECTION
+     ===================================================================== -->
+<section class="outcomes-section" id="outcomes">
+  <div class="wrap">
+    <p class="label reveal" style="text-align:center;margin-bottom:16px">What changes</p>
+    <h2 class="reveal text-reveal" style="text-align:center">From disconnected parts to one growth engine.</h2>
+    <div class="outcomes-grid reveal-children" id="outcomesGrid">
+      <div class="outcome-card reveal-child">
+        <div class="outcome-card-value">Connected systems</div>
+        <div class="outcome-card-label">One growth engine instead of six separate tools nobody maintains</div>
+      </div>
+      <div class="outcome-card reveal-child">
+        <div class="outcome-card-value">Cleaner execution</div>
+        <div class="outcome-card-label">Less founder drag — the team operates from a prioritized playbook, not guesswork</div>
+      </div>
+      <div class="outcome-card reveal-child">
+        <div class="outcome-card-value">Prioritized action</div>
+        <div class="outcome-card-label">Strategy becomes shipped work — sequenced by impact, not urgency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     FAQ SECTION
+     ===================================================================== -->
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="faq-header">
+      <div class="label">What past clients asked before saying yes</div>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-wrap" id="faqWrap">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span>Who is the best fit?</span>
+          <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="faq-vline"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p>Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span>Do we need to know what service we want?</span>
+          <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="faq-vline"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p>No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span>What can the roadmap include?</span>
+          <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="faq-vline"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p>Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span>Do you execute after the strategy?</span>
+          <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="faq-vline"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p>Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span>How long does an engagement take?</span>
+          <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="faq-vline"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p>A Business Review typically takes 2-3 weeks. A Focused Build is 4-12 weeks depending on scope. Ongoing Support is month-to-month with no lock-in.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span>What industries do you work with?</span>
+          <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/><line x1="10" y1="4" x2="10" y2="16" class="faq-vline"/></svg></span>
+        </button>
+        <div class="faq-body">
+          <p>We have worked across 30+ industries including health and wellness, construction, professional services, e-commerce, SaaS, and manufacturing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     CTA SECTION (FINAL)
+     ===================================================================== -->
+<section class="cta-section" id="cta">
+  <div class="cta-bg" aria-hidden="true">
+    <div class="cta-bg-grad"></div>
+  </div>
+  <div class="cta-content">
+    <h2 class="reveal">Ready to find out what's actually holding you back?</h2>
+    <p class="cta-desc reveal">Tell us about your company. We'll tell you where growth is leaking and what to fix first.</p>
+    <div class="magnetic-wrap reveal" data-magnetic>
+      <a href="assessment.html" class="btn btn-shimmer">Start Your Free Business Review</a>
+    </div>
+    <p class="cta-sub reveal">Takes 8&ndash;10 minutes. We respond within 2 business days.</p>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">SWG</a>
+        <p>Business consulting for founder-led companies. Strategy, operations, technology, and marketing — connected to one plan.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <div class="footer-nav">
+            <a href="problems.html">Problems</a>
+            <a href="process.html">Process</a>
+            <a href="implementation.html">Implementation</a>
+            <a href="engagements.html">Pricing</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="about.html">About</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-nav">
+            <a href="mailto:hello@supportwellnessglobal.com">hello@supportwellnessglobal.com</a>
+            <a href="assessment.html">Start Your Review</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 Support Wellness Global. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+
+<!-- =====================================================================
+     SCRIPTS
+     ===================================================================== -->
+<script>
+(function(){
+'use strict';
+var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ================================================================
+   1. CANVAS PARTICLE HERO
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  var canvas = document.getElementById('heroCanvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var PARTICLE_COUNT = 80;
+  var CONNECTION_DIST = 120;
+  var MOUSE_RADIUS = 100;
+  var mouseX = -9999, mouseY = -9999;
+  var heroEl = document.getElementById('hero');
+  var isVisible = true;
+  var raf;
+
+  function resize(){
+    canvas.width = canvas.offsetWidth * (window.devicePixelRatio > 1 ? 2 : 1);
+    canvas.height = canvas.offsetHeight * (window.devicePixelRatio > 1 ? 2 : 1);
+    ctx.scale(window.devicePixelRatio > 1 ? 2 : 1, window.devicePixelRatio > 1 ? 2 : 1);
+  }
+
+  function createParticles(){
+    particles = [];
+    var w = canvas.offsetWidth;
+    var h = canvas.offsetHeight;
+    for(var i = 0; i < PARTICLE_COUNT; i++){
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: Math.random() * 2 + 1,
+        color: Math.random() > 0.5 ? '124,58,237' : '6,182,212'
+      });
+    }
+  }
+
+  function draw(){
+    if(!isVisible){ raf = requestAnimationFrame(draw); return; }
+    var w = canvas.offsetWidth;
+    var h = canvas.offsetHeight;
+    ctx.clearRect(0, 0, w, h);
+
+    for(var i = 0; i < particles.length; i++){
+      var p = particles[i];
+      // Mouse repulsion
+      var dx = p.x - mouseX;
+      var dy = p.y - mouseY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if(dist < MOUSE_RADIUS && dist > 0){
+        var force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * 0.8;
+        p.vx += (dx / dist) * force;
+        p.vy += (dy / dist) * force;
+      }
+      // Dampen velocity
+      p.vx *= 0.98;
+      p.vy *= 0.98;
+      // Ensure minimum velocity
+      var speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+      if(speed < 0.15){
+        p.vx += (Math.random() - 0.5) * 0.1;
+        p.vy += (Math.random() - 0.5) * 0.1;
+      }
+      p.x += p.vx;
+      p.y += p.vy;
+      // Wrap around
+      if(p.x < -10) p.x = w + 10;
+      if(p.x > w + 10) p.x = -10;
+      if(p.y < -10) p.y = h + 10;
+      if(p.y > h + 10) p.y = -10;
+      // Draw particle
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.color + ',0.5)';
+      ctx.fill();
+    }
+
+    // Draw connections
+    for(var i = 0; i < particles.length; i++){
+      for(var j = i + 1; j < particles.length; j++){
+        var dx2 = particles[i].x - particles[j].x;
+        var dy2 = particles[i].y - particles[j].y;
+        var d = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+        if(d < CONNECTION_DIST){
+          var alpha = (1 - d / CONNECTION_DIST) * 0.15;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(124,58,237,' + alpha + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    raf = requestAnimationFrame(draw);
+  }
+
+  // Track mouse position relative to canvas
+  var rafMouse;
+  heroEl.addEventListener('mousemove', function(e){
+    var rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  }, {passive:true});
+  heroEl.addEventListener('mouseleave', function(){
+    mouseX = -9999; mouseY = -9999;
+  }, {passive:true});
+
+  // Visibility check
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      isVisible = entries[0].isIntersecting;
+    }, {threshold:0});
+    obs.observe(heroEl);
+  }
+
+  resize();
+  createParticles();
+  draw();
+  window.addEventListener('resize', function(){ resize(); createParticles(); });
+})();
+
+
+/* ================================================================
+   2. SCROLL PROGRESS BAR
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      ticking = true;
+      requestAnimationFrame(function(){
+        var scrollTop = window.scrollY || window.pageYOffset;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = progress + '%';
+        ticking = false;
+      });
+    }
+  }, {passive:true});
+})();
+
+
+/* ================================================================
+   3. HERO: Word-by-word fade-in
+   ================================================================ */
+(function(){
+  var headline = document.getElementById('heroHeadline');
+  if(!headline) return;
+  var text = headline.textContent.trim();
+  var words = text.split(/\s+/);
+  headline.innerHTML = '';
+  words.forEach(function(word, i){
+    var span = document.createElement('span');
+    span.className = 'word';
+    span.textContent = word;
+    if(!reducedMotion){
+      span.style.animationDelay = (i * 80) + 'ms';
+    }
+    headline.appendChild(span);
+    if(i < words.length - 1){
+      headline.appendChild(document.createTextNode(' '));
+    }
+  });
+})();
+
+
+/* ================================================================
+   4. NAV TOGGLE
+   ================================================================ */
+(function(){
+  var toggle = document.getElementById('v6NavToggle');
+  var mobile = document.getElementById('v6NavMobile');
+  if(toggle && mobile){
+    toggle.addEventListener('click', function(){
+      mobile.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', mobile.classList.contains('open'));
+      document.body.style.overflow = mobile.classList.contains('open') ? 'hidden' : '';
+    });
+    mobile.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobile.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+})();
+
+
+/* ================================================================
+   5. ACTIVE NAV HIGHLIGHTING
+   ================================================================ */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var navLinks = document.querySelectorAll('.v6-nav-links a[data-section]');
+  var sections = [];
+  navLinks.forEach(function(link){
+    var id = link.getAttribute('data-section');
+    var el = document.getElementById(id);
+    if(el) sections.push({id:id, el:el, link:link});
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var sectionData = sections.find(function(s){ return s.el === entry.target; });
+      if(!sectionData) return;
+      if(entry.isIntersecting){
+        navLinks.forEach(function(l){ l.classList.remove('nav-active'); });
+        sectionData.link.classList.add('nav-active');
+      }
+    });
+  }, {threshold:0.15, rootMargin:'-80px 0px -40% 0px'});
+
+  sections.forEach(function(s){ observer.observe(s.el); });
+})();
+
+
+/* ================================================================
+   6. SCROLL REVEAL with IntersectionObserver
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  var els = document.querySelectorAll('.reveal');
+  var groups = document.querySelectorAll('.reveal-children');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('visible'); });
+    groups.forEach(function(g){ g.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        var children = entry.target.querySelectorAll('.reveal-child');
+        children.forEach(function(child, i){
+          child.style.transitionDelay = (i * 100) + 'ms';
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.05, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ observer.observe(el); });
+  groups.forEach(function(g){ observer.observe(g); });
+})();
+
+
+/* ================================================================
+   7. TEXT REVEAL ON SCROLL (clip-path wipe)
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  if(!('IntersectionObserver' in window)) return;
+  var reveals = document.querySelectorAll('.text-reveal');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.2});
+  reveals.forEach(function(el){ observer.observe(el); });
+})();
+
+
+/* ================================================================
+   8. ANIMATED STAT COUNTERS
+   ================================================================ */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var statsGrid = document.getElementById('statsGrid');
+  if(!statsGrid) return;
+  var statNums = statsGrid.querySelectorAll('.stat-number');
+  var animated = false;
+
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 2000;
+    var start = performance.now();
+
+    function tick(now){
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(target * ease);
+      el.textContent = current + suffix;
+      if(progress < 1){
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting && !animated){
+        animated = true;
+        statNums.forEach(function(el, i){
+          setTimeout(function(){ animateCounter(el); }, i * 150);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.3});
+  observer.observe(statsGrid);
+})();
+
+
+/* ================================================================
+   9. 3D TILT CARDS
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  if(window.innerWidth < 768) return;
+  var cards = document.querySelectorAll('[data-tilt]');
+
+  cards.forEach(function(card){
+    card.addEventListener('mouseenter', function(){
+      this.style.willChange = 'transform';
+    });
+
+    card.addEventListener('mousemove', function(e){
+      var rect = this.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -8;
+      var rotateY = ((x - centerX) / centerX) * 8;
+      this.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+    });
+
+    card.addEventListener('mouseleave', function(){
+      this.style.willChange = '';
+      this.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      this.style.transition = 'transform 0.5s var(--ease), border-color 0.3s ease, box-shadow 0.3s ease';
+      var self = this;
+      setTimeout(function(){ self.style.transition = ''; }, 500);
+    });
+  });
+})();
+
+
+/* ================================================================
+   10. MAGNETIC BUTTONS
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  if(window.innerWidth < 768) return;
+  var magnets = document.querySelectorAll('[data-magnetic]');
+  var PULL_DISTANCE = 80;
+  var STRENGTH = 0.3;
+
+  magnets.forEach(function(wrap){
+    var btn = wrap.querySelector('.btn, .btn-shimmer');
+    if(!btn) return;
+
+    wrap.addEventListener('mousemove', function(e){
+      var rect = wrap.getBoundingClientRect();
+      var centerX = rect.left + rect.width / 2;
+      var centerY = rect.top + rect.height / 2;
+      var dx = e.clientX - centerX;
+      var dy = e.clientY - centerY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+
+      if(dist < PULL_DISTANCE){
+        var pull = (PULL_DISTANCE - dist) / PULL_DISTANCE;
+        btn.style.transform = 'translate(' + (dx * STRENGTH * pull) + 'px,' + (dy * STRENGTH * pull) + 'px)';
+      }
+    });
+
+    wrap.addEventListener('mouseleave', function(){
+      btn.style.transform = '';
+      btn.style.transition = 'transform 0.4s var(--ease)';
+      setTimeout(function(){ btn.style.transition = ''; }, 400);
+    });
+  });
+})();
+
+
+/* ================================================================
+   11. CURSOR DOT FOLLOWER
+   ================================================================ */
+(function(){
+  if(reducedMotion) return;
+  if(window.innerWidth < 769) return;
+  if(window.matchMedia('(pointer:coarse)').matches) return;
+
+  var dot = document.getElementById('cursorDot');
+  if(!dot) return;
+  var mx = 0, my = 0;
+  var dx = 0, dy = 0;
+
+  document.addEventListener('mousemove', function(e){
+    mx = e.clientX;
+    my = e.clientY;
+  }, {passive:true});
+
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  function tick(){
+    dx = lerp(dx, mx, 0.15);
+    dy = lerp(dy, my, 0.15);
+    dot.style.left = dx + 'px';
+    dot.style.top = dy + 'px';
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  // Change appearance on interactive elements
+  var interactiveSelector = 'a, button, [data-magnetic], [data-tilt], .accordion-trigger, .faq-trigger, .diagram-node-circle, .diagram-hub-circle';
+  document.addEventListener('mouseover', function(e){
+    if(e.target.closest(interactiveSelector)){
+      dot.classList.add('cursor-hover');
+    }
+  });
+  document.addEventListener('mouseout', function(e){
+    if(e.target.closest(interactiveSelector)){
+      dot.classList.remove('cursor-hover');
+    }
+  });
+})();
+
+
+/* ================================================================
+   12. INTERACTIVE SVG DIAGRAM — Hover Tooltips
+   ================================================================ */
+(function(){
+  var diagram = document.getElementById('problemDiagram');
+  if(!diagram) return;
+  var svg = diagram.querySelector('svg');
+  var tooltip = document.getElementById('diagramTooltip');
+  if(!svg || !tooltip) return;
+
+  // Animate on scroll
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          svg.classList.add('diagram-active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.3});
+    observer.observe(diagram);
+  }
+
+  // Tooltip for nodes
+  var nodes = svg.querySelectorAll('.diagram-node, .diagram-hub-circle');
+  nodes.forEach(function(node){
+    var tipText = node.getAttribute('data-tip');
+    if(!tipText) return;
+
+    node.addEventListener('mouseenter', function(e){
+      tooltip.textContent = tipText;
+      tooltip.classList.add('show');
+    });
+
+    node.addEventListener('mousemove', function(e){
+      var rect = diagram.getBoundingClientRect();
+      tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+      tooltip.style.top = (e.clientY - rect.top - 30) + 'px';
+    });
+
+    node.addEventListener('mouseleave', function(){
+      tooltip.classList.remove('show');
+    });
+  });
+
+  // Also handle hub circle tooltip
+  var hubCircle = svg.querySelector('.diagram-hub-circle');
+  if(hubCircle){
+    var tipText = hubCircle.getAttribute('data-tip');
+    if(tipText){
+      hubCircle.addEventListener('mouseenter', function(){
+        tooltip.textContent = tipText;
+        tooltip.classList.add('show');
+      });
+      hubCircle.addEventListener('mousemove', function(e){
+        var rect = diagram.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+        tooltip.style.top = (e.clientY - rect.top - 30) + 'px';
+      });
+      hubCircle.addEventListener('mouseleave', function(){
+        tooltip.classList.remove('show');
+      });
+    }
+  }
+})();
+
+
+/* ================================================================
+   13. SITUATIONS ACCORDION
+   ================================================================ */
+(function(){
+  var accordion = document.getElementById('accordion');
+  if(!accordion) return;
+  var triggers = accordion.querySelectorAll('.accordion-trigger');
+  triggers.forEach(function(trigger){
+    trigger.addEventListener('click', function(){
+      var item = this.closest('.accordion-item');
+      var body = item.querySelector('.accordion-body');
+      var isOpen = item.classList.contains('open');
+      // Close all items
+      accordion.querySelectorAll('.accordion-item').forEach(function(it){
+        it.classList.remove('open');
+        it.querySelector('.accordion-trigger').setAttribute('aria-expanded','false');
+        var b = it.querySelector('.accordion-body');
+        b.style.maxHeight = '0';
+      });
+      // Toggle clicked item
+      if(!isOpen){
+        item.classList.add('open');
+        this.setAttribute('aria-expanded','true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+
+
+/* ================================================================
+   14. FAQ ACCORDION
+   ================================================================ */
+(function(){
+  var faq = document.getElementById('faqWrap');
+  if(!faq) return;
+  var triggers = faq.querySelectorAll('.faq-trigger');
+  triggers.forEach(function(trigger){
+    trigger.addEventListener('click', function(){
+      var item = this.closest('.faq-item');
+      var body = item.querySelector('.faq-body');
+      var isOpen = item.classList.contains('faq-open');
+      // Close all
+      faq.querySelectorAll('.faq-item').forEach(function(it){
+        it.classList.remove('faq-open');
+        it.querySelector('.faq-trigger').setAttribute('aria-expanded','false');
+        var b = it.querySelector('.faq-body');
+        b.style.maxHeight = '0';
+        b.style.padding = '0 24px';
+      });
+      // Open clicked if wasn't open
+      if(!isOpen){
+        item.classList.add('faq-open');
+        this.setAttribute('aria-expanded','true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.padding = '0 24px';
+      }
+    });
+  });
+})();
+
+
+/* ================================================================
+   15. BACK TO TOP
+   ================================================================ */
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 400 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 400 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+
+})();
+</script>
+
+<!-- SWG Scores Data -->
+<script>
+window.SWG_SCORES = {
+  ui: { score: 8.5, reason: "Typography-driven hierarchy is sophisticated. Instrument Serif italic headlines command attention. Violet margin rules as consistent accent. Some sections could use more visual variety." },
+  ux: { score: 8.5, reason: "Clearest CTA flow of all versions. Hero underline micro-interaction is elegant. Situations with icons scan well. Best assessment form experience." },
+  mobile: { score: 8.5, reason: "Best mobile implementation. Sticky header, Outfit font scales well, generous whitespace. All touch targets exceed 44px. Clean mobile nav overlay." },
+  seo: { score: 8.5, reason: "Richer Organization schema with foundingDate and numberOfEmployees. Full meta/OG/Twitter/canonical. Good semantic HTML. No FAQ schema like V4." },
+  design: { score: 8.5, reason: "Instrument Serif italic is the most distinctive typography. Violet accent unusual for B2B. Breaks template patterns. Restraint is intentional but hero could use more visual weight." }
+};
+</script>
+
+<!-- SWG Score Widget Script -->
+<script>
+(function () {
+  'use strict';
+  function scoreColor(s) {
+    if (s >= 9) return '#22C55E';
+    if (s >= 7) return '#3B82F6';
+    if (s >= 5) return '#EAB308';
+    return '#EF4444';
+  }
+  function dotColor(s) {
+    if (s >= 8) return '#22C55E';
+    if (s >= 6) return '#EAB308';
+    return '#EF4444';
+  }
+  var LABELS = { ui: 'UI', ux: 'UX', mobile: 'Mobile', seo: 'SEO', design: 'Design' };
+  var KEYS = ['ui', 'ux', 'mobile', 'seo', 'design'];
+  var widget = document.getElementById('swgScoreWidget');
+  var pill = document.getElementById('swgScorePill');
+  var dots = document.getElementById('swgDots');
+  var panel = document.getElementById('swgPanel');
+  var avgEl = document.getElementById('swgAvgVal');
+  var isOpen = false;
+  function toggle() {
+    isOpen = !isOpen;
+    widget.classList.toggle('swg-score--open', isOpen);
+    pill.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  pill.addEventListener('click', toggle);
+  pill.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (isOpen && !widget.contains(e.target)) { toggle(); }
+  });
+  function render() {
+    var scores = window.SWG_SCORES || {};
+    var total = 0, count = 0;
+    dots.innerHTML = '';
+    KEYS.forEach(function (k) {
+      var s = (scores[k] && scores[k].score) || 0;
+      total += s; count++;
+      var d = document.createElement('span');
+      d.className = 'swg-score-dot';
+      d.style.background = dotColor(s);
+      d.title = LABELS[k] + ': ' + s;
+      dots.appendChild(d);
+    });
+    var avg = count ? (total / count) : 0;
+    avgEl.textContent = avg.toFixed(1);
+    panel.innerHTML = '';
+    KEYS.forEach(function (k) {
+      var data = scores[k] || { score: 0, reason: 'Not yet scored.' };
+      var s = data.score, reason = data.reason || 'Not yet scored.';
+      var row = document.createElement('div'); row.className = 'swg-score-row';
+      var label = document.createElement('span'); label.className = 'swg-score-label'; label.textContent = LABELS[k];
+      var barWrap = document.createElement('div'); barWrap.className = 'swg-score-bar-wrap';
+      var barFill = document.createElement('div'); barFill.className = 'swg-score-bar-fill';
+      barFill.style.width = (s * 10) + '%'; barFill.style.background = scoreColor(s);
+      barWrap.appendChild(barFill);
+      var num = document.createElement('span'); num.className = 'swg-score-num';
+      num.textContent = s.toFixed(1); num.style.color = scoreColor(s);
+      var help = document.createElement('span'); help.className = 'swg-score-help';
+      help.setAttribute('tabindex', '0'); help.setAttribute('role', 'button');
+      help.setAttribute('aria-label', LABELS[k] + ' score explanation'); help.textContent = '?';
+      var tip = document.createElement('span'); tip.className = 'swg-score-tooltip'; tip.textContent = reason;
+      help.appendChild(tip);
+      row.appendChild(label); row.appendChild(barWrap); row.appendChild(num); row.appendChild(help);
+      panel.appendChild(row);
+    });
+  }
+  window.updateScoreWidget = render;
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', render); }
+  else { setTimeout(render, 0); }
+})();
+</script>
+
+</body>
+</html>

@@ -123,14 +123,19 @@ p{max-width:65ch}
   background:rgba(10,10,10,0.97);
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:6px;
-  padding:6px 0;
+  justify-content:space-between;
+  padding:2px 0 2px 6px;
   position:fixed;
   top:0;
   left:0;
   right:0;
   z-index:1001;
+}
+.vb-right{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px 6px 0;
 }
 .version-bar .vb-label{
   font-size:9px;
@@ -1358,9 +1363,7 @@ footer{
 <style>
 /* ── SWG Score Widget ── */
 .swg-score-widget {
-  position: fixed;
-  top: 44px;
-  left: 0;
+  position: relative;
   z-index: 9998;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -1377,8 +1380,7 @@ footer{
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,0.08);
-  border-left: none;
-  border-radius: 0 16px 16px 0;
+  border-radius: 16px;
   padding: 5px 14px 5px 12px;
   cursor: pointer;
   transition: background 0.2s ease, box-shadow 0.2s ease;
@@ -1417,12 +1419,14 @@ footer{
   transition: background 0.2s ease;
 }
 .swg-score-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
   background: rgba(24, 24, 27, 0.96);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.08);
-  border-left: none;
-  border-radius: 0 0 12px 0;
+  border-radius: 0 12px 12px 12px;
   width: 240px;
   max-height: 0;
   overflow: hidden;
@@ -1539,7 +1543,7 @@ footer{
     padding: 4px 10px 4px 8px;
     gap: 0;
     height: 28px;
-    border-radius: 0 12px 12px 0;
+    border-radius: 12px;
   }
   .swg-score-dots { display: none; }
   .swg-score-avg { font-size: 12px; }
@@ -1561,12 +1565,24 @@ footer{
 
 <!-- Version Switcher -->
 <div class="version-bar">
-  <span class="vb-label">Version</span>
-  <a href="../v1.html">1</a>
-  <a href="../v2/">2</a>
-  <a href="../v3/">3</a>
-  <a href="../v4/">4</a>
-  <a href="../v5/" class="active">5</a>
+  <div class="swg-score-widget" id="swgScoreWidget">
+    <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
+      <span class="swg-score-avg">
+        <span class="swg-score-avg-val" id="swgAvgVal">0.0</span><span class="swg-score-avg-max">/10</span>
+      </span>
+      <span class="swg-score-dots" id="swgDots"></span>
+    </div>
+    <div class="swg-score-panel" id="swgPanel" role="region" aria-label="Score details"></div>
+  </div>
+  <div class="vb-right">
+    <span class="vb-label">Version</span>
+    <a href="../v1.html">1</a>
+    <a href="../v2/">2</a>
+    <a href="../v3/">3</a>
+    <a href="../v4/">4</a>
+    <a href="../v5/" class="active">5</a>
+    <a href="../v6/">6</a>
+  </div>
 </div>
 
 <!-- Q3 Client Bar -->
@@ -1602,16 +1618,6 @@ footer{
   </div>
 </nav>
 
-<!-- SWG Score Widget -->
-<div class="swg-score-widget" id="swgScoreWidget">
-  <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
-    <span class="swg-score-avg">
-      <span class="swg-score-avg-val" id="swgAvgVal">0.0</span><span class="swg-score-avg-max">/10</span>
-    </span>
-    <span class="swg-score-dots" id="swgDots"></span>
-  </div>
-  <div class="swg-score-panel" id="swgPanel" role="region" aria-label="Score details"></div>
-</div>
 
 <!-- Mouse-following orb -->
 <div class="hero-orb" id="heroOrb" aria-hidden="true"></div>
