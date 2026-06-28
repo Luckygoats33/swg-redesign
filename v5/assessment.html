@@ -55,6 +55,10 @@ body{font-family:var(--outfit);background:var(--paper);color:var(--ink);-webkit-
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
+/* ── Full-screen assessment: hide site chrome ── */
+.nav,.mobile-menu,.swg-score-widget{display:none!important}
+.assess-layout{margin-top:0!important}
+
 /* ── Version Bar ── */
 .version-bar{width:100%;background:var(--ink);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0}
 .version-bar .vb-label{font-family:var(--outfit);font-size:9px;font-weight:500;color:var(--paper-35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px}
@@ -131,6 +135,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* ── Form Main ── */
 .assess-main{padding:40px 25px 64px;max-width:760px}
 @media(min-width:768px){.assess-main{padding:56px 64px 80px}}
+.assess-close{position:fixed;top:16px;right:16px;z-index:200;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(250,250,247,0.1);transition:background 0.3s,transform 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.assess-close:hover{background:var(--violet);transform:scale(1.1)}
+.assess-close svg{width:18px;height:18px}
+@media(min-width:960px){.assess-close{top:24px;right:24px}}
 
 .step{display:none;animation:stepIn 0.5s var(--ease)}
 .step.active{display:block}

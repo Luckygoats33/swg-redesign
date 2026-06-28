@@ -186,14 +186,17 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 .hero-stat .label{font-family:var(--mono);font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:rgba(247,245,240,0.45);margin-top:4px}
 
 /* ━━ LOGOS ━━ */
-.logos{padding:40px 0;border-bottom:none;overflow:hidden;background:var(--navy)}
-@media(min-width:768px){.logos{padding:52px 0}}
-.logos-top{text-align:center;margin-bottom:24px;font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(247,245,240,0.5)}
+.logos{padding:56px 0;border-bottom:none;overflow:hidden;background:linear-gradient(135deg,#0c1e3a 0%,#152238 50%,#0e2240 100%);border-top:2px solid rgba(59,130,246,0.25);border-bottom:2px solid rgba(59,130,246,0.25)}
+@media(min-width:768px){.logos{padding:60px 0}}
+.logos-top{text-align:center;margin-bottom:28px;font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.85)}
 .logos-track{display:flex;gap:60px;animation:marquee 40s linear infinite;width:max-content;align-items:center}
 @media(min-width:768px){.logos-track{gap:80px}}
-.logos-track svg{height:28px;width:auto;opacity:0.8;transition:opacity 0.4s;flex-shrink:0}
-@media(min-width:768px){.logos-track svg{height:34px}}
-.logos-track svg:hover{opacity:1}
+.logos-track .logo-item{display:flex;align-items:center;gap:14px;flex-shrink:0;opacity:1;transition:opacity 0.4s,transform 0.3s var(--ease);padding:10px 20px;border:1px solid rgba(59,130,246,0.12);border-radius:10px;background:rgba(255,255,255,0.03)}
+.logos-track .logo-item:hover{opacity:1;transform:scale(1.05);border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.06)}
+.logos-track .logo-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--heading);font-weight:800;font-size:11px;color:#fff}
+@media(min-width:768px){.logos-track .logo-icon{width:42px;height:42px;font-size:12px}}
+.logos-track .logo-name{font-family:var(--heading);font-weight:800;font-size:15px;color:#fff;letter-spacing:0.02em;white-space:nowrap}
+@media(min-width:768px){.logos-track .logo-name{font-size:17px}}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ━━ SECTION SPACING ━━ */
@@ -225,8 +228,10 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 .showcase-img:hover img{transform:scale(1.04)}
 
 /* ━━ INTEGRATION DIAGRAM ━━ */
-.integ{background:var(--ivory);overflow:hidden}
-.integ-header{text-align:center;max-width:600px;margin:0 auto 48px}
+.integ{background:linear-gradient(180deg,var(--ivory) 0%,#EEF2F7 100%);overflow:hidden;position:relative}
+.integ::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,0.06) 0%,transparent 70%);border-radius:50%;transform:translate(-50%,-50%);animation:integGlow 6s ease-in-out infinite;pointer-events:none}
+@keyframes integGlow{0%,100%{opacity:0.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+.integ-header{text-align:center;max-width:600px;margin:0 auto 48px;position:relative;z-index:1}
 @media(min-width:768px){.integ-header{margin-bottom:72px}}
 .integ-header .eyebrow{justify-content:center}
 .integ-header .eyebrow::before{display:none}
@@ -237,18 +242,23 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 @keyframes dash{to{stroke-dashoffset:-200}}
 .integ-pulse{animation:ipulse 3s ease-in-out infinite}
 @keyframes ipulse{0%,100%{r:4;opacity:0.8}50%{r:7;opacity:0.3}}
-.integ-cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:48px}
-@media(min-width:640px){.integ-cards{grid-template-columns:repeat(3,1fr)}}
-.integ-card{padding:28px 24px;border-radius:14px;background:var(--white);border:1px solid var(--border);text-align:center;transition:all 0.5s var(--ease)}
-.integ-card:hover{transform:translateY(-6px);background:var(--navy);color:var(--ivory);border-color:transparent;box-shadow:0 24px 64px rgba(17,24,39,0.15)}
+.integ-cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:48px;position:relative;z-index:1}
+@media(min-width:640px){.integ-cards{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:640px){.integ-cards::before,.integ-cards::after{content:'';position:absolute;top:50%;width:40px;height:2px;background:linear-gradient(90deg,var(--accent),transparent);animation:connectPulse 2s ease-in-out infinite}.integ-cards::before{left:calc(33.33% - 10px)}.integ-cards::after{left:calc(66.66% - 10px);animation-delay:0.5s}}
+@keyframes connectPulse{0%,100%{opacity:0.3;transform:translateY(-50%) scaleX(0.8)}50%{opacity:1;transform:translateY(-50%) scaleX(1.2)}}
+.integ-card{padding:28px 24px;border-radius:14px;background:var(--white);border:1px solid var(--border);text-align:center;transition:all 0.5s var(--ease);position:relative;overflow:hidden}
+.integ-card::after{content:'';position:absolute;inset:-1px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#8B5CF6,var(--accent));opacity:0;transition:opacity 0.5s;z-index:-1;padding:2px}
+.integ-card:hover::after{opacity:1}
+.integ-card:hover{transform:translateY(-8px);background:var(--navy);color:var(--ivory);border-color:transparent;box-shadow:0 24px 64px rgba(59,130,246,0.2)}
 .integ-card:hover h4{color:var(--ivory)}
 .integ-card:hover p{color:rgba(247,245,240,0.5)}
-.integ-card:hover .ic-icon{background:var(--accent-10)}
+.integ-card:hover .ic-icon{background:rgba(59,130,246,0.15);animation:iconPulse 1.5s ease-in-out infinite}
 .integ-card:hover .ic-icon svg{stroke:var(--accent)}
-.ic-icon{width:50px;height:50px;border-radius:12px;background:var(--slate-50);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:all 0.5s var(--ease)}
-.ic-icon svg{width:22px;height:22px;stroke:var(--navy);transition:stroke 0.5s var(--ease)}
-.integ-card h4{margin-bottom:6px}
-.integ-card p{font-size:0.82rem;color:var(--muted);line-height:1.65;transition:color 0.5s var(--ease)}
+@keyframes iconPulse{0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,0.2)}50%{box-shadow:0 0 0 12px rgba(59,130,246,0)}}
+.ic-icon{width:56px;height:56px;border-radius:14px;background:var(--slate-50);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;transition:all 0.5s var(--ease)}
+.ic-icon svg{width:24px;height:24px;stroke:var(--navy);transition:stroke 0.5s var(--ease)}
+.integ-card h4{margin-bottom:8px}
+.integ-card p{font-size:0.84rem;color:var(--muted);line-height:1.65;transition:color 0.5s var(--ease)}
 
 /* ━━ PROBLEMS ━━ */
 .problems{background:var(--ivory)}
@@ -825,18 +835,18 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 <section class="logos" aria-label="Trusted companies">
   <div class="logos-top">Trusted by growing companies across 30+ industries</div>
   <div class="logos-track">
-    <svg viewBox="0 0 150 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="900" font-size="18" fill="#F7F5F0" letter-spacing="1">CAMOTOE</text></svg>
-    <svg viewBox="0 0 180 36"><text x="0" y="26" font-family="Sora,sans-serif" font-weight="400" font-size="16" fill="#F7F5F0" font-style="italic">Nature&apos;s Turn</text></svg>
-    <svg viewBox="0 0 160 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="800" font-size="16" fill="#F7F5F0" letter-spacing="0.5">SharkGroup</text></svg>
-    <svg viewBox="0 0 160 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="900" font-size="17" fill="#F7F5F0">Ballast Gym</text></svg>
-    <svg viewBox="0 0 220 36"><text x="0" y="26" font-family="Sora,sans-serif" font-weight="400" font-size="14" fill="#F7F5F0" letter-spacing="2.5">HOLY WAGYU MEATS</text></svg>
-    <svg viewBox="0 0 260 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="800" font-size="16" fill="#F7F5F0" letter-spacing="1">TRU NORTH CONSTRUCTION</text></svg>
-    <svg viewBox="0 0 150 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="900" font-size="18" fill="#F7F5F0" letter-spacing="1">CAMOTOE</text></svg>
-    <svg viewBox="0 0 180 36"><text x="0" y="26" font-family="Sora,sans-serif" font-weight="400" font-size="16" fill="#F7F5F0" font-style="italic">Nature&apos;s Turn</text></svg>
-    <svg viewBox="0 0 160 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="800" font-size="16" fill="#F7F5F0" letter-spacing="0.5">SharkGroup</text></svg>
-    <svg viewBox="0 0 160 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="900" font-size="17" fill="#F7F5F0">Ballast Gym</text></svg>
-    <svg viewBox="0 0 220 36"><text x="0" y="26" font-family="Sora,sans-serif" font-weight="400" font-size="14" fill="#F7F5F0" letter-spacing="2.5">HOLY WAGYU MEATS</text></svg>
-    <svg viewBox="0 0 260 36"><text x="0" y="27" font-family="Sora,sans-serif" font-weight="800" font-size="16" fill="#F7F5F0" letter-spacing="1">TRU NORTH CONSTRUCTION</text></svg>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#8B6914,#C49B2C)">CT</div><span class="logo-name">CAMOTOE</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#2D7A3A,#4CAF50)">NT</div><span class="logo-name" style="font-style:italic;font-weight:600">Nature's Turn</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#1565C0,#42A5F5)">SG</div><span class="logo-name">SharkGroup</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#D32F2F,#EF5350)">BG</div><span class="logo-name">Ballast Gym</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#6D4C41,#A1887F)">HW</div><span class="logo-name" style="letter-spacing:0.12em;font-size:14px">HOLY WAGYU MEATS</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#37474F,#78909C)">TN</div><span class="logo-name" style="letter-spacing:0.06em">TRU NORTH</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#8B6914,#C49B2C)">CT</div><span class="logo-name">CAMOTOE</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#2D7A3A,#4CAF50)">NT</div><span class="logo-name" style="font-style:italic;font-weight:600">Nature's Turn</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#1565C0,#42A5F5)">SG</div><span class="logo-name">SharkGroup</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#D32F2F,#EF5350)">BG</div><span class="logo-name">Ballast Gym</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#6D4C41,#A1887F)">HW</div><span class="logo-name" style="letter-spacing:0.12em;font-size:14px">HOLY WAGYU MEATS</span></div>
+    <div class="logo-item"><div class="logo-icon" style="background:linear-gradient(135deg,#37474F,#78909C)">TN</div><span class="logo-name" style="letter-spacing:0.06em">TRU NORTH</span></div>
   </div>
 </section>
 
@@ -852,12 +862,20 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 
 <section class="integ sec" id="integrations">
   <div class="wrap">
-    <div class="integ-header"><div class="eyebrow r">How it connects</div><h2 class="r d1">One growth engine. Six connected <span style="color:var(--accent)">systems.</span></h2></div>
-    <div class="integ-video-wrap r d2" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;max-width:900px;margin:0 auto 48px;box-shadow:0 20px 60px rgba(17,24,39,0.4)">
+    <div class="integ-header"><div class="eyebrow r">How it connects</div><h2 class="r d1">One growth engine. Six connected <span style="color:var(--accent)">systems.</span></h2><p class="body-lg r d2">Website, CRM, ads, email, AI, and reporting — connected to one strategy, working as one engine.</p></div>
+    <div class="integ-video-wrap r d2" style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;max-width:900px;margin:0 auto 48px;box-shadow:0 20px 60px rgba(17,24,39,0.4);border:1px solid rgba(59,130,246,0.15)">
       <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block" aria-hidden="true">
         <source src="../assets/v2-systems-video.mp4" type="video/mp4">
       </video>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(17,24,39,0.6));pointer-events:none"></div>
+      <div style="position:absolute;top:16px;left:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--accent);backdrop-filter:blur(8px);animation:float 4s ease-in-out infinite">Website</span>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--accent);backdrop-filter:blur(8px);animation:float 4s ease-in-out 0.5s infinite">CRM</span>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--accent);backdrop-filter:blur(8px);animation:float 4s ease-in-out 1s infinite">AI</span>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--accent);backdrop-filter:blur(8px);animation:float 4s ease-in-out 1.5s infinite">Ads</span>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--accent);backdrop-filter:blur(8px);animation:float 4s ease-in-out 2s infinite">Email</span>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--accent);backdrop-filter:blur(8px);animation:float 4s ease-in-out 2.5s infinite">Reporting</span>
+      </div>
     </div>
     <div class="integ-cards">
       <div class="integ-card r d1"><div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg></div><h4>Strategy first</h4><p>Every tool serves the growth plan — not the other way around.</p></div>

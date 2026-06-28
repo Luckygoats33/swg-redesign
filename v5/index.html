@@ -459,16 +459,18 @@ p{max-width:65ch}
    CLIENT LOGOS MARQUEE
    ================================================================ */
 .logos-section{
-  background:var(--ink);
-  padding:48px 0;
-  border-top:1px solid rgba(250,250,247,0.06);
-  border-bottom:1px solid rgba(250,250,247,0.06);
+  background:linear-gradient(180deg,#18181B 0%,#1E1B2E 50%,#18181B 100%);
+  padding:56px 0;
+  border-top:1px solid rgba(124,58,237,0.15);
+  border-bottom:1px solid rgba(124,58,237,0.15);
   overflow:hidden;
 }
 .logos-label{
   text-align:center;
-  margin-bottom:32px;
-  color:rgba(250,250,247,0.3);
+  margin-bottom:36px;
+  color:rgba(250,250,247,0.7);
+  font-weight:500;
+  font-size:13px;
 }
 .marquee-wrap{
   position:relative;
@@ -490,17 +492,30 @@ p{max-width:65ch}
 }
 .marquee-track span{
   font-family:var(--outfit);
-  font-weight:500;
-  font-size:clamp(0.85rem,1.3vw,1.05rem);
-  color:var(--paper);
-  opacity:0.3;
+  font-weight:700;
+  font-size:clamp(1.1rem,1.8vw,1.4rem);
+  color:#fff;
+  opacity:0.65;
   white-space:nowrap;
-  letter-spacing:0.03em;
-  transition:opacity 0.3s ease;
+  letter-spacing:0.04em;
+  transition:opacity 0.3s ease,color 0.3s ease;
   cursor:default;
+  padding:12px 0;
 }
 .marquee-track span:hover{
-  opacity:0.8;
+  opacity:1;
+  color:var(--violet);
+}
+.logo-pill{
+  background:rgba(250,250,247,0.04);
+  border:1px solid rgba(250,250,247,0.08);
+  border-radius:8px;
+  padding:14px 28px!important;
+  transition:all 0.3s ease;
+}
+.logo-pill:hover{
+  background:rgba(124,58,237,0.1);
+  border-color:rgba(124,58,237,0.25);
 }
 
 /* ================================================================
@@ -1504,19 +1519,19 @@ footer{
   <p class="label logos-label">Trusted by growing companies across 30+ industries</p>
   <div class="marquee-wrap">
     <div class="marquee-track" aria-hidden="true">
-      <span>CamoToe</span>
-      <span>Nature's Turn</span>
-      <span>SharkGroup</span>
-      <span>Ballast Gym</span>
-      <span>Holy Wagyu Meats</span>
-      <span>Tru North Construction</span>
+      <span class="logo-pill">CamoToe</span>
+      <span class="logo-pill">Nature's Turn</span>
+      <span class="logo-pill">SharkGroup</span>
+      <span class="logo-pill">Ballast Gym</span>
+      <span class="logo-pill">Holy Wagyu Meats</span>
+      <span class="logo-pill">Tru North Construction</span>
       <!-- Duplicate for seamless loop -->
-      <span>CamoToe</span>
-      <span>Nature's Turn</span>
-      <span>SharkGroup</span>
-      <span>Ballast Gym</span>
-      <span>Holy Wagyu Meats</span>
-      <span>Tru North Construction</span>
+      <span class="logo-pill">CamoToe</span>
+      <span class="logo-pill">Nature's Turn</span>
+      <span class="logo-pill">SharkGroup</span>
+      <span class="logo-pill">Ballast Gym</span>
+      <span class="logo-pill">Holy Wagyu Meats</span>
+      <span class="logo-pill">Tru North Construction</span>
     </div>
   </div>
 </section>

@@ -220,6 +220,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
 .back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+.announce-bar{background:var(--accent,#2563EB);color:#fff;text-align:center;padding:9px 16px;font-family:var(--body,Inter,sans-serif);font-size:12px;font-weight:600;letter-spacing:0.03em;position:relative;overflow:hidden}.announce-bar::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);background-size:200% 100%;animation:announceShimmer 3s ease-in-out infinite}@keyframes announceShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}.announce-bar span{position:relative;z-index:1}.pulse-dot{width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;margin-right:8px;vertical-align:middle;animation:pulseDot 2s ease-in-out infinite}@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.6)}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -421,11 +422,18 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
     transform: none;
   }
 }
+.announce-bar{background:var(--accent,#2563EB);color:#fff;text-align:center;padding:9px 16px;font-family:var(--body,Inter,sans-serif);font-size:12px;font-weight:600;letter-spacing:0.03em;position:relative;overflow:hidden}.announce-bar::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);background-size:200% 100%;animation:announceShimmer 3s ease-in-out infinite}@keyframes announceShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}.announce-bar span{position:relative;z-index:1}.pulse-dot{width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;margin-right:8px;vertical-align:middle;animation:pulseDot 2s ease-in-out infinite}@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.6)}}
 </style>
 </head>
 <body>
+<div class="announce-bar"><span><span class="pulse-dot"></span>Now accepting Q3 2026 clients</span></div>
 
 <div style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif"><span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span><a href="../v1.html" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1</a><a href="../v2/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a><a href="../v3/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:#2563EB;color:#fff;text-decoration:none">3</a><a href="../v4/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">4</a><a href="../v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a></div>
+
+<!-- Q3 Client Bar -->
+<div style="width:100%;background:#2563EB;text-align:center;padding:9px 16px;font-family:sans-serif;font-size:12px;font-weight:600;color:#fff;letter-spacing:0.03em;position:relative;overflow:hidden"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:middle;animation:pulseDot 2s ease-in-out infinite"></span>Now accepting Q3 2026 clients</div>
+<style>@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}.announce-bar{background:var(--accent,#2563EB);color:#fff;text-align:center;padding:9px 16px;font-family:var(--body,Inter,sans-serif);font-size:12px;font-weight:600;letter-spacing:0.03em;position:relative;overflow:hidden}.announce-bar::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);background-size:200% 100%;animation:announceShimmer 3s ease-in-out infinite}@keyframes announceShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}.announce-bar span{position:relative;z-index:1}.pulse-dot{width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;margin-right:8px;vertical-align:middle;animation:pulseDot 2s ease-in-out infinite}@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.6)}}
+</style>
 
 <!-- SWG Score Widget -->
 <div class="swg-score-widget" id="swgScoreWidget">
@@ -773,3 +781,19 @@ window.SWG_SCORES = {
 </script>
 </body>
 </html>
+<style>
+/* Enhanced hero headers with motion */
+.hero-gradient{position:relative;overflow:hidden;background:linear-gradient(145deg,#0a1628 0%,#111827 40%,#1a1a2e 70%,#0f1d32 100%) !important;animation:none !important}
+.hero-gradient .wrap{position:relative;z-index:2}
+.hero-gradient h1,.hero-gradient h2{color:#fff !important}
+.hero-gradient .eyebrow{color:#60a5fa !important}
+.hero-gradient .body-lg,.hero-gradient p:not(.eyebrow){color:rgba(255,255,255,0.65) !important}
+.hero-gradient::before{content:'';position:absolute;top:-100px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.15),transparent 70%);animation:heroOrb1 12s ease-in-out infinite;pointer-events:none}
+.hero-gradient::after{content:'';position:absolute;bottom:-80px;left:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.1),transparent 70%);animation:heroOrb2 16s ease-in-out infinite;pointer-events:none}
+@keyframes heroOrb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.15)}}
+@keyframes heroOrb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-25px) scale(1.1)}}
+.hero-gradient .btn-primary{background:#2563EB !important;color:#fff !important}
+.hero-gradient .btn-primary:hover{background:#7C3AED !important}
+.hero-gradient .btn-outline{border-color:rgba(255,255,255,0.25) !important;color:#fff !important}
+.hero-gradient .btn-outline:hover{background:rgba(255,255,255,0.1) !important;border-color:rgba(255,255,255,0.5) !important}
+</style>
