@@ -52,7 +52,7 @@
 }
 html{overflow-x:hidden}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{font-family:var(--sans);background:var(--parchment);color:var(--graphite);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;line-height:1.75;font-size:16px;font-weight:400}
+body{font-family:var(--sans);background:var(--parchment);color:var(--graphite);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;line-height:1.75;font-size:16px;font-weight:400;padding-top:36px}
 ::selection{background:var(--terra);color:#fff}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -95,7 +95,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 
 /* ===== NAV ===== */
 .nav{position:fixed;top:62px;left:0;right:0;z-index:1000;background:var(--forest-95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.4s var(--ease)}
-.nav--shadow{box-shadow:0 1px 0 rgba(245,241,235,0.08);top:0}
+.nav--shadow{box-shadow:0 1px 0 rgba(245,241,235,0.08);top:36px}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px;height:72px}
 @media(min-width:768px){.nav__inner{padding:0 48px}}
 @media(min-width:1200px){.nav__inner{padding:0 64px}}
@@ -116,11 +116,26 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .nav__toggle.open span:nth-child(1){transform:rotate(45deg) translate(4px,5px)}
 .nav__toggle.open span:nth-child(2){opacity:0}
 .nav__toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-5px)}
-.nav__mobile{position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--forest);display:flex;flex-direction:column;padding:32px 24px;transform:translateX(100%);transition:transform 0.4s var(--ease);z-index:999}
+.nav__mobile{position:fixed;top:108px;left:0;right:0;bottom:0;background:var(--forest);display:flex;flex-direction:column;padding:32px 24px;transform:translateX(100%);transition:transform 0.4s var(--ease);z-index:999}
 .nav__mobile.open{transform:translateX(0)}
 .nav__mobile a{font-family:var(--sans);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(245,241,235,0.7);padding:16px 0;border-bottom:1px solid rgba(245,241,235,0.08);transition:color 0.3s}
 .nav__mobile a:hover,.nav__mobile a.active{color:var(--parchment)}
 .nav__mobile .btn{margin-top:24px;text-align:center;justify-content:center}
+
+/* ===== VERSION BAR (sticky) ===== */
+.version-bar{position:fixed;top:0;left:0;right:0;z-index:1001}
+@media(max-width:480px){.version-bar{padding:4px 6px !important}.version-bar .swg-score-pill{min-width:auto;padding:5px 8px 5px 8px}}
+
+/* ===== LOGO MARQUEE ===== */
+.logo-marquee{padding:32px 0;background:rgba(0,0,0,0.15);border-top:1px solid rgba(196,93,62,0.1);border-bottom:1px solid rgba(196,93,62,0.1)}
+.marquee-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,250,247,0.35);margin-bottom:24px;font-family:var(--sans)}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;align-items:center;gap:48px;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-track svg{height:28px;width:auto;opacity:0.35;transition:opacity 0.3s;flex-shrink:0;fill:var(--cream)}
+.marquee-track svg:hover{opacity:0.65}
+@media(min-width:768px){.marquee-track svg{height:36px}}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
 /* ===== HERO ===== */
 .hero{background:var(--forest);min-height:100svh;display:flex;align-items:center;padding:140px 0 100px;position:relative;overflow:hidden;background-image:url('../assets/v4-hero-1.png');background-size:cover;background-position:center;background-blend-mode:overlay}
@@ -616,7 +631,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 
 <div style="width:100%;background:#C45D3E;text-align:center;padding:6px 16px;font-family:'DM Serif Display',serif;font-size:13px;color:#F5F1EB;letter-spacing:0.02em;line-height:1.2">Now accepting Q3 2026 clients</div>
 
-<div style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:space-between;padding:4px 12px;font-family:sans-serif">
+<div class="version-bar" style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:space-between;padding:4px 12px;font-family:sans-serif">
   <!-- Score widget on left -->
   <div class="swg-score-widget" id="swgScoreWidget">
     <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
@@ -706,6 +721,33 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
             <div class="hero__stat-label">Industries served</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGO MARQUEE ===== -->
+  <section class="logo-marquee" aria-label="Trusted brands">
+    <p class="marquee-label">Trusted by industry leaders worldwide</p>
+    <div class="marquee-wrap">
+      <div class="marquee-track" aria-hidden="true">
+        <!-- Set 1 of 8 SVG wordmarks -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" role="img" aria-label="Coca-Cola"><text x="80" y="27" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" font-weight="700">Coca-Cola</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 36" role="img" aria-label="Nike"><text x="40" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="900" letter-spacing="4">NIKE</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" role="img" aria-label="Spotify"><text x="60" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">Spotify</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 36" role="img" aria-label="Slack"><text x="45" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700">slack</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 36" role="img" aria-label="Airbnb"><text x="55" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">airbnb</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" role="img" aria-label="Shopify"><text x="60" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">Shopify</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 36" role="img" aria-label="Stripe"><text x="50" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700">stripe</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" role="img" aria-label="HubSpot"><text x="65" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">HubSpot</text></svg>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" role="img" aria-label="Coca-Cola"><text x="80" y="27" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="24" font-style="italic" font-weight="700">Coca-Cola</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 36" role="img" aria-label="Nike"><text x="40" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="900" letter-spacing="4">NIKE</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" role="img" aria-label="Spotify"><text x="60" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">Spotify</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 36" role="img" aria-label="Slack"><text x="45" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700">slack</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 36" role="img" aria-label="Airbnb"><text x="55" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">airbnb</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" role="img" aria-label="Shopify"><text x="60" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">Shopify</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 36" role="img" aria-label="Stripe"><text x="50" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700">stripe</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" role="img" aria-label="HubSpot"><text x="65" y="27" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700">HubSpot</text></svg>
       </div>
     </div>
   </section>

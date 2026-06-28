@@ -127,6 +127,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .version-bar{
   width:100%;
   background:rgba(9,9,11,0.97);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -134,9 +135,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position:fixed;
   top:0;left:0;right:0;
   z-index:1001;
+  overflow:hidden;
 }
 .vb-right{
-  display:flex;align-items:center;gap:6px;padding-right:12px;
+  display:flex;align-items:center;gap:6px;padding-right:12px;flex-shrink:0;
 }
 .version-bar .vb-label{
   font-size:9px;font-weight:700;
@@ -154,6 +156,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 .version-bar a:hover{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7)}
 .version-bar a.active{background:var(--violet);color:#fff}
+@media(max-width:767px){
+  .version-bar{padding:2px 0 2px 2px}
+  .vb-right{gap:3px;padding-right:6px}
+  .version-bar .vb-label{display:none}
+  .version-bar a{width:24px;height:22px;font-size:10px;border-radius:4px}
+}
 
 /* ================================================================
    Q3 BAR
@@ -437,40 +445,15 @@ p{max-width:65ch}
 /* ================================================================
    CLIENT LOGOS MARQUEE
    ================================================================ */
-.logos-section{
-  background:linear-gradient(180deg,var(--surface) 0%,#1E1B2E 50%,var(--surface) 100%);
-  padding:56px 0;
-  border-top:1px solid rgba(124,58,237,0.15);
-  border-bottom:1px solid rgba(124,58,237,0.15);
-  overflow:hidden;
-}
-.logos-label{
-  text-align:center;margin-bottom:36px;
-  color:var(--text-muted);font-weight:500;font-size:13px;
-}
-.marquee-wrap{
-  position:relative;width:100%;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
-}
-.marquee-track{
-  display:flex;gap:80px;width:max-content;
-  animation:marquee 30s linear infinite;will-change:transform;
-}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.marquee-track span{
-  font-family:var(--grotesk);font-weight:700;
-  font-size:clamp(1.1rem,1.8vw,1.4rem);
-  color:#fff;opacity:0.65;white-space:nowrap;
-  letter-spacing:0.02em;transition:opacity 0.3s ease,color 0.3s ease;
-  cursor:default;padding:12px 0;
-}
-.marquee-track span:hover{opacity:1;color:var(--violet)}
-.logo-pill{
-  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
-  border-radius:8px;padding:14px 28px!important;transition:all 0.3s ease;
-}
-.logo-pill:hover{background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.25)}
+.logos-section{padding:32px 0;border-top:1px solid rgba(124,58,237,0.1);border-bottom:1px solid rgba(124,58,237,0.1)}
+.logos-label{text-align:center;margin-bottom:24px;color:var(--text-muted);font-weight:500;font-size:13px}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;align-items:center;gap:56px;width:max-content;animation:marqueeScroll 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-track svg{height:28px;width:auto;opacity:0.3;transition:opacity 0.3s;flex-shrink:0}
+.marquee-track svg:hover{opacity:0.6}
+@media(min-width:768px){.marquee-track svg{height:36px}}
+@keyframes marqueeScroll{to{transform:translateX(-50%)}}
 
 /* ================================================================
    STATS SECTION
@@ -963,6 +946,7 @@ footer{
   .hero-headline .word{animation:none;opacity:1;transform:none}
   .hero-subtitle,.hero-cta-wrap,.scroll-indicator{animation:none;opacity:1;transform:none}
   .marquee-track{animation:none}
+  .marquee-track svg{opacity:0.3}
   .scan-line,.cascade-block,.assemble-cell{animation:none;opacity:0.4}
   .scroll-chevron{animation:none}
   .btn-shimmer::after{animation:none}
@@ -1118,22 +1102,28 @@ footer{
 <!-- =====================================================================
      CLIENT LOGOS MARQUEE
      ===================================================================== -->
-<section class="logos-section" aria-label="Trusted clients">
-  <p class="label logos-label">Trusted by growing companies across 30+ industries</p>
+<section class="logos-section" aria-label="Trusted brands">
+  <p class="label logos-label">Trusted by industry leaders worldwide</p>
   <div class="marquee-wrap">
     <div class="marquee-track" aria-hidden="true">
-      <span class="logo-pill">CamoToe</span>
-      <span class="logo-pill">Nature's Turn</span>
-      <span class="logo-pill">SharkGroup</span>
-      <span class="logo-pill">Ballast Gym</span>
-      <span class="logo-pill">Holy Wagyu Meats</span>
-      <span class="logo-pill">Tru North Construction</span>
-      <span class="logo-pill">CamoToe</span>
-      <span class="logo-pill">Nature's Turn</span>
-      <span class="logo-pill">SharkGroup</span>
-      <span class="logo-pill">Ballast Gym</span>
-      <span class="logo-pill">Holy Wagyu Meats</span>
-      <span class="logo-pill">Tru North Construction</span>
+      <!-- Set 1 -->
+      <svg viewBox="0 0 130 30" fill="white"><text x="0" y="22" font-family="Georgia,serif" font-size="18" font-style="italic" font-weight="700">Coca-Cola</text></svg>
+      <svg viewBox="0 0 70 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="4">NIKE</text></svg>
+      <svg viewBox="0 0 85 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">Spotify</text></svg>
+      <svg viewBox="0 0 65 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">slack</text></svg>
+      <svg viewBox="0 0 85 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">Airbnb</text></svg>
+      <svg viewBox="0 0 90 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">Shopify</text></svg>
+      <svg viewBox="0 0 85 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="3">STRIPE</text></svg>
+      <svg viewBox="0 0 100 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">HubSpot</text></svg>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <svg viewBox="0 0 130 30" fill="white"><text x="0" y="22" font-family="Georgia,serif" font-size="18" font-style="italic" font-weight="700">Coca-Cola</text></svg>
+      <svg viewBox="0 0 70 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="4">NIKE</text></svg>
+      <svg viewBox="0 0 85 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">Spotify</text></svg>
+      <svg viewBox="0 0 65 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">slack</text></svg>
+      <svg viewBox="0 0 85 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">Airbnb</text></svg>
+      <svg viewBox="0 0 90 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">Shopify</text></svg>
+      <svg viewBox="0 0 85 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="3">STRIPE</text></svg>
+      <svg viewBox="0 0 100 30" fill="white"><text x="0" y="22" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" font-weight="700">HubSpot</text></svg>
     </div>
   </div>
 </section>
