@@ -92,7 +92,9 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   .r{opacity:1;transform:none;transition:none}
   .flip-card-inner{transition:none!important}
   .hero-gear{animation:none!important}
+  .hero-gear::before{animation:none!important}
   .counter-num{animation:none!important}
+  .hiw-step{opacity:1!important;transform:none!important}
 }
 
 /* Section spacing */
@@ -134,7 +136,10 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .mobile-menu .btn{margin-top:36px;justify-content:center}
 
 /* ━━ HERO ━━ */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--white)}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--white);background-image:url('../assets/v3-hero-1.png');background-size:cover;background-position:center}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.82);z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+@media(max-width:767px){.hero{background-image:none}}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;padding:160px 0 80px}
 @media(min-width:1024px){.hero-grid{grid-template-columns:7fr 5fr;gap:80px}}
 .hero-text{max-width:620px}
@@ -149,20 +154,26 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 /* Hero CSS illustration — interlocking gears */
 .hero-illustration{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;margin:0 auto;animation:fadeUp 0.8s var(--ease) 0.5s both}
 @media(max-width:1023px){.hero-illustration{max-width:320px}}
-.hero-gear{position:absolute;border-radius:50%;border:3px solid var(--accent);opacity:0.15;transition:all 0.6s var(--ease)}
+.hero-gear{position:absolute;border-radius:50%;border:3px solid var(--accent);opacity:0.15;transition:opacity 0.6s var(--ease),border-color 0.6s var(--ease)}
 .hero-illustration:hover .hero-gear{opacity:0.4}
 .hero-gear-1{width:55%;height:55%;top:5%;left:5%;animation:gearSpin 20s linear infinite}
 .hero-gear-2{width:40%;height:40%;bottom:10%;right:5%;animation:gearSpin 15s linear infinite reverse}
 .hero-gear-3{width:30%;height:30%;top:40%;left:40%;animation:gearSpin 25s linear infinite;border-color:var(--accent-hover)}
 .hero-gear-4{width:20%;height:20%;top:15%;right:20%;animation:gearSpin 12s linear infinite reverse;border-color:var(--accent-hover);opacity:0.1}
 .hero-illustration:hover .hero-gear-4{opacity:0.35}
+/* Hover: speed up rotation */
+.hero-illustration:hover .hero-gear-1{animation-duration:5s}
+.hero-illustration:hover .hero-gear-2{animation-duration:3.75s}
+.hero-illustration:hover .hero-gear-3{animation-duration:6.25s}
+.hero-illustration:hover .hero-gear-4{animation-duration:3s}
 @keyframes gearSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .hero-illustration.gear-boost .hero-gear{animation-duration:4s}
 
-/* Gear center dots */
-.hero-gear::before{content:'';position:absolute;top:50%;left:50%;width:8px;height:8px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%);opacity:0.6}
-.hero-gear-3::before{background:var(--accent-hover)}
-.hero-gear-4::before{background:var(--accent-hover);width:6px;height:6px}
+/* Gear center dots + pulsing glow */
+.hero-gear::before{content:'';position:absolute;top:50%;left:50%;width:8px;height:8px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%);opacity:0.6;animation:centerPulse 3s ease-in-out infinite}
+.hero-gear-3::before{background:var(--accent-hover);animation-delay:0.5s}
+.hero-gear-4::before{background:var(--accent-hover);width:6px;height:6px;animation-delay:1s}
+@keyframes centerPulse{0%,100%{box-shadow:0 0 4px rgba(37,99,235,0.3);opacity:0.6}50%{box-shadow:0 0 14px rgba(37,99,235,0.6),0 0 28px rgba(37,99,235,0.2);opacity:1}}
 
 /* Connector lines in hero illustration */
 .hero-connector{position:absolute;background:var(--accent);opacity:0.08;transition:opacity 0.6s var(--ease)}
@@ -261,6 +272,23 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .timeline-hint svg{width:16px;height:16px;animation:hintBounce 1.5s ease-in-out infinite}
 @keyframes hintBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 
+/* ━━ HOW IT WORKS — Upgraded Steps ━━ */
+.hiw-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-top:56px;position:relative}
+@media(min-width:768px){.hiw-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
+.hiw-step{background:var(--light-blue);border-radius:16px;padding:40px 28px 36px;text-align:center;transition:all 0.5s var(--ease);position:relative;opacity:0;transform:translateY(30px)}
+.hiw-step.vis{opacity:1;transform:none}
+.hiw-step:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(37,99,235,0.18)}
+.hiw-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#1D4ED8);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:var(--heading);font-weight:700;font-size:18px;color:#fff;letter-spacing:-0.02em}
+.hiw-icon{width:48px;height:48px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+.hiw-icon svg{width:32px;height:32px;color:var(--accent);stroke-width:1.5}
+.hiw-step h3{color:var(--deep-navy);margin-bottom:10px;font-size:1.15rem}
+.hiw-step p{font-size:0.88rem;color:var(--slate);line-height:1.75}
+/* SVG connecting arrows between steps (desktop only) */
+.hiw-arrows{display:none;position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+@media(min-width:768px){.hiw-arrows{display:block}}
+.hiw-arrows svg{width:100%;height:100%}
+.hiw-arrow-path{stroke:var(--accent);stroke-width:2;fill:none;opacity:0.25;stroke-dasharray:8 4}
+
 /* ━━ OUTCOMES — Animated Counters ━━ */
 .outcomes-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:48px}
 @media(min-width:640px){.outcomes-grid{grid-template-columns:repeat(2,1fr)}}
@@ -303,6 +331,11 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .sec-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:0.02em;color:var(--accent);margin-top:32px;transition:gap 0.3s var(--ease)}
 .sec-link:hover{gap:14px;color:var(--accent-hover)}
 .sec-link svg{width:16px;height:16px}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#2563EB;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -596,14 +629,14 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <!-- TRUSTED BY — Client Logo Bar -->
 <section style="padding:48px 0;background:var(--white);border-bottom:1px solid rgba(37,99,235,0.06)">
   <div class="wrap">
-    <p style="text-align:center;font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin-bottom:28px">Trusted by growth-stage companies</p>
+    <p style="text-align:center;font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin-bottom:28px">Trusted by growing companies across 30+ industries</p>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 48px">
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Meridian Partners</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Vitality Roots</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Apex Mechanical</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Archway Labs</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Riverstone Capital</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Fern &amp; Bloom</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">CamoToe</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Nature's Turn</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">SharkGroup</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Ballast Gym</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Holy Wagyu Meats</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Tru North Construction</span>
     </div>
   </div>
 </section>
@@ -803,53 +836,54 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   </div>
 </section>
 
-<!-- 5. HOW IT WORKS — Horizontal Scroll Timeline (dark section) -->
+<!-- 5. HOW IT WORKS — Visual Step Cards -->
 <section class="sec sec-dark" id="how">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:48px">
+    <div style="max-width:680px;margin-bottom:16px">
       <div class="eyebrow r" style="color:rgba(37,99,235,0.8)">How it works</div>
       <h2 class="r d1" style="color:#fff">Business Review. Focused Build. Ongoing Support.</h2>
       <p class="body-lg r d2" style="color:rgba(255,255,255,0.5)">Every engagement starts the same way: understand the business first. Then build in the right order.</p>
     </div>
-    <div class="timeline-scroll r d3">
-      <div class="timeline-track">
-        <div class="timeline-card">
-          <div class="timeline-card-num">01</div>
-          <h3>Discovery Call</h3>
-          <p>A 30-minute conversation to understand your business, goals, and current bottlenecks. No pitch -- just questions.</p>
-          <div class="timeline-connector"></div>
+    <div class="hiw-grid">
+      <!-- SVG connecting arrows (desktop) -->
+      <div class="hiw-arrows" aria-hidden="true">
+        <svg viewBox="0 0 900 280" preserveAspectRatio="none">
+          <path class="hiw-arrow-path" d="M280,140 C320,140 340,140 380,140" marker-end="url(#hiwArrow)"/>
+          <path class="hiw-arrow-path" d="M580,140 C620,140 640,140 680,140" marker-end="url(#hiwArrow)"/>
+          <defs>
+            <marker id="hiwArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.4"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <div class="hiw-step r d1">
+        <div class="hiw-num">01</div>
+        <div class="hiw-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <div class="timeline-card">
-          <div class="timeline-card-num">02</div>
-          <h3>Business Review</h3>
-          <p>A structured diagnostic of revenue model, customer journey, tech stack, team capacity, and marketing performance.</p>
-          <div class="timeline-connector"></div>
+        <h3>Business Review</h3>
+        <p>A structured diagnostic of your revenue model, customer journey, tech stack, team capacity, and marketing performance. We find what is actually blocking growth.</p>
+      </div>
+      <div class="hiw-step r d2">
+        <div class="hiw-num">02</div>
+        <div class="hiw-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <div class="timeline-card">
-          <div class="timeline-card-num">03</div>
-          <h3>Prioritized Roadmap</h3>
-          <p>You get specific recommendations in priority order -- not a generic audit. Each item has a clear business case.</p>
-          <div class="timeline-connector"></div>
+        <h3>Focused Build</h3>
+        <p>We execute in phases. Each phase ships working assets -- rebuilt site, clean CRM, live campaigns -- in the order that creates the most leverage.</p>
+      </div>
+      <div class="hiw-step r d3">
+        <div class="hiw-num">03</div>
+        <div class="hiw-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-        <div class="timeline-card">
-          <div class="timeline-card-num">04</div>
-          <h3>Focused Build</h3>
-          <p>We execute in phases. Each phase ships working assets -- rebuilt site, clean CRM, live campaigns -- in the order that creates leverage.</p>
-          <div class="timeline-connector"></div>
-        </div>
-        <div class="timeline-card">
-          <div class="timeline-card-num">05</div>
-          <h3>Ongoing Support</h3>
-          <p>Monthly retainer for optimization, new campaigns, workflow builds, and strategic guidance. Your systems stay current.</p>
-        </div>
+        <h3>Ongoing Support</h3>
+        <p>Monthly retainer for optimization, new campaigns, workflow builds, and strategic guidance. Your systems stay current and keep compounding.</p>
       </div>
     </div>
-    <div class="timeline-hint r d4">
-      <span>Scroll to explore</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </div>
-    <div style="margin-top:32px" class="r d5">
-      <a href="process.html" class="sec-link" style="color:rgba(255,255,255,0.45)">Learn about the process <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div style="margin-top:40px" class="r d4">
+      <a href="process.html" class="sec-link" style="color:rgba(255,255,255,0.45)">Learn about the full process <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -863,42 +897,10 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
     </div>
     <div class="outcomes-grid">
       <div class="outcome-card r d1">
-        <span class="outcome-label">Conversion</span>
-        <div class="counter-num" data-target="3.95" data-suffix="%" data-decimals="2">0%</div>
-        <h4>Avg. conversion rate lift</h4>
-        <p>Connected systems mean more visitors become customers without increasing ad spend.</p>
-      </div>
-      <div class="outcome-card r d2">
-        <span class="outcome-label">Revenue</span>
-        <div class="counter-num" data-target="480" data-prefix="$" data-suffix="K">$0K</div>
-        <h4>Additional revenue unlocked</h4>
-        <p>Average client sees this in recovered revenue within the first year of engagement.</p>
-      </div>
-      <div class="outcome-card r d3">
-        <span class="outcome-label">Efficiency</span>
-        <div class="counter-num" data-target="6" data-suffix="x">0x</div>
-        <h4>Average ROI</h4>
-        <p>For every dollar invested in SWG, clients see six dollars in measurable business impact.</p>
-      </div>
-      <div class="outcome-card r d4">
         <span class="outcome-label">Clarity</span>
         <div class="counter-num" data-target="92" data-suffix="%">0%</div>
         <h4>Client retention rate</h4>
         <p>Clients stay because the systems work. Not because of contracts -- because of results.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="sec sec-white" style="padding:80px 0">
-  <div class="wrap" style="max-width:800px;text-align:center">
-    <div class="r">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style="margin:0 auto 24px;display:block;opacity:0.12"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="var(--accent)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="var(--accent)"/></svg>
-      <blockquote style="font-family:var(--heading);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:600;line-height:1.4;letter-spacing:-0.02em;color:var(--deep-navy);margin-bottom:24px">SWG did not just build our website. They rebuilt how we think about growth. Every system connects to the one before it. For the first time, we can see the full picture.</blockquote>
-      <div>
-        <p style="font-family:var(--body);font-weight:600;font-size:0.9rem;color:var(--deep-navy)">Rachel Thornton</p>
-        <p style="font-family:var(--body);font-weight:400;font-size:0.82rem;color:var(--slate)">COO, Meridian Partners</p>
       </div>
     </div>
   </div>
@@ -1010,6 +1012,44 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       });
     }, {threshold:0.3});
     gearObs.observe(heroIllustration);
+  }
+
+  // Gear mousemove parallax (desktop only)
+  if(heroIllustration && window.matchMedia('(min-width:1024px)').matches){
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(!prefersReduced){
+      heroIllustration.style.transition = 'transform 0.15s ease-out';
+      document.querySelector('.hero').addEventListener('mousemove', function(e){
+        var rect = heroIllustration.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var dx = (e.clientX - cx) / (rect.width / 2);
+        var dy = (e.clientY - cy) / (rect.height / 2);
+        var maxShift = 12;
+        var tx = dx * maxShift;
+        var ty = dy * maxShift;
+        heroIllustration.style.transform = 'translate(' + tx + 'px,' + ty + 'px)';
+      });
+      document.querySelector('.hero').addEventListener('mouseleave', function(){
+        heroIllustration.style.transform = 'translate(0,0)';
+      });
+    }
+  }
+
+  // ━━ How-It-Works staggered reveal ━━
+  var hiwSteps = document.querySelectorAll('.hiw-step');
+  if(hiwSteps.length && 'IntersectionObserver' in window){
+    var hiwObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('vis');
+          hiwObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    hiwSteps.forEach(function(el){ hiwObs.observe(el); });
+  } else {
+    hiwSteps.forEach(function(el){ el.classList.add('vis'); });
   }
 
   // ━━ Accordion ━━
@@ -1192,5 +1232,21 @@ window.SWG_SCORES = {
 })();
 </script>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

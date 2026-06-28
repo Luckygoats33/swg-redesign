@@ -87,6 +87,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .d7{transition-delay:0.42s}.d8{transition-delay:0.48s}
 @media(prefers-reduced-motion:reduce){
   .r{opacity:1;transform:none;transition:none}
+  .hero{animation:none!important}
+  .hero::before,.hero::after{animation:none!important}
 }
 
 /* Section spacing */
@@ -127,8 +129,13 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .mobile-menu .btn{margin-top:36px;justify-content:center}
 
 /* ━━ HERO ━━ */
-.hero{position:relative;min-height:70svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:var(--light-blue);padding:160px 0 100px}
+.hero{position:relative;min-height:70svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:linear-gradient(160deg,#F0F4FF 0%,#FFFFFF 30%,#E8EEFF 65%,#F0F4FF 100%);background-size:400% 400%;animation:gradientShift 15s ease infinite;padding:160px 0 100px}
 @media(min-width:768px){.hero{padding:180px 0 140px}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before{content:'';position:absolute;top:-50px;left:-70px;width:280px;height:280px;border-radius:50%;background:rgba(37,99,235,0.04);animation:geoDrift1 22s ease-in-out infinite;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-50px;right:-40px;width:220px;height:220px;border:2px solid rgba(124,58,237,0.05);border-radius:50%;animation:geoDrift2 18s ease-in-out infinite;pointer-events:none}
+@keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-25px) scale(1.06)}66%{transform:translate(-15px,20px) scale(0.95)}}
+@keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-20px,15px) rotate(40deg)}}
 .hero h1{margin-bottom:24px;max-width:680px}
 .hero .body-lg{margin-bottom:36px;max-width:580px}
 
@@ -224,6 +231,11 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .footer-bottom p{font-size:0.7rem;color:var(--slate);font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#2563EB;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -490,13 +502,13 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <section class="logo-bar" aria-label="Trusted by">
   <div class="wrap">
     <div class="logo-bar-inner">
-      <span class="logo-bar-label">Trusted by</span>
-      <span class="logo-bar-item">Meridian Partners</span>
-      <span class="logo-bar-item">Vitality Roots</span>
-      <span class="logo-bar-item">Apex Mechanical</span>
-      <span class="logo-bar-item">Archway Labs</span>
-      <span class="logo-bar-item">Riverstone Capital</span>
-      <span class="logo-bar-item">Fern &amp; Bloom</span>
+      <span class="logo-bar-label">Trusted by growing companies across 30+ industries</span>
+      <span class="logo-bar-item">CamoToe</span>
+      <span class="logo-bar-item">Nature's Turn</span>
+      <span class="logo-bar-item">SharkGroup</span>
+      <span class="logo-bar-item">Ballast Gym</span>
+      <span class="logo-bar-item">Holy Wagyu Meats</span>
+      <span class="logo-bar-item">Tru North Construction</span>
     </div>
   </div>
 </section>
@@ -684,15 +696,6 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   </div>
 </section>
 
-<!-- ━━ TESTIMONIAL ━━ -->
-<section class="testimonial-section">
-  <div class="wrap">
-    <div class="testimonial-card r">
-      <div class="testimonial-quote">Other vendors delivered a website and left. SWG connected it to our CRM, our ads, and our reporting. Six months later, we can trace every dollar.</div>
-      <div class="testimonial-attribution"><strong>Lisa Nakamura</strong>, CEO, Vitality Roots</div>
-    </div>
-  </div>
-</section>
 
 <!-- ━━ BOTTOM CTA ━━ -->
 <section class="cta-section">
@@ -868,5 +871,21 @@ window.SWG_SCORES = {
 })();
 </script>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

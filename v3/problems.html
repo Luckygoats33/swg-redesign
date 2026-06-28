@@ -75,7 +75,21 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .r.vis{opacity:1;transform:none}
 .d1{transition-delay:0.07s}.d2{transition-delay:0.14s}.d3{transition-delay:0.21s}.d4{transition-delay:0.28s}
 .d5{transition-delay:0.35s}.d6{transition-delay:0.42s}.d7{transition-delay:0.49s}.d8{transition-delay:0.56s}
-@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){
+  .r{opacity:1;transform:none;transition:none}
+  .hero-gradient{animation:none!important}
+  .hero-gradient::before,.hero-gradient::after{animation:none!important}
+}
+
+/* ━━ HERO GRADIENT ━━ */
+.hero-gradient{position:relative;overflow:hidden;background:linear-gradient(145deg,#F0F4FF 0%,#E8EEFF 35%,#FFFFFF 65%,#F0F4FF 100%);background-size:400% 400%;animation:gradientShift 14s ease infinite}
+.hero-gradient .wrap{position:relative;z-index:1}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+/* Floating geometric decorations */
+.hero-gradient::before{content:'';position:absolute;top:-60px;right:-40px;width:260px;height:260px;border-radius:50%;background:rgba(37,99,235,0.05);animation:geoDrift1 18s ease-in-out infinite;pointer-events:none}
+.hero-gradient::after{content:'';position:absolute;bottom:-30px;left:-20px;width:180px;height:180px;border:2px solid rgba(37,99,235,0.06);border-radius:50%;animation:geoDrift2 22s ease-in-out infinite;pointer-events:none}
+@keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-30px,20px) scale(1.05)}66%{transform:translate(20px,-15px) scale(0.96)}}
+@keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(25px,-20px) rotate(45deg)}}
 
 /* ━━ NAV ━━ */
 .nav{position:fixed;top:36px;left:0;right:0;z-index:100;padding:20px 0;transition:all 0.4s var(--ease)}
@@ -173,6 +187,11 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .footer-bottom p{font-size:0.7rem;color:var(--slate);font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#2563EB;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -428,7 +447,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <main id="main">
 
 <!-- ━━ HERO ━━ -->
-<section class="sec sec-light" style="padding:160px 0 80px">
+<section class="sec hero-gradient" style="padding:160px 0 80px">
   <div class="wrap">
     <div class="eyebrow r">Problems we solve</div>
     <h1 class="r d1" style="max-width:680px">The problem is rarely just one service.</h1>
@@ -709,18 +728,6 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   </div>
 </section>
 
-<!-- ━━ TESTIMONIAL ━━ -->
-<section class="sec sec-white" style="padding:80px 0">
-  <div class="wrap" style="max-width:800px;text-align:center">
-    <div class="r">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style="margin:0 auto 24px;display:block;opacity:0.12"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="var(--accent)"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="var(--accent)"/></svg>
-      <blockquote style="font-family:var(--heading);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:600;line-height:1.4;letter-spacing:-0.02em;color:var(--deep-navy);margin-bottom:24px">We had tried three agencies before SWG. The difference was that they started by understanding our business, not selling us a package. The diagnosis changed everything.</blockquote>
-      <p style="font-family:var(--body);font-weight:600;font-size:0.9rem;color:var(--deep-navy)">James Whitfield</p>
-      <p style="font-family:var(--body);font-weight:400;font-size:0.82rem;color:var(--slate)">Founder, Apex Mechanical</p>
-    </div>
-  </div>
-</section>
-
 <!-- ━━ CTA ━━ -->
 <section class="cta-section">
   <div class="wrap">
@@ -859,5 +866,21 @@ window.SWG_SCORES = {
 })();
 </script>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

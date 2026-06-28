@@ -121,8 +121,10 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .nav__mobile .btn{margin-top:24px;text-align:center;justify-content:center}
 
 /* ===== HERO ===== */
-.hero{background:var(--forest);min-height:100svh;display:flex;align-items:center;padding:140px 0 100px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--gold));opacity:0.5}
+.hero{background:var(--forest);min-height:100svh;display:flex;align-items:center;padding:140px 0 100px;position:relative;overflow:hidden;background-image:url('../assets/v4-hero-1.png');background-size:cover;background-position:center;background-blend-mode:overlay}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(26,46,31,0.7);z-index:0}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--gold));opacity:0.5;z-index:1}
+.hero>.hero__grid{position:relative;z-index:1}
 .hero__grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;max-width:1400px;margin:0 auto;padding:0 24px}
 @media(min-width:768px){.hero__grid{padding:0 48px}}
 @media(min-width:1024px){.hero__grid{grid-template-columns:1.2fr 0.8fr;gap:40px}}
@@ -376,6 +378,11 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   .service-card,.case-card,.btn{transition:none}
   html{scroll-behavior:auto}
 }
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(194,97,63,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:color-mix(in srgb, var(--terra), #000 15%);transform:translateY(-2px);box-shadow:0 6px 20px rgba(194,97,63,0.4)}
+.back-to-top:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 </head>
 <body>
@@ -443,8 +450,8 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
             </svg>
           </div>
           <div class="hero__stat">
-            <div class="hero__stat-num">150+</div>
-            <div class="hero__stat-label">Companies helped</div>
+            <div class="hero__stat-num">30+</div>
+            <div class="hero__stat-label">Industries served</div>
           </div>
         </div>
       </div>
@@ -452,15 +459,15 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   </section>
 
   <!-- ===== CLIENT LOGOS ===== -->
-  <section class="logos" aria-label="Trusted by">
+  <section class="logos" aria-label="Trusted by growing companies across 30+ industries">
     <div class="wrap">
       <div class="logos__track">
-        <span class="logos__item">Meridian Partners</span>
-        <span class="logos__item">Vitality Roots</span>
-        <span class="logos__item">Apex Mechanical</span>
-        <span class="logos__item">Archway Labs</span>
-        <span class="logos__item">Riverstone Capital</span>
-        <span class="logos__item">Fern &amp; Bloom</span>
+        <span class="logos__item">CamoToe</span>
+        <span class="logos__item">Nature's Turn</span>
+        <span class="logos__item">SharkGroup</span>
+        <span class="logos__item">Ballast Gym</span>
+        <span class="logos__item">Holy Wagyu Meats</span>
+        <span class="logos__item">Tru North Construction</span>
       </div>
     </div>
   </section>
@@ -635,9 +642,9 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
       </article>
       <article class="case-card reveal s1">
         <div class="case-card__industry">Professional Services</div>
-        <div class="case-card__metric">$480K</div>
-        <div class="case-card__metric-label">Pipeline generated in first quarter</div>
-        <p class="case-card__desc">Connected Google Ads to CRM with proper attribution. Killed underperforming campaigns, doubled down on what worked. First quarter pipeline: $480K.</p>
+        <div class="case-card__metric">6x</div>
+        <div class="case-card__metric-label">Increase in qualified pipeline</div>
+        <p class="case-card__desc">Connected Google Ads to CRM with proper attribution. Killed underperforming campaigns, doubled down on what worked. Pipeline grew sixfold in the first quarter.</p>
       </article>
       <article class="case-card reveal s2">
         <div class="case-card__industry">DTC Brand</div>
@@ -667,8 +674,8 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
           <div class="outcome__label">Average conversion rate<br>after CRO engagement</div>
         </div>
         <div class="outcome reveal s1">
-          <div class="outcome__number" data-target="480" data-prefix="$" data-suffix="K" data-decimals="0">$0K</div>
-          <div class="outcome__label">Pipeline generated<br>in first quarter</div>
+          <div class="outcome__number" data-target="6" data-suffix="x" data-decimals="0">0x</div>
+          <div class="outcome__label">Qualified pipeline<br>increase in first quarter</div>
         </div>
         <div class="outcome reveal s2">
           <div class="outcome__number" data-target="6" data-suffix="x ROI" data-decimals="0">0x ROI</div>
@@ -678,42 +685,6 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
           <div class="outcome__number" data-target="79" data-suffix=" fixes" data-decimals="0">0 fixes</div>
           <div class="outcome__label">Issues found and deployed<br>in one sprint</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials">
-    <div class="wrap">
-      <div class="testimonials__header">
-        <span class="label reveal">What Clients Say</span>
-        <h2 class="reveal s1">Words from the<br>companies we built with.</h2>
-      </div>
-      <div class="testimonials__grid">
-        <blockquote class="testimonial reveal s1">
-          <div class="testimonial__accent"></div>
-          <p class="testimonial__quote">SWG helped us see what we were too close to notice.</p>
-          <footer class="testimonial__attr">
-            <cite class="testimonial__name">Sarah Chen</cite>
-            <span class="testimonial__role">COO, Meridian Partners</span>
-          </footer>
-        </blockquote>
-        <blockquote class="testimonial reveal s2">
-          <div class="testimonial__accent"></div>
-          <p class="testimonial__quote">They didn't just consult &mdash; they built.</p>
-          <footer class="testimonial__attr">
-            <cite class="testimonial__name">Marcus Rivera</cite>
-            <span class="testimonial__role">Founder, Vitality Roots</span>
-          </footer>
-        </blockquote>
-        <blockquote class="testimonial reveal s3">
-          <div class="testimonial__accent"></div>
-          <p class="testimonial__quote">Our lead response dropped from 3 days to 18 minutes.</p>
-          <footer class="testimonial__attr">
-            <cite class="testimonial__name">David Park</cite>
-            <span class="testimonial__role">CEO, Apex Mechanical</span>
-          </footer>
-        </blockquote>
       </div>
     </div>
   </section>
@@ -745,7 +716,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
       <div class="footer__brand">
         <p class="nav__logo" style="color:var(--parchment)">SWG</p>
         <p>Strategy, operations, technology, and marketing support for founder-led companies.</p>
-        <p class="footer__trust">150+ companies across 30+ industries</p>
+        <p class="footer__trust">Trusted by growing companies across 30+ industries</p>
       </div>
       <div class="footer__col">
         <p class="footer__col-title">Pages</p>
@@ -953,5 +924,20 @@ window.SWG_SCORES = {
 };
 </script>
 <!-- AUDIT: UI 8.5/10, UX 8.0/10, Mobile 7.5/10, SEO 9.0/10, Design 8.5/10 -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14V4"/><path d="M4 8l5-5 5 5"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  if(!btn)return;
+  window.addEventListener('scroll',function(){
+    btn.classList.toggle('visible',window.scrollY>600);
+  },{passive:true});
+  btn.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
 </body>
 </html>

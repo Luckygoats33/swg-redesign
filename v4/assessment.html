@@ -169,9 +169,9 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .step-header p{font-family:var(--sans);font-size:0.9rem;color:var(--graphite-50);line-height:1.65}
 
 /* ── Form Fields (bottom-line style) ── */
-.field{margin-bottom:28px}
+.field{margin-bottom:32px}
 .field:last-child{margin-bottom:0}
-.field label{display:block;font-family:var(--sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--graphite);margin-bottom:10px}
+.field label{display:block;font-family:var(--sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--graphite);margin-bottom:12px}
 .field .hint{display:block;font-weight:400;font-size:12px;text-transform:none;letter-spacing:0;color:var(--graphite-50);margin-top:2px;margin-bottom:4px}
 
 .field input[type="text"],
@@ -180,7 +180,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .field textarea,
 .field select{
   width:100%;
-  padding:12px 0;
+  padding:14px 2px;
   border:none;
   border-bottom:1.5px solid var(--graphite-10);
   border-radius:0;
@@ -209,13 +209,14 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   padding-right:28px;
   cursor:pointer
 }
-.field textarea{resize:vertical;min-height:80px;line-height:1.65}
+.field textarea{resize:vertical;min-height:120px;line-height:1.65}
 
-.form-grid{display:grid;grid-template-columns:1fr;gap:0 32px}
+.form-grid{display:grid;grid-template-columns:1fr;gap:8px 32px}
 @media(min-width:520px){.form-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:767px){.field input[type="text"],.field input[type="email"],.field input[type="url"],.field textarea,.field select{padding:16px 4px;min-height:52px}.field{margin-bottom:28px}.check-grid{gap:10px}}
 
 /* ── Checkboxes (custom) ── */
-.check-grid{display:grid;grid-template-columns:1fr;gap:6px}
+.check-grid{display:grid;grid-template-columns:1fr;gap:12px}
 @media(min-width:520px){.check-grid.two-col{grid-template-columns:1fr 1fr}}
 .opt{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-radius:4px;cursor:pointer;transition:background 0.2s;min-height:48px;font-family:var(--sans);font-size:0.9rem;font-weight:400;color:var(--graphite);line-height:1.5;-webkit-tap-highlight-color:transparent;border:1px solid transparent}
 .opt:hover{background:var(--terra-10)}
@@ -236,15 +237,15 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .opt.selected .radio-dot::after{transform:scale(1)}
 
 /* ── Scale Buttons ── */
-.scale-group{margin-top:4px}
-.scale{display:flex;gap:8px;flex-wrap:wrap}
+.scale-group{margin-top:8px}
+.scale{display:flex;gap:10px;flex-wrap:wrap}
 .scale-btn{padding:12px 0;flex:1;min-width:56px;text-align:center;border-radius:4px;font-family:var(--sans);font-weight:600;font-size:14px;border:1.5px solid var(--graphite-10);background:transparent;cursor:pointer;transition:all 0.2s;min-height:48px;display:inline-flex;align-items:center;justify-content:center;color:var(--graphite)}
 .scale-btn:hover{border-color:var(--terra)}
 .scale-btn.active{background:var(--terra);color:#fff;border-color:var(--terra)}
 .scale-labels{display:flex;justify-content:space-between;font-family:var(--sans);font-size:11px;color:var(--graphite-50);margin-top:8px}
 
 /* ── Step Navigation ── */
-.step-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:40px;padding-top:32px;border-top:1px solid var(--graphite-10)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:32px;border-top:1px solid var(--graphite-10)}
 
 .btn-continue{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:var(--terra);color:#fff;font-family:var(--sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;border:none;border-radius:4px;cursor:pointer;transition:background 0.3s,transform 0.2s;min-height:52px;position:relative;overflow:hidden;z-index:1}
 .btn-continue::after{content:'';position:absolute;top:0;left:0;width:0;height:100%;background:rgba(0,0,0,0.15);transition:width 0.4s var(--ease);z-index:-1}
@@ -292,6 +293,11 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 
 /* ── Screen reader only ── */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(194,97,63,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:color-mix(in srgb, var(--terra), #000 15%);transform:translateY(-2px);box-shadow:0 6px 20px rgba(194,97,63,0.4)}
+.back-to-top:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -1427,5 +1433,21 @@ window.SWG_SCORES = {
 </script>
 
 <!-- AUDIT: UI 9/10, UX 8.5/10, Mobile 8/10, SEO 8/10, Design 9/10 -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

@@ -396,6 +396,11 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   }
 }
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(194,97,63,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:color-mix(in srgb, var(--terra), #000 15%);transform:translateY(-2px);box-shadow:0 6px 20px rgba(194,97,63,0.4)}
+.back-to-top:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 </head>
 <body>
@@ -466,8 +471,8 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   <div class="wrap">
     <div class="snapshots__header reveal">
       <div class="divider" style="margin-bottom:20px"></div>
-      <h2>Five engagements. Five industries.</h2>
-      <p>Different problems, same operating principle: connect the system before scaling the spend.</p>
+      <h2>Real engagement. Complete transparency.</h2>
+      <p>One operating principle: connect the system before scaling the spend.</p>
     </div>
 
     <div class="snapshots__grid">
@@ -514,158 +519,6 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
         </div>
       </article>
 
-      <!-- Snapshot 2: Meridian Partners -->
-      <article class="snapshot-card reveal s2">
-        <span class="label snapshot-card__label">B2B Professional Services</span>
-        <h3 class="snapshot-card__title">Meridian Partners &mdash; B2B Consulting Firm</h3>
-        <div class="snapshot-card__metrics">
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="480" data-prefix="$" data-suffix="K" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">New ARR</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="11" data-suffix="/mo" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Inbound Leads</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="6" data-suffix="x" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Form Submissions</span>
-          </div>
-        </div>
-        <div class="snapshot-card__body">
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Situation</div>
-            <p>A 12-person management consulting firm where the two founding partners personally generated 90% of new business through their networks and conference speaking. No inbound pipeline, no CRM discipline, and a website that had not been updated in three years. Junior consultants had no way to contribute to business development.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Constraint</div>
-            <p>The partners resisted anything that felt like &ldquo;marketing&rdquo; &mdash; they built the firm on relationships and referrals. Any system had to feel like a natural extension of their existing approach, not a bolt-on marketing machine. Budget was capped at $15K total.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Work</div>
-            <p>Diagnosed the founder bottleneck as the core growth constraint. Redesigned the website around 6 service-specific landing pages. Built a CRM workflow in HubSpot replacing a shared spreadsheet. Created a thought-leadership content system repurposed across LinkedIn, email, and conference proposals. Trained 3 junior consultants on relationship-based business development.</p>
-          </div>
-          <div class="snapshot-card__block snapshot-card__result">
-            <div class="snapshot-card__block-label">Result</div>
-            <p>Inbound leads: 2/month to 11/month within 4 months. Junior consultants sourced 3 closed deals ($340K combined). Time-to-close: 47 days to 29 days. Website form submissions increased 6x. Founders reduced BD time from ~15 hours/week each to ~6 hours/week. $480K in new ARR.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Snapshot 3: Vitality Roots -->
-      <article class="snapshot-card reveal s1">
-        <span class="label snapshot-card__label">Health &amp; Wellness DTC</span>
-        <h3 class="snapshot-card__title">Vitality Roots &mdash; Health &amp; Wellness DTC Brand</h3>
-        <div class="snapshot-card__metrics">
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="74" data-suffix="%" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Email Rev Increase</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="3.4" data-suffix="x" data-decimals="1">0</span>
-            <span class="snapshot-card__metric-label">ROAS</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="22" data-suffix="%" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Repeat Rate</span>
-          </div>
-        </div>
-        <div class="snapshot-card__body">
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Situation</div>
-            <p>Vitality Roots sells plant-based supplement powders through Shopify with a loyal but small customer base. The founder and a single operations manager handled everything &mdash; customer service, fulfillment, social media, email, and ads. They were spending 60+ hours per week on execution with no time to think about growth. Repeat purchase rate was declining.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Constraint</div>
-            <p>The founder had been burned by a previous agency that ran a $4,000/month retainer for 6 months with no measurable improvement. Trust was low. She insisted on understanding every system before approving it &mdash; no black-box solutions. She refused to increase ad spend until existing spend was proven efficient.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Work</div>
-            <p>Mapped every operational task, identifying 22 hours/week of automatable work. Built AI-powered customer service triage. Restructured Meta ad account from 1 bloated campaign into a clean 3-campaign architecture. Audited and rebuilt 7 Klaviyo email flows. Created a subscription-first landing page. Set up weekly automated performance reporting and inventory-based ad pausing.</p>
-          </div>
-          <div class="snapshot-card__block snapshot-card__result">
-            <div class="snapshot-card__block-label">Result</div>
-            <p>Founder&rsquo;s weekly hours: 62 to 38 within 8 weeks. Email revenue increased 74% ($8,200/month to $14,300/month). Meta ROAS: 1.8x to 3.4x on the same $2,500/month spend. Repeat purchase rate reversed from 14% declining to 22% climbing. Subscribe &amp; Save enrollment: 3% to 11% of orders.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Snapshot 4: Apex Mechanical -->
-      <article class="snapshot-card reveal s2">
-        <span class="label snapshot-card__label">Multi-Location HVAC Services</span>
-        <h3 class="snapshot-card__title">Apex Mechanical &mdash; Local Multi-Location Service Business</h3>
-        <div class="snapshot-card__metrics">
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="18" data-suffix=" min" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Response Time</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="48" data-suffix="%" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Close Rate</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="340" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Reviews</span>
-          </div>
-        </div>
-        <div class="snapshot-card__body">
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Situation</div>
-            <p>Apex Mechanical operates 4 HVAC and plumbing locations across Dallas-Fort Worth. Each location had its own website, Google Business Profile, and ad hoc lead handling &mdash; some used a shared email inbox, one used a whiteboard. The owner had no unified view of which locations were profitable or how many leads were being dropped.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Constraint</div>
-            <p>All four locations had to keep running on existing systems while new infrastructure was built alongside. The 28 field technicians ranged from tech-comfortable to tech-resistant &mdash; any new system that added friction would be rejected. Total technology budget was $1,200/month.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Work</div>
-            <p>Consolidated 4 websites into a single multi-location site with location-specific landing pages. Implemented ServiceTitan across all locations with standardized workflows. Migrated 11,400 customer records. Optimized all 4 Google Business Profiles. Built Google Ads campaigns with location-specific budgets and seasonal bid adjustments. Created a single-screen operations dashboard.</p>
-          </div>
-          <div class="snapshot-card__block snapshot-card__result">
-            <div class="snapshot-card__block-label">Result</div>
-            <p>Lead response time: 4.2 hours to 18 minutes. Identified Location 3 losing money on every click &mdash; fixed in week one, saving $1,400/month. Lead volume increased 31% in 90 days. Close rate: 34% to 48%. Google reviews: 187 to 340 in 4 months.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Snapshot 5: Archway Labs -->
-      <article class="snapshot-card reveal s3">
-        <span class="label snapshot-card__label">B2B SaaS</span>
-        <h3 class="snapshot-card__title">Archway Labs &mdash; Tech Startup Post-Failed-Agency</h3>
-        <div class="snapshot-card__metrics">
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="187" data-prefix="$" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Cost Per Trial</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="34" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Trials in 60 Days</span>
-          </div>
-          <div class="snapshot-card__metric">
-            <span class="snapshot-card__number" data-target="19" data-suffix="%" data-decimals="0">0</span>
-            <span class="snapshot-card__metric-label">Trial-to-Paid</span>
-          </div>
-        </div>
-        <div class="snapshot-card__body">
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Situation</div>
-            <p>Archway Labs is a 15-person B2B SaaS company selling project management software to construction firms. After closing a $2M seed round, they hired a performance marketing agency at $8,500/month. After 5 months and $42,500 in agency fees (plus $61,000 in ad spend), they had 23 trial signups and zero converted customers from paid channels.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Constraint</div>
-            <p>The founders were out of patience and nearly out of runway for marketing experimentation. They needed directional results within 30 days or they were pulling all paid spend. The previous agency left behind a Google Ads account with 847 keywords, 12 campaigns, and no conversion tracking.</p>
-          </div>
-          <div class="snapshot-card__block">
-            <div class="snapshot-card__block-label">Work</div>
-            <p>Forensic audit of the previous agency&rsquo;s account: broad match keywords with no negatives, no conversion tracking, campaigns optimized for clicks not conversions, traffic sent to the homepage. Paused all 12 campaigns, archived 790 keywords, rebuilt with 3 tightly themed campaigns. Built 3 dedicated landing pages. Set up LinkedIn Ads pilot. Restructured trial onboarding from 2 generic emails to a 7-email construction-specific series.</p>
-          </div>
-          <div class="snapshot-card__block snapshot-card__result">
-            <div class="snapshot-card__block-label">Result</div>
-            <p>Cost per trial: $2,652 to $187 within 45 days. 34 qualified trial signups in 60 days on $4,200/month spend (vs. 23 in 5 months at $12,200/month). 6 trials converted to paying customers ($14,400 ARR each). LinkedIn pilot: 18 demo requests at $94 CPL. Trial-to-paid conversion rate: 4% to 19%.</p>
-          </div>
-        </div>
-      </article>
-
     </div>
   </div>
 </section>
@@ -695,7 +548,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
       <div class="footer__brand">
         <span class="nav__logo" style="color:var(--parchment)">SWG</span>
         <p>Business consulting for founder-led companies. Strategy, operations, technology, and marketing connected to one plan.</p>
-        <p class="footer__trust">150+ companies across 30+ industries</p>
+        <p class="footer__trust">Trusted by growing companies across 30+ industries</p>
       </div>
       <div class="footer__col">
         <div class="footer__col-title">Pages</div>
@@ -927,5 +780,20 @@ window.SWG_SCORES = {
 </script>
 
 <!-- AUDIT: UI 9/10, UX 8.5/10, Mobile 8/10, SEO 8/10, Design 9/10 -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14V4"/><path d="M4 8l5-5 5 5"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  if(!btn)return;
+  window.addEventListener('scroll',function(){
+    btn.classList.toggle('visible',window.scrollY>600);
+  },{passive:true});
+  btn.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
 </body>
 </html>

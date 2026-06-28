@@ -91,6 +91,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   .price-card,.fit-card{transition:none!important}
   .price-card:hover,.fit-card:hover{transform:none!important}
   .price-card.feat{transform:none!important}
+  .hero{animation:none!important}
+  .hero::before,.hero::after{animation:none!important}
 }
 
 /* Section spacing */
@@ -131,8 +133,13 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .mobile-menu .btn{margin-top:36px;justify-content:center}
 
 /* ━━ HERO ━━ */
-.hero{position:relative;min-height:60svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:var(--light-blue);color:var(--deep-navy);padding:160px 0 100px}
+.hero{position:relative;min-height:60svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:linear-gradient(130deg,#F0F4FF 0%,#E8EEFF 40%,#FFFFFF 70%,#EEF2FF 100%);background-size:400% 400%;animation:gradientShift 11s ease infinite;color:var(--deep-navy);padding:160px 0 100px}
 @media(min-width:768px){.hero{padding:200px 0 120px}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before{content:'';position:absolute;top:-40px;right:-50px;width:240px;height:240px;border-radius:50%;background:rgba(37,99,235,0.05);animation:geoDrift1 16s ease-in-out infinite;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30px;left:-40px;width:190px;height:190px;border:2px solid rgba(37,99,235,0.06);border-radius:50%;animation:geoDrift2 20s ease-in-out infinite;pointer-events:none}
+@keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-20px,15px) scale(1.03)}66%{transform:translate(15px,-20px) scale(0.98)}}
+@keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(15px,-10px) rotate(35deg)}}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{margin-bottom:24px;max-width:700px}
 .hero .body-lg{max-width:580px}
@@ -225,6 +232,11 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .footer-bottom p{font-size:0.7rem;color:var(--slate);font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#2563EB;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -489,14 +501,14 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <!-- ━━ CLIENT LOGO BAR ━━ -->
 <section style="padding:48px 0;background:var(--white);border-bottom:1px solid rgba(37,99,235,0.06)">
   <div class="wrap">
-    <p style="text-align:center;font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin-bottom:28px">Trusted by growth-stage companies</p>
+    <p style="text-align:center;font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin-bottom:28px">Trusted by growing companies across 30+ industries</p>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 48px">
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Meridian Partners</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Vitality Roots</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Apex Mechanical</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Archway Labs</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Riverstone Capital</span>
-      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Fern &amp; Bloom</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">CamoToe</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Nature's Turn</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">SharkGroup</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Ballast Gym</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Holy Wagyu Meats</span>
+      <span style="font-family:var(--heading);font-weight:700;font-size:1.15rem;color:var(--deep-navy);opacity:0.18;letter-spacing:-0.03em;white-space:nowrap">Tru North Construction</span>
     </div>
   </div>
 </section>
@@ -646,15 +658,6 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   </div>
 </section>
 
-<!-- ━━ TESTIMONIAL ━━ -->
-<section class="testimonial">
-  <div class="wrap">
-    <div class="testimonial-inner r">
-      <blockquote>We started with the Business Review expecting a report. What we got was a complete operating plan that paid for itself in the first month of execution.</blockquote>
-      <cite><strong>Sarah Blackwell</strong>, Founder, Fern &amp; Bloom</cite>
-    </div>
-  </div>
-</section>
 
 <!-- ━━ BOTTOM CTA ━━ -->
 <section class="cta">
@@ -839,5 +842,21 @@ window.SWG_SCORES = {
 })();
 </script>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

@@ -240,6 +240,11 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   .btn{transition:none}
   html{scroll-behavior:auto}
 }
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(194,97,63,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:color-mix(in srgb, var(--terra), #000 15%);transform:translateY(-2px);box-shadow:0 6px 20px rgba(194,97,63,0.4)}
+.back-to-top:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -1101,5 +1106,21 @@ window.SWG_SCORES = {
 </script>
 
 <!-- AUDIT: UI 9/10, UX 9/10, Mobile 8/10, SEO 8/10, Design 9/10 -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

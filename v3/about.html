@@ -89,6 +89,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   .r{opacity:1;transform:none;transition:none}
   .who-card,.who-card::before,.who-card .who-reveal{transition:none!important}
   .hero-orb{animation:none!important}
+  .hero{animation:none!important}
+  .hero::before,.hero::after{animation:none!important}
 }
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
@@ -128,7 +130,12 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .mobile-menu .btn{margin-top:36px;justify-content:center}
 
 /* ━━ HERO ━━ */
-.hero{position:relative;min-height:60vh;display:flex;align-items:center;overflow:hidden;background:var(--light-blue);padding-top:140px;padding-bottom:80px}
+.hero{position:relative;min-height:60vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(140deg,#F0F4FF 0%,#FFFFFF 35%,#E8EEFF 60%,#EEF2FF 100%);background-size:400% 400%;animation:gradientShift 16s ease infinite;padding-top:140px;padding-bottom:80px}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before{content:'';position:absolute;bottom:-60px;right:-50px;width:270px;height:270px;border-radius:50%;background:rgba(124,58,237,0.04);animation:geoDrift1 21s ease-in-out infinite;pointer-events:none;z-index:0}
+.hero::after{content:'';position:absolute;top:-30px;left:-40px;width:180px;height:180px;border:2px solid rgba(37,99,235,0.06);border-radius:50%;animation:geoDrift2 17s ease-in-out infinite;pointer-events:none;z-index:0}
+@keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(0.96)}}
+@keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-15px,20px) rotate(50deg)}}
 .hero-orb{position:absolute;border-radius:50%;filter:blur(140px);pointer-events:none;animation:drift 16s ease-in-out infinite}
 .hero-orb-1{width:400px;height:400px;background:var(--accent);opacity:0.06;top:-10%;right:-5%;animation-delay:-3s}
 .hero-orb-2{width:300px;height:300px;background:var(--accent-hover);opacity:0.05;bottom:-10%;left:-5%;animation-delay:-8s}
@@ -208,6 +215,11 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .footer-bottom{border-top:1px solid rgba(37,99,235,0.08);padding-top:24px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
 @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
 .footer-bottom p{font-size:0.7rem;color:var(--slate);font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#2563EB;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -471,14 +483,14 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 <!-- Client Logo Bar -->
 <section class="logo-bar">
   <div class="wrap">
-    <p class="logo-bar-label">Trusted by growth-stage companies</p>
+    <p class="logo-bar-label">Trusted by growing companies across 30+ industries</p>
     <div class="logo-bar-row">
-      <span>Meridian Partners</span>
-      <span>Vitality Roots</span>
-      <span>Apex Mechanical</span>
-      <span>Archway Labs</span>
-      <span>Riverstone Capital</span>
-      <span>Fern &amp; Bloom</span>
+      <span>CamoToe</span>
+      <span>Nature's Turn</span>
+      <span>SharkGroup</span>
+      <span>Ballast Gym</span>
+      <span>Holy Wagyu Meats</span>
+      <span>Tru North Construction</span>
     </div>
   </div>
 </section>
@@ -505,7 +517,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       <div class="who-card r">
         <h4>Founder-led companies</h4>
         <p>You built this business from scratch. You know the product, the customers, and the market better than anyone. But your growth has outpaced your systems, and you are still the bottleneck on too many decisions.</p>
-        <p class="who-reveal">We have worked with 40+ founder-led companies across DTC, SaaS, professional services, and healthcare.</p>
+        <p class="who-reveal">We work with founder-led companies across DTC, SaaS, professional services, and healthcare.</p>
       </div>
       <div class="who-card r d1">
         <h4>Owner-led companies</h4>
@@ -569,18 +581,6 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       <div class="team-placeholder">
         <p>Team profiles coming soon. SWG is led by operators and strategists who have built inside real companies. Not consultants who advise from the outside. People who have owned P&amp;Ls, managed teams, launched products, and fixed the operational problems that growing companies face every day.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonial -->
-<section class="sec sec-white">
-  <div class="wrap">
-    <div class="testimonial r">
-      <blockquote>
-        <span aria-hidden="true"></span>SWG feels like an extension of our team, not an outside vendor. They understand our business as well as we do.
-      </blockquote>
-      <cite><strong>Daniel Ortega</strong>, COO, Riverstone Capital</cite>
     </div>
   </div>
 </section>
@@ -755,5 +755,21 @@ window.SWG_SCORES = {
 })();
 </script>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

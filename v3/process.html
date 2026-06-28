@@ -86,6 +86,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   .tl-step .tl-dot{border-color:var(--accent)!important;transform:none!important;box-shadow:none!important}
   .tl-step .tl-dot-inner{background:var(--accent)!important}
   .timeline-progress{height:100%!important;transition:none!important}
+  .hero{animation:none!important}
+  .hero::before,.hero::after{animation:none!important}
 }
 
 /* Section spacing */
@@ -128,8 +130,13 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .mobile-menu a:hover{color:#fff;transform:translateX(12px)}
 .mobile-menu .btn{margin-top:36px;justify-content:center}
 
-/* ━━ HERO (light background) ━━ */
-.hero{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;background:var(--light-blue);padding:140px 0 100px}
+/* ━━ HERO (animated gradient) ━━ */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(120deg,#F0F4FF 0%,#E8EEFF 25%,#FFFFFF 55%,#EEF2FF 100%);background-size:400% 400%;animation:gradientShift 10s ease infinite;padding:140px 0 100px}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before{content:'';position:absolute;top:-80px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(37,99,235,0.04);animation:geoDrift1 20s ease-in-out infinite;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-30px;width:200px;height:200px;border:2px solid rgba(37,99,235,0.05);border-radius:50%;animation:geoDrift2 24s ease-in-out infinite;pointer-events:none}
+@keyframes geoDrift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-25px,15px) scale(1.04)}66%{transform:translate(15px,-10px) scale(0.97)}}
+@keyframes geoDrift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(20px,-15px) rotate(30deg)}}
 @media(min-width:768px){.hero{padding:180px 0 120px}}
 .hero .wrap{position:relative;z-index:1;max-width:780px}
 .hero h1{color:var(--deep-navy);margin-bottom:24px}
@@ -230,6 +237,11 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .footer-bottom p{font-size:0.7rem;color:var(--slate);font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#2563EB;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:#1D4ED8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.back-to-top:focus-visible{outline:2px solid #2563EB;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 <style>
 /* ── SWG Score Widget ── */
@@ -908,5 +920,21 @@ window.SWG_SCORES = {
 })();
 </script>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

@@ -145,6 +145,11 @@ h3{font-size:clamp(1.2rem,2vw,1.5rem)}
 .footer-bottom{margin-top:56px;padding-top:24px;border-top:1px solid rgba(10,10,10,0.08);display:flex;flex-direction:column;gap:4px}
 @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
 .footer-bottom p{font-size:13px;color:var(--stone);font-weight:300}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s ease;box-shadow:0 4px 16px rgba(124,58,237,0.3)}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:color-mix(in srgb, var(--violet), #000 15%);transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,0.4)}
+.back-to-top:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 
 </style>
 <style>
@@ -446,126 +451,6 @@ h3{font-size:clamp(1.2rem,2vw,1.5rem)}
       </div>
     </div>
 
-    <!-- Case 2: Meridian Partners -->
-    <div class="case-block r">
-      <div class="case-inner">
-        <div class="case-label">B2B Professional Services</div>
-        <h2 class="case-title">Meridian Partners &mdash; B2B Consulting Firm</h2>
-        <div class="case-grid">
-          <div class="case-narrative">
-            <div>
-              <div class="case-heading">Situation</div>
-              <p class="case-text">A 12-person management consulting firm where the two founding partners personally generated 90% of new business through their networks and conference speaking. No inbound pipeline, no CRM discipline, and a website that had not been updated in three years. Junior consultants had no way to contribute to business development.</p>
-            </div>
-            <div>
-              <div class="case-heading">Constraint</div>
-              <p class="case-text">The partners resisted anything that felt like &ldquo;marketing&rdquo; &mdash; they built the firm on relationships and referrals. Any system had to feel like a natural extension of their existing approach, not a bolt-on marketing machine. Budget was capped at $15K total.</p>
-            </div>
-            <div>
-              <div class="case-heading">Work</div>
-              <p class="case-text">Diagnosed the founder bottleneck as the core growth constraint. Redesigned the website around 6 service-specific landing pages. Built a CRM workflow in HubSpot replacing a shared spreadsheet. Created a thought-leadership content system repurposed across LinkedIn, email, and conference proposals. Trained 3 junior consultants on relationship-based business development.</p>
-            </div>
-          </div>
-          <div class="case-result-box">
-            <div class="case-result-num">$480K</div>
-            <div class="case-result-label">New annual recurring revenue within 6 months</div>
-            <div class="case-result-num" style="margin-top:32px">5.5x</div>
-            <div class="case-result-label">Inbound leads (2/month to 11/month)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Case 3: Vitality Roots -->
-    <div class="case-block r">
-      <div class="case-inner">
-        <div class="case-label">Health &amp; Wellness DTC</div>
-        <h2 class="case-title">Vitality Roots &mdash; Health &amp; Wellness DTC Brand</h2>
-        <div class="case-grid">
-          <div class="case-narrative">
-            <div>
-              <div class="case-heading">Situation</div>
-              <p class="case-text">Vitality Roots sells plant-based supplement powders through Shopify with a loyal but small customer base. The founder and a single operations manager handled everything &mdash; customer service, fulfillment, social media, email, and ads. They were spending 60+ hours per week on execution with no time to think about growth. Repeat purchase rate was declining.</p>
-            </div>
-            <div>
-              <div class="case-heading">Constraint</div>
-              <p class="case-text">The founder had been burned by a previous agency that ran a $4,000/month retainer for 6 months with no measurable improvement. Trust was low. She insisted on understanding every system before approving it &mdash; no black-box solutions. She refused to increase ad spend until existing spend was proven efficient.</p>
-            </div>
-            <div>
-              <div class="case-heading">Work</div>
-              <p class="case-text">Mapped every operational task, identifying 22 hours/week of automatable work. Built AI-powered customer service triage. Restructured Meta ad account from 1 bloated campaign into a clean 3-campaign architecture. Audited and rebuilt 7 Klaviyo email flows. Created a subscription-first landing page. Set up weekly automated performance reporting and inventory-based ad pausing.</p>
-            </div>
-          </div>
-          <div class="case-result-box">
-            <div class="case-result-num">1.8x &rarr; 3.4x</div>
-            <div class="case-result-label">Meta ROAS on the same $2,500/month spend</div>
-            <div class="case-result-num" style="margin-top:32px">74%</div>
-            <div class="case-result-label">Email revenue increase ($8.2K to $14.3K/month)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Case 4: Apex Mechanical -->
-    <div class="case-block r">
-      <div class="case-inner">
-        <div class="case-label">Multi-Location HVAC Services</div>
-        <h2 class="case-title">Apex Mechanical &mdash; Local Multi-Location Service Business</h2>
-        <div class="case-grid">
-          <div class="case-narrative">
-            <div>
-              <div class="case-heading">Situation</div>
-              <p class="case-text">Apex Mechanical operates 4 HVAC and plumbing locations across Dallas-Fort Worth. Each location had its own website, Google Business Profile, and ad hoc lead handling &mdash; some used a shared email inbox, one used a whiteboard. The owner had no unified view of which locations were profitable or how many leads were being dropped.</p>
-            </div>
-            <div>
-              <div class="case-heading">Constraint</div>
-              <p class="case-text">All four locations had to keep running on existing systems while new infrastructure was built alongside. The 28 field technicians ranged from tech-comfortable to tech-resistant &mdash; any new system that added friction would be rejected. Total technology budget was $1,200/month.</p>
-            </div>
-            <div>
-              <div class="case-heading">Work</div>
-              <p class="case-text">Consolidated 4 websites into a single multi-location site with location-specific landing pages. Implemented ServiceTitan across all locations with standardized workflows. Migrated 11,400 customer records. Optimized all 4 Google Business Profiles. Built Google Ads campaigns with location-specific budgets and seasonal bid adjustments. Created a single-screen operations dashboard.</p>
-            </div>
-          </div>
-          <div class="case-result-box">
-            <div class="case-result-num">18 min</div>
-            <div class="case-result-label">Lead response time (down from 4.2 hours)</div>
-            <div class="case-result-num" style="margin-top:32px">48%</div>
-            <div class="case-result-label">Close rate (up from 34%)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Case 5: Archway Labs -->
-    <div class="case-block r">
-      <div class="case-inner">
-        <div class="case-label">B2B SaaS</div>
-        <h2 class="case-title">Archway Labs &mdash; Tech Startup Post-Failed-Agency</h2>
-        <div class="case-grid">
-          <div class="case-narrative">
-            <div>
-              <div class="case-heading">Situation</div>
-              <p class="case-text">Archway Labs is a 15-person B2B SaaS company selling project management software to construction firms. After closing a $2M seed round, they hired a performance marketing agency at $8,500/month. After 5 months and $42,500 in agency fees (plus $61,000 in ad spend), they had 23 trial signups and zero converted customers from paid channels.</p>
-            </div>
-            <div>
-              <div class="case-heading">Constraint</div>
-              <p class="case-text">The founders were out of patience and nearly out of runway for marketing experimentation. They needed directional results within 30 days or they were pulling all paid spend. The previous agency left behind a Google Ads account with 847 keywords, 12 campaigns, and no conversion tracking.</p>
-            </div>
-            <div>
-              <div class="case-heading">Work</div>
-              <p class="case-text">Forensic audit of the previous agency&rsquo;s account: broad match keywords with no negatives, no conversion tracking, campaigns optimized for clicks not conversions, traffic sent to the homepage. Paused all 12 campaigns, archived 790 keywords, rebuilt with 3 tightly themed campaigns. Built 3 dedicated landing pages. Set up LinkedIn Ads pilot. Restructured trial onboarding from 2 generic emails to a 7-email construction-specific series.</p>
-            </div>
-          </div>
-          <div class="case-result-box">
-            <div class="case-result-num">$187</div>
-            <div class="case-result-label">Cost per trial (down from $2,652)</div>
-            <div class="case-result-num" style="margin-top:32px">19%</div>
-            <div class="case-result-label">Trial-to-paid conversion rate (up from 4%)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -734,6 +619,23 @@ window.SWG_SCORES = {
   window.updateScoreWidget = render;
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', render); }
   else { setTimeout(render, 0); }
+})();
+</script>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 300 && !shown){ btn.classList.add('visible'); shown = true; }
+    else if(y <= 300 && shown){ btn.classList.remove('visible'); shown = false; }
+  }, {passive:true});
+  btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 })();
 </script>
 
