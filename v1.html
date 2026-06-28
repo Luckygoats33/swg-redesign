@@ -1,0 +1,3301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0e12" />
+    <title>SWG | Business Growth & Execution</title>
+    <meta
+      name="description"
+      content="Support Wellness Global helps growing companies align strategy, operations, technology, AI, and marketing so they can scale more efficiently and profitably."
+    />
+    <link rel="icon" href="data:," />
+    <style>@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap");
+
+:root {
+  --ink: #0b0e12;
+  --graphite: #171b23;
+  --graphite-2: #222833;
+  --paper: #ffffff;
+  --warm-white: #f8f6f0;
+  --muted: #68717d;
+  --line: rgba(11, 14, 18, 0.12);
+  --light-line: rgba(255, 255, 255, 0.14);
+  --electric: #2f6bff;
+  --lime: #c9ff3b;
+  --coral: #ff4f5e;
+  --teal: #1f6f5b;
+  --amber: #f2b84b;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: #d9d9d7;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(47,107,255,0.14), transparent 26%),
+    linear-gradient(180deg, #dededb 0%, #cfcfcb 100%);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", "Aptos", sans-serif;
+}
+
+a { color: inherit; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Sora", "Aptos Display", sans-serif;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  transform: translateX(-130%);
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.skip-link:focus-visible { transform: translateX(0); }
+
+.section-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+#features,
+#process,
+#pricing,
+#proof,
+#faq,
+#alignment,
+#situations,
+#roadmap,
+#implementation,
+#intake,
+#operating-system {
+  scroll-margin-top: 120px;
+}
+
+.site-nav {
+  position: sticky;
+  top: 18px;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  width: min(1180px, calc(100% - 40px));
+  min-height: 66px;
+  margin: 18px auto 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 8px;
+  background: rgba(248,246,240,0.82);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 24px 80px rgba(11,14,18,0.12);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--warm-white);
+  text-decoration: none;
+}
+
+.brand-mark span {
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+}
+
+.nav-links {
+  justify-self: center;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: #4d5663;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--ink);
+}
+
+.nav-button,
+.primary-action,
+.secondary-action {
+  display: inline-grid;
+  place-items: center;
+  min-height: 42px;
+  border-radius: 999px;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-button,
+.primary-action {
+  padding: 0 18px;
+  background: var(--ink);
+  color: var(--warm-white);
+}
+
+.secondary-action {
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.74fr);
+  gap: clamp(38px, 7vw, 94px);
+  align-items: center;
+  min-height: 760px;
+  padding: 72px 0 44px;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 32px;
+  margin-bottom: 22px;
+  padding: 8px 12px;
+  border: 1px solid rgba(11,14,18,0.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.74);
+  color: #3b4550;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  box-shadow: 0 14px 40px rgba(11,14,18,0.08);
+}
+
+.trust-pill span {
+  width: 38px;
+  height: 10px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 7px 50%, var(--lime) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 18px 50%, var(--electric) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 29px 50%, var(--coral) 0 4px, transparent 4.5px),
+    rgba(11,14,18,0.08);
+}
+
+.hero h1 {
+  max-width: 880px;
+  margin-bottom: 22px;
+  font-size: clamp(44px, 4.4vw, 64px);
+  line-height: 0.94;
+  font-weight: 800;
+}
+
+.hero-subhead {
+  max-width: 720px;
+  margin-bottom: 28px;
+  color: #3b4550;
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.45;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.68);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(135deg, #222833, #111720);
+  background-size: 34px 34px, 34px 34px, auto;
+  color: var(--warm-white);
+  box-shadow: 0 42px 120px rgba(11,14,18,0.2);
+}
+
+.visual-topline {
+  position: absolute;
+  z-index: 4;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(248,246,240,0.64);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.visual-topline strong {
+  color: var(--lime);
+}
+
+.card-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--electric);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.card-kicker b {
+  color: var(--teal);
+}
+
+.alignment-console {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(201,255,59,0.12), transparent 18%),
+    radial-gradient(circle at 85% 18%, rgba(47,107,255,0.22), transparent 26%),
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(135deg, #202630, #0b0f16);
+  background-size: auto, auto, 34px 34px, 34px 34px, auto;
+}
+
+.alignment-scorecard {
+  position: absolute;
+  z-index: 4;
+  top: 72px;
+  left: 34px;
+  right: 34px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--warm-white);
+  color: var(--ink);
+  box-shadow: 0 28px 90px rgba(0,0,0,0.24);
+}
+
+.alignment-scorecard h2 {
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1;
+}
+
+.diagnostic-path {
+  position: absolute;
+  z-index: 3;
+  left: 34px;
+  right: 34px;
+  bottom: 34px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.diagnostic-path div {
+  min-height: 128px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  background: rgba(11,14,18,0.78);
+}
+
+.diagnostic-path b {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--lime);
+  font: 700 10px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.diagnostic-path span {
+  color: rgba(248,246,240,0.76);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.24;
+}
+
+.partners-strip {
+  padding: 34px 0 74px;
+}
+
+.partners-strip p {
+  margin-bottom: 18px;
+  color: #6a727d;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, 4vw, 42px);
+  color: rgba(11,14,18,0.38);
+  font-family: "Sora", sans-serif;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 800;
+}
+
+.signal-list {
+  display: grid;
+  gap: 8px;
+}
+
+.signal-list span {
+  position: relative;
+  min-height: 44px;
+  padding: 13px 12px 12px 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(47,107,255,0.07);
+  color: #2f3843;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.signal-list span::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 13px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255,79,94,0.12);
+}
+
+.proof-strip-v18 {
+  padding-bottom: 56px;
+}
+
+.proof-strip-v18 h2 {
+  max-width: 1040px;
+  margin: 0 auto 28px;
+  color: #0b0e12;
+  font: 800 clamp(30px, 4.8vw, 58px)/0.96 "Sora", sans-serif;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.proof-strip-v18 > .eyebrow {
+  margin: 0 0 16px;
+  color: #6a727d;
+  text-align: center;
+}
+
+.approach-bridge {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.approach-bridge article {
+  min-height: 238px;
+  padding: 20px;
+  border: 1px solid rgba(11,14,18,0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.92), rgba(248,246,240,0.66)),
+    radial-gradient(circle at 20% 0%, rgba(202,255,61,0.2), transparent 34%);
+  box-shadow: 0 18px 44px rgba(25,32,44,0.08);
+}
+
+.approach-bridge article:nth-child(even) {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.94), rgba(235,239,246,0.72)),
+    radial-gradient(circle at 78% 8%, rgba(47,107,255,0.14), transparent 34%);
+}
+
+.approach-bridge span {
+  display: inline-flex;
+  margin-bottom: 54px;
+  color: var(--blue);
+  font: 800 11px/1 "IBM Plex Mono", monospace;
+}
+
+.approach-bridge h3 {
+  margin: 0 0 12px;
+  color: #10151c;
+  font: 800 clamp(21px, 2vw, 29px)/0.98 "Sora", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.approach-bridge p {
+  margin: 0;
+  color: #49535f;
+  font: 700 14px/1.45 "Manrope", sans-serif;
+  text-transform: none;
+}
+
+.situations,
+.alignment-map-section {
+  padding: 88px 0;
+}
+
+.situation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.situation-card {
+  min-height: 300px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.9), rgba(248,246,240,0.7)),
+    rgba(248,246,240,0.88);
+  box-shadow: 0 28px 80px rgba(11,14,18,0.08);
+}
+
+.situation-card span,
+.diagnostic-column span {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--electric);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.situation-card h3 {
+  margin-bottom: 14px;
+  font-size: clamp(21px, 2.1vw, 30px);
+  line-height: 1.04;
+}
+
+.situation-card p {
+  margin: 0;
+  color: #4b5562;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.request-diagnostic {
+  padding-top: 92px;
+}
+
+.request-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.request-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: span 4;
+  min-height: 292px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.92), rgba(248,246,240,0.68)),
+    radial-gradient(circle at 90% 0%, rgba(47,107,255,0.12), transparent 32%);
+  box-shadow: 0 28px 80px rgba(11,14,18,0.09);
+}
+
+.request-card::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  width: 72px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--electric), var(--lime));
+  opacity: 0.42;
+}
+
+.request-wide {
+  grid-column: span 6;
+}
+
+.request-rescue {
+  grid-column: span 8;
+  min-height: 238px;
+  color: var(--warm-white);
+  background:
+    radial-gradient(circle at 88% 22%, rgba(201,255,59,0.2), transparent 28%),
+    linear-gradient(135deg, rgba(11,14,18,0.96), rgba(47,56,67,0.92));
+  border-color: rgba(255,255,255,0.18);
+}
+
+.request-card span {
+  display: block;
+  margin-bottom: 38px;
+  color: var(--electric);
+  font: 800 11px/1 "IBM Plex Mono", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.request-rescue span {
+  color: var(--lime);
+}
+
+.request-card h3 {
+  max-width: 620px;
+  margin: 0 0 26px;
+  color: #10151c;
+  font: 800 clamp(23px, 2.4vw, 36px)/0.98 "Sora", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.request-rescue h3 {
+  max-width: 900px;
+  color: var(--warm-white);
+}
+
+.request-card div {
+  max-width: 700px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(11,14,18,0.1);
+}
+
+.request-rescue div {
+  border-top-color: rgba(255,255,255,0.16);
+}
+
+.request-card b {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--blue);
+  font: 800 11px/1 "IBM Plex Mono", monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.request-rescue b {
+  color: var(--lime);
+}
+
+.request-card p {
+  margin: 0;
+  color: #4b5562;
+  font-size: 15px;
+  line-height: 1.46;
+}
+
+.request-rescue p {
+  color: rgba(248,246,240,0.78);
+}
+
+.alignment-map-section {
+  display: grid;
+  grid-template-columns: 0.62fr 1.38fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.alignment-map-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 460px;
+  padding: clamp(26px, 4vw, 44px);
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--warm-white);
+  box-shadow: 0 34px 90px rgba(11,14,18,0.16);
+}
+
+.alignment-map-copy .eyebrow {
+  color: var(--lime);
+}
+
+.alignment-map-copy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(36px, 4.2vw, 70px);
+  line-height: 0.95;
+}
+
+.alignment-map-copy p {
+  margin: 0;
+  color: rgba(248,246,240,0.74);
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.48;
+}
+
+.diagnostic-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  min-height: 460px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(135deg, #202630, #0b0f16);
+  background-size: 34px 34px, 34px 34px, auto;
+  box-shadow: 0 42px 120px rgba(11,14,18,0.18);
+}
+
+.diagnostic-panel::before,
+.diagnostic-panel::after {
+  display: none;
+}
+
+.diagnostic-column {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(20px, 2.6vw, 34px);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 8px;
+  background: rgba(11,14,18,0.76);
+  color: rgba(248,246,240,0.78);
+}
+
+.diagnostic-column.review {
+  background: var(--warm-white);
+  color: var(--ink);
+}
+
+.diagnostic-column.review span {
+  color: var(--electric);
+}
+
+.diagnostic-column span {
+  margin-bottom: 26px;
+}
+
+.diagnostic-column b {
+  display: block;
+  max-width: 620px;
+  margin-bottom: 16px;
+  color: currentColor;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(22px, 1.9vw, 30px);
+  line-height: 1.06;
+}
+
+.diagnostic-column p,
+.diagnostic-column li {
+  color: currentColor;
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: 0.86;
+}
+
+.diagnostic-column p {
+  margin: 0;
+}
+
+.diagnostic-column ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.diagnostic-column li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.diagnostic-column li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--electric);
+}
+
+.work-order {
+  padding: 86px 0;
+}
+
+.work-order-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(201,255,59,0.14), transparent 24%),
+    linear-gradient(135deg, #202630, #0b0f16);
+  box-shadow: 0 42px 120px rgba(11,14,18,0.18);
+}
+
+.work-order-card-v18 {
+  min-height: 330px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  background: rgba(11,14,18,0.74);
+  color: rgba(248,246,240,0.78);
+}
+
+.work-order-card-v18:nth-child(2),
+.work-order-card-v18:nth-child(3) {
+  background: var(--warm-white);
+  color: var(--ink);
+}
+
+.work-order-card-v18 span {
+  display: block;
+  margin-bottom: 48px;
+  color: var(--lime);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.work-order-card-v18:nth-child(2) span,
+.work-order-card-v18:nth-child(3) span {
+  color: var(--electric);
+}
+
+.work-order-card-v18 h3 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1;
+}
+
+.work-order-card-v18 p,
+.work-order-card-v18 li {
+  color: currentColor;
+  font-size: 15px;
+  line-height: 1.45;
+  opacity: 0.86;
+}
+
+.work-order-card-v18 p {
+  margin: 0;
+}
+
+.work-order-card-v18 ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work-order-card-v18 li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.work-order-card-v18 li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--electric);
+}
+
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.artifact-grid b {
+  min-height: 54px;
+  padding: 14px 10px 0;
+  border: 1px solid rgba(11,14,18,0.1);
+  border-radius: 7px;
+  background: rgba(47,107,255,0.07);
+  color: #2f3843;
+  font: 700 10px/1.12 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.features,
+.why,
+.faq,
+.cta {
+  padding: 80px 0;
+}
+
+.section-heading {
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: var(--teal);
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-heading h2,
+.faq-copy h2,
+.cta-panel h2 {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: clamp(36px, 4.8vw, 72px);
+  line-height: 0.96;
+  font-weight: 800;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.feature-card,
+.why-card,
+.review-card,
+.faq-list,
+.cta-panel,
+.footer {
+  border-radius: 8px;
+}
+
+.feature-card {
+  position: relative;
+  grid-column: span 4;
+  min-height: 260px;
+  overflow: hidden;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,0.76);
+  background: rgba(248,246,240,0.88);
+  box-shadow: 0 28px 80px rgba(11,14,18,0.1);
+}
+
+.feature-large {
+  grid-column: span 5;
+}
+
+.feature-wide {
+  grid-column: span 6;
+}
+
+.feature-slim {
+  grid-column: span 3;
+}
+
+.feature-rescue {
+  grid-column: span 12;
+  min-height: 230px;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(201,255,59,0.2), transparent 28%),
+    linear-gradient(135deg, rgba(11,14,18,0.96), rgba(47,56,67,0.92));
+  border-color: rgba(255,255,255,0.18);
+  color: var(--warm-white);
+}
+
+.feature-rescue h3 {
+  max-width: 760px;
+}
+
+.feature-rescue p {
+  max-width: 840px;
+  color: rgba(248,246,240,0.76);
+}
+
+.feature-card.feature-rescue p {
+  color: rgba(248,246,240,0.78);
+}
+
+.feature-rescue .feature-icon {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 42px;
+  border-radius: 7px;
+  background: var(--ink);
+  color: var(--lime);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+}
+
+.feature-card h3,
+.why-card h3 {
+  max-width: 470px;
+  margin-bottom: 12px;
+  font-size: clamp(22px, 2vw, 32px);
+  line-height: 1.04;
+}
+
+.feature-card p,
+.why-card p,
+.faq-copy p,
+.cta-panel p {
+  color: #4b5562;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.implementation {
+  padding-top: 110px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.service-card {
+  min-height: 220px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.86), rgba(248,246,240,0.64)),
+    rgba(248,246,240,0.88);
+  box-shadow: 0 28px 80px rgba(11,14,18,0.08);
+}
+
+.service-card b {
+  display: block;
+  min-height: 58px;
+  margin-bottom: 16px;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.02;
+}
+
+.service-card p {
+  margin: 0;
+  color: #4b5562;
+  font-size: 16px;
+  line-height: 1.44;
+}
+
+.service-card::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 8px;
+  margin-bottom: 34px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--electric), var(--lime));
+}
+
+.service-card:nth-child(2)::before { background: linear-gradient(90deg, var(--coral), var(--electric)); }
+.service-card:nth-child(3)::before { background: linear-gradient(90deg, var(--amber), var(--lime)); }
+.service-card:nth-child(4)::before { background: linear-gradient(90deg, var(--teal), var(--electric)); }
+.service-card:nth-child(5)::before { background: linear-gradient(90deg, var(--ink), var(--amber)); }
+.service-card:nth-child(6)::before { background: linear-gradient(90deg, var(--lime), var(--coral)); }
+
+.mini-browser,
+.mini-proof {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  gap: 8px;
+  width: 190px;
+}
+
+.mini-browser i,
+.mini-proof i {
+  display: block;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(47,107,255,0.2);
+}
+
+.mini-proof i:nth-child(2) { width: 82%; background: rgba(31,111,91,0.32); }
+.mini-proof i:nth-child(3) { width: 68%; background: rgba(242,184,75,0.42); }
+.mini-proof i:nth-child(4) { width: 52%; background: rgba(201,255,59,0.58); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.why-card {
+  min-height: 230px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.68);
+  background: rgba(255,255,255,0.54);
+}
+
+.why-card span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 44px;
+  border-radius: 7px;
+  background: var(--warm-white);
+  color: var(--electric);
+  font: 700 16px/1 "IBM Plex Mono", monospace;
+}
+
+.why-card h3 {
+  font-size: 20px;
+}
+
+.why-card p {
+  font-size: 14px;
+}
+
+.reviews {
+  padding: 82px 0;
+}
+
+.review-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.review-card {
+  min-height: 210px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.76);
+  background: rgba(248,246,240,0.88);
+}
+
+.stars {
+  margin-bottom: 16px;
+  color: var(--amber);
+  font: 700 13px/1 "IBM Plex Mono", monospace;
+}
+
+.review-card p {
+  min-height: 88px;
+  color: #2f3843;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.38;
+}
+
+.review-card div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #586270;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.review-card div:last-child span {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--electric), var(--lime));
+}
+
+.faq {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(28px, 6vw, 96px);
+  align-items: start;
+}
+
+.faq-copy h2 {
+  margin: 0 0 18px;
+}
+
+.faq-copy p {
+  max-width: 470px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.74);
+  border-radius: 8px;
+  background: rgba(248,246,240,0.76);
+  color: var(--ink);
+  text-align: left;
+}
+
+.faq-item span {
+  font-weight: 800;
+}
+
+.faq-item b {
+  font: 700 18px/1 "IBM Plex Mono", monospace;
+}
+
+.faq-item p {
+  grid-column: 1 / -1;
+  display: none;
+  margin: 0;
+  color: #4b5562;
+  line-height: 1.42;
+}
+
+.faq-item.is-open p {
+  display: block;
+}
+
+.cta-panel {
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  gap: 38px;
+  align-items: center;
+  min-height: 330px;
+  padding: clamp(28px, 5vw, 58px);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.76);
+  background:
+    radial-gradient(circle at 78% 28%, rgba(47,107,255,0.16), transparent 26%),
+    rgba(248,246,240,0.88);
+}
+
+.cta-panel h2 {
+  margin: 0 0 18px;
+}
+
+.cta-panel p {
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+
+.cta-card {
+  min-height: 220px;
+  padding: 22px;
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 28px 80px rgba(11,14,18,0.12);
+}
+
+.cta-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--electric);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.cta-card b {
+  display: block;
+  margin-bottom: 14px;
+  font-family: "Sora", sans-serif;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.cta-card p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.pricing-panel {
+  grid-template-columns: 0.96fr 1.04fr;
+  align-items: center;
+}
+
+.pricing-panel h2 {
+  max-width: 620px;
+  margin-bottom: 18px;
+  font-size: clamp(40px, 3.9vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.pricing-panel > div:first-child {
+  align-self: center;
+}
+
+.pricing-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.pricing-note {
+  display: inline-flex;
+  margin: 4px 0 18px;
+  padding: 8px 10px;
+  border: 1px solid rgba(11,14,18,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.66);
+  color: #4b5562;
+  font: 700 13px/1.35 "IBM Plex Mono", monospace;
+  letter-spacing: 0;
+}
+
+.pricing-stack article {
+  padding: 18px;
+  border: 1px solid rgba(11,14,18,0.08);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 22px 64px rgba(11,14,18,0.08);
+}
+
+.pricing-stack span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--electric);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.pricing-stack b {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1;
+}
+
+.pricing-stack p {
+  margin: 0;
+  color: #4b5562;
+  font-size: 15px;
+}
+
+.intake {
+  padding: 100px 0 72px;
+}
+
+.intake-header {
+  max-width: 920px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.intake-header h2 {
+  margin: 0 auto 18px;
+  font-size: clamp(42px, 5.4vw, 84px);
+  line-height: .94;
+}
+
+.intake-header p {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #4b5562;
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.45;
+}
+
+.intake-layout {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.intake-rail {
+  position: sticky;
+  top: 104px;
+  display: grid;
+  gap: 12px;
+}
+
+.rail-card,
+.assessment-form {
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background: rgba(248,246,240,0.9);
+  box-shadow: 0 28px 80px rgba(11,14,18,0.1);
+}
+
+.rail-card {
+  padding: 20px;
+}
+
+.rail-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--electric);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.rail-card strong {
+  display: block;
+  margin-bottom: 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.rail-card p {
+  margin: 0;
+  color: #4b5562;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.step-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(11,14,18,0.1);
+}
+
+.step-progress i {
+  display: block;
+  width: 20%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--electric), var(--lime));
+  transition: width 260ms ease;
+}
+
+.step-tabs {
+  display: grid;
+  gap: 8px;
+}
+
+.step-tab {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.48);
+  color: #59636f;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.step-tab.is-active {
+  border-color: rgba(11,14,18,0.18);
+  background: var(--ink);
+  color: var(--lime);
+}
+
+.assessment-form {
+  padding: clamp(22px, 4vw, 40px);
+}
+
+.form-step {
+  display: none;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-step.is-active {
+  display: block;
+}
+
+.form-step legend {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(34px, 4.2vw, 62px);
+  font-weight: 800;
+  line-height: .96;
+}
+
+.form-step legend span {
+  color: var(--teal);
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.step-copy {
+  max-width: 780px;
+  margin-bottom: 28px;
+  color: #4b5562;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.form-grid,
+.range-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.field > span {
+  color: #2f3843;
+  font: 700 12px/1.25 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.field input:not([type="checkbox"]):not([type="range"]),
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(11,14,18,0.12);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.72);
+  color: var(--ink);
+  outline: none;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(47,107,255,0.58);
+  box-shadow: 0 0 0 4px rgba(47,107,255,0.12);
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.choice-grid.compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice-grid label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 58px;
+  padding: 12px;
+  border: 1px solid rgba(11,14,18,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.56);
+  color: #3b4550;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.26;
+}
+
+.choice-grid input {
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  accent-color: var(--electric);
+  flex: 0 0 auto;
+}
+
+.range-field {
+  padding: 14px;
+  border: 1px solid rgba(11,14,18,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.54);
+}
+
+.range-field input {
+  accent-color: var(--electric);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.range-field small {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #68717d;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.range-field small strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--lime);
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(11,14,18,0.1);
+}
+
+.form-actions button {
+  border: 0;
+}
+
+.form-back[disabled] {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.form-submit {
+  display: none;
+}
+
+.assessment-form[data-final-step="true"] .form-next {
+  display: none;
+}
+
+.assessment-form[data-final-step="true"] .form-submit {
+  display: inline-grid;
+}
+
+.form-confirmation {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--warm-white);
+}
+
+.form-confirmation span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--lime);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.form-confirmation h3 {
+  max-width: 720px;
+  margin-bottom: 12px;
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1;
+}
+
+.form-confirmation p {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(248,246,240,0.74);
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 42px;
+  margin-top: 50px;
+  padding: 48px 0 72px;
+  border-top: 1px solid rgba(11,14,18,0.1);
+}
+
+.footer-brand p {
+  max-width: 460px;
+  margin: 18px 0;
+  color: #5a6470;
+}
+
+.footer-contact {
+  display: inline-grid;
+  place-items: center;
+  min-height: 42px;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: var(--ink);
+  color: var(--warm-white);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.footer-links div {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.footer-links b {
+  font-family: "Sora", sans-serif;
+}
+
+.footer-links a {
+  color: #68717d;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms ease, transform 620ms cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (max-width: 980px) {
+  .site-nav {
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-button {
+    justify-self: end;
+  }
+
+  .hero,
+  .faq,
+  .footer,
+  .cta-panel,
+  .pricing-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-visual {
+    min-height: 580px;
+  }
+
+  .feature-card,
+  .feature-large,
+  .feature-wide,
+  .feature-slim,
+  .feature-rescue {
+    grid-column: span 6;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .approach-bridge {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .request-card,
+  .request-wide {
+    grid-column: span 6;
+  }
+
+  .request-rescue {
+    grid-column: span 12;
+  }
+
+  .situation-grid,
+  .alignment-map-section,
+  .diagnostic-panel,
+  .work-order-board,
+  .review-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intake-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-rail {
+    position: static;
+  }
+
+  .step-tabs {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .step-tab {
+    min-height: 58px;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .choice-grid.compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .section-shell,
+  .site-nav {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .site-nav {
+    top: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-button {
+    min-height: 40px;
+    padding: 0 12px;
+  }
+
+  .hero {
+    padding-top: 28px;
+    gap: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 12.8vw, 60px);
+    line-height: 0.92;
+    margin-bottom: 16px;
+  }
+
+  .hero-subhead {
+    margin-bottom: 20px;
+    font-size: 17px;
+  }
+
+  .trust-pill {
+    align-items: flex-start;
+    border-radius: 8px;
+    line-height: 1.25;
+  }
+
+  .hero-visual {
+    min-height: 560px;
+  }
+
+  .hero-visual.alignment-console {
+    min-height: 640px;
+  }
+
+  .alignment-scorecard,
+  .diagnostic-path {
+    left: 16px;
+    right: 16px;
+  }
+
+  .diagnostic-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .diagnostic-path {
+    bottom: 16px;
+  }
+
+  .alignment-scorecard {
+    top: 54px;
+  }
+
+  .alignment-scorecard h2 {
+    font-size: clamp(24px, 8vw, 34px);
+  }
+
+  .diagnostic-path {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostic-path div {
+    min-height: auto;
+  }
+
+  .features,
+  .why,
+  .faq,
+  .cta,
+  .situations,
+  .alignment-map-section,
+  .work-order,
+  .intake,
+  #operating-system {
+    padding: 58px 0;
+  }
+
+  .section-heading {
+    text-align: left;
+  }
+
+  .section-heading h2,
+  .faq-copy h2,
+  .cta-panel h2 {
+    font-size: clamp(34px, 12vw, 58px);
+  }
+
+  .feature-grid,
+  .why-grid,
+  .service-grid,
+  .approach-bridge,
+  .request-grid,
+  .situation-grid,
+  .alignment-map-section,
+  .diagnostic-panel,
+  .work-order-board,
+  .review-track {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-strip-v18 h2 {
+    text-align: left;
+  }
+
+  .proof-strip-v18 > .eyebrow {
+    text-align: left;
+  }
+
+  .approach-bridge article {
+    min-height: auto;
+  }
+
+  .approach-bridge span {
+    margin-bottom: 34px;
+  }
+
+  .request-card,
+  .request-wide,
+  .request-rescue {
+    grid-column: auto;
+    min-height: auto;
+  }
+
+  .request-card span {
+    margin-bottom: 34px;
+  }
+
+  .feature-card,
+  .feature-large,
+  .feature-wide,
+  .feature-slim,
+  .feature-rescue {
+    grid-column: auto;
+  }
+
+  .mini-browser,
+  .mini-proof {
+    position: static;
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .why-grid {
+    gap: 10px;
+  }
+
+  .cta-panel {
+    padding: 24px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-header {
+    text-align: left;
+  }
+
+  .intake-header h2 {
+    font-size: clamp(34px, 12vw, 58px);
+  }
+
+  .step-tabs,
+  .form-grid,
+  .range-grid,
+  .choice-grid,
+  .choice-grid.compact {
+    grid-template-columns: 1fr;
+  }
+
+  .assessment-form {
+    padding: 18px;
+  }
+
+  .form-step legend {
+    font-size: clamp(30px, 10vw, 46px);
+  }
+
+  .choice-grid label {
+    min-height: auto;
+  }
+
+  .form-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions .primary-action,
+  .form-actions .secondary-action {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+    <script defer>const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function setupReveals() {
+  const items = [...document.querySelectorAll(".reveal")];
+  if (!items.length) return;
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16 });
+
+  items.forEach((item) => observer.observe(item));
+}
+
+function setupFaq() {
+  const items = [...document.querySelectorAll(".faq-item")];
+  const syncIcons = () => {
+    items.forEach((item) => {
+      const icon = item.querySelector("b");
+      if (icon) icon.textContent = item.classList.contains("is-open") ? "-" : "+";
+    });
+  };
+
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      const wasOpen = item.classList.contains("is-open");
+      items.forEach((next) => next.classList.remove("is-open"));
+      if (!wasOpen) item.classList.add("is-open");
+      syncIcons();
+    });
+  });
+
+  syncIcons();
+}
+
+function setupAssessmentForm() {
+  const form = document.querySelector("#business-review-form");
+  if (!form) return;
+
+  const isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname) || window.location.protocol === "file:";
+  const steps = [...form.querySelectorAll(".form-step")];
+  const tabs = [...document.querySelectorAll(".step-tab")];
+  const progress = document.querySelector(".step-progress i");
+  const backButton = form.querySelector(".form-back");
+  const nextButton = form.querySelector(".form-next");
+  const confirmation = form.querySelector(".form-confirmation");
+  let currentStep = 0;
+
+  const updateRanges = () => {
+    form.querySelectorAll(".range-field").forEach((field) => {
+      const input = field.querySelector("input[type='range']");
+      const value = field.querySelector("small strong");
+      if (input && value) value.textContent = input.value;
+    });
+  };
+
+  const setStep = (index) => {
+    currentStep = Math.max(0, Math.min(index, steps.length - 1));
+    steps.forEach((step, stepIndex) => {
+      step.classList.toggle("is-active", stepIndex === currentStep);
+    });
+    tabs.forEach((tab, tabIndex) => {
+      tab.classList.toggle("is-active", tabIndex === currentStep);
+    });
+    if (progress) progress.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+    if (backButton) backButton.disabled = currentStep === 0;
+    form.dataset.finalStep = String(currentStep === steps.length - 1);
+  };
+
+  const activeRequiredFields = () => [...steps[currentStep].querySelectorAll("[required]")];
+
+  const validateCurrentStep = () => {
+    const invalid = activeRequiredFields().find((field) => !field.checkValidity());
+    if (invalid) {
+      invalid.reportValidity();
+      return false;
+    }
+    return true;
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = Number(tab.dataset.stepTarget);
+      if (target <= currentStep || validateCurrentStep()) setStep(target);
+    });
+  });
+
+  nextButton?.addEventListener("click", () => {
+    if (validateCurrentStep()) setStep(currentStep + 1);
+  });
+
+  backButton?.addEventListener("click", () => setStep(currentStep - 1));
+
+  form.querySelectorAll("input[type='range']").forEach((input) => {
+    input.addEventListener("input", updateRanges);
+  });
+
+  form.addEventListener("submit", (event) => {
+    const invalid = [...form.querySelectorAll("[required]")].find((field) => !field.checkValidity());
+    if (invalid) {
+      event.preventDefault();
+      const step = steps.findIndex((next) => next.contains(invalid));
+      setStep(step);
+      requestAnimationFrame(() => invalid.reportValidity());
+      return;
+    }
+
+    if (isLocalPreview && confirmation) {
+      event.preventDefault();
+      confirmation.hidden = false;
+      confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    }
+  });
+
+  updateRanges();
+  setStep(0);
+
+  if (new URLSearchParams(window.location.search).get("swg_review") === "success" && confirmation) {
+    confirmation.hidden = false;
+    confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  }
+}
+
+let initialized = false;
+
+function initPage() {
+  if (initialized) return;
+  initialized = true;
+  setupReveals();
+  setupFaq();
+  setupAssessmentForm();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPage);
+} else {
+  initPage();
+}
+</script>
+  <style>
+/* ── SWG Score Widget ── */
+.swg-score-widget {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  z-index: 9998;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e4e4e7;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.swg-score-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: none;
+  border-radius: 0 16px 16px 0;
+  padding: 5px 14px 5px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  min-width: 110px;
+  height: 32px;
+  box-sizing: border-box;
+}
+.swg-score-pill:hover,
+.swg-score-pill:focus-visible {
+  background: rgba(24, 24, 27, 0.98);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.swg-score-pill:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+.swg-score-avg {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.swg-score-avg-val { color: #fff; }
+.swg-score-avg-max { color: #71717a; font-weight: 400; }
+.swg-score-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.swg-score-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+.swg-score-panel {
+  background: rgba(24, 24, 27, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: none;
+  border-radius: 0 0 12px 0;
+  width: 240px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+.swg-score-widget.swg-score--open .swg-score-panel {
+  max-height: 340px;
+  opacity: 1;
+  padding: 10px 14px 14px;
+}
+.swg-score-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.swg-score-row:last-child { margin-bottom: 0; }
+.swg-score-label {
+  width: 48px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #a1a1aa;
+}
+.swg-score-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.swg-score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+.swg-score-num {
+  width: 26px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+.swg-score-help {
+  position: relative;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #71717a;
+  cursor: help;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.swg-score-help:hover,
+.swg-score-help:focus-visible {
+  background: rgba(255,255,255,0.16);
+  color: #d4d4d8;
+}
+.swg-score-help:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 1px;
+}
+.swg-score-tooltip {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #e4e4e7;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  width: max-content;
+  max-width: 280px;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.swg-score-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #1a1a1a;
+}
+.swg-score-help:hover .swg-score-tooltip,
+.swg-score-help:focus .swg-score-tooltip {
+  display: block;
+}
+@media (max-width: 767px) {
+  .swg-score-pill {
+    min-width: 0;
+    padding: 4px 10px 4px 8px;
+    gap: 0;
+    height: 28px;
+    border-radius: 0 12px 12px 0;
+  }
+  .swg-score-dots { display: none; }
+  .swg-score-avg { font-size: 12px; }
+  .swg-score-panel { width: 220px; }
+  .swg-score-tooltip {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+  .swg-score-tooltip::before {
+    left: auto;
+    right: 8px;
+    transform: none;
+  }
+}
+</style>
+</head>
+  <body>
+    <div style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif"><span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span><a href="/v1.html" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:#3B82F6;color:#fff;text-decoration:none">1</a><a href="/v2/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a><a href="/v3/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">3</a><a href="/v4/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">4</a><a href="/v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a></div>
+
+<!-- SWG Score Widget -->
+<div class="swg-score-widget" id="swgScoreWidget">
+  <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
+    <span class="swg-score-avg">
+      <span class="swg-score-avg-val" id="swgAvgVal">0.0</span><span class="swg-score-avg-max">/10</span>
+    </span>
+    <span class="swg-score-dots" id="swgDots"></span>
+  </div>
+  <div class="swg-score-panel" id="swgPanel" role="region" aria-label="Score details"></div>
+</div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-nav" aria-label="Primary navigation">
+      <a class="brand-mark" href="#main" aria-label="Support Wellness Global home">
+        <span>SWG</span>
+      </a>
+      <nav class="nav-links" aria-label="Main links">
+        <a href="#situations">Problems</a>
+        <a href="#operating-system">Process</a>
+        <a href="#implementation">Implementation</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#intake">Assessment</a>
+      </nav>
+      <a class="nav-button" href="#intake">Start the review</a>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell hero-v18" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="trust-pill">
+            <span></span>
+            For founder-led and operator-led companies ready for the next stage
+          </p>
+          <h1 id="hero-title">We help growing companies solve the business problems behind growth.</h1>
+          <p class="hero-subhead">
+            SWG comes in when paid media is not converting, teams are still working manually,
+            and the website, CRM, AI tools, and reporting are not connected to one strategy.
+            We diagnose the business first, then decide what to fix, connect, rebuild,
+            automate, or rescue.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#intake">Start the review</a>
+            <a class="secondary-action" href="#pricing">See engagement paths</a>
+          </div>
+        </div>
+
+        <div class="hero-visual alignment-console clarity-board reveal" aria-label="Business review visual">
+          <div class="visual-topline">
+            <span>Business Review</span>
+            <strong>Built around the real problem</strong>
+          </div>
+          <article class="alignment-scorecard">
+            <div class="card-kicker">
+              <span>What usually shows up first</span>
+              <b>Strategy + implementation</b>
+            </div>
+            <h2>The problem is rarely just the website.</h2>
+            <div class="signal-list" aria-hidden="true">
+              <span>Website no longer matches the company</span>
+              <span>Leads and follow-up leak between tools</span>
+              <span>AI ideas stall after the first meeting</span>
+              <span>Founder still carries too much context</span>
+            </div>
+          </article>
+          <div class="diagnostic-path" aria-hidden="true">
+            <div>
+              <b>Diagnose</b>
+              <span>Business stage, customer, offer, team, tools, and growth bottleneck</span>
+            </div>
+            <div>
+              <b>Sequence</b>
+              <span>What to fix first, what to build next, what can wait</span>
+            </div>
+            <div>
+              <b>Execute</b>
+              <span>Website, CRM, AI workflows, paid media, social campaigns, AI image generation, reporting, or operating support</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners-strip section-shell proof-strip-v18 reveal" aria-labelledby="buyer-fit-title">
+        <p class="eyebrow">Built for the messy middle of growth.</p>
+        <h2 id="buyer-fit-title">When marketing, tech, and people stop moving together, growth gets expensive.</h2>
+        <div class="approach-bridge" aria-label="How SWG creates leverage">
+          <article>
+            <span>01</span>
+            <h3>One view of the business.</h3>
+            <p>We look beyond the requested service to understand the company, customers, team, tools, revenue model, and growth target.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>The real constraint gets named.</h3>
+            <p>Sometimes the problem is marketing. Sometimes it is offer clarity, follow-up, reporting, ownership, or a broken handoff.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>The next build has a sequence.</h3>
+            <p>You get a practical order of operations: what to fix first, what to build next, and what should wait.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Strategy can turn into shipped work.</h3>
+            <p>SWG can stay with the company to build the systems, campaigns, automations, assets, and reporting needed to move.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="situations section-shell request-diagnostic" id="situations" aria-labelledby="situations-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What you ask for vs. what we usually fix</p>
+          <h2 id="situations-title">The first request is often tactical. The work underneath is where growth gets unstuck.</h2>
+        </div>
+        <div class="request-grid">
+          <article class="request-card request-wide reveal">
+            <span>Website request</span>
+            <h3>“We need the site to finally match the company.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>Positioning, offer clarity, proof, service architecture, conversion paths, and analytics need to catch up.</p>
+            </div>
+          </article>
+          <article class="request-card request-wide reveal">
+            <span>Paid media request</span>
+            <h3>“We are spending, but it is not converting.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>The audience, landing page, offer, tracking, follow-up, and sales handoff are not working as one path.</p>
+            </div>
+          </article>
+          <article class="request-card reveal">
+            <span>AI request</span>
+            <h3>“We need AI automation.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>The process, inputs, review rules, owner, and human approval path need to be defined before tools help.</p>
+            </div>
+          </article>
+          <article class="request-card reveal">
+            <span>CRM request</span>
+            <h3>“Our CRM is messy.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>Stages, ownership, source tracking, follow-up rules, pipeline hygiene, and reporting are not agreed on.</p>
+            </div>
+          </article>
+          <article class="request-card reveal">
+            <span>Marketing request</span>
+            <h3>“We are active everywhere, but nothing compounds.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>Content, email, social, SEO, paid media, proof capture, and campaign measurement need one operating rhythm.</p>
+            </div>
+          </article>
+          <article class="request-card reveal">
+            <span>Operations request</span>
+            <h3>“The team is still doing too much by hand.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>Intake, approvals, handoffs, content review, reporting, and accountability need cleaner workflows and automation.</p>
+            </div>
+          </article>
+          <article class="request-card request-rescue reveal">
+            <span>Rescue request</span>
+            <h3>“We already spent five or six figures and still do not have something usable.”</h3>
+            <div>
+              <b>Usually means</b>
+              <p>The build needs a calm audit: what failed, what can be salvaged, what should be rebuilt, and what the next decision should be.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="alignment-map-section section-shell" id="operating-system" aria-labelledby="system-title">
+        <div class="alignment-map-copy reveal">
+          <p class="eyebrow">How SWG works</p>
+          <h2 id="system-title">Start with the review, not a menu of services.</h2>
+          <p>
+            A company may come in asking for a website, AI workshop, newsletter, CRM cleanup,
+            campaign, or creative package. We still start by understanding the business, then
+            recommend the smallest useful sequence of work.
+          </p>
+        </div>
+        <div class="diagnostic-panel reveal" aria-label="SWG business review process">
+          <div class="diagnostic-column incoming">
+            <span>What you may ask for</span>
+            <b>“We need growth support.”</b>
+            <p>Website outdated. Sales follow-up inconsistent. AI ideas parked. Marketing unclear.</p>
+          </div>
+          <div class="diagnostic-column review">
+            <span>What we review first</span>
+            <b>Understand the business before prescribing the build.</b>
+            <ul>
+              <li>Business stage and growth goal</li>
+              <li>Customer, offer, and positioning</li>
+              <li>Sales, ops, tech, and reporting gaps</li>
+              <li>Budget, urgency, and execution readiness</li>
+            </ul>
+          </div>
+          <div class="diagnostic-column output">
+            <span>What happens next</span>
+            <b>A clear plan, a focused build, or ongoing support.</b>
+            <p>The output is a practical plan with the work in the right order.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-order section-shell" aria-labelledby="work-order-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">From request to result</p>
+          <h2 id="work-order-title">A messy request becomes a scoped, built, approved, and operated system.</h2>
+        </div>
+        <div class="work-order-board reveal" aria-label="Live work order example">
+          <article class="work-order-card-v18">
+            <span>01 Messy request</span>
+            <h3>Launch the new offer before the conference.</h3>
+            <p>Leads are getting lost. The site is outdated. AI can help, but humans need approval before anything goes live.</p>
+          </article>
+          <article class="work-order-card-v18">
+            <span>02 Scope sheet</span>
+            <h3>Goal, owner, deadline, risk, and budget are made visible.</h3>
+            <ul>
+              <li>Audience and offer clarified</li>
+              <li>Website, CRM, paid media, social, AI, follow-up, and reporting mapped</li>
+              <li>Approvals and launch path assigned</li>
+            </ul>
+          </article>
+          <article class="work-order-card-v18">
+            <span>03 Build layer</span>
+            <h3>The services become connected artifacts.</h3>
+            <div class="artifact-grid" aria-hidden="true">
+              <b>Landing page</b>
+              <b>CRM route</b>
+              <b>AI review flow</b>
+              <b>Email follow-up</b>
+              <b>Dashboard</b>
+              <b>Proof capture</b>
+            </div>
+          </article>
+          <article class="work-order-card-v18">
+            <span>04 Operate</span>
+            <h3>The system keeps producing decisions.</h3>
+            <p>Leads route, follow-up sends, proof is captured, performance is reviewed, and the next action is clear.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="why section-shell" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What the review produces</p>
+          <h2 id="roadmap-title">Before the next build, everyone should know what the work is supposed to change.</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <span>1</span>
+            <h3>Constraint map.</h3>
+            <p>Where the business is stuck across offer, audience, sales, operations, technology, AI, marketing, and reporting.</p>
+          </article>
+          <article class="why-card reveal">
+            <span>2</span>
+            <h3>Priority sequence.</h3>
+            <p>What to fix now, what to build next, what can wait, and which decisions need leadership approval.</p>
+          </article>
+          <article class="why-card reveal">
+            <span>3</span>
+            <h3>Build scope.</h3>
+            <p>The assets, workflows, campaigns, dashboards, automations, and responsibilities required to make the plan real.</p>
+          </article>
+          <article class="why-card reveal">
+            <span>4</span>
+            <h3>Operating rhythm.</h3>
+            <p>The cadence for reviews, approvals, reporting, optimization, and the next round of useful decisions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="features section-shell implementation" id="implementation" aria-labelledby="implementation-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What we can build</p>
+          <h2 id="implementation-title">You can still find the specific services you need.</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <b>Websites + offers</b>
+            <p>Positioning, service pages, landing pages, case studies, forms, tracking, and conversion paths.</p>
+          </article>
+          <article class="service-card reveal">
+            <b>AI workflows</b>
+            <p>Drafting, summarization, intake, routing, review queues, approvals, and human-in-the-loop controls.</p>
+          </article>
+          <article class="service-card reveal">
+            <b>CRM + sales systems</b>
+            <p>Lead capture, ownership, stages, follow-up, tags, source tracking, and pipeline visibility.</p>
+          </article>
+          <article class="service-card reveal">
+            <b>Marketing execution</b>
+            <p>Email, SMS, content, social, SEO, paid traffic, launch calendars, and campaign measurement.</p>
+          </article>
+          <article class="service-card reveal">
+            <b>Operations cleanup</b>
+            <p>Process mapping, handoffs, SOPs, team workflows, approval paths, and internal accountability.</p>
+          </article>
+          <article class="service-card reveal">
+            <b>Proof + reporting</b>
+            <p>Dashboards, case-study capture, weekly decision views, KPI definitions, and next-action reporting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="reviews" id="proof" aria-labelledby="proof-title">
+        <div class="section-heading section-shell reveal">
+          <p class="eyebrow">What should feel different</p>
+          <h2 id="proof-title">The business has clearer decisions, cleaner systems, and fewer expensive guesses.</h2>
+        </div>
+        <div class="review-track" aria-label="Outcome cards">
+          <article class="review-card">
+            <div class="stars">ALIGNMENT</div>
+            <p>Leadership can see which growth problems are strategic, operational, marketing, or technology problems.</p>
+            <div><span></span><b>Executive clarity</b></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">ROADMAP</div>
+            <p>The team has a practical sequence instead of a wishlist of disconnected services and AI ideas.</p>
+            <div><span></span><b>Prioritized action</b></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">SYSTEMS</div>
+            <p>Leads, approvals, campaigns, reporting, and operations move through a visible operating layer.</p>
+            <div><span></span><b>Cleaner execution</b></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">SCALE</div>
+            <p>The business can grow with less founder drag because the work is documented, routed, and measured.</p>
+            <div><span></span><b>Profitable growth</b></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq section-shell" id="faq" aria-labelledby="faq-title">
+        <div class="faq-copy reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions before the first review.</h2>
+          <p>
+            We lead with the business problem, then recommend the clearest next step for strategy,
+            implementation, and measurable execution.
+          </p>
+        </div>
+        <div class="faq-list reveal">
+          <button type="button" class="faq-item is-open">
+            <span>Who is the best fit?</span>
+            <b>+</b>
+            <p>Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution.</p>
+          </button>
+          <button type="button" class="faq-item">
+            <span>Do we need to know what service we want?</span>
+            <b>+</b>
+            <p>No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth.</p>
+          </button>
+          <button type="button" class="faq-item">
+            <span>What can the roadmap include?</span>
+            <b>+</b>
+            <p>Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support.</p>
+          </button>
+          <button type="button" class="faq-item">
+            <span>Do you execute after the strategy?</span>
+            <b>+</b>
+            <p>Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed.</p>
+          </button>
+        </div>
+      </section>
+
+      <section class="cta section-shell" id="pricing" aria-labelledby="pricing-title">
+        <div class="cta-panel pricing-panel reveal">
+          <div>
+            <p class="eyebrow">Ways to work together</p>
+            <h2 id="pricing-title">Start with the business. Build what it needs.</h2>
+            <p>
+              SWG diagnoses the business, finds the operating gaps, builds the roadmap,
+              then implements the right systems in the right order.
+            </p>
+            <p class="pricing-note">Larger operating-system, company ERP, or custom app builds are scoped separately.</p>
+            <a class="primary-action" href="#intake">Start the review</a>
+          </div>
+          <div class="pricing-stack" aria-label="Pricing paths">
+            <article>
+              <span>Business Review</span>
+              <b>$5K-$10K</b>
+              <p>Diagnosis, priorities, roadmap, recommended sequence.</p>
+            </article>
+            <article>
+              <span>Focused Build</span>
+              <b>$10K-$50K+</b>
+              <p>Website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch.</p>
+            </article>
+            <article>
+              <span>Ongoing Support</span>
+              <b>From $7.5K/mo</b>
+              <p>Ongoing execution, reporting, optimization, and support.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="intake section-shell" id="intake" aria-labelledby="intake-title">
+        <div class="intake-header">
+          <p class="eyebrow">Business review assessment</p>
+          <h2 id="intake-title">Start your business review.</h2>
+          <p>
+            Companies usually come to SWG when growth is no longer a marketing problem alone.
+            This assessment helps us understand your company stage, current bottlenecks,
+            operating maturity, growth goals, and readiness to implement.
+          </p>
+        </div>
+
+        <div class="intake-layout">
+          <aside class="intake-rail" aria-label="Assessment progress">
+            <div class="rail-card">
+              <span class="rail-kicker">Estimated time</span>
+              <strong>8-10 minutes</strong>
+              <p>If there is a strong fit, we will recommend the best next step: Business Review, Focused Build, or Ongoing Support.</p>
+            </div>
+            <div class="step-progress" aria-hidden="true">
+              <i></i>
+            </div>
+            <div class="step-tabs" role="tablist" aria-label="Assessment sections">
+              <button type="button" class="step-tab is-active" data-step-target="0">01 Company</button>
+              <button type="button" class="step-tab" data-step-target="1">02 Growth</button>
+              <button type="button" class="step-tab" data-step-target="2">03 Systems</button>
+              <button type="button" class="step-tab" data-step-target="3">04 Goals</button>
+              <button type="button" class="step-tab" data-step-target="4">05 Fit</button>
+            </div>
+          </aside>
+
+          <form class="assessment-form" id="business-review-form" action="https://supportwellnessglobal.com/wp-admin/admin-post.php" method="post">
+            <input type="hidden" name="action" value="swg_business_review" />
+            <input type="hidden" name="swg_business_review_nonce" value="a3d32e22e6" />
+            <input type="hidden" name="swg_form_name" value="Business Review Assessment" />
+            <input class="form-honeypot" name="swg_company_fax" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <fieldset class="form-step is-active" data-step="0">
+              <legend>
+                <span>Section 1</span>
+                Company Snapshot
+              </legend>
+              <p class="step-copy">Help us understand the business, your role, and whether the company is in the stage where SWG can create real leverage.</p>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span>Company name</span>
+                  <input name="company_name" type="text" autocomplete="organization" required />
+                </label>
+                <label class="field">
+                  <span>Website URL</span>
+                  <input name="website_url" type="url" placeholder="https://" required />
+                </label>
+                <label class="field">
+                  <span>Your name</span>
+                  <input name="name" type="text" autocomplete="name" required />
+                </label>
+                <label class="field">
+                  <span>Your email</span>
+                  <input name="email" type="email" autocomplete="email" required />
+                </label>
+                <label class="field">
+                  <span>Your role</span>
+                  <select name="role" required>
+                    <option value="">Select one</option>
+                    <option>Owner / Founder</option>
+                    <option>CEO / President</option>
+                    <option>COO / Operations leader</option>
+                    <option>CMO / Marketing leader</option>
+                    <option>Sales leader</option>
+                    <option>Department lead</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Are you involved in strategic or budget decisions?</span>
+                  <select name="decision_role" required>
+                    <option value="">Select one</option>
+                    <option>Yes, I am the primary decision-maker</option>
+                    <option>Yes, I am part of the decision team</option>
+                    <option>No, but I can introduce the right people</option>
+                    <option>No</option>
+                  </select>
+                </label>
+                <label class="field field-wide">
+                  <span>Who else would approve a strategic engagement?</span>
+                  <input name="approval_team" type="text" placeholder="Names or roles are fine" />
+                </label>
+                <label class="field">
+                  <span>Estimated annual revenue</span>
+                  <select name="annual_revenue" required>
+                    <option value="">Select range</option>
+                    <option>Under $1M</option>
+                    <option>$1M-$5M</option>
+                    <option>$5M-$10M</option>
+                    <option>$10M-$15M</option>
+                    <option>$15M-$25M</option>
+                    <option>$25M+</option>
+                    <option>Prefer to discuss</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Number of employees</span>
+                  <select name="employee_count" required>
+                    <option value="">Select range</option>
+                    <option>1-5</option>
+                    <option>6-15</option>
+                    <option>16-50</option>
+                    <option>51-100</option>
+                    <option>101-250</option>
+                    <option>250+</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Industry</span>
+                  <input name="industry" type="text" required />
+                </label>
+                <label class="field">
+                  <span>How long has the business been operating?</span>
+                  <select name="years_operating" required>
+                    <option value="">Select one</option>
+                    <option>Less than 1 year</option>
+                    <option>1-3 years</option>
+                    <option>4-7 years</option>
+                    <option>8-15 years</option>
+                    <option>15+ years</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="1">
+              <legend>
+                <span>Section 2</span>
+                Growth Bottlenecks
+              </legend>
+              <p class="step-copy">Growth often exposes the gaps between strategy, team structure, operations, marketing, sales, and technology.</p>
+
+              <div class="field field-wide">
+                <span>Which best describes your current situation?</span>
+                <div class="choice-grid">
+                  <label><input type="checkbox" name="current_situation[]" value="Operations struggling" /> We have grown quickly and operations are struggling to keep up.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Revenue plateaued" /> Revenue has plateaued.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Sales slowed" /> Sales growth has slowed.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Marketing unclear" /> Marketing activity is happening, but results are unclear.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Website outdated" /> Our website or positioning no longer reflects the business.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Accountability inconsistent" /> Team accountability is inconsistent.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Lack systems" /> We lack clear systems, processes, or ownership.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Leadership overwhelmed" /> Leadership is overwhelmed or pulled into too many decisions.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Tools messy" /> Our CRM, tools, or reporting are messy.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="AI plan needed" /> We are using or considering AI, but need a practical implementation plan.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Expansion" /> We are preparing for expansion.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Exit" /> We are preparing for acquisition, succession, or exit.</label>
+                </div>
+              </div>
+
+              <label class="field field-wide">
+                <span>What is the biggest obstacle to growth right now?</span>
+                <textarea name="growth_obstacle" rows="4" required></textarea>
+              </label>
+
+              <div class="field field-wide">
+                <span>Where does the business feel most disconnected?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="disconnects[]" value="Mission and vision" /> Mission and vision</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Brand positioning" /> Brand positioning</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Customer targeting" /> Customer targeting</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Sales process" /> Sales process</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Marketing execution" /> Marketing execution</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Operations and workflows" /> Operations and workflows</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Team accountability" /> Team accountability</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Technology stack" /> Technology stack</label>
+                  <label><input type="checkbox" name="disconnects[]" value="AI adoption" /> AI adoption</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Reporting" /> Reporting and decision-making</label>
+                </div>
+              </div>
+
+              <label class="field field-wide">
+                <span>If nothing changes over the next 12 months, what is at risk?</span>
+                <textarea name="inaction_risk" rows="4" placeholder="Lost revenue, stalled growth, team burnout, missed expansion, customer experience issues, operational waste..." required></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="2">
+              <legend>
+                <span>Section 3</span>
+                Systems And Structure
+              </legend>
+              <p class="step-copy">These questions help us understand whether the constraint is strategy, process, people, technology, reporting, or execution.</p>
+
+              <div class="field field-wide">
+                <span>Which of the following do you currently have documented?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="documented_assets[]" value="Strategic plan" /> Strategic plan</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Messaging guide" /> Brand positioning or messaging guide</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="ICP" /> Ideal customer profile</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Org chart" /> Organizational chart</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="KPI dashboard" /> KPI dashboard</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="SOPs" /> SOPs or process documentation</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Sales stages" /> Sales pipeline stages</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Marketing calendar" /> Marketing calendar</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Leadership cadence" /> Leadership meeting cadence</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Budgeting" /> Budget and forecasting process</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="AI guidelines" /> AI usage policy or workflow guidelines</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="None" /> None of the above</label>
+                </div>
+              </div>
+
+              <div class="field field-wide">
+                <span>Which systems or tools are currently part of your operation?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="current_tools[]" value="CRM" /> CRM</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Email marketing" /> Email marketing platform</label>
+                  <label><input type="checkbox" name="current_tools[]" value="SMS" /> SMS platform</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Project management" /> Project management system</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Analytics dashboard" /> Analytics dashboard</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Website CMS" /> Website CMS</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Ecommerce" /> Ecommerce platform</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Paid ads" /> Paid advertising accounts</label>
+                  <label><input type="checkbox" name="current_tools[]" value="AI tools" /> AI tools used by the team</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Knowledge base" /> Internal knowledge base</label>
+                </div>
+              </div>
+
+              <div class="range-grid">
+                <label class="field range-field">
+                  <span>How effective are your current operations?</span>
+                  <input name="operations_effectiveness" type="range" min="1" max="10" value="5" />
+                  <small><b>1</b> reactive and inconsistent <strong>5</strong> clear, documented, measured, and scalable</small>
+                </label>
+                <label class="field range-field">
+                  <span>How aligned is leadership on the next stage of growth?</span>
+                  <input name="leadership_alignment" type="range" min="1" max="10" value="5" />
+                  <small><b>1</b> unclear priorities <strong>5</strong> clear agreement and ownership</small>
+                </label>
+                <label class="field range-field">
+                  <span>Can your current systems support the next stage?</span>
+                  <input name="systems_confidence" type="range" min="1" max="10" value="5" />
+                  <small><b>1</b> holding us back <strong>5</strong> ready for scale</small>
+                </label>
+              </div>
+
+              <label class="field field-wide">
+                <span>What part of the business depends too heavily on one person or a small group?</span>
+                <textarea name="key_person_dependency" rows="4"></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="3">
+              <legend>
+                <span>Section 4</span>
+                Goals And Success
+              </legend>
+              <p class="step-copy">Tell us what outcome you actually want, not only which service you think you may need.</p>
+
+              <label class="field field-wide">
+                <span>Where do you want the business to be 24 months from now?</span>
+                <textarea name="twenty_four_month_goal" rows="4" required></textarea>
+              </label>
+
+              <label class="field field-wide">
+                <span>What revenue goal are you working toward?</span>
+                <select name="revenue_goal" required>
+                  <option value="">Select one</option>
+                  <option>Maintain current level with better profitability</option>
+                  <option>25% growth</option>
+                  <option>50% growth</option>
+                  <option>Double revenue</option>
+                  <option>Prepare for expansion</option>
+                  <option>Prepare for acquisition, succession, or exit</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <div class="field field-wide">
+                <span>What would a successful engagement with SWG make possible?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="success_outcomes[]" value="Strategic priorities" /> Clearer strategic priorities</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Positioning" /> Stronger positioning and messaging</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Lead generation" /> Better lead generation or conversion</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Sales process" /> Cleaner sales process</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Marketing execution" /> More consistent marketing execution</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Workflows" /> Better operational workflows</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="AI implementation" /> Practical AI implementation</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Less bottleneck" /> Less founder or leadership bottleneck</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Reporting" /> Better reporting and decision-making</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Roadmap" /> A roadmap the team can actually execute</label>
+                </div>
+              </div>
+
+              <label class="field field-wide">
+                <span>In your own words, what would success look like?</span>
+                <textarea name="success_definition" rows="4" required></textarea>
+              </label>
+
+              <label class="field field-wide">
+                <span>Why is now the right time to address this?</span>
+                <textarea name="why_now" rows="4" required></textarea>
+              </label>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="4">
+              <legend>
+                <span>Section 5</span>
+                Fit And Next Step
+              </legend>
+              <p class="step-copy">SWG is best suited for companies ready to make decisions, implement changes, and invest in the operating layer behind growth.</p>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span>Have you worked with a consultant, coach, agency, or advisory firm before?</span>
+                  <select name="prior_advisory" required>
+                    <option value="">Select one</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Yes, but not successfully</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>What kind of partner are you looking for?</span>
+                  <select name="partner_type" required>
+                    <option value="">Select one</option>
+                    <option>Strategic diagnosis and roadmap</option>
+                    <option>Strategy plus implementation</option>
+                    <option>Implementation of a known priority</option>
+                    <option>Ongoing operating support</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Do you have the authority and willingness to act on critical recommendations?</span>
+                  <select name="change_authority" required>
+                    <option value="">Select one</option>
+                    <option>Yes</option>
+                    <option>Yes, with leadership alignment</option>
+                    <option>Depends on the recommendation</option>
+                    <option>No</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>What level of investment have you allocated?</span>
+                  <select name="investment_range" required>
+                    <option value="">Select range</option>
+                    <option>Under $7,500</option>
+                    <option>$7,500-$15,000</option>
+                    <option>$15,000-$25,000</option>
+                    <option>$25,000-$75,000</option>
+                    <option>$75,000+</option>
+                    <option>Not finalized yet, but we can invest if there is a clear case</option>
+                  </select>
+                </label>
+                <label class="field field-wide range-field">
+                  <span>How committed are you to implementing recommendations?</span>
+                  <input name="implementation_commitment" type="range" min="1" max="10" value="6" />
+                  <small><b>1</b> exploring ideas <strong>6</strong> ready to make decisions and execute</small>
+                </label>
+                <label class="field field-wide">
+                  <span>Which engagement path seems closest to what you may need?</span>
+                  <select name="engagement_path" required>
+                    <option value="">Select one</option>
+                    <option>Business Review: diagnosis, priorities, next-step plan</option>
+                    <option>Focused Build: website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch</option>
+                    <option>Ongoing Support: execution, optimization, reporting, and support</option>
+                    <option>I am not sure yet</option>
+                  </select>
+                </label>
+                <label class="field field-wide">
+                  <span>Anything else we should know before reviewing your assessment?</span>
+                  <textarea name="additional_context" rows="4"></textarea>
+                </label>
+                <label class="field field-wide">
+                  <span>Optional context link</span>
+                  <input name="context_link" type="url" placeholder="Website, deck, org chart, KPI dashboard, campaign report..." />
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="secondary-action form-back" type="button">Back</button>
+              <button class="primary-action form-next" type="button">Continue</button>
+              <button class="primary-action form-submit" type="submit">Submit Business Review</button>
+            </div>
+
+            <div class="form-confirmation" role="status" aria-live="polite" hidden>
+              <span>Review received</span>
+              <h3>Thank you. We will review your assessment and determine whether there is a strong strategic fit.</h3>
+              <p>If the fit is clear, we will follow up with the best next step: a Business Review, a Focused Build, or an Ongoing Support conversation.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer section-shell">
+      <div class="footer-brand">
+        <a class="brand-mark" href="#main" aria-label="Support Wellness Global home">
+          <span>SWG</span>
+        </a>
+        <p>Strategy, operations, technology, and marketing support for growing companies that need the work connected and executed.</p>
+        <a class="footer-contact" href="#intake">Start the review</a>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Essential Links</b>
+          <a href="#situations">Problems</a>
+          <a href="#operating-system">Process</a>
+          <a href="#implementation">Implementation</a>
+        </div>
+        <div>
+          <b>Company</b>
+          <a href="#proof">Outcomes</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#intake">Assessment</a>
+          <a href="#intake">Contact</a>
+        </div>
+        <div>
+          <b>Next Step</b>
+          <a href="#intake">Start Review</a>
+          <a href="#pricing">Engagement Paths</a>
+          <a href="#implementation">Service Routes</a>
+        </div>
+      </div>
+    </footer>
+  
+<script>
+window.SWG_SCORES = {
+  ui: { score: 7.5, reason: "Clean single-page layout with good structure. Navigation works well. Some sections feel dense." },
+  ux: { score: 7.0, reason: "Clear flow from problem to solution. Assessment form is functional. Could benefit from better progressive disclosure." },
+  mobile: { score: 7.5, reason: "Responsive layout works on mobile. Touch targets adequate. Some horizontal spacing could be tighter." },
+  seo: { score: 6.5, reason: "Basic meta tags present. Missing structured data, OG tags, and optimized heading hierarchy." },
+  design: { score: 7.0, reason: "Professional but standard consulting look. Dark theme is clean. Could use more visual distinction and personality." }
+};
+</script>
+
+<script>
+(function () {
+  'use strict';
+  function scoreColor(s) {
+    if (s >= 9)   return '#22C55E';
+    if (s >= 7)   return '#3B82F6';
+    if (s >= 5)   return '#EAB308';
+    return '#EF4444';
+  }
+  function dotColor(s) {
+    if (s >= 8) return '#22C55E';
+    if (s >= 6) return '#EAB308';
+    return '#EF4444';
+  }
+  var LABELS = { ui: 'UI', ux: 'UX', mobile: 'Mobile', seo: 'SEO', design: 'Design' };
+  var KEYS = ['ui', 'ux', 'mobile', 'seo', 'design'];
+  var widget = document.getElementById('swgScoreWidget');
+  var pill   = document.getElementById('swgScorePill');
+  var dots   = document.getElementById('swgDots');
+  var panel  = document.getElementById('swgPanel');
+  var avgEl  = document.getElementById('swgAvgVal');
+  var isOpen = false;
+  function toggle() {
+    isOpen = !isOpen;
+    widget.classList.toggle('swg-score--open', isOpen);
+    pill.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  pill.addEventListener('click', toggle);
+  pill.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (isOpen && !widget.contains(e.target)) { toggle(); }
+  });
+  function render() {
+    var scores = window.SWG_SCORES || {};
+    var total = 0, count = 0;
+    dots.innerHTML = '';
+    KEYS.forEach(function (k) {
+      var s = (scores[k] && scores[k].score) || 0;
+      total += s; count++;
+      var d = document.createElement('span');
+      d.className = 'swg-score-dot';
+      d.style.background = dotColor(s);
+      d.title = LABELS[k] + ': ' + s;
+      dots.appendChild(d);
+    });
+    var avg = count ? (total / count) : 0;
+    avgEl.textContent = avg.toFixed(1);
+    panel.innerHTML = '';
+    KEYS.forEach(function (k) {
+      var data = scores[k] || { score: 0, reason: 'Not yet scored.' };
+      var s = data.score, reason = data.reason || 'Not yet scored.';
+      var row = document.createElement('div'); row.className = 'swg-score-row';
+      var label = document.createElement('span'); label.className = 'swg-score-label'; label.textContent = LABELS[k];
+      var barWrap = document.createElement('div'); barWrap.className = 'swg-score-bar-wrap';
+      var barFill = document.createElement('div'); barFill.className = 'swg-score-bar-fill';
+      barFill.style.width = (s * 10) + '%'; barFill.style.background = scoreColor(s);
+      barWrap.appendChild(barFill);
+      var num = document.createElement('span'); num.className = 'swg-score-num';
+      num.textContent = s.toFixed(1); num.style.color = scoreColor(s);
+      var help = document.createElement('span'); help.className = 'swg-score-help';
+      help.setAttribute('tabindex', '0'); help.setAttribute('role', 'button');
+      help.setAttribute('aria-label', LABELS[k] + ' score explanation'); help.textContent = '?';
+      var tip = document.createElement('span'); tip.className = 'swg-score-tooltip'; tip.textContent = reason;
+      help.appendChild(tip);
+      row.appendChild(label); row.appendChild(barWrap); row.appendChild(num); row.appendChild(help);
+      panel.appendChild(row);
+    });
+  }
+  window.updateScoreWidget = render;
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', render); }
+  else { setTimeout(render, 0); }
+})();
+</script>
+
+</body>
+</html>
+
+<!--Generated by Endurance Page Cache-->
