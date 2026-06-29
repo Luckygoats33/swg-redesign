@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page Not Found | SWG</title>
+<link rel="icon" type="image/svg+xml" href="/swg-redesign/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0b0e12;
+  --warm-white:#f8f6f0;
+  --electric:#2f6bff;
+  --lime:#c9ff3b;
+}
+html,body{height:100%}
+body{
+  font-family:'IBM Plex Sans',sans-serif;
+  background:var(--ink);
+  color:var(--warm-white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:480px;padding:2rem}
+.brand{
+  font-family:'Sora',sans-serif;
+  font-weight:800;
+  font-size:1.25rem;
+  letter-spacing:0.04em;
+  color:var(--warm-white);
+  margin-bottom:2.5rem;
+}
+.brand span{
+  color:var(--electric);
+}
+h1{
+  font-family:'Sora',sans-serif;
+  font-weight:700;
+  font-size:2.5rem;
+  line-height:1.2;
+  margin-bottom:1rem;
+}
+h1 span{
+  color:var(--lime);
+}
+p{
+  color:rgba(248,246,240,0.6);
+  font-size:1.05rem;
+  line-height:1.6;
+  margin-bottom:2.5rem;
+}
+.btn{
+  display:inline-block;
+  font-family:'Sora',sans-serif;
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--ink);
+  background:var(--lime);
+  padding:0.85rem 2rem;
+  border-radius:8px;
+  text-decoration:none;
+  transition:opacity 0.2s ease;
+}
+.btn:hover{opacity:0.85}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="brand">S<span>W</span>G</div>
+  <h1><span>404</span> — Page not found</h1>
+  <p>The page you're looking for doesn't exist or has been moved.</p>
+  <a href="/swg-redesign/" class="btn">Back to home</a>
+</div>
+</body>
+</html>

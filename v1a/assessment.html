@@ -17,7 +17,7 @@
     <meta name="twitter:title" content="Business Review Assessment | SWG" />
     <meta name="twitter:description" content="Start your business review with SWG. 8-10 minutes." />
     <meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg" />
-    <link rel="icon" href="data:," />
+    <link rel="icon" type="image/svg+xml" href="/swg-redesign/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -935,9 +935,11 @@ h1, h2, h3 {
           </aside>
 
           <!-- FORM -->
-          <form class="assessment-form" id="business-review-form" action="https://supportwellnessglobal.com/wp-admin/admin-post.php" method="post">
-            <input type="hidden" name="action" value="swg_business_review" />
-            <input type="hidden" name="swg_business_review_nonce" value="a3d32e22e6" />
+          <form class="assessment-form" id="business-review-form" action="https://formspree.io/f/xpwddjkb" method="post">
+            <input type="hidden" name="_subject" value="New SWG Business Review Assessment">
+            <input type="hidden" name="_cc" value="will@supportwellnessglobal.com,mike@supportwellnessglobal.com">
+            <input type="hidden" name="_replyto" value="">
+            <input type="hidden" name="_next" value="https://luckygoats33.github.io/swg-redesign/v1a/assessment.html?swg_review=success">
             <input type="hidden" name="swg_form_name" value="Business Review Assessment" />
             <input class="form-honeypot" name="swg_company_fax" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -1445,6 +1447,12 @@ h1, h2, h3 {
         confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
       }
     });
+
+    var emailField = form.querySelector('input[name="email"]');
+    var replyTo = form.querySelector('input[name="_replyto"]');
+    if (emailField && replyTo) {
+      emailField.addEventListener('input', function() { replyTo.value = emailField.value; });
+    }
 
     updateRanges();
     setStep(0);

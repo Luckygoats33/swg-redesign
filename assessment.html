@@ -16,6 +16,7 @@
 <meta name="twitter:title" content="Business Assessment | SWG">
 <meta name="twitter:description" content="Complete SWG's business review assessment. 8-10 minutes.">
 <meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="/swg-redesign/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -184,7 +185,11 @@ textarea{resize:vertical;min-height:80px;line-height:1.6}
   <h1 style="font-family:var(--heading);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:20px;color:var(--text)">Business Review Assessment</h1>
 
   <div class="form-card">
-    <form id="assessmentForm" onsubmit="return false">
+    <form id="assessmentForm" action="https://formspree.io/f/xpwddjkb" method="post">
+      <input type="hidden" name="_subject" value="New SWG Business Review Assessment">
+      <input type="hidden" name="_cc" value="will@supportwellnessglobal.com,mike@supportwellnessglobal.com">
+      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_next" value="https://luckygoats33.github.io/swg-redesign/assessment.html?swg_review=success">
 
       <!-- STEP 1: Company Snapshot -->
       <div class="step active" id="step0">
@@ -490,11 +495,36 @@ function goStep(i){if(i<=current){current=i;showStep(i)}}
 function nextStep(){if(current<total-1){current++;showStep(current)}else{submit()}}
 function prevStep(){if(current>0){current--;showStep(current)}}
 function submit(){
-  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  var isLocal = ['', 'localhost', '127.0.0.1'].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:';
+  if (isLocal) {
+    document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+    document.getElementById('successState').classList.add('active');
+    formNav.style.display='none';
+    document.querySelector('.progress-section').style.display='none';
+    bar.style.width='100%';
+  } else {
+    document.getElementById('assessmentForm').submit();
+  }
+}
+
+// Dynamic _replyto
+(function(){
+  var form = document.getElementById('assessmentForm');
+  var emailField = form.querySelector('input[name="contact_email"]');
+  var replyTo = form.querySelector('input[name="_replyto"]');
+  if (emailField && replyTo) {
+    emailField.addEventListener('input', function() { replyTo.value = emailField.value; });
+  }
+})();
+
+// Show success state if returning from Formspree
+if (new URLSearchParams(window.location.search).get('swg_review') === 'success') {
+  document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});
   document.getElementById('successState').classList.add('active');
-  formNav.style.display='none';
-  document.querySelector('.progress-section').style.display='none';
-  bar.style.width='100%';
+  document.getElementById('formNav').style.display='none';
+  var ps = document.querySelector('.progress-section');
+  if (ps) ps.style.display='none';
+  document.getElementById('progressBar').style.width='100%';
 }
 
 document.querySelectorAll('.scale-btn').forEach(btn=>{

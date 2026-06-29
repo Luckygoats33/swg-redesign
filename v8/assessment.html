@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Growth Assessment | SWG">
 <meta name="twitter:description" content="Start your free growth audit with SWG.">
 <meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233B82F6'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='11' fill='%23fff'%3ESWG%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/swg-redesign/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
@@ -79,7 +79,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   position:fixed;
   border-radius:50%;
   filter:blur(80px);
-  opacity:0.5;
+  opacity:0.75;
   pointer-events:none;
   will-change:transform;
   animation:orbFloat 16s ease-in-out infinite;
@@ -641,7 +641,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
      ===================================================================== -->
 <section class="assess-form-section" id="assessForm">
   <div class="assess-form-container" id="formContainer">
-    <form id="growthAssessment" novalidate>
+    <form id="growthAssessment" action="https://formspree.io/f/xpwddjkb" method="post" novalidate>
+      <input type="hidden" name="_subject" value="New SWG Business Review Assessment">
+      <input type="hidden" name="_cc" value="will@supportwellnessglobal.com,mike@supportwellnessglobal.com">
+      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_next" value="https://luckygoats33.github.io/swg-redesign/v8/assessment.html?swg_review=success">
       <div class="form-grid">
 
         <div class="form-group">
@@ -833,9 +837,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   var form = document.getElementById('growthAssessment');
   var formContainer = document.getElementById('formContainer');
   var successMessage = document.getElementById('successMessage');
+  var isLocal = ['', 'localhost', '127.0.0.1'].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:';
 
   form.addEventListener('submit', function(e){
-    e.preventDefault();
 
     // Basic validation
     var required = form.querySelectorAll('[required]');
@@ -860,20 +864,32 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       valid = false;
     }
 
-    if(!valid) return;
+    if(!valid) { e.preventDefault(); return; }
 
-    // Collect form data
-    var data = {};
-    new FormData(form).forEach(function(value, key){
-      data[key] = value;
-    });
-    console.log('Growth Assessment Submission:', data);
+    if (isLocal) {
+      e.preventDefault();
+      // Show success
+      formContainer.style.display = 'none';
+      successMessage.classList.add('show');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    // Non-local: form submits naturally to Formspree
+  });
 
-    // Show success
+  // Dynamic _replyto
+  (function(){
+    var emailInput = form.querySelector('input[name="email"]');
+    var replyTo = form.querySelector('input[name="_replyto"]');
+    if (emailInput && replyTo) {
+      emailInput.addEventListener('input', function() { replyTo.value = emailInput.value; });
+    }
+  })();
+
+  // Show success if returning from Formspree
+  if (new URLSearchParams(window.location.search).get('swg_review') === 'success') {
     formContainer.style.display = 'none';
     successMessage.classList.add('show');
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
+  }
 
   // Clear error styling on input
   form.querySelectorAll('input, select, textarea').forEach(function(field){

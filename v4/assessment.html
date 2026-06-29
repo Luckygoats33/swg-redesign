@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Free Business Review Assessment | SWG">
 <meta name="twitter:description" content="Take the free SWG business review assessment. In 8-10 minutes, get a personalized growth roadmap.">
 <meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A2E1F'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-weight='400' font-size='11' fill='%23F5F2ED'%3ESWG%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/swg-redesign/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -344,7 +344,11 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   <section class="assessment">
     <div class="assessment__container">
 
-      <form id="assessmentForm" class="assessment__form" novalidate>
+      <form id="assessmentForm" class="assessment__form" action="https://formspree.io/f/xpwddjkb" method="post" novalidate>
+        <input type="hidden" name="_subject" value="New SWG Business Review Assessment">
+        <input type="hidden" name="_cc" value="will@supportwellnessglobal.com,mike@supportwellnessglobal.com">
+        <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="_next" value="https://luckygoats33.github.io/swg-redesign/v4/assessment.html?swg_review=success">
 
         <!-- Contact Information -->
         <span class="assessment__section-label">Contact Information</span>
@@ -550,9 +554,9 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   // ===== FORM SUBMISSION =====
   var form = document.getElementById('assessmentForm');
   var success = document.getElementById('assessmentSuccess');
+  var isLocal = ['', 'localhost', '127.0.0.1'].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:';
 
   form.addEventListener('submit', function(e){
-    e.preventDefault();
 
     // Basic validation
     var required = form.querySelectorAll('[required]');
@@ -573,16 +577,33 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
       valid = false;
     }
 
-    if(!valid) return;
+    if(!valid) { e.preventDefault(); return; }
 
-    // Hide form, show success
+    if (isLocal) {
+      e.preventDefault();
+      // Hide form, show success
+      form.style.display = 'none';
+      success.classList.add('visible');
+      success.style.display = 'block';
+      // Scroll to success message
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    // Non-local: form submits naturally to Formspree
+  });
+
+  // Dynamic _replyto
+  var emailInput = form.querySelector('input[name="email"]');
+  var replyTo = form.querySelector('input[name="_replyto"]');
+  if (emailInput && replyTo) {
+    emailInput.addEventListener('input', function() { replyTo.value = emailInput.value; });
+  }
+
+  // Show success if returning from Formspree
+  if (new URLSearchParams(window.location.search).get('swg_review') === 'success') {
     form.style.display = 'none';
     success.classList.add('visible');
     success.style.display = 'block';
-
-    // Scroll to success message
-    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
+  }
 
   // Clear validation styling on input
   form.querySelectorAll('input, select, textarea').forEach(function(field){

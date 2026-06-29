@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Free Business Review Assessment | SWG">
 <meta name="twitter:description" content="Take the SWG Business Review assessment. Get a personalized growth roadmap.">
 <meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23D4A574'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='12' fill='%2309090B'%3ESWG%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/swg-redesign/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -770,7 +770,11 @@ body.loading .hero-content{
 
     <!-- The Form -->
     <div class="form-card reveal" id="formCard">
-      <form id="assessmentForm" novalidate>
+      <form id="assessmentForm" action="https://formspree.io/f/xpwddjkb" method="post" novalidate>
+        <input type="hidden" name="_subject" value="New SWG Business Review Assessment">
+        <input type="hidden" name="_cc" value="will@supportwellnessglobal.com,mike@supportwellnessglobal.com">
+        <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="_next" value="https://luckygoats33.github.io/swg-redesign/v7/assessment.html?swg_review=success">
         <div class="form-grid">
 
           <!-- Company Name -->
@@ -1011,6 +1015,8 @@ window.SWG_SCORES = {
     var submitBtn = document.getElementById('submitBtn');
     if(!form || !formCard || !success) return;
 
+    var isLocal = ['', 'localhost', '127.0.0.1'].indexOf(window.location.hostname) !== -1 || window.location.protocol === 'file:';
+
     // Inline validation styling
     var style = document.createElement('style');
     style.textContent = '.form-input.error,.form-select.error,.form-textarea.error{border-color:#EF4444!important;box-shadow:0 0 0 3px rgba(239,68,68,0.15)!important}.form-error-msg{font-size:0.75rem;color:#EF4444;margin-top:4px;font-weight:400}';
@@ -1033,8 +1039,18 @@ window.SWG_SCORES = {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
+    function showSuccess(){
+      formCard.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      formCard.style.opacity = '0';
+      formCard.style.transform = 'translateY(-20px)';
+      setTimeout(function(){
+        formCard.style.display = 'none';
+        success.classList.add('show');
+        window.scrollTo({top: success.offsetTop - 200, behavior: 'smooth'});
+      }, 400);
+    }
+
     form.addEventListener('submit', function(e){
-      e.preventDefault();
       clearErrors();
 
       var valid = true;
@@ -1074,28 +1090,33 @@ window.SWG_SCORES = {
       }
 
       if(!valid){
+        e.preventDefault();
         var firstError = form.querySelector('.error');
         if(firstError) firstError.focus();
         return;
       }
 
-      // Simulate submission
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.style.opacity = '0.6';
-
-      setTimeout(function(){
-        formCard.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        formCard.style.opacity = '0';
-        formCard.style.transform = 'translateY(-20px)';
-
-        setTimeout(function(){
-          formCard.style.display = 'none';
-          success.classList.add('show');
-          window.scrollTo({top: success.offsetTop - 200, behavior: 'smooth'});
-        }, 400);
-      }, 1200);
+      if (isLocal) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.style.opacity = '0.6';
+        setTimeout(showSuccess, 1200);
+      }
+      // Non-local: form submits naturally to Formspree
     });
+
+    // Dynamic _replyto
+    var emailInput = form.querySelector('input[name="email"]');
+    var replyTo = form.querySelector('input[name="_replyto"]');
+    if (emailInput && replyTo) {
+      emailInput.addEventListener('input', function() { replyTo.value = emailInput.value; });
+    }
+
+    // Show success if returning from Formspree
+    if (new URLSearchParams(window.location.search).get('swg_review') === 'success') {
+      showSuccess();
+    }
 
     // Clear error on input
     form.querySelectorAll('.form-input,.form-select,.form-textarea').forEach(function(input){
