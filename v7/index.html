@@ -74,14 +74,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 img,video{max-width:100%;display:block}
 
 /* ================================================================
-   SCROLL SNAP CONTAINER
+   SCROLL SNAP CONTAINER (disabled — cinematic sections work without snap)
    ================================================================ */
-.snap-container{
-  height:100vh;
-  overflow-y:auto;
-  scroll-snap-type:y proximity;
-  scroll-behavior:smooth;
-}
 
 /* ================================================================
    VERSION BAR
@@ -410,7 +404,6 @@ p{max-width:65ch}
   background:var(--bg);
   overflow:hidden;
   padding:140px 24px 80px;
-  scroll-snap-align:start;
 }
 .hero-bg-video{
   position:absolute;inset:0;
@@ -543,7 +536,6 @@ p{max-width:65ch}
   display:flex;align-items:center;justify-content:center;
   padding:100px 24px;
   background:var(--bg);
-  scroll-snap-align:start;
   position:relative;
 }
 .video-container{
@@ -656,7 +648,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:80px 24px;
   background:var(--bg);
-  scroll-snap-align:start;
   position:relative;
   overflow:hidden;
 }
@@ -708,7 +699,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:100px 24px;
   background:var(--bg);
-  scroll-snap-align:start;
   position:relative;
 }
 .problem-grid{
@@ -770,7 +760,6 @@ p{max-width:65ch}
 .process-section{
   min-height:100vh;
   background:var(--bg);
-  scroll-snap-align:start;
   position:relative;
   padding:0;
   overflow:hidden;
@@ -871,7 +860,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:100px 24px;
   background:linear-gradient(180deg,var(--bg) 0%,#0F0E0C 50%,var(--bg) 100%);
-  scroll-snap-align:start;
 }
 .services-inner{max-width:1200px;margin:0 auto;width:100%}
 .services-inner .label{margin-bottom:12px}
@@ -919,7 +907,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:100px 24px;
   background:var(--bg);
-  scroll-snap-align:start;
   position:relative;
   overflow:hidden;
 }
@@ -1016,7 +1003,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:100px 24px;
   background:linear-gradient(180deg,var(--bg) 0%,#0C0B09 50%,var(--bg) 100%);
-  scroll-snap-align:start;
 }
 .situations-inner{max-width:800px;margin:0 auto;width:100%}
 .situations-inner .label{text-align:center;margin-bottom:16px}
@@ -1082,7 +1068,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:100px 24px;
   background:var(--bg);
-  scroll-snap-align:start;
 }
 .outcomes-inner{max-width:1000px;margin:0 auto;width:100%}
 .outcomes-inner .label{text-align:center;margin-bottom:16px}
@@ -1129,7 +1114,6 @@ p{max-width:65ch}
   display:flex;align-items:center;
   padding:100px 24px;
   background:var(--bg);
-  scroll-snap-align:start;
 }
 .faq-inner{max-width:720px;margin:0 auto;width:100%}
 .faq-header{text-align:center;margin-bottom:56px}
@@ -1180,7 +1164,6 @@ p{max-width:65ch}
   text-align:center;
   position:relative;
   overflow:hidden;
-  scroll-snap-align:start;
 }
 .cta-bg-glow{
   position:absolute;
@@ -1453,7 +1436,7 @@ body.loading .scroll-indicator{
      HERO SECTION
      ===================================================================== -->
 <section class="hero" id="hero">
-  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true">
+  <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
     <source src="../assets/v7/hero-bg-web.mp4" type="video/mp4">
   </video>
   <div class="hero-bg-grain" aria-hidden="true"></div>
@@ -1516,7 +1499,7 @@ body.loading .scroll-indicator{
 <section class="video-section" id="video">
   <div class="wrap" style="width:100%">
     <div class="video-container" id="videoContainer">
-      <video class="video-showcase-bg" autoplay muted loop playsinline>
+      <video class="video-showcase-bg" autoplay muted loop playsinline preload="auto">
         <source src="../assets/v7/network-connect-web.mp4" type="video/mp4">
       </video>
       <div class="video-gradient-bg" aria-hidden="true"></div>
@@ -1596,7 +1579,7 @@ body.loading .scroll-indicator{
      PROCESS — STICKY SPLIT-SCREEN
      ===================================================================== -->
 <section class="process-section" id="process">
-  <video class="process-bg-video" autoplay muted loop playsinline aria-hidden="true">
+  <video class="process-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
     <source src="../assets/v7/process-gears-web.mp4" type="video/mp4">
   </video>
   <div class="process-inner">
@@ -2302,6 +2285,11 @@ window.SWG_SCORES = {
     }, {passive:true});
     btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
   })();
+
+  // ── Force video autoplay ──
+  document.querySelectorAll('video[autoplay]').forEach(function(v) {
+    v.play().catch(function() {});
+  });
 
 })();
 </script>
