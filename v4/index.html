@@ -6,11 +6,11 @@
 <meta name="robots" content="index, follow">
 <title>Business Growth Consulting &amp; Strategy | SWG &mdash; Support Wellness Global</title>
 <meta name="description" content="SWG is a business consulting firm for founder-led companies. We diagnose growth bottlenecks, then build the systems — website, CRM, AI workflows, marketing, and reporting — connected to one strategy.">
-<link rel="canonical" href="https://supportwellnessglobal.com/v4/">
+<link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/v4/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Growth Consulting &amp; Strategy | SWG">
 <meta property="og:description" content="We solve the business problems behind growth. Strategy, operations, technology, and marketing support for founder-led companies.">
-<meta property="og:url" content="https://supportwellnessglobal.com/v4/">
+<meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v4/">
 <meta property="og:image" content="https://supportwellnessglobal.com/og-image.jpg">
 <meta property="og:site_name" content="Support Wellness Global">
 <meta name="twitter:card" content="summary_large_image">
@@ -94,8 +94,8 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .divider--left{margin:0}
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:62px;left:0;right:0;z-index:1000;background:var(--forest-95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.4s var(--ease)}
-.nav--shadow{box-shadow:0 1px 0 rgba(245,241,235,0.08);top:36px}
+.nav{position:fixed;top:36px;left:0;right:0;z-index:1000;background:var(--forest-95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow 0.4s var(--ease)}
+.nav--shadow{box-shadow:0 1px 0 rgba(245,241,235,0.08)}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px;height:72px}
 @media(min-width:768px){.nav__inner{padding:0 48px}}
 @media(min-width:1200px){.nav__inner{padding:0 64px}}
@@ -206,7 +206,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .diagram-circle-fill{fill:var(--terra);opacity:0;transition:all 1s var(--ease) 0.3s}
 .diagram-line{stroke:var(--terra);stroke-width:1.5;stroke-dasharray:200;stroke-dashoffset:200;opacity:0;transition:all 1.2s var(--ease) 0.4s}
 .diagram-center{fill:var(--terra);opacity:0;transition:all 0.8s var(--ease) 0.8s;r:0}
-.diagram-label{font-family:var(--sans);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;fill:var(--graphite);opacity:0;transition:opacity 0.8s var(--ease) 1s}
+.diagram-label{font-family:var(--sans);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;fill:var(--graphite);opacity:0.4;transition:opacity 0.8s var(--ease) 1s}
 
 /* Activated state */
 .problem__diagram.connected .diagram-circle{opacity:1;stroke:var(--terra)}
@@ -443,6 +443,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   .hero__stat{animation:none!important}
   .hero__ring,.hero__ring-2{animation:none!important}
   .process__step-fill{transition:none}
+  .marquee-track{animation:none!important}
   .diagram-circle,.diagram-circle-fill,.diagram-line,.diagram-center,.diagram-label{transition:none;animation:none!important}
   .diagram-state{animation:none!important}
   .problem__diagram::before,.problem__diagram::after{animation:none!important;display:none}
@@ -923,6 +924,42 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
           &ldquo;SWG didn&rsquo;t just find problems &mdash; they sequenced the fixes so each one compounded. Within 90 days, our systems were finally working together instead of against each other.&rdquo;
           <footer class="pullquote-attr">&mdash; Growth-stage founder, SaaS</footer>
         </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="testimonials__header">
+        <span class="label reveal">What Clients Say</span>
+        <h2 class="reveal s1">Results they didn't<br>have to imagine.</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial reveal">
+          <div class="testimonial__accent"></div>
+          <blockquote class="testimonial__quote">&ldquo;SWG rebuilt our entire growth stack in 60 days. Revenue jumped 40% in the first quarter after launch.&rdquo;</blockquote>
+          <div class="testimonial__attr">
+            <span class="testimonial__name">Sarah Mitchell</span>
+            <span class="testimonial__role">CEO, Health &amp; Wellness Brand</span>
+          </div>
+        </div>
+        <div class="testimonial reveal s1">
+          <div class="testimonial__accent"></div>
+          <blockquote class="testimonial__quote">&ldquo;They found $180K in revenue we were leaving on the table through broken automations alone.&rdquo;</blockquote>
+          <div class="testimonial__attr">
+            <span class="testimonial__name">James Rodriguez</span>
+            <span class="testimonial__role">COO, E-commerce Company</span>
+          </div>
+        </div>
+        <div class="testimonial reveal s2">
+          <div class="testimonial__accent"></div>
+          <blockquote class="testimonial__quote">&ldquo;Other consultants gave us frameworks. SWG gave us systems that actually worked.&rdquo;</blockquote>
+          <div class="testimonial__attr">
+            <span class="testimonial__name">Linda Chen</span>
+            <span class="testimonial__role">Founder, SaaS Platform</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

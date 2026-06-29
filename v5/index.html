@@ -6,11 +6,11 @@
 <meta name="robots" content="index, follow">
 <title>Business Growth Consulting &amp; Strategy | SWG &mdash; Support Wellness Global</title>
 <meta name="description" content="SWG is a business consulting firm for founder-led companies. We diagnose growth bottlenecks, then build the systems — website, CRM, AI workflows, marketing, and reporting — connected to one strategy.">
-<link rel="canonical" href="https://supportwellnessglobal.com/v5/">
+<link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/v5/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Growth Consulting &amp; Strategy | SWG">
 <meta property="og:description" content="We help growing companies solve the business problems behind growth. Strategy, operations, technology, and marketing support for founder-led companies.">
-<meta property="og:url" content="https://supportwellnessglobal.com/v5/">
+<meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v5/">
 <meta property="og:image" content="https://supportwellnessglobal.com/og-image.jpg">
 <meta property="og:site_name" content="Support Wellness Global">
 <meta name="twitter:card" content="summary_large_image">
@@ -926,7 +926,7 @@ p{max-width:65ch}
   padding:0 8px 0 76px;
 }
 .accordion-item.open .accordion-body{
-  max-height:200px;
+  max-height:500px;
   padding:0 8px 28px 76px;
 }
 .accordion-body p{
@@ -1143,7 +1143,7 @@ footer{
 .footer-brand p{
   font-size:0.85rem;
   font-weight:300;
-  color:rgba(250,250,247,0.35);
+  color:rgba(250,250,247,0.55);
   line-height:1.7;
 }
 .footer-links{
@@ -1157,7 +1157,7 @@ footer{
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:0.12em;
-  color:rgba(250,250,247,0.25);
+  color:rgba(250,250,247,0.55);
   margin-bottom:16px;
 }
 .footer-nav{
@@ -1168,7 +1168,7 @@ footer{
 .footer-nav a{
   font-size:0.88rem;
   font-weight:400;
-  color:rgba(250,250,247,0.45);
+  color:rgba(250,250,247,0.65);
   min-height:44px;
   display:flex;
   align-items:center;
@@ -1262,7 +1262,7 @@ footer{
 .v5-services h2{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem);color:var(--ink);margin-bottom:64px}
 .v5-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 32px;color:var(--ink)}
 .v5-services-grid h3{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-bottom:8px}
-.v5-services-grid p{font-size:0.95rem;color:var(--stone);line-height:1.7}
+.v5-services-grid p{font-size:0.95rem;color:#525252;line-height:1.7}
 @media(max-width:768px){
   .v5-services-grid{grid-template-columns:1fr;gap:40px}
 }
@@ -1519,6 +1519,9 @@ footer{
 </head>
 <body>
 
+<!-- Skip to content -->
+<a href="#hero" class="skip-to-content" tabindex="0">Skip to content</a>
+
 <!-- Version Switcher -->
 <div class="version-bar">
   <div class="swg-score-widget" id="swgScoreWidget">
@@ -1547,8 +1550,6 @@ footer{
 <div class="q3-bar" style="width:100%;background:#7C3AED;text-align:center;padding:8px 16px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:400;color:#fff;letter-spacing:0.02em;position:fixed;top:36px;left:0;right:0;z-index:1000;">Now accepting Q3 2026 clients</div>
 
 <div style="height:68px" aria-hidden="true"></div>
-<!-- Skip to content -->
-<a href="#hero" class="skip-to-content" tabindex="0">Skip to content</a>
 
 <!-- Navigation -->
 <nav class="v5-nav" id="v5Nav">
@@ -1859,7 +1860,7 @@ footer{
 <section class="cta-mid">
   <div class="wrap">
     <h2>Ready to find out what's really holding your growth back?</h2>
-    <a href="assessment.html" class="btn-shimmer">Get Your Free Growth Map</a>
+    <a href="assessment.html" class="btn btn-shimmer">Get Your Free Growth Map</a>
   </div>
 </section>
 
@@ -2063,17 +2064,25 @@ footer{
   }
 })();
 
-// ── Mouse-following orb ──
+// ── Mouse-following orb (contained to hero) ──
 (function(){
   var orb = document.getElementById('heroOrb');
   if(!orb) return;
   if(window.innerWidth < 769) return;
+  var hero = document.getElementById('hero');
   var mx = 0, my = 0;
   document.addEventListener('mousemove', function(e){
     mx = e.clientX;
     my = e.clientY;
     orb.style.transform = 'translate(' + (mx - 50) + 'px,' + (my - 50) + 'px)';
   }, {passive:true});
+  // Hide orb when scrolled past hero
+  if(hero){
+    window.addEventListener('scroll', function(){
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      orb.style.opacity = heroBottom > 0 ? '0.4' : '0';
+    }, {passive:true});
+  }
 })();
 
 // ── Scroll Reveal with IntersectionObserver ──

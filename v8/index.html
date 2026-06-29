@@ -121,20 +121,21 @@ img{max-width:100%;display:block}
   position:absolute;
   border-radius:50%;
   filter:blur(80px);
-  opacity:0.5;
+  opacity:0.75;
   pointer-events:none;
   will-change:transform;
-  animation:orbFloat 20s ease-in-out infinite;
+  animation:orbFloat 16s ease-in-out infinite;
 }
-.orb-1{width:400px;height:400px;background:rgba(59,130,246,0.25);top:-100px;right:-100px;animation-delay:0s}
-.orb-2{width:350px;height:350px;background:rgba(244,114,182,0.2);bottom:-50px;left:-80px;animation-delay:-7s}
-.orb-3{width:300px;height:300px;background:rgba(139,92,246,0.18);top:40%;right:10%;animation-delay:-14s}
-.orb-4{width:250px;height:250px;background:rgba(132,204,22,0.15);top:20%;left:5%;animation-delay:-3s}
+.orb-1{width:450px;height:450px;background:rgba(59,130,246,0.3);top:-100px;right:-100px;animation-delay:0s}
+.orb-2{width:400px;height:400px;background:rgba(244,114,182,0.25);bottom:-50px;left:-80px;animation-delay:-5s}
+.orb-3{width:350px;height:350px;background:rgba(139,92,246,0.22);top:40%;right:10%;animation-delay:-10s}
+.orb-4{width:300px;height:300px;background:rgba(132,204,22,0.2);top:20%;left:5%;animation-delay:-3s}
 @keyframes orbFloat{
   0%,100%{transform:translate(0,0) scale(1)}
-  25%{transform:translate(30px,-40px) scale(1.1)}
-  50%{transform:translate(-20px,30px) scale(0.95)}
-  75%{transform:translate(40px,20px) scale(1.05)}
+  20%{transform:translate(60px,-70px) scale(1.15)}
+  40%{transform:translate(-40px,50px) scale(0.9)}
+  60%{transform:translate(50px,30px) scale(1.1)}
+  80%{transform:translate(-30px,-50px) scale(0.95)}
 }
 
 /* ================================================================
@@ -396,10 +397,6 @@ img{max-width:100%;display:block}
   display:inline-block;
   transition:transform 0.3s var(--ease),color 0.3s;
   cursor:default;
-}
-.hero-headline .word:hover{
-  transform:translateY(-4px) scale(1.02);
-  color:var(--blue);
 }
 .hero-headline .highlight{
   background:linear-gradient(135deg,var(--blue),var(--purple));
@@ -676,9 +673,9 @@ img{max-width:100%;display:block}
 .stats-section .section-subtitle{color:rgba(255,255,255,0.8);margin:0 auto 48px}
 .stats-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:40px;
-  max-width:900px;
+  max-width:1100px;
   margin:0 auto;
 }
 .stat-item{text-align:center}
@@ -968,6 +965,63 @@ img{max-width:100%;display:block}
 /* ================================================================
    RESPONSIVE
    ================================================================ */
+/* Stat item colors */
+.stat-item:nth-child(1) .stat-number{color:#fff}
+.stat-item:nth-child(2) .stat-number{color:var(--yellow)}
+.stat-item:nth-child(3) .stat-number{color:var(--lime)}
+.stat-item:nth-child(4) .stat-number{color:var(--coral)}
+
+/* Service card accent borders */
+.tilt-card{border-top:3px solid transparent}
+.tilt-card:nth-child(1){border-top-color:var(--blue)}
+.tilt-card:nth-child(2){border-top-color:var(--coral)}
+.tilt-card:nth-child(3){border-top-color:var(--purple)}
+.tilt-card:nth-child(4){border-top-color:var(--lime)}
+
+/* Testimonial card colored left borders */
+.testimonial-card{border-left:4px solid transparent}
+.testimonial-card:nth-child(1){border-left-color:var(--blue)}
+.testimonial-card:nth-child(2){border-left-color:var(--coral)}
+.testimonial-card:nth-child(3){border-left-color:var(--purple)}
+
+/* Cursor section color transitions */
+.cursor-follower.cursor-hero{
+  background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);
+}
+.cursor-follower.cursor-services{
+  background:rgba(244,114,182,0.15);border-color:rgba(244,114,182,0.3);
+}
+.cursor-follower.cursor-process{
+  background:rgba(132,204,22,0.15);border-color:rgba(132,204,22,0.3);
+}
+.cursor-follower.cursor-results{
+  background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3);
+}
+.cursor-follower.cursor-testimonials{
+  background:rgba(251,191,36,0.15);border-color:rgba(251,191,36,0.3);
+}
+.cursor-follower.cursor-faq{
+  background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);
+}
+.cursor-follower.cursor-cta{
+  background:rgba(244,114,182,0.15);border-color:rgba(244,114,182,0.3);
+}
+
+/* Hero word parallax via custom properties */
+.hero-headline .word{
+  --px:0px;--py:0px;
+  transform:translate(var(--px),var(--py));
+}
+.hero-headline .word:hover{
+  transform:translate(var(--px),var(--py)) translateY(-4px) scale(1.02);
+  color:var(--blue);
+}
+
+/* Marquee reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+}
+
 @media(max-width:767px){
   .hero{padding:120px 20px 60px}
   .hero-headline{font-size:clamp(2.4rem,10vw,3.5rem)}
@@ -978,7 +1032,7 @@ img{max-width:100%;display:block}
   .footer-inner{flex-direction:column;text-align:center}
   .process-step p{max-width:none}
   .marquee-item{padding:0 28px;font-size:1rem}
-  .orb{opacity:0.3;filter:blur(60px)}
+  .orb{opacity:0.4;filter:blur(60px)}
 }
 </style>
 </head>
@@ -1083,7 +1137,7 @@ img{max-width:100%;display:block}
       <div class="magnetic">
         <a href="assessment.html" class="btn-primary">Start Your Growth Audit <span>&#8594;</span></a>
       </div>
-      <a href="#services" class="btn-secondary">See How It Works</a>
+      <a href="#process" class="btn-secondary">See How It Works</a>
     </div>
   </div>
 </section>
@@ -1369,7 +1423,7 @@ img{max-width:100%;display:block}
   <div class="orb orb-1" style="background:rgba(59,130,246,0.2)"></div>
   <div class="orb orb-2" style="background:rgba(244,114,182,0.15)"></div>
   <div style="position:relative;z-index:2">
-    <h2 class="cta-headline reveal" data-scramble>Ready to Grow?<br>Let's Talk.</h2>
+    <h2 class="cta-headline reveal">Ready to Grow?<br>Let's Talk.</h2>
     <p class="cta-sub reveal reveal-delay-1">Book a free growth audit. We'll show you exactly where you're leaving money on the table and how to fix it.</p>
     <div class="cta-buttons reveal reveal-delay-2">
       <div class="magnetic">
@@ -1399,13 +1453,13 @@ img{max-width:100%;display:block}
       <a href="assessment.html">Contact</a>
     </div>
     <div class="footer-socials">
-      <a href="#" aria-label="LinkedIn">
+      <a href="https://linkedin.com/company/supportwellnessglobal" aria-label="LinkedIn" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
-      <a href="#" aria-label="Twitter">
+      <a href="https://x.com/swg_global" aria-label="Twitter" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
       </a>
-      <a href="#" aria-label="Instagram">
+      <a href="https://instagram.com/swg_global" aria-label="Instagram" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
     </div>
@@ -1570,8 +1624,8 @@ window.SWG_SCORES = {
         var y = e.clientY - rect.top;
         var centerX = rect.width / 2;
         var centerY = rect.height / 2;
-        var rotateX = ((y - centerY) / centerY) * -8;
-        var rotateY = ((x - centerX) / centerX) * 8;
+        var rotateX = ((y - centerY) / centerY) * -15;
+        var rotateY = ((x - centerX) / centerX) * 15;
         card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
         if(glow){
           glow.style.left = (x - 100) + 'px';
@@ -1594,7 +1648,7 @@ window.SWG_SCORES = {
         var rect = btn.getBoundingClientRect();
         var x = e.clientX - rect.left - rect.width / 2;
         var y = e.clientY - rect.top - rect.height / 2;
-        if(child) child.style.transform = 'translate(' + (x * 0.3) + 'px,' + (y * 0.3) + 'px) scale(1.05)';
+        if(child) child.style.transform = 'translate(' + (x * 0.5) + 'px,' + (y * 0.5) + 'px) scale(1.05)';
       });
       btn.addEventListener('mouseleave', function(){
         if(child) child.style.transform = '';
@@ -1666,23 +1720,54 @@ window.SWG_SCORES = {
     });
   });
 
-  // ── Hero word parallax on mouse ──
+  // ── Hero word parallax on mouse (CSS custom properties to avoid hover conflict) ──
   if(!isMobile && !reducedMotion){
     var heroHeadline = document.getElementById('heroHeadline');
     var heroWords = heroHeadline ? heroHeadline.querySelectorAll('.word') : [];
     document.addEventListener('mousemove', function(e){
       if(!heroHeadline) return;
       var rect = heroHeadline.getBoundingClientRect();
-      if(e.clientY > rect.bottom + 200) return; // Only when near hero
+      if(e.clientY > rect.bottom + 200) return;
       var cx = window.innerWidth / 2;
       var cy = window.innerHeight / 2;
       var dx = (e.clientX - cx) / cx;
       var dy = (e.clientY - cy) / cy;
       heroWords.forEach(function(word, i){
         var factor = (i % 3 + 1) * 2;
-        word.style.transform = 'translate(' + (dx * factor) + 'px,' + (dy * factor) + 'px)';
+        word.style.setProperty('--px', (dx * factor) + 'px');
+        word.style.setProperty('--py', (dy * factor) + 'px');
       });
     });
+  }
+
+  // ── Cursor follower section-aware color ──
+  if(!isMobile && !reducedMotion){
+    var sectionColorMap = [
+      {id:'hero', cls:'cursor-hero'},
+      {id:'services', cls:'cursor-services'},
+      {id:'process', cls:'cursor-process'},
+      {id:'results', cls:'cursor-results'},
+      {id:'testimonials', cls:'cursor-testimonials'},
+      {id:'faq', cls:'cursor-faq'},
+      {id:'cta', cls:'cursor-cta'}
+    ];
+    var allCursorClasses = sectionColorMap.map(function(s){return s.cls;});
+    var cursorEl = document.getElementById('cursorFollower');
+    function updateCursorSection(){
+      var scrollY = window.scrollY + window.innerHeight / 2;
+      var activeClass = '';
+      for(var i = sectionColorMap.length - 1; i >= 0; i--){
+        var sec = document.getElementById(sectionColorMap[i].id);
+        if(sec && scrollY >= sec.offsetTop){
+          activeClass = sectionColorMap[i].cls;
+          break;
+        }
+      }
+      allCursorClasses.forEach(function(c){ cursorEl.classList.remove(c); });
+      if(activeClass) cursorEl.classList.add(activeClass);
+    }
+    window.addEventListener('scroll', updateCursorSection, {passive:true});
+    updateCursorSection();
   }
 
 })();

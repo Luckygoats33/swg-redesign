@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>Growth Assessment | SWG &mdash; Support Wellness Global</title>
+<meta name="description" content="Start your free growth audit with SWG. Tell us about your business and we'll show you exactly where you're leaving money on the table.">
+<link rel="canonical" href="https://supportwellnessglobal.com/v8/assessment.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Growth Assessment | SWG">
+<meta property="og:description" content="Start your free growth audit. Tell us about your business and we'll build your custom growth engine.">
+<meta property="og:url" content="https://supportwellnessglobal.com/v8/assessment.html">
+<meta property="og:image" content="../og-image.jpg">
+<meta property="og:site_name" content="Support Wellness Global">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Growth Assessment | SWG">
+<meta name="twitter:description" content="Start your free growth audit with SWG.">
+<meta name="twitter:image" content="https://supportwellnessglobal.com/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233B82F6'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='11' fill='%23fff'%3ESWG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+/* ================================================================
+   RESET
+   ================================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root{
+  --bg:#FAFBFF;
+  --fg:#0F172A;
+  --blue:#3B82F6;
+  --blue-dark:#1e40af;
+  --blue-light:#DBEAFE;
+  --coral:#F472B6;
+  --lime:#84CC16;
+  --yellow:#FBBF24;
+  --purple:#8B5CF6;
+  --surface:#FFFFFF;
+  --surface-alt:#F1F5F9;
+  --border:rgba(15,23,42,0.08);
+  --border-strong:rgba(15,23,42,0.15);
+  --text-secondary:#64748B;
+  --heading:'Space Grotesk',system-ui,sans-serif;
+  --body:'DM Sans','Segoe UI',sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --ease-out:cubic-bezier(0.33,1,0.68,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+
+/* ================================================================
+   BASE
+   ================================================================ */
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  line-height:1.7;
+  font-size:16px;
+  font-weight:400;
+}
+::selection{background:var(--blue);color:#fff}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ================================================================
+   FLOATING GRADIENT ORBS
+   ================================================================ */
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.5;
+  pointer-events:none;
+  will-change:transform;
+  animation:orbFloat 16s ease-in-out infinite;
+  z-index:0;
+}
+.orb-1{width:400px;height:400px;background:rgba(59,130,246,0.2);top:-100px;right:-100px;animation-delay:0s}
+.orb-2{width:350px;height:350px;background:rgba(244,114,182,0.18);bottom:-50px;left:-80px;animation-delay:-5s}
+.orb-3{width:300px;height:300px;background:rgba(139,92,246,0.15);top:50%;right:15%;animation-delay:-10s}
+.orb-4{width:250px;height:250px;background:rgba(132,204,22,0.12);top:30%;left:5%;animation-delay:-3s}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  20%{transform:translate(60px,-70px) scale(1.15)}
+  40%{transform:translate(-40px,50px) scale(0.9)}
+  60%{transform:translate(50px,30px) scale(1.1)}
+  80%{transform:translate(-30px,-50px) scale(0.95)}
+}
+
+/* ================================================================
+   VERSION BAR
+   ================================================================ */
+.version-bar{
+  width:100%;
+  background:rgba(15,23,42,0.95);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:2px 0 2px 6px;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1001;
+}
+.vb-right{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px 6px 0;
+}
+.version-bar .vb-label{
+  font-size:9px;font-weight:700;
+  color:rgba(255,255,255,0.35);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-right:6px;
+  font-family:var(--body);
+}
+.version-bar a{
+  width:28px;height:24px;
+  border-radius:5px;
+  display:inline-flex;
+  align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;
+  font-family:var(--body);
+  text-decoration:none;
+  background:rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.4);
+  transition:background 0.2s,color 0.2s;
+}
+.version-bar a:hover{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7)}
+.version-bar a.active{background:var(--blue);color:#fff}
+@media(max-width:480px){
+  .version-bar{padding:2px 4px 2px 4px;gap:2px;flex-wrap:nowrap}
+  .vb-right{gap:3px;padding:4px 4px 4px 0}
+  .version-bar .vb-label{display:none}
+  .version-bar a{width:24px;height:22px;font-size:10px;border-radius:4px}
+}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+.v8-nav{
+  position:fixed;
+  top:36px;left:0;right:0;
+  z-index:999;
+  background:rgba(250,251,255,0.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:background 0.3s,box-shadow 0.3s;
+}
+.v8-nav.scrolled{
+  background:rgba(255,255,255,0.95);
+  box-shadow:0 1px 20px rgba(15,23,42,0.06);
+}
+.v8-nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 24px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  height:64px;
+}
+.v8-nav-brand{
+  font-family:var(--heading);
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--blue);
+  letter-spacing:-0.02em;
+}
+.v8-nav-links{display:none;align-items:center;gap:32px}
+@media(min-width:768px){.v8-nav-links{display:flex}}
+.v8-nav-links a{
+  font-size:0.9rem;font-weight:500;
+  color:var(--text-secondary);
+  transition:color 0.25s;
+  position:relative;
+}
+.v8-nav-links a::after{
+  content:'';position:absolute;
+  bottom:-4px;left:0;right:0;
+  height:2px;border-radius:1px;
+  background:var(--blue);
+  transform:scaleX(0);
+  transition:transform 0.25s var(--ease);
+}
+.v8-nav-links a:hover{color:var(--fg)}
+.v8-nav-links a:hover::after{transform:scaleX(1)}
+.v8-nav-cta{
+  background:var(--blue);
+  color:#fff;
+  padding:10px 24px;
+  border-radius:50px;
+  font-weight:600;
+  font-size:0.9rem;
+  transition:transform 0.25s var(--ease-spring),box-shadow 0.25s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.v8-nav-cta:hover{
+  transform:scale(1.05);
+  box-shadow:0 4px 24px rgba(59,130,246,0.35);
+}
+.v8-mobile-toggle{
+  display:flex;flex-direction:column;gap:5px;
+  width:28px;cursor:pointer;padding:4px 0;
+}
+.v8-mobile-toggle span{
+  display:block;height:2px;width:100%;
+  background:var(--fg);border-radius:2px;
+  transition:transform 0.3s,opacity 0.3s;
+}
+@media(min-width:768px){.v8-mobile-toggle{display:none}}
+.v8-mobile-nav{
+  display:none;
+  position:fixed;top:100px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.98);
+  backdrop-filter:blur(20px);
+  z-index:998;
+  flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:32px;
+}
+.v8-mobile-nav.open{display:flex}
+.v8-mobile-nav a{
+  font-family:var(--heading);
+  font-size:1.5rem;font-weight:600;
+  color:var(--fg);
+  transition:color 0.2s;
+}
+.v8-mobile-nav a:hover{color:var(--blue)}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.assess-hero{
+  min-height:50vh;
+  display:flex;align-items:center;
+  padding:160px 24px 60px;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg);
+  text-align:center;
+}
+.assess-hero-inner{
+  max-width:700px;margin:0 auto;
+  position:relative;z-index:2;
+}
+.assess-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(59,130,246,0.08);
+  color:var(--blue);
+  padding:8px 16px;
+  border-radius:50px;
+  font-size:0.85rem;
+  font-weight:600;
+  margin-bottom:24px;
+  border:1px solid rgba(59,130,246,0.15);
+  animation:fadeUp 0.6s var(--ease) both;
+}
+.assess-badge .dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--lime);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.assess-hero h1{
+  font-family:var(--heading);
+  font-size:clamp(2.2rem,6vw,3.8rem);
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:-0.04em;
+  color:var(--fg);
+  margin-bottom:16px;
+  animation:fadeUp 0.6s 0.1s var(--ease) both;
+}
+.assess-hero h1 .highlight{
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.assess-hero p{
+  font-size:1.15rem;
+  color:var(--text-secondary);
+  max-width:520px;
+  margin:0 auto;
+  line-height:1.7;
+  animation:fadeUp 0.6s 0.2s var(--ease) both;
+}
+
+/* ================================================================
+   ASSESSMENT FORM
+   ================================================================ */
+.assess-form-section{
+  padding:0 24px 100px;
+  position:relative;
+  z-index:2;
+}
+.assess-form-container{
+  max-width:800px;
+  margin:0 auto;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:48px 40px;
+  box-shadow:0 20px 60px rgba(15,23,42,0.06);
+  position:relative;
+  overflow:hidden;
+  animation:fadeUp 0.6s 0.3s var(--ease) both;
+}
+.assess-form-container::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--coral),var(--purple),var(--lime),var(--yellow));
+  border-radius:24px 24px 0 0;
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+@media(max-width:600px){
+  .form-grid{grid-template-columns:1fr}
+  .assess-form-container{padding:32px 24px}
+}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full-width{grid-column:1 / -1}
+.form-group label{
+  font-family:var(--heading);
+  font-size:0.85rem;
+  font-weight:600;
+  color:var(--fg);
+  letter-spacing:0.01em;
+}
+.form-group label .required{color:var(--coral);margin-left:2px}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  font-family:var(--body);
+  font-size:0.95rem;
+  padding:14px 18px;
+  border:2px solid var(--border-strong);
+  border-radius:14px;
+  background:var(--bg);
+  color:var(--fg);
+  transition:border-color 0.25s,box-shadow 0.25s,background 0.25s;
+  outline:none;
+  line-height:1.5;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px rgba(59,130,246,0.1);
+  background:var(--surface);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+  color:var(--text-secondary);
+  opacity:0.6;
+}
+.form-group select{
+  appearance:none;
+  -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  padding-right:44px;
+  cursor:pointer;
+}
+.form-group textarea{
+  resize:vertical;
+  min-height:120px;
+}
+.form-submit-wrap{
+  grid-column:1 / -1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  margin-top:8px;
+}
+.btn-submit{
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  color:#fff;
+  padding:18px 48px;
+  border-radius:50px;
+  font-weight:700;
+  font-size:1.1rem;
+  font-family:var(--heading);
+  transition:transform 0.25s var(--ease-spring),box-shadow 0.25s;
+  display:inline-flex;align-items:center;gap:10px;
+  cursor:pointer;
+  border:none;
+  letter-spacing:-0.01em;
+}
+.btn-submit:hover{
+  transform:scale(1.05);
+  box-shadow:0 8px 32px rgba(59,130,246,0.35);
+}
+.btn-submit:active{transform:scale(0.98)}
+.form-note{
+  font-size:0.85rem;
+  color:var(--text-secondary);
+  text-align:center;
+}
+
+/* ================================================================
+   SUCCESS MESSAGE
+   ================================================================ */
+.assess-success{
+  display:none;
+  text-align:center;
+  padding:60px 20px;
+}
+.assess-success.show{display:block}
+.assess-success .success-icon{
+  width:80px;height:80px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--lime),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5rem;
+  margin:0 auto 24px;
+  animation:popIn 0.5s var(--ease-spring) both;
+}
+@keyframes popIn{
+  from{transform:scale(0);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+.assess-success h2{
+  font-family:var(--heading);
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:12px;
+  letter-spacing:-0.03em;
+}
+.assess-success p{
+  font-size:1.1rem;
+  color:var(--text-secondary);
+  max-width:480px;
+  margin:0 auto 32px;
+  line-height:1.7;
+}
+.assess-success .back-link{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--blue);
+  font-weight:600;
+  font-size:1rem;
+  transition:gap 0.25s;
+}
+.assess-success .back-link:hover{gap:12px}
+
+/* ================================================================
+   CONTACT EMAILS
+   ================================================================ */
+.assess-emails{
+  text-align:center;
+  padding:0 24px 60px;
+  position:relative;z-index:2;
+}
+.assess-emails-label{
+  font-family:var(--heading);
+  font-size:0.8rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.15em;
+  color:var(--text-secondary);
+  margin-bottom:16px;
+}
+.assess-emails-list{
+  display:flex;gap:32px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.assess-emails-list a{
+  font-size:0.95rem;
+  color:var(--blue);
+  font-weight:500;
+  transition:color 0.2s;
+  padding:8px 16px;
+  border-radius:50px;
+  background:rgba(59,130,246,0.06);
+  border:1px solid rgba(59,130,246,0.12);
+}
+.assess-emails-list a:hover{
+  color:var(--blue-dark);
+  background:rgba(59,130,246,0.12);
+}
+@media(max-width:600px){
+  .assess-emails-list{flex-direction:column;gap:12px;align-items:center}
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.footer{
+  background:var(--fg);
+  color:rgba(255,255,255,0.4);
+  padding:40px 24px 32px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  position:relative;z-index:2;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.footer-brand{
+  font-family:var(--heading);
+  font-weight:700;
+  font-size:1.1rem;
+  color:rgba(255,255,255,0.6);
+}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{
+  font-size:0.85rem;
+  color:rgba(255,255,255,0.4);
+  transition:color 0.2s;
+}
+.footer-links a:hover{color:#fff}
+.footer-copy{
+  width:100%;text-align:center;
+  margin-top:24px;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.3);
+}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);
+  transition:background 0.2s,color 0.2s,transform 0.2s;
+}
+.footer-socials a:hover{
+  background:var(--blue);
+  color:#fff;
+  transform:translateY(-2px);
+}
+@media(max-width:767px){
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Floating orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="orb orb-4"></div>
+
+<!-- =====================================================================
+     VERSION BAR
+     ===================================================================== -->
+<div class="version-bar">
+  <div class="vb-right">
+    <span class="vb-label">Version</span>
+    <a href="../v1.html">1</a>
+    <a href="../v2/">2</a>
+    <a href="../v3/">3</a>
+    <a href="../v4/">4</a>
+    <a href="../v5/">5</a>
+    <a href="../v6/">6</a>
+    <a href="../v7/">7</a>
+    <a href="./" class="active">8</a>
+  </div>
+</div>
+
+<!-- =====================================================================
+     NAVIGATION
+     ===================================================================== -->
+<nav class="v8-nav" id="v8Nav">
+  <div class="v8-nav-inner">
+    <a href="./" class="v8-nav-brand">SWG</a>
+    <div class="v8-nav-links">
+      <a href="./#about">About</a>
+      <a href="./#services">Services</a>
+      <a href="./#process">Process</a>
+      <a href="./#results">Results</a>
+      <a href="./#faq">FAQ</a>
+    </div>
+    <a href="assessment.html" class="v8-nav-cta" style="opacity:0.6;pointer-events:none">Assessment <span>&#10003;</span></a>
+    <div class="v8-mobile-toggle" id="mobileToggle" role="button" tabindex="0" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="v8-mobile-nav" id="mobileNav">
+  <a href="./#about" class="mobile-nav-link">About</a>
+  <a href="./#services" class="mobile-nav-link">Services</a>
+  <a href="./#process" class="mobile-nav-link">Process</a>
+  <a href="./#results" class="mobile-nav-link">Results</a>
+  <a href="./#faq" class="mobile-nav-link">FAQ</a>
+</div>
+
+<!-- Spacer for fixed bars -->
+<div style="height:100px" aria-hidden="true"></div>
+
+<!-- =====================================================================
+     HERO
+     ===================================================================== -->
+<section class="assess-hero">
+  <div class="assess-hero-inner">
+    <div class="assess-badge">
+      <span class="dot"></span>
+      Takes less than 2 minutes
+    </div>
+    <h1>Let's Build Your <span class="highlight">Growth Engine</span></h1>
+    <p>Tell us a little about your business. We'll come back with a custom growth audit showing exactly where the opportunities are.</p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     ASSESSMENT FORM
+     ===================================================================== -->
+<section class="assess-form-section" id="assessForm">
+  <div class="assess-form-container" id="formContainer">
+    <form id="growthAssessment" novalidate>
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="companyName">Company Name <span class="required">*</span></label>
+          <input type="text" id="companyName" name="companyName" placeholder="Acme Growth Co." required>
+        </div>
+
+        <div class="form-group">
+          <label for="yourName">Your Name <span class="required">*</span></label>
+          <input type="text" id="yourName" name="yourName" placeholder="Jane Smith" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jane@acmegrowth.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+        </div>
+
+        <div class="form-group full-width">
+          <label for="website">Website URL</label>
+          <input type="url" id="website" name="website" placeholder="https://acmegrowth.com">
+        </div>
+
+        <div class="form-group">
+          <label for="industry">Industry <span class="required">*</span></label>
+          <select id="industry" name="industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option value="ecommerce">E-Commerce / DTC</option>
+            <option value="saas">SaaS / Technology</option>
+            <option value="health">Health &amp; Wellness</option>
+            <option value="professional">Professional Services</option>
+            <option value="finance">Finance &amp; Insurance</option>
+            <option value="real-estate">Real Estate</option>
+            <option value="hospitality">Hospitality &amp; Food</option>
+            <option value="education">Education &amp; Training</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="retail">Retail</option>
+            <option value="nonprofit">Nonprofit</option>
+            <option value="construction">Construction &amp; Trades</option>
+            <option value="automotive">Automotive</option>
+            <option value="beauty">Beauty &amp; Personal Care</option>
+            <option value="legal">Legal</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="revenue">Annual Revenue <span class="required">*</span></label>
+          <select id="revenue" name="revenue" required>
+            <option value="" disabled selected>Select revenue range</option>
+            <option value="pre-revenue">Pre-revenue / Startup</option>
+            <option value="under-500k">Under $500K</option>
+            <option value="500k-1m">$500K - $1M</option>
+            <option value="1m-5m">$1M - $5M</option>
+            <option value="5m-10m">$5M - $10M</option>
+            <option value="10m-50m">$10M - $50M</option>
+            <option value="50m-plus">$50M+</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="challenge">Biggest Growth Challenge <span class="required">*</span></label>
+          <textarea id="challenge" name="challenge" placeholder="What's the #1 thing holding your business back right now? Be as specific as you want &#8212; the more we know, the better our audit." required></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="referral">How Did You Hear About Us?</label>
+          <select id="referral" name="referral">
+            <option value="" disabled selected>Select one</option>
+            <option value="google">Google Search</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="referral">Referral / Word of Mouth</option>
+            <option value="social">Social Media</option>
+            <option value="event">Event / Conference</option>
+            <option value="podcast">Podcast</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-submit-wrap">
+          <button type="submit" class="btn-submit">Launch My Growth Audit <span>&#127776;</span></button>
+          <p class="form-note">Free. No commitment. We'll be in touch within 24 hours.</p>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <!-- Success message (hidden by default) -->
+  <div class="assess-form-container assess-success" id="successMessage">
+    <div class="success-icon">&#127881;</div>
+    <h2>You're In!</h2>
+    <p>We received your assessment. Our team will review your business details and get back to you within 24 hours with your custom growth audit.</p>
+    <a href="./" class="back-link"><span>&#8592;</span> Back to SWG</a>
+  </div>
+</section>
+
+<!-- =====================================================================
+     CONTACT EMAILS
+     ===================================================================== -->
+<section class="assess-emails">
+  <div class="assess-emails-label">Or reach out directly</div>
+  <div class="assess-emails-list">
+    <a href="mailto:dean@supportwellnessglobal.com">dean@supportwellnessglobal.com</a>
+    <a href="mailto:will@supportwellnessglobal.com">will@supportwellnessglobal.com</a>
+    <a href="mailto:mike@supportwellnessglobal.com">mike@supportwellnessglobal.com</a>
+  </div>
+</section>
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">SWG</div>
+    <div class="footer-links">
+      <a href="./#about">About</a>
+      <a href="./#services">Services</a>
+      <a href="./#process">Process</a>
+      <a href="./#results">Results</a>
+      <a href="./#faq">FAQ</a>
+      <a href="assessment.html">Contact</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://linkedin.com/company/supportwellnessglobal" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://x.com/swg_global" aria-label="Twitter" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+      </a>
+      <a href="https://instagram.com/swg_global" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Support Wellness Global. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     SCRIPTS
+     ===================================================================== -->
+<script>
+(function(){
+  'use strict';
+
+  // ── Nav scroll effect ──
+  var nav = document.getElementById('v8Nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 80){
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, {passive:true});
+
+  // ── Mobile nav toggle ──
+  var mobileToggle = document.getElementById('mobileToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileOpen = false;
+  function toggleMobile(){
+    mobileOpen = !mobileOpen;
+    mobileNav.classList.toggle('open', mobileOpen);
+    var spans = mobileToggle.querySelectorAll('span');
+    if(mobileOpen){
+      spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  }
+  mobileToggle.addEventListener('click', toggleMobile);
+  mobileToggle.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){e.preventDefault(); toggleMobile();}
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(function(link){
+    link.addEventListener('click', function(){
+      if(mobileOpen) toggleMobile();
+    });
+  });
+
+  // ── Form submission ──
+  var form = document.getElementById('growthAssessment');
+  var formContainer = document.getElementById('formContainer');
+  var successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Basic validation
+    var required = form.querySelectorAll('[required]');
+    var valid = true;
+    required.forEach(function(field){
+      if(!field.value || field.value.trim() === ''){
+        field.style.borderColor = 'var(--coral)';
+        field.style.boxShadow = '0 0 0 4px rgba(244,114,182,0.12)';
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+        field.style.boxShadow = '';
+      }
+    });
+
+    // Email format check
+    var emailField = document.getElementById('email');
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(emailField.value && !emailPattern.test(emailField.value)){
+      emailField.style.borderColor = 'var(--coral)';
+      emailField.style.boxShadow = '0 0 0 4px rgba(244,114,182,0.12)';
+      valid = false;
+    }
+
+    if(!valid) return;
+
+    // Collect form data
+    var data = {};
+    new FormData(form).forEach(function(value, key){
+      data[key] = value;
+    });
+    console.log('Growth Assessment Submission:', data);
+
+    // Show success
+    formContainer.style.display = 'none';
+    successMessage.classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  // Clear error styling on input
+  form.querySelectorAll('input, select, textarea').forEach(function(field){
+    field.addEventListener('input', function(){
+      field.style.borderColor = '';
+      field.style.boxShadow = '';
+    });
+    field.addEventListener('change', function(){
+      field.style.borderColor = '';
+      field.style.boxShadow = '';
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Growth Consulting &amp; Strategy | SWG">
 <meta property="og:description" content="We solve the business problems behind growth. Strategy, operations, technology, and marketing support for founder-led companies.">
-<meta property="og:url" content="https://supportwellnessglobal.com/">
+<meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v2/">
 <meta property="og:image" content="https://supportwellnessglobal.com/og-image.jpg">
 <meta property="og:site_name" content="Support Wellness Global">
 <meta name="twitter:card" content="summary_large_image">
@@ -172,21 +172,12 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 .hero-img-card img{width:100%;height:auto;display:block;transition:transform 8s ease}
 .hero-img-card:hover img{transform:scale(1.04)}
 .hero-img-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(0deg,rgba(17,24,39,0.95) 0%,transparent 100%)}
-.hero-img-tags{display:none}
-.hero-img-tag{font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:var(--radius-full);border:1px solid rgba(59,130,246,0.25);color:var(--accent);background:rgba(59,130,246,0.08);backdrop-filter:blur(8px)}
 .hero-badge{position:absolute;top:16px;right:16px;padding:10px 16px;border-radius:var(--radius-md);background:rgba(17,24,39,0.88);backdrop-filter:blur(16px);border:1px solid rgba(247,245,240,0.06);animation:float 5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .hero-badge-num{font-family:var(--heading);font-weight:800;font-size:1.3rem;color:var(--accent);line-height:1}
 .hero-badge-label{font-family:var(--mono);font-size:8px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:rgba(247,245,240,0.3)}
 
 /* Stats */
-.hero-stats{display:none;/*display:grid;*/grid-template-columns:repeat(2,1fr);gap:1px;margin-top:48px;border-top:1px solid rgba(247,245,240,0.08);padding-top:32px;position:relative;z-index:2}
-@media(min-width:640px){.hero-stats{grid-template-columns:repeat(3,1fr)}}
-.hero-stat{text-align:center;padding:8px;animation:fadeUp 0.8s var(--ease) both}
-.hero-stat:nth-child(1){animation-delay:0.9s}.hero-stat:nth-child(2){animation-delay:1s}.hero-stat:nth-child(3){animation-delay:1.1s}.hero-stat:nth-child(4){animation-delay:1.2s}
-@media(min-width:640px){.hero-stat{text-align:left;border-left:1px solid rgba(247,245,240,0.08);padding:0 20px}.hero-stat:first-child{border-left:none;padding-left:0}}
-.hero-stat .num{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;line-height:1;color:var(--ivory)}
-.hero-stat .label{font-family:var(--mono);font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:rgba(247,245,240,0.65);margin-top:4px}
 
 /* ━━ LOGOS ━━ */
 .logos{overflow:hidden;padding:48px 0;background:#1a365d;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1)}
@@ -772,7 +763,7 @@ body{padding-top:36px}
 </head>
 <body>
 
-<div class="announce">Now accepting Q3 2026 clients <span style="opacity:0.45;margin:0 4px">|</span> <a href="assessment.html" onclick="openModal();return false">Book a call &rarr;</a></div>
+<div class="announce">Now accepting Q3 2026 clients <span style="opacity:0.45;margin:0 4px">|</span> <a href="assessment.html">Book a call &rarr;</a></div>
 
 <div class="version-bar" style="width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:space-between;padding:4px 12px;font-family:sans-serif">
   <!-- Score widget on left -->
@@ -806,15 +797,15 @@ body{padding-top:36px}
 <nav class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="logo"><div class="logo-mark">SWG</div><span class="logo-text">Support Wellness Global</span></a>
-    <div class="nav-links"><a href="#problems">Problems</a><a href="#process">Process</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="assessment.html" onclick="openModal();return false">Assessment</a></div>
-    <a href="assessment.html" onclick="openModal();return false" class="btn btn-gold nav-cta"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="nav-links"><a href="#problems">Problems</a><a href="#process">Process</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="assessment.html">Assessment</a></div>
+    <a href="assessment.html" class="btn btn-gold nav-cta"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#problems" onclick="closeMobile()">Problems</a><a href="#process" onclick="closeMobile()">Process</a><a href="#services" onclick="closeMobile()">Services</a><a href="#pricing" onclick="closeMobile()">Pricing</a><a href="assessment.html" onclick="closeMobile();openModal();return false">Assessment</a>
-  <a href="assessment.html" onclick="closeMobile();openModal();return false" class="btn btn-gold"><span>Start the review</span></a>
+  <a href="#problems" onclick="closeMobile()">Problems</a><a href="#process" onclick="closeMobile()">Process</a><a href="#services" onclick="closeMobile()">Services</a><a href="#pricing" onclick="closeMobile()">Pricing</a><a href="assessment.html" onclick="closeMobile()">Assessment</a>
+  <a href="assessment.html" onclick="closeMobile()" class="btn btn-gold"><span>Start the review</span></a>
 </div>
 
 <main id="main">
@@ -829,22 +820,16 @@ body{padding-top:36px}
         <h1 id="heroTitle">We solve the business problems behind <span class="gold">growth.</span></h1>
         <p class="body-lg">SWG comes in when paid media is not converting, teams are still working manually, and the website, CRM, AI tools, and reporting are not connected to one strategy.</p>
         <div class="hero-buttons">
-          <a href="assessment.html" onclick="openModal();return false" class="btn btn-gold magnetic"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="assessment.html" class="btn btn-gold magnetic"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="#pricing" class="btn btn-outline-light"><span>See engagement paths</span></a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-img-card" id="heroCard">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop" alt="Analytics dashboard" loading="eager">
-          <div class="hero-img-overlay"><div class="hero-img-tags"><span class="hero-img-tag">Strategy</span><span class="hero-img-tag">CRM</span><span class="hero-img-tag">AI Workflows</span><span class="hero-img-tag">Reporting</span></div></div>
           <div class="hero-badge"><div class="hero-badge-num">30+</div><div class="hero-badge-label">Industries</div></div>
         </div>
       </div>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num" data-target="30" data-suffix="+">0</div><div class="label">Industries served</div></div>
-      <div class="hero-stat"><div class="num" data-target="6" data-suffix="">0</div><div class="label">Core disciplines</div></div>
-      <div class="hero-stat"><div class="num" data-target="1" data-suffix="">0</div><div class="label">Connected strategy</div></div>
     </div>
   </div></div>
 </section>
@@ -960,7 +945,7 @@ body{padding-top:36px}
       <div class="leak-card r d4"><h4>Tech exists, but it is not connected to strategy.</h4><p>The website, CRM, AI tools, dashboards, and ad platforms were added over time without supporting the growth plan.</p></div>
       <div class="leak-card r d5"><h4>Leads leak between people and tools.</h4><p>A form, call, ad click, or campaign reply comes in, and the next step depends on memory instead of a clean route.</p></div>
       <div class="leak-card r d6"><h4>Reporting creates more questions.</h4><p>The numbers exist, but leadership still cannot see what to fix next, what to stop, or where spend is working.</p></div>
-      <div class="rescue r"><div class="dots"></div><div><div class="eyebrow">Rescue mode</div><h3>The last tech build needs a rescue.</h3></div><div><p>If five or six figures went into a website, app, CRM, or automation build and the result is not usable, SWG diagnoses what failed and salvages what can still work.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-gold"><span>Talk to us</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></div>
+      <div class="rescue r"><div class="dots"></div><div><div class="eyebrow">Rescue mode</div><h3>The last tech build needs a rescue.</h3></div><div><p>If five or six figures went into a website, app, CRM, or automation build and the result is not usable, SWG diagnoses what failed and salvages what can still work.</p><a href="assessment.html" class="btn btn-gold"><span>Talk to us</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></div>
     </div>
   </div>
 </section>
@@ -1011,9 +996,9 @@ body{padding-top:36px}
   <div class="wrap">
     <div class="pricing-header"><div class="eyebrow r">Ways to work together</div><h2 class="r d1">Build only what the business actually <span style="color:var(--accent)">needs.</span></h2><p class="body-lg r d2">SWG diagnoses the business, finds the operating gaps, builds the roadmap, then implements the right systems in the right order.</p></div>
     <div class="price-grid">
-      <div class="price-card r d1"><div class="price-label">Business Review</div><div class="price-amount">$5K &ndash; $10K</div><p class="price-desc">Diagnosis, priorities, roadmap, recommended sequence. The business review is the starting point for every engagement.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-      <div class="price-card feat r d2"><div class="price-label">Focused Build</div><div class="price-amount">$10K &ndash; $50K+</div><p class="price-desc">Website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-gold"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-      <div class="price-card r d3"><div class="price-label">Ongoing Support</div><div class="price-amount">From $7.5K/mo</div><p class="price-desc">Ongoing execution, reporting, optimization, campaign management, and strategic support.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="price-card r d1"><div class="price-label">Business Review</div><div class="price-amount">$5K &ndash; $10K</div><p class="price-desc">Diagnosis, priorities, roadmap, recommended sequence. The business review is the starting point for every engagement.</p><a href="assessment.html" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="price-card feat r d2"><div class="price-label">Focused Build</div><div class="price-amount">$10K &ndash; $50K+</div><p class="price-desc">Website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch.</p><a href="assessment.html" class="btn btn-gold"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="price-card r d3"><div class="price-label">Ongoing Support</div><div class="price-amount">From $7.5K/mo</div><p class="price-desc">Ongoing execution, reporting, optimization, campaign management, and strategic support.</p><a href="assessment.html" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     </div>
     <p class="price-note r">Larger operating-system, company ERP, or custom app builds are scoped separately.</p>
   </div>
@@ -1026,7 +1011,7 @@ body{padding-top:36px}
     <h2 class="r" style="color:var(--ivory)">Start your <span style="color:var(--accent)">business review.</span></h2>
     <p class="body-lg r d1">Companies usually come to SWG when growth is no longer a marketing problem alone. This assessment takes 8&ndash;10 minutes and helps us understand your company stage, current bottlenecks, and readiness to implement.</p>
     <div class="cta-buttons r d2">
-      <a href="assessment.html" onclick="openModal();return false" class="btn btn-gold magnetic"><span>Begin assessment</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="assessment.html" class="btn btn-gold magnetic"><span>Begin assessment</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="mailto:dean@supportwellnessglobal.com,will@supportwellnessglobal.com,mike@supportwellnessglobal.com" class="btn btn-outline-light"><span>Contact us</span></a>
     </div>
   </div>
@@ -1038,8 +1023,8 @@ body{padding-top:36px}
     <div class="footer-grid">
       <div class="footer-brand"><div class="logo"><div class="logo-mark">SWG</div></div><p>Strategy, operations, technology, and marketing support for growing companies that need the work connected and executed.</p></div>
       <div class="footer-col"><h5>Essentials</h5><a href="#problems">Problems</a><a href="#process">Process</a><a href="#services">Services</a></div>
-      <div class="footer-col"><h5>Company</h5><a href="#outcomes">Outcomes</a><a href="#pricing">Pricing</a><a href="assessment.html" onclick="openModal();return false">Assessment</a></div>
-      <div class="footer-col"><h5>Next Step</h5><a href="assessment.html" onclick="openModal();return false">Start Review</a><a href="#pricing">Engagement Paths</a><a href="#services">Service Routes</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="#outcomes">Outcomes</a><a href="#pricing">Pricing</a><a href="assessment.html">Assessment</a></div>
+      <div class="footer-col"><h5>Next Step</h5><a href="assessment.html">Start Review</a><a href="#pricing">Engagement Paths</a><a href="#services">Service Routes</a></div>
     </div>
     <div class="footer-bottom"><p>&copy; 2026 Support Wellness Global</p><p>Built around the real problem.</p></div>
   </div>

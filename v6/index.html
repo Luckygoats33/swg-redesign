@@ -75,7 +75,6 @@ body{
   line-height:1.7;
   font-size:16px;
   font-weight:400;
-  cursor:default;
 }
 ::selection{background:var(--violet);color:#fff}
 a{color:inherit;text-decoration:none}
@@ -209,9 +208,14 @@ p{max-width:65ch}
 .text-reveal{
   clip-path:inset(0 100% 0 0);
   transition:clip-path 0.8s var(--ease);
+  animation:textRevealFallback 0s 4s forwards;
+}
+@keyframes textRevealFallback{
+  to{clip-path:inset(0 0 0 0)}
 }
 .text-reveal.revealed{
   clip-path:inset(0 0% 0 0);
+  animation:none;
 }
 
 /* ================================================================
@@ -1543,12 +1547,12 @@ footer{
         <div>
           <div class="footer-col-title">Navigation</div>
           <div class="footer-nav">
-            <a href="problems.html">Problems</a>
-            <a href="process.html">Process</a>
-            <a href="implementation.html">Implementation</a>
-            <a href="engagements.html">Pricing</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="about.html">About</a>
+            <a href="#problems">Problems</a>
+            <a href="#how-we-work">Process</a>
+            <a href="#services">Services</a>
+            <a href="assessment.html">Pricing</a>
+            <a href="#outcomes">Outcomes</a>
+            <a href="#faq">FAQ</a>
           </div>
         </div>
         <div>
@@ -1818,6 +1822,9 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matche
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
+        if(entry.target.classList.contains('text-reveal')){
+          entry.target.classList.add('revealed');
+        }
         var children = entry.target.querySelectorAll('.reveal-child');
         children.forEach(function(child, i){
           child.style.transitionDelay = (i * 100) + 'ms';
@@ -1845,7 +1852,7 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matche
         observer.unobserve(entry.target);
       }
     });
-  }, {threshold:0.2});
+  }, {threshold:0.05, rootMargin:'0px 0px -20px 0px'});
   reveals.forEach(function(el){ observer.observe(el); });
 })();
 
@@ -2163,11 +2170,11 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matche
 <!-- SWG Scores Data -->
 <script>
 window.SWG_SCORES = {
-  ui: { score: 8.5, reason: "Typography-driven hierarchy is sophisticated. Instrument Serif italic headlines command attention. Violet margin rules as consistent accent. Some sections could use more visual variety." },
+  ui: { score: 8.5, reason: "Typography-driven hierarchy is sophisticated. Space Grotesk headlines command attention. Violet margin rules as consistent accent. Some sections could use more visual variety." },
   ux: { score: 8.5, reason: "Clearest CTA flow of all versions. Hero underline micro-interaction is elegant. Situations with icons scan well. Best assessment form experience." },
-  mobile: { score: 8.5, reason: "Best mobile implementation. Sticky header, Outfit font scales well, generous whitespace. All touch targets exceed 44px. Clean mobile nav overlay." },
+  mobile: { score: 8.5, reason: "Best mobile implementation. Sticky header, Inter body font scales well, generous whitespace. All touch targets exceed 44px. Clean mobile nav overlay." },
   seo: { score: 8.5, reason: "Richer Organization schema with foundingDate and numberOfEmployees. Full meta/OG/Twitter/canonical. Good semantic HTML. No FAQ schema like V4." },
-  design: { score: 8.5, reason: "Instrument Serif italic is the most distinctive typography. Violet accent unusual for B2B. Breaks template patterns. Restraint is intentional but hero could use more visual weight." }
+  design: { score: 8.5, reason: "Space Grotesk is the most distinctive typography choice. Violet accent unusual for B2B. Breaks template patterns. Restraint is intentional but hero could use more visual weight." }
 };
 </script>
 

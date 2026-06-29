@@ -6,17 +6,17 @@
 <meta name="robots" content="index, follow">
 <title>Business Growth Consulting &amp; Strategy | SWG &mdash; Support Wellness Global</title>
 <meta name="description" content="SWG is a business consulting firm for founder-led companies. We diagnose growth bottlenecks, then build the systems — website, CRM, AI workflows, marketing, and reporting — connected to one strategy.">
-<link rel="canonical" href="https://supportwellnessglobal.com/v7/">
+<link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/v7/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Growth Consulting &amp; Strategy | SWG">
 <meta property="og:description" content="We help growing companies solve the business problems behind growth. Strategy, operations, technology, and marketing support for founder-led companies.">
-<meta property="og:url" content="https://supportwellnessglobal.com/v7/">
-<meta property="og:image" content="../assets/v7/og-image.jpg">
+<meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v7/">
+<meta property="og:image" content="https://luckygoats33.github.io/swg-redesign/assets/v7/og-image.jpg">
 <meta property="og:site_name" content="Support Wellness Global">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Business Growth Consulting &amp; Strategy | SWG">
 <meta name="twitter:description" content="We help growing companies solve the business problems behind growth.">
-<meta name="twitter:image" content="https://supportwellnessglobal.com/og-image.jpg">
+<meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/assets/v7/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23D4A574'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='12' fill='%2309090B'%3ESWG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -404,6 +404,7 @@ p{max-width:65ch}
   background:var(--bg);
   overflow:hidden;
   padding:140px 24px 80px;
+  background-image:radial-gradient(ellipse at 50% 40%,rgba(212,165,116,0.08) 0%,rgba(9,9,11,1) 70%);
 }
 .hero-bg-video{
   position:absolute;inset:0;
@@ -542,23 +543,60 @@ p{max-width:65ch}
 }
 .video-container{
   width:100%;
-  height:70vh;
+  height:50vh;
   position:relative;
   overflow:hidden;
   border:none;
   border-radius:0;
 }
 @media(max-width:767px){
-  .video-container{height:40vh}
+  .video-container{height:35vh}
 }
 .video-showcase-bg{
   position:absolute;inset:0;
   width:100%;height:100%;
   object-fit:cover;
-  z-index:0;
+  z-index:1;
 }
 .video-gradient-bg{
-  display:none;
+  position:absolute;inset:0;
+  z-index:0;
+  background:linear-gradient(135deg,#0C0B09 0%,#1A1714 30%,#0F0E0C 60%,#141210 100%);
+  background-size:200% 200%;
+  animation:videoGradientShift 12s ease-in-out infinite;
+}
+@keyframes videoGradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.video-overlay{
+  position:absolute;inset:0;
+  z-index:2;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  pointer-events:none;
+  text-align:center;
+  padding:24px;
+  opacity:1;
+  transition:opacity 0.6s ease;
+}
+.video-overlay.video-loaded{
+  opacity:0;
+}
+.video-overlay-heading{
+  font-family:var(--playfair);
+  font-size:clamp(1.3rem,3vw,2rem);
+  color:rgba(245,245,244,0.35);
+  font-weight:400;
+  letter-spacing:0.02em;
+  margin-bottom:12px;
+}
+.video-overlay-sub{
+  font-family:var(--dm);
+  font-size:0.85rem;
+  color:rgba(245,245,244,0.2);
+  font-weight:300;
 }
 
 /* ================================================================
@@ -678,6 +716,7 @@ p{max-width:65ch}
    ================================================================ */
 .process-section{
   background:var(--bg);
+  background-image:linear-gradient(135deg,rgba(212,165,116,0.04) 0%,rgba(9,9,11,1) 40%,rgba(212,165,116,0.03) 100%);
   position:relative;
   padding:0;
   overflow:hidden;
@@ -964,7 +1003,7 @@ p{max-width:65ch}
   transition:max-height 0.4s var(--ease),padding 0.4s var(--ease);
   padding:0 8px 0 70px;
 }
-.sit-item.open .sit-body{max-height:200px;padding:0 8px 24px 70px}
+.sit-item.open .sit-body{padding:0 8px 24px 70px}
 .sit-body p{
   font-size:0.92rem;color:var(--stone);
   line-height:1.75;font-weight:300;
@@ -1410,8 +1449,13 @@ body.loading .scroll-indicator{
      ===================================================================== -->
 <section class="video-section" id="video">
   <div class="video-container" id="videoContainer">
-    <video class="video-showcase-bg" autoplay muted loop playsinline preload="auto">
-      <source src="../assets/v7/network-connect-web.mp4" type="video/mp4">
+    <div class="video-gradient-bg" aria-hidden="true"></div>
+    <div class="video-overlay" id="videoOverlay" aria-hidden="true">
+      <div class="video-overlay-heading">Our Approach in Action</div>
+      <div class="video-overlay-sub">Loading...</div>
+    </div>
+    <video class="video-showcase-bg" id="videoShowcase" muted loop playsinline preload="none">
+      <source data-src="../assets/v7/network-connect-web.mp4" type="video/mp4">
     </video>
   </div>
 </section>
@@ -1484,8 +1528,8 @@ body.loading .scroll-indicator{
      PROCESS — STICKY SPLIT-SCREEN
      ===================================================================== -->
 <section class="process-section" id="process">
-  <video class="process-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="../assets/v7/process-gears-web.mp4" type="video/mp4">
+  <video class="process-bg-video" id="processVideo" muted loop playsinline preload="none" aria-hidden="true">
+    <source data-src="../assets/v7/process-gears-web.mp4" type="video/mp4">
   </video>
   <div class="process-inner">
     <div class="process-left">
@@ -1775,12 +1819,12 @@ body.loading .scroll-indicator{
         <div>
           <div class="footer-col-title">Navigation</div>
           <div class="footer-nav">
-            <a href="problems.html">Problems</a>
-            <a href="process.html">Process</a>
-            <a href="implementation.html">Implementation</a>
-            <a href="engagements.html">Pricing</a>
-            <a href="case-studies.html">Case Studies</a>
-            <a href="about.html">About</a>
+            <a href="#problem">Problems</a>
+            <a href="#process">Process</a>
+            <a href="#services">Services</a>
+            <a href="#situations">Engagements</a>
+            <a href="#outcomes">Outcomes</a>
+            <a href="#faq">FAQ</a>
           </div>
         </div>
         <div>
@@ -2102,14 +2146,18 @@ window.SWG_SCORES = {
     accordion.querySelectorAll('.sit-trigger').forEach(function(trigger){
       trigger.addEventListener('click', function(){
         var item = this.closest('.sit-item');
+        var body = item.querySelector('.sit-body');
         var isOpen = item.classList.contains('open');
         accordion.querySelectorAll('.sit-item').forEach(function(it){
           it.classList.remove('open');
           it.querySelector('.sit-trigger').setAttribute('aria-expanded','false');
+          var b = it.querySelector('.sit-body');
+          b.style.maxHeight = '0';
         });
         if(!isOpen){
           item.classList.add('open');
           this.setAttribute('aria-expanded','true');
+          body.style.maxHeight = body.scrollHeight + 'px';
         }
       });
     });
@@ -2174,10 +2222,60 @@ window.SWG_SCORES = {
     btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
   })();
 
-  // ── Force video autoplay ──
-  document.querySelectorAll('video[autoplay]').forEach(function(v) {
-    v.play().catch(function() {});
-  });
+  // ── Lazy Video Loading (IntersectionObserver) ──
+  (function(){
+    var lazyVideos = [
+      { id: 'videoShowcase', overlayId: 'videoOverlay' },
+      { id: 'processVideo', overlayId: null }
+    ];
+    if(!('IntersectionObserver' in window)){
+      // Fallback: load all videos immediately
+      lazyVideos.forEach(function(cfg){
+        var video = document.getElementById(cfg.id);
+        if(!video) return;
+        var source = video.querySelector('source[data-src]');
+        if(source){ source.src = source.getAttribute('data-src'); source.removeAttribute('data-src'); }
+        video.load();
+        video.play().catch(function(){});
+      });
+      return;
+    }
+    lazyVideos.forEach(function(cfg){
+      var video = document.getElementById(cfg.id);
+      if(!video) return;
+      var loaded = false;
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && !loaded){
+            loaded = true;
+            var source = video.querySelector('source[data-src]');
+            if(source){ source.src = source.getAttribute('data-src'); source.removeAttribute('data-src'); }
+            video.load();
+            video.play().catch(function(){});
+            // Hide overlay when video can play
+            if(cfg.overlayId){
+              var overlay = document.getElementById(cfg.overlayId);
+              video.addEventListener('canplay', function(){
+                if(overlay) overlay.classList.add('video-loaded');
+              }, {once:true});
+              // Safety timeout: hide overlay after 8s even if canplay never fires
+              setTimeout(function(){
+                if(overlay && !overlay.classList.contains('video-loaded')){
+                  overlay.classList.add('video-loaded');
+                }
+              }, 8000);
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {rootMargin:'200px 0px'});
+      observer.observe(video);
+    });
+
+    // Hero video still uses autoplay+preload="auto", just ensure it plays
+    var heroVideo = document.querySelector('.hero-bg-video');
+    if(heroVideo){ heroVideo.play().catch(function(){}); }
+  })();
 
 })();
 </script>
