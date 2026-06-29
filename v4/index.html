@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Support Wellness Global","alternateName":"SWG","url":"https://supportwellnessglobal.com","description":"Business consulting firm for founder-led and operator-led companies. Strategy, operations, technology, and marketing support.","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@supportwellnessglobal.com"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Support Wellness Global","alternateName":"SWG","url":"https://supportwellnessglobal.com","description":"Business consulting firm for founder-led and operator-led companies. Strategy, operations, technology, and marketing support.","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"dean@supportwellnessglobal.com"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is the best fit for SWG?","acceptedAnswer":{"@type":"Answer","text":"Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution."}},{"@type":"Question","name":"Do we need to know what service we want?","acceptedAnswer":{"@type":"Answer","text":"No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth."}},{"@type":"Question","name":"What can the roadmap include?","acceptedAnswer":{"@type":"Answer","text":"Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support."}},{"@type":"Question","name":"Do you execute after the strategy?","acceptedAnswer":{"@type":"Answer","text":"Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed."}},{"@type":"Question","name":"What industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"Health and wellness, professional services, real estate, e-commerce, SaaS, agencies, home services, and any founder-led company with $1M+ revenue and growth ambition."}},{"@type":"Question","name":"How long does a business review take?","acceptedAnswer":{"@type":"Answer","text":"The initial assessment takes 8-10 minutes online. The full business review engagement is typically 2-4 weeks depending on complexity, team availability, and scope."}}]}
@@ -127,13 +127,13 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 @media(max-width:480px){.version-bar{padding:4px 6px !important}.version-bar .swg-score-pill{min-width:auto;padding:5px 8px 5px 8px}}
 
 /* ===== LOGO MARQUEE ===== */
-.logo-marquee{padding:32px 0;background:rgba(0,0,0,0.15);border-top:1px solid rgba(196,93,62,0.1);border-bottom:1px solid rgba(196,93,62,0.1)}
-.marquee-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,250,247,0.35);margin-bottom:24px;font-family:var(--sans)}
+.logo-marquee{padding:44px 0;background:var(--forest);border-top:2px solid var(--terra);border-bottom:1px solid rgba(196,93,62,0.2)}
+.marquee-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,241,235,0.6);margin-bottom:24px;font-family:var(--sans)}
 .marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .marquee-track{display:flex;align-items:center;gap:48px;width:max-content;animation:marquee 30s linear infinite}
 .marquee-track:hover{animation-play-state:paused}
-.marquee-track svg{height:28px;width:auto;opacity:0.35;transition:opacity 0.3s;flex-shrink:0;fill:var(--cream)}
-.marquee-track svg:hover{opacity:0.65}
+.marquee-track svg{height:28px;width:auto;opacity:0.5;transition:opacity 0.3s;flex-shrink:0;fill:var(--cream)}
+.marquee-track svg:hover{opacity:0.85}
 @media(min-width:768px){.marquee-track svg{height:36px}}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
@@ -217,6 +217,40 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 
 /* Before/after labels on diagram */
 .diagram-state{font-family:var(--sans);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;fill:var(--terra)}
+
+/* Problem diagram — continuous floating & warning animations */
+@keyframes diagFloat{0%,100%{transform:translate(0,0)}25%{transform:translate(5px,-7px)}75%{transform:translate(-4px,6px)}}
+@keyframes diagPulseWarn{0%,100%{stroke-width:2;opacity:0.25}50%{stroke-width:3;opacity:0.55}}
+@keyframes diagOrbitDash{to{transform:rotate(360deg)}}
+@keyframes diagHubGlow{0%,100%{opacity:1}50%{opacity:0.65}}
+@keyframes diagLineBreathe{0%,100%{opacity:0.35;stroke-width:1.5}50%{opacity:0.65;stroke-width:2.5}}
+@keyframes diagWarnFlicker{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:0.9;transform:scale(1.15)}}
+
+/* Disconnected state: circles float and pulse with warning feel */
+.problem__diagram:not(.connected) .diagram-circle{animation:diagFloat 4.5s ease-in-out infinite,diagPulseWarn 3s ease-in-out infinite;will-change:transform}
+.problem__diagram:not(.connected) .diagram-circle:nth-of-type(3){animation-delay:0.6s,0.4s;animation-duration:5.2s,3.4s}
+.problem__diagram:not(.connected) .diagram-circle:nth-of-type(5){animation-delay:1.1s,0.8s;animation-duration:4.8s,2.8s}
+.problem__diagram:not(.connected) .diagram-circle:nth-of-type(7){animation-delay:0.3s,1.2s;animation-duration:5.5s,3.6s}
+.problem__diagram:not(.connected) .diagram-circle:nth-of-type(9){animation-delay:1.5s,0.2s;animation-duration:4.2s,3.2s}
+.problem__diagram:not(.connected) .diagram-circle:nth-of-type(11){animation-delay:0.8s,1.6s;animation-duration:5s,2.6s}
+
+/* Disconnected warning state label blinks */
+.problem__diagram:not(.connected) .diagram-state{animation:diagWarnFlicker 2.5s ease-in-out infinite}
+
+/* Decorative orbit rings around diagram */
+.problem__diagram::before{content:'';position:absolute;top:50%;left:50%;width:85%;height:85%;transform:translate(-50%,-50%);border:2px dashed var(--terra);border-radius:50%;opacity:0.1;animation:diagOrbitDash 30s linear infinite;pointer-events:none;z-index:0}
+.problem__diagram::after{content:'';position:absolute;top:50%;left:50%;width:60%;height:60%;transform:translate(-50%,-50%);border:1.5px dashed var(--gold);border-radius:50%;opacity:0.08;animation:diagOrbitDash 20s linear infinite reverse;pointer-events:none;z-index:0}
+
+/* Connected state: calmer motion, glowing hub, breathing lines */
+.problem__diagram.connected::before{animation-duration:60s;opacity:0.06}
+.problem__diagram.connected::after{animation-duration:40s;opacity:0.04}
+.problem__diagram.connected .diagram-center{animation:diagHubGlow 3s ease-in-out infinite}
+.problem__diagram.connected .diagram-line{animation:diagLineBreathe 4s ease-in-out infinite}
+.problem__diagram.connected .diagram-line:nth-of-type(2){animation-delay:0.5s}
+.problem__diagram.connected .diagram-line:nth-of-type(3){animation-delay:1s}
+.problem__diagram.connected .diagram-line:nth-of-type(4){animation-delay:1.5s}
+.problem__diagram.connected .diagram-line:nth-of-type(5){animation-delay:2s}
+.problem__diagram.connected .diagram-line:nth-of-type(6){animation-delay:2.5s}
 
 /* ===== SERVICES — STAGGERED MASONRY ===== */
 .services{padding:120px 0;background:var(--stone);position:relative}
@@ -302,7 +336,10 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .case-card__desc{font-size:0.95rem;line-height:1.75;color:rgba(245,241,235,0.55)}
 
 /* ===== OUTCOMES — ANIMATED METRICS ===== */
-.outcomes{padding:120px 0;position:relative}
+.outcomes{padding:120px 0;position:relative;background:var(--stone)}
+.outcomes::before,.outcomes::after{content:'';position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--terra),transparent);opacity:0.15}
+.outcomes::before{top:0}
+.outcomes::after{bottom:0}
 .outcomes__header{margin-bottom:64px;text-align:center}
 .outcomes__header .label{margin-bottom:16px;display:block}
 .outcomes__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 32px;max-width:720px;margin:0 auto}
@@ -328,6 +365,18 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
 .testimonial__attr{display:flex;flex-direction:column;gap:2px}
 .testimonial__name{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--graphite);font-style:normal}
 .testimonial__role{font-family:var(--sans);font-size:13px;color:rgba(45,45,45,0.5);font-style:normal}
+
+/* ===== TESTIMONIAL PULL-QUOTE ===== */
+.pullquote-section{padding:100px 0;background:var(--forest);position:relative;overflow:hidden}
+.pullquote-section::before,.pullquote-section::after{content:'';position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--terra),var(--gold),transparent);opacity:0.3}
+.pullquote-section::before{top:0}
+.pullquote-section::after{bottom:0}
+.pullquote-inner{max-width:800px;margin:0 auto;position:relative;padding-left:80px}
+@media(max-width:767px){.pullquote-inner{padding-left:48px}}
+.pullquote-icon{position:absolute;left:0;top:-20px;font-family:var(--serif);font-size:8rem;line-height:1;color:var(--terra);opacity:0.25;pointer-events:none;user-select:none}
+@media(max-width:767px){.pullquote-icon{font-size:5rem;top:-10px}}
+.pullquote-text{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.9rem);font-style:italic;color:var(--parchment);line-height:1.65;border-left:4px solid var(--terra);padding-left:32px;margin:0}
+.pullquote-attr{display:block;margin-top:28px;font-family:var(--sans);font-size:0.95rem;font-style:normal;color:var(--gold);font-weight:500;letter-spacing:0.02em}
 
 /* ===== CTA SECTION ===== */
 .cta{padding:120px 0;background:linear-gradient(135deg,var(--forest) 0%,#2A4A32 50%,var(--forest) 100%);position:relative;overflow:hidden}
@@ -394,7 +443,9 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   .hero__stat{animation:none!important}
   .hero__ring,.hero__ring-2{animation:none!important}
   .process__step-fill{transition:none}
-  .diagram-circle,.diagram-circle-fill,.diagram-line,.diagram-center,.diagram-label{transition:none}
+  .diagram-circle,.diagram-circle-fill,.diagram-line,.diagram-center,.diagram-label{transition:none;animation:none!important}
+  .diagram-state{animation:none!important}
+  .problem__diagram::before,.problem__diagram::after{animation:none!important;display:none}
   .service-card,.case-card,.btn,.testimonial,.outcome__number{transition:none}
   .service-card,.case-card,.testimonial,.btn-terra{will-change:auto}
   html{scroll-behavior:auto}
@@ -642,6 +693,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
     <a href="../v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a>
     <a href="../v6/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">6</a>
     <a href="../v7/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">7</a>
+    <a href="../v8/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">8</a>
   </div>
 </div>
 
@@ -863,11 +915,16 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
   </section>
 
   <!-- ===== TESTIMONIAL PULL-QUOTE ===== -->
-  <section style="padding:80px 24px;max-width:900px;margin:0 auto">
-    <blockquote style="font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-style:italic;color:var(--parchment);line-height:1.6;border-left:4px solid var(--terra);padding-left:32px;margin:0">
-      "SWG didn't just find problems — they sequenced the fixes so each one compounded. Within 90 days, our systems were finally working together instead of against each other."
-      <footer style="margin-top:24px;font-family:'Source Sans 3',sans-serif;font-size:0.95rem;font-style:normal;color:var(--stone);font-weight:400">— Growth-stage founder, SaaS</footer>
-    </blockquote>
+  <section class="pullquote-section">
+    <div class="wrap">
+      <div class="pullquote-inner">
+        <div class="pullquote-icon" aria-hidden="true">&ldquo;</div>
+        <blockquote class="pullquote-text">
+          &ldquo;SWG didn&rsquo;t just find problems &mdash; they sequenced the fixes so each one compounded. Within 90 days, our systems were finally working together instead of against each other.&rdquo;
+          <footer class="pullquote-attr">&mdash; Growth-stage founder, SaaS</footer>
+        </blockquote>
+      </div>
+    </div>
   </section>
 
   <!-- ===== PROCESS TIMELINE ===== -->
@@ -1009,7 +1066,7 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.3}
       <div class="footer__col">
         <p class="footer__col-title">Company</p>
         <a href="about.html">About</a>
-        <a href="mailto:hello@supportwellnessglobal.com">Contact</a>
+        <a href="mailto:dean@supportwellnessglobal.com,will@supportwellnessglobal.com,mike@supportwellnessglobal.com">Contact</a>
         <a href="assessment.html">Start the Review</a>
       </div>
     </div>

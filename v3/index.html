@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Support Wellness Global","alternateName":"SWG","url":"https://supportwellnessglobal.com","description":"Business consulting firm for founder-led and operator-led companies. Strategy, operations, technology, and marketing support.","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@supportwellnessglobal.com"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Support Wellness Global","alternateName":"SWG","url":"https://supportwellnessglobal.com","description":"Business consulting firm for founder-led and operator-led companies. Strategy, operations, technology, and marketing support.","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"dean@supportwellnessglobal.com"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is the best fit?","acceptedAnswer":{"@type":"Answer","text":"Founder-led, owner-led, operator-led, and leadership-driven companies with real complexity, urgency, budget, and a need for both direction and execution."}},{"@type":"Question","name":"Do we need to know what service we want?","acceptedAnswer":{"@type":"Answer","text":"No. The point is to understand the business first. The service recommendation comes after we know what is actually blocking growth."}},{"@type":"Question","name":"What can the roadmap include?","acceptedAnswer":{"@type":"Answer","text":"Website redevelopment, brand positioning, marketing strategy, CRM cleanup, AI implementation, workflow design, reporting, content, campaigns, or operating support."}},{"@type":"Question","name":"Do you execute after the strategy?","acceptedAnswer":{"@type":"Answer","text":"Yes. SWG is strongest when the plan becomes a working system: assets launched, workflows connected, teams trained, campaigns shipped, and reporting reviewed."}},{"@type":"Question","name":"How long does an engagement take?","acceptedAnswer":{"@type":"Answer","text":"A Business Review typically takes 2-3 weeks. A Focused Build is 4-12 weeks depending on scope. Ongoing Support is month-to-month with no lock-in."}},{"@type":"Question","name":"What industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"We have worked across 30+ industries including health and wellness, construction, professional services, e-commerce, SaaS, and manufacturing. The growth problems are structural, not vertical."}}]}
@@ -146,18 +146,39 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 /* ━━ HERO ━━ */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--white);background-image:url('../assets/v3-hero-1.png');background-size:cover;background-position:center}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.82);z-index:0}
-.hero>.wrap{position:relative;z-index:1}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,0.04) 0%,rgba(124,58,237,0.03) 25%,rgba(37,99,235,0.06) 50%,rgba(124,58,237,0.02) 75%,rgba(37,99,235,0.04) 100%);background-size:400% 400%;animation:heroGradientShift 12s ease-in-out infinite;z-index:0;pointer-events:none}
+@keyframes heroGradientShift{0%{background-position:0% 0%}25%{background-position:100% 50%}50%{background-position:50% 100%}75%{background-position:0% 50%}100%{background-position:0% 0%}}
+.hero>.wrap{position:relative;z-index:2}
 @media(max-width:767px){.hero{background-image:none}}
+/* Floating hero orbs */
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1;filter:blur(60px);opacity:0.35}
+.hero-orb-1{width:400px;height:400px;background:radial-gradient(circle,rgba(37,99,235,0.25),transparent 70%);top:-5%;right:10%;animation:orbFloat1 18s ease-in-out infinite}
+.hero-orb-2{width:300px;height:300px;background:radial-gradient(circle,rgba(124,58,237,0.2),transparent 70%);bottom:5%;left:5%;animation:orbFloat2 22s ease-in-out infinite}
+.hero-orb-3{width:200px;height:200px;background:radial-gradient(circle,rgba(34,197,94,0.12),transparent 70%);top:40%;left:30%;animation:orbFloat3 15s ease-in-out infinite}
+@keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,30px) scale(1.15)}66%{transform:translate(20px,-20px) scale(0.9)}}
+@keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-25px) scale(1.1)}66%{transform:translate(-20px,15px) scale(0.95)}}
+@keyframes orbFloat3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,20px) scale(1.2)}}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;padding:160px 0 80px}
 @media(min-width:1024px){.hero-grid{grid-template-columns:7fr 5fr;gap:80px}}
 .hero-text{max-width:620px}
-.hero-text .eyebrow{animation:fadeUp 0.7s var(--ease) 0.1s both}
+.hero-text .eyebrow{animation:fadeSlideRight 0.7s var(--ease) 0.1s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-.hero-text h1{margin-bottom:24px;animation:fadeUp 0.8s var(--ease) 0.25s both}
-.hero-text h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-text .body-lg{margin-bottom:40px;animation:fadeUp 0.8s var(--ease) 0.4s both}
-.hero-buttons{display:flex;flex-direction:column;gap:14px;animation:fadeUp 0.8s var(--ease) 0.55s both}
+@keyframes fadeSlideRight{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+@keyframes fadeScaleIn{from{opacity:0;transform:scale(0.92) translateY(16px)}to{opacity:1;transform:none}}
+@keyframes heroWordReveal{from{opacity:0;transform:translateY(100%);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+.hero-text h1{margin-bottom:24px;animation:fadeScaleIn 1s var(--ease) 0.25s both}
+.hero-text h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--secondary),#3B82F6);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 4s ease-in-out infinite}
+.hero-text .body-lg{margin-bottom:40px;animation:fadeUp 0.8s var(--ease) 0.5s both}
+.hero-buttons{display:flex;flex-direction:column;gap:14px;animation:fadeUp 0.8s var(--ease) 0.65s both}
 @media(min-width:480px){.hero-buttons{flex-direction:row}}
+/* Hero shimmer line */
+.hero-shimmer{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(37,99,235,0.3),rgba(124,58,237,0.2),transparent);z-index:2}
+/* Hero text animated accent bar */
+.hero-text h1::after{content:'';display:block;width:80px;height:4px;margin-top:16px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--secondary));animation:heroBarGrow 1.2s var(--ease) 0.8s both}
+@keyframes heroBarGrow{from{width:0;opacity:0}to{width:80px;opacity:1}}
+/* Hero eyebrow pulse dot */
+.hero-text .eyebrow::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px;vertical-align:middle;animation:eyebrowPulse 2s ease-in-out infinite}
+@keyframes eyebrowPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(37,99,235,0.4)}50%{opacity:0.7;box-shadow:0 0 0 8px rgba(37,99,235,0)}}
 
 /* Hero CSS illustration — interlocking gears */
 .hero-illustration{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;margin:0 auto;animation:fadeUp 0.8s var(--ease) 0.5s both}
@@ -224,13 +245,14 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 }
 
 /* ━━ TRUSTED BY — Marquee ━━ */
-.trusted-section{padding:32px 0;background:rgba(15,22,41,0.6);border-top:1px solid rgba(37,99,235,0.15);border-bottom:1px solid rgba(37,99,235,0.15)}
-.trusted-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);opacity:0.6;margin-bottom:24px}
-.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.trusted-section{padding:48px 0;background:linear-gradient(135deg,#1a365d 0%,#1e40af 50%,#1a365d 100%);border-top:none;border-bottom:none;position:relative;overflow:hidden}
+.trusted-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(59,130,246,0.15),transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(124,58,237,0.1),transparent 60%);pointer-events:none}
+.trusted-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;opacity:0.85;margin-bottom:28px;position:relative;z-index:1}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);position:relative;z-index:1}
 .marquee-track{display:flex;align-items:center;gap:48px;width:max-content;animation:marquee 30s linear infinite}
 .marquee-track:hover{animation-play-state:paused}
-.marquee-track svg{height:28px;width:auto;opacity:0.35;transition:opacity 0.3s;flex-shrink:0}
-.marquee-track svg:hover{opacity:0.65}
+.marquee-track svg{height:28px;width:auto;opacity:0.7;transition:opacity 0.3s;flex-shrink:0;filter:brightness(10)}
+.marquee-track svg:hover{opacity:1}
 @media(min-width:768px){.marquee-track svg{height:36px}}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
@@ -594,6 +616,124 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 .shimmer-hover::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:none;pointer-events:none}
 .shimmer-hover:hover::before{left:100%;transition:left 0.7s var(--ease)}
 
+/* ━━ ENHANCED SECTION VISUALS ━━ */
+
+/* Section divider gradients — flow between sections */
+.sec-light{background:linear-gradient(180deg,#F0F4FF 0%,#E8EEFF 40%,#F0F4FF 100%);position:relative}
+.sec-light::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(37,99,235,0.1) 30%,rgba(124,58,237,0.08) 70%,transparent 95%)}
+
+/* Core problem section — enhanced */
+#problem{position:relative;overflow:hidden}
+#problem::before{content:'';position:absolute;top:-120px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.06),transparent 70%);pointer-events:none;animation:geoDrift1 25s ease-in-out infinite}
+
+/* Flip card enhanced hover */
+.flip-card-front{transition:box-shadow 0.4s var(--ease)}
+.flip-card:hover .flip-card-front{box-shadow:0 12px 40px rgba(37,99,235,0.15)}
+.flip-card-back{background:linear-gradient(135deg,var(--accent) 0%,#1D4ED8 60%,var(--secondary) 100%)}
+
+/* Phase blocks — gradient number hover */
+.phase-block{transition:all 0.5s var(--ease);position:relative}
+.phase-block::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.02),rgba(124,58,237,0.01));border-radius:var(--card-radius);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none}
+.phase-block:hover::before{opacity:1}
+
+/* What SWG Does section — subtle grid pattern */
+#what{position:relative;overflow:hidden}
+#what::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,0.04) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;opacity:0.5}
+
+/* Situations section — accent line */
+#situations{position:relative}
+#situations::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));border-radius:3px}
+
+/* Accordion enhanced hover */
+.accordion-trigger:hover{background:rgba(37,99,235,0.02);border-radius:10px}
+.accordion-item.open .accordion-trigger{background:rgba(37,99,235,0.03);border-radius:10px 10px 0 0}
+
+/* Principles section — pattern background */
+#principles{position:relative;overflow:hidden}
+#principles::after{content:'';position:absolute;bottom:-60px;left:-40px;width:250px;height:250px;border:2px solid rgba(124,58,237,0.04);border-radius:50%;pointer-events:none;animation:geoDrift2 20s ease-in-out infinite}
+
+/* Principle card — glow on hover */
+.principle-card:hover{box-shadow:0 16px 48px rgba(37,99,235,0.12),0 0 0 1px rgba(37,99,235,0.15)}
+
+/* How it works dark section — mesh gradient */
+#how{background:linear-gradient(135deg,#1A1A2E 0%,#16213E 30%,#1A1A2E 60%,#0F3460 100%);position:relative;overflow:hidden}
+#how::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(37,99,235,0.3),transparent)}
+#how::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,0.2),transparent)}
+.hiw-step{background:linear-gradient(180deg,var(--light-blue),#E8EEFF)}
+.hiw-step:hover{box-shadow:0 16px 48px rgba(37,99,235,0.18),0 0 60px rgba(37,99,235,0.06)}
+
+/* Work order section — enhanced cards */
+.wo-card{transition:all 0.5s var(--ease)}
+.wo-card:hover{transform:translateY(-4px)}
+
+/* Roadmap cards — enhanced hover */
+.roadmap-card{transition:all 0.5s var(--ease)}
+.roadmap-card:hover{box-shadow:0 20px 60px rgba(37,99,235,0.15)}
+
+/* Services grid — enhanced cards with distinct identity */
+.svc-card{transition:all 0.5s var(--ease)}
+.svc-card:hover{box-shadow:0 20px 60px rgba(37,99,235,0.12);transform:translateY(-8px)}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--secondary));transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease)}
+.svc-card:hover::after{transform:scaleX(1)}
+
+/* Implementation section — dot pattern */
+#implementation{position:relative;overflow:hidden}
+#implementation::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+
+/* Outcomes section — gradient background */
+#outcomes{background:linear-gradient(180deg,#F0F4FF 0%,#E6EDFF 50%,#F0F4FF 100%);position:relative;overflow:hidden}
+#outcomes::before{content:'';position:absolute;top:50%;left:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.05),transparent 70%);pointer-events:none;animation:orbFloat2 20s ease-in-out infinite}
+
+/* Outcome card enhanced */
+.outcome-card{transition:all 0.5s var(--ease)}
+.outcome-card:hover{transform:translateY(-10px);box-shadow:0 24px 64px rgba(37,99,235,0.16)}
+.counter-num{transition:color 0.4s var(--ease)}
+.outcome-card:hover .counter-num{color:var(--secondary)}
+
+/* Proof cards enhanced */
+.proof-card{transition:all 0.5s var(--ease)}
+.proof-card:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(37,99,235,0.14)}
+
+/* FAQ section — accent */
+#faq{position:relative;overflow:hidden}
+#faq::before{content:'';position:absolute;top:60px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.04),transparent 70%);pointer-events:none;animation:geoDrift1 20s ease-in-out infinite}
+.faq-btn{transition:all 0.3s var(--ease)}
+.faq-btn:hover{transform:translateX(4px)}
+
+/* Pricing section — enhanced gradient */
+#pricing{background:linear-gradient(180deg,#F0F4FF 0%,#E4ECFF 30%,#EDE9FE 70%,#F0F4FF 100%);overflow:hidden}
+.pricing-card{transition:all 0.4s var(--ease)}
+.pricing-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 60px rgba(37,99,235,0.16)}
+
+/* CTA section — enhanced background */
+.cta-section{background:linear-gradient(180deg,#fff 0%,#F8FAFF 30%,#F0F4FF 70%,#fff 100%);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.04),rgba(124,58,237,0.02),transparent 70%);pointer-events:none;animation:orbFloat3 16s ease-in-out infinite}
+.cta-inner h2{position:relative;z-index:1}
+.cta-inner .body-lg{position:relative;z-index:1}
+.cta-buttons{position:relative;z-index:1}
+
+/* Footer — enhanced */
+.footer{background:linear-gradient(180deg,#F0F4FF,#E8EEFF);position:relative}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 10%,var(--accent) 50%,transparent 90%);opacity:0.15}
+
+/* Scroll-triggered slide-in variants */
+.r-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.r-left.vis{opacity:1;transform:none}
+.r-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.r-right.vis{opacity:1;transform:none}
+.r-scale{opacity:0;transform:scale(0.9);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.r-scale.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.r-left,.r-right,.r-scale{opacity:1;transform:none;transition:none}}
+
+/* Floating decorative shapes */
+.deco-diamond{position:absolute;width:20px;height:20px;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(124,58,237,0.06));transform:rotate(45deg);border-radius:3px;pointer-events:none;animation:floatBob 5s ease-in-out infinite}
+.deco-ring{position:absolute;width:40px;height:40px;border:2px solid rgba(37,99,235,0.06);border-radius:50%;pointer-events:none;animation:floatBob 6s ease-in-out infinite reverse}
+.deco-line{position:absolute;width:60px;height:2px;background:linear-gradient(90deg,rgba(37,99,235,0.1),transparent);pointer-events:none;animation:floatBob 4s ease-in-out infinite}
+
+/* Button enhanced glow on hover */
+.btn-primary:hover{box-shadow:0 12px 36px rgba(124,58,237,0.3),0 0 20px rgba(37,99,235,0.15)}
+.btn-dark:hover{box-shadow:0 16px 48px rgba(26,26,46,0.25),0 0 20px rgba(26,26,46,0.1)}
+
 /* Animated gradient border for dark sections */
 .gradient-border-wrap{position:relative;border-radius:20px;padding:2px}
 .gradient-border-wrap::before{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--secondary),#22C55E,var(--accent));background-size:300% 300%;animation:gradientBorder 8s ease infinite;z-index:0}
@@ -845,6 +985,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
     <a href="../v5/" class="vbar-link">5</a>
     <a href="../v6/" class="vbar-link">6</a>
     <a href="../v7/" class="vbar-link">7</a>
+    <a href="../v8/" class="vbar-link">8</a>
   </div>
 </div>
 <a href="#main" class="skip-link" tabindex="0" style="position:absolute;top:-40px;left:0;background:#2563EB;color:#fff;padding:8px 16px;z-index:10000;font-size:14px;transition:top 0.3s">Skip to content</a>
@@ -884,6 +1025,10 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 
 <!-- 1. HERO — Split layout with CSS illustration -->
 <section class="hero" id="hero">
+  <!-- Floating gradient orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-text">
@@ -917,6 +1062,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
       </div>
     </div>
   </div>
+  <div class="hero-shimmer"></div>
 </section>
 
 <!-- TRUSTED BY — Logo Marquee -->
@@ -948,6 +1094,9 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 
 <!-- 2. CORE PROBLEM — Flip Cards -->
 <section class="sec sec-light" id="problem">
+  <div class="deco-diamond" style="top:80px;right:12%;animation-delay:0s"></div>
+  <div class="deco-ring" style="top:200px;left:5%;animation-delay:1.5s"></div>
+  <div class="deco-line" style="bottom:120px;right:8%;animation-delay:0.8s;transform:rotate(-15deg)"></div>
   <div class="wrap">
     <div class="eyebrow r">The core problem</div>
     <h2 class="r d1 gradient-text" style="max-width:680px">Your systems are disconnected. That is the bottleneck.</h2>
@@ -1019,6 +1168,8 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 
 <!-- 3. WHAT SWG DOES — Scale-up Numbered Blocks -->
 <section class="sec sec-white" id="what">
+  <div class="deco-ring" style="top:60px;right:8%;width:60px;height:60px;animation-delay:2s"></div>
+  <div class="deco-diamond" style="bottom:80px;left:6%;animation-delay:1s;width:16px;height:16px"></div>
   <div class="wrap">
     <div class="eyebrow r">What SWG does</div>
     <h2 class="r d1 gradient-text">Diagnose. Sequence. Execute.</h2>
@@ -1387,6 +1538,9 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 
 <!-- 8. IMPLEMENTATION — Services Grid -->
 <section class="sec sec-white" id="implementation">
+  <div class="deco-diamond" style="top:100px;left:8%;animation-delay:0.5s;width:14px;height:14px"></div>
+  <div class="deco-ring" style="bottom:100px;right:6%;animation-delay:2.5s;width:50px;height:50px;border-color:rgba(124,58,237,0.06)"></div>
+  <div class="deco-line" style="top:60px;right:15%;animation-delay:1.2s;transform:rotate(20deg);width:40px"></div>
   <div class="wrap">
     <div style="text-align:center;margin-bottom:16px">
       <div class="eyebrow r">What we can build</div>
@@ -1558,6 +1712,9 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
 
 <!-- 12. CTA — Clean with ripple button -->
 <section class="cta-section" id="cta">
+  <div class="deco-ring" style="top:40px;left:12%;width:70px;height:70px;border-color:rgba(124,58,237,0.05);animation-delay:1s"></div>
+  <div class="deco-diamond" style="bottom:60px;right:10%;animation-delay:2s;width:18px;height:18px"></div>
+  <div class="deco-ring" style="bottom:30%;right:25%;width:30px;height:30px;animation-delay:0.5s"></div>
   <div class="wrap">
     <div class="cta-inner">
       <div class="eyebrow r" style="justify-content:center">Get started</div>
@@ -1593,7 +1750,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
         <a href="engagements.html">Pricing</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="about.html">About</a>
-        <a href="mailto:hello@supportwellnessglobal.com">Contact</a>
+        <a href="mailto:dean@supportwellnessglobal.com,will@supportwellnessglobal.com,mike@supportwellnessglobal.com">Contact</a>
       </div>
       <div class="footer-col">
         <h5>Start</h5>
@@ -1641,7 +1798,7 @@ h4{font-size:1.05rem;letter-spacing:-0.02em}
   };
 
   // ━━ Scroll reveals ━━
-  var reveals = document.querySelectorAll('.r');
+  var reveals = document.querySelectorAll('.r,.r-left,.r-right,.r-scale');
   if('IntersectionObserver' in window){
     var obs = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -1967,14 +2124,15 @@ window.SWG_SCORES = {
     function resize(){ canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
     resize();
     window.addEventListener('resize', resize);
-    for(var i = 0; i < 40; i++){
+    for(var i = 0; i < 60; i++){
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 0.5,
-        dx: (Math.random() - 0.5) * 0.3,
-        dy: (Math.random() - 0.5) * 0.3,
-        a: Math.random() * 0.3 + 0.05
+        r: Math.random() * 2.5 + 0.5,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+        a: Math.random() * 0.35 + 0.08,
+        hue: Math.random() > 0.7 ? 260 : 220
       });
     }
     function draw(){
@@ -1987,8 +2145,10 @@ window.SWG_SCORES = {
         if(p.y > canvas.height) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(37,99,235,' + p.a + ')';
+        var hue = p.hue || 220;
+        ctx.fillStyle = hue === 260 ? 'rgba(124,58,237,' + p.a + ')' : 'rgba(37,99,235,' + p.a + ')';
         ctx.fill();
+        if(p.r > 1.5){ctx.beginPath();ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);ctx.fillStyle=hue===260?'rgba(124,58,237,'+(p.a*0.1)+')':'rgba(37,99,235,'+(p.a*0.1)+')';ctx.fill();}
       });
       // Draw connecting lines for nearby particles
       for(var i = 0; i < particles.length; i++){
@@ -1996,12 +2156,12 @@ window.SWG_SCORES = {
           var dx = particles[i].x - particles[j].x;
           var dy = particles[i].y - particles[j].y;
           var dist = Math.sqrt(dx*dx + dy*dy);
-          if(dist < 120){
+          if(dist < 150){
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = 'rgba(37,99,235,' + (0.06 * (1 - dist/120)) + ')';
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = 'rgba(37,99,235,' + (0.08 * (1 - dist/150)) + ')';
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
@@ -2011,6 +2171,96 @@ window.SWG_SCORES = {
     draw();
   })();
 
+})();
+</script>
+
+<script>
+// ━━ Enhanced visual interactivity ━━
+(function(){
+  'use strict';
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+  // Card mouse-tracking glow effect
+  var glowCards = document.querySelectorAll('.flip-card-front,.phase-block,.principle-card,.svc-card,.outcome-card,.proof-card,.roadmap-card,.pricing-card');
+  glowCards.forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      card.style.setProperty('--glow-x', x + 'px');
+      card.style.setProperty('--glow-y', y + 'px');
+      card.style.background = 'radial-gradient(circle 200px at ' + x + 'px ' + y + 'px, rgba(37,99,235,0.04), transparent 70%), var(--white)';
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.background = '';
+    });
+  });
+
+  // Staggered entrance for grid children
+  var grids = document.querySelectorAll('.services-grid,.proof-grid,.outcomes-grid,.roadmap-grid');
+  if('IntersectionObserver' in window){
+    var gridObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var children = e.target.children;
+          for(var i = 0; i < children.length; i++){
+            (function(child, delay){
+              setTimeout(function(){
+                child.style.opacity = '1';
+                child.style.transform = 'none';
+              }, delay);
+            })(children[i], i * 80);
+          }
+          gridObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.15});
+    grids.forEach(function(grid){
+      var children = grid.children;
+      for(var i = 0; i < children.length; i++){
+        children[i].style.opacity = '0';
+        children[i].style.transform = 'translateY(20px)';
+        children[i].style.transition = 'opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)';
+      }
+      gridObs.observe(grid);
+    });
+  }
+
+  // Animated gradient on dark section (How it Works)
+  var howSection = document.getElementById('how');
+  if(howSection){
+    var gradAngle = 135;
+    var animating = false;
+    var howObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        animating = e.isIntersecting;
+        if(animating) animateGrad();
+      });
+    }, {threshold:0.1});
+    howObs.observe(howSection);
+    function animateGrad(){
+      if(!animating) return;
+      gradAngle = (gradAngle + 0.15) % 360;
+      howSection.style.background = 'linear-gradient(' + gradAngle + 'deg, #1A1A2E 0%, #16213E 30%, #1A1A2E 60%, #0F3460 100%)';
+      requestAnimationFrame(animateGrad);
+    }
+  }
+
+  // Subtle parallax on decorated section decorative elements
+  var decoEls = document.querySelectorAll('.deco-diamond,.deco-ring,.deco-line');
+  if(decoEls.length){
+    window.addEventListener('scroll', function(){
+      var scrollY = window.scrollY;
+      decoEls.forEach(function(el){
+        var speed = 0.03;
+        var rect = el.parentElement.getBoundingClientRect();
+        if(rect.top < window.innerHeight && rect.bottom > 0){
+          var offset = (rect.top / window.innerHeight) * 20;
+          el.style.transform = el.style.transform.replace(/translateY\([^)]*\)/,'') + ' translateY(' + (offset * speed * 100) + 'px)';
+        }
+      });
+    }, {passive:true});
+  }
 })();
 </script>
 
