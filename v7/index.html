@@ -1320,6 +1320,7 @@ body.loading .scroll-indicator{
     <a href="../v6/">6</a>
     <a href="./" class="active">7</a>
     <a href="../v8/">8</a>
+    <a href="../v1a/" style="font-size:9px">1a</a>
   </div>
 </div>
 
@@ -1932,7 +1933,7 @@ window.SWG_SCORES = {
       var docHeight = document.documentElement.scrollHeight - window.innerHeight;
       var scrolled = window.scrollY || window.pageYOffset;
       var pct = docHeight > 0 ? scrolled / docHeight : 0;
-      fill.style.height = (pct * 100) + '%';
+      fill.style.transform = 'scaleY(' + pct + ')';
     }
     window.addEventListener('scroll', update, {passive:true});
     update();

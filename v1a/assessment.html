@@ -1,0 +1,1466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0e12" />
+    <title>Business Review Assessment | SWG</title>
+    <meta name="description" content="Start your business review with SWG. This 5-step assessment helps us understand your company stage, current bottlenecks, operating maturity, growth goals, and readiness to implement." />
+    <link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/v1a/assessment.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Business Review Assessment | SWG" />
+    <meta property="og:description" content="Start your business review. 8-10 minutes. We review every submission personally and respond within two business days." />
+    <meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v1a/assessment.html" />
+    <meta property="og:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg" />
+    <meta property="og:site_name" content="Support Wellness Global" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Business Review Assessment | SWG" />
+    <meta name="twitter:description" content="Start your business review with SWG. 8-10 minutes." />
+    <meta name="twitter:image" content="https://luckygoats33.github.io/swg-redesign/og-image.jpg" />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Support Wellness Global","alternateName":"SWG","url":"https://supportwellnessglobal.com","description":"Business consulting firm for founder-led and operator-led companies.","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"dean@supportwellnessglobal.com"}}
+    </script>
+    <style>
+/* ================================================================
+   RESET
+   ================================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root {
+  --ink: #0b0e12;
+  --graphite: #171b23;
+  --graphite-2: #222833;
+  --paper: #ffffff;
+  --warm-white: #f8f6f0;
+  --muted: #4b5562;
+  --line: rgba(11, 14, 18, 0.12);
+  --light-line: rgba(255, 255, 255, 0.14);
+  --electric: #2f6bff;
+  --lime: #c9ff3b;
+  --coral: #ff4f5e;
+  --teal: #1f6f5b;
+  --amber: #f2b84b;
+}
+
+/* ================================================================
+   BASE
+   ================================================================ */
+html {
+  scroll-behavior: smooth;
+  background: #d9d9d7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(47,107,255,0.14), transparent 26%),
+    linear-gradient(180deg, #dededb 0%, #cfcfcb 100%);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", "Aptos", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+::selection {
+  background: var(--electric);
+  color: #fff;
+}
+
+a { color: inherit; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button { cursor: pointer; }
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1, h2, h3 {
+  font-family: "Sora", "Aptos Display", sans-serif;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+#assessment-form {
+  scroll-margin-top: 120px;
+}
+
+/* ================================================================
+   SKIP LINK
+   ================================================================ */
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  transform: translateX(-130%);
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible { transform: translateX(0); }
+
+/* ================================================================
+   VERSION BAR
+   ================================================================ */
+.version-bar {
+  width: 100%;
+  background: rgba(10, 10, 10, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.version-bar .vb-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(250, 250, 247, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 6px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.version-bar a {
+  width: 28px;
+  height: 24px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-decoration: none;
+  background: rgba(250, 250, 247, 0.08);
+  color: rgba(250, 250, 247, 0.45);
+  transition: background 0.2s, color 0.2s;
+}
+
+.version-bar a:hover {
+  background: rgba(250, 250, 247, 0.14);
+  color: rgba(250, 250, 247, 0.7);
+}
+
+.version-bar a.active {
+  background: #3B82F6;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .version-bar { padding: 4px 4px; gap: 3px; }
+  .version-bar .vb-label { display: none; }
+  .version-bar a { width: 24px; height: 22px; font-size: 10px; border-radius: 4px; }
+}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+.site-nav {
+  position: sticky;
+  top: 54px;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  width: min(1180px, calc(100% - 40px));
+  min-height: 66px;
+  margin: 18px auto 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  background: rgba(248, 246, 240, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 24px 80px rgba(11, 14, 18, 0.12);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--warm-white);
+  text-decoration: none;
+}
+
+.brand-mark span {
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+}
+
+.nav-links {
+  justify-self: center;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: #4d5663;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--ink);
+}
+
+.nav-button {
+  display: inline-grid;
+  place-items: center;
+  min-height: 42px;
+  border-radius: 999px;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 18px;
+  background: var(--ink);
+  color: var(--warm-white);
+}
+
+@media (max-width: 980px) {
+  .site-nav {
+    grid-template-columns: auto 1fr;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-button {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-shell,
+  .site-nav {
+    width: min(100% - 28px, 1180px);
+  }
+  .site-nav {
+    top: 46px;
+    margin-top: 10px;
+  }
+  .nav-button {
+    min-height: 40px;
+    padding: 0 12px;
+  }
+}
+
+/* ================================================================
+   EYEBROW
+   ================================================================ */
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--electric);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--electric);
+}
+
+/* ================================================================
+   HEADER
+   ================================================================ */
+.page-header {
+  padding: 48px 0 0;
+}
+
+.page-header h1 {
+  max-width: 720px;
+  margin-bottom: 18px;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 0.96;
+}
+
+.page-header p {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: #4b5562;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .page-header { padding: 28px 0 0; }
+  .page-header h1 { font-size: clamp(28px, 10vw, 38px); }
+}
+
+/* ================================================================
+   INTAKE LAYOUT (sidebar + form)
+   ================================================================ */
+.intake-layout {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.intake-rail {
+  position: sticky;
+  top: 140px;
+  display: grid;
+  gap: 12px;
+}
+
+.rail-card,
+.assessment-form {
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 8px;
+  background: rgba(248, 246, 240, 0.9);
+  box-shadow: 0 28px 80px rgba(11, 14, 18, 0.1);
+}
+
+.rail-card {
+  padding: 20px;
+}
+
+.rail-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--electric);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.rail-card strong {
+  display: block;
+  margin-bottom: 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.rail-card p {
+  margin: 0;
+  color: #4b5562;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+/* ================================================================
+   PROGRESS BAR
+   ================================================================ */
+.step-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(11, 14, 18, 0.1);
+}
+
+.step-progress i {
+  display: block;
+  width: 20%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--electric), var(--lime));
+  transition: width 260ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-progress i { transition: none; }
+}
+
+/* ================================================================
+   STEP TABS
+   ================================================================ */
+.step-tabs {
+  display: grid;
+  gap: 8px;
+}
+
+.step-tab {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.48);
+  color: #59636f;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.step-tab.is-active {
+  border-color: rgba(11, 14, 18, 0.18);
+  background: var(--ink);
+  color: var(--lime);
+}
+
+/* ================================================================
+   FORM CARD
+   ================================================================ */
+.assessment-form {
+  padding: clamp(22px, 4vw, 40px);
+}
+
+/* ================================================================
+   FIELDSETS / STEPS
+   ================================================================ */
+.form-step {
+  display: none;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-step.is-active {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .form-step.is-active {
+    animation: stepIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.form-step legend {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(34px, 4.2vw, 62px);
+  font-weight: 800;
+  line-height: 0.96;
+}
+
+.form-step legend span {
+  color: var(--teal);
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.step-copy {
+  max-width: 780px;
+  margin-bottom: 28px;
+  color: #4b5562;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+/* ================================================================
+   FORM GRID
+   ================================================================ */
+.form-grid,
+.range-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.field > span {
+  color: #2f3843;
+  font: 700 12px/1.25 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.field input:not([type="checkbox"]):not([type="range"]),
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(11, 14, 18, 0.12);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  outline: none;
+  font-size: 16px;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(47, 107, 255, 0.58);
+  box-shadow: 0 0 0 4px rgba(47, 107, 255, 0.12);
+}
+
+/* ================================================================
+   CHOICE GRIDS (checkboxes)
+   ================================================================ */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.choice-grid.compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice-grid label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 58px;
+  padding: 12px;
+  border: 1px solid rgba(11, 14, 18, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.56);
+  color: #3b4550;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.26;
+  cursor: pointer;
+}
+
+.choice-grid input {
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  accent-color: var(--electric);
+  flex: 0 0 auto;
+}
+
+/* ================================================================
+   RANGE FIELDS
+   ================================================================ */
+.range-field {
+  padding: 14px;
+  border: 1px solid rgba(11, 14, 18, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.range-field input[type="range"] {
+  width: 100%;
+  accent-color: var(--electric);
+}
+
+.range-field small {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #4b5562;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.range-field small strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--lime);
+  font: 700 12px/1 "IBM Plex Mono", monospace;
+}
+
+.range-field small b {
+  font-weight: 700;
+}
+
+/* ================================================================
+   HONEYPOT
+   ================================================================ */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ================================================================
+   FORM ACTIONS
+   ================================================================ */
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(11, 14, 18, 0.1);
+}
+
+.form-actions button {
+  border: 0;
+}
+
+.primary-action,
+.secondary-action {
+  display: inline-grid;
+  place-items: center;
+  min-height: 42px;
+  border-radius: 999px;
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.primary-action {
+  padding: 0 18px;
+  background: var(--ink);
+  color: var(--warm-white);
+}
+
+.secondary-action {
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.form-back[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.form-submit {
+  display: none;
+}
+
+.assessment-form[data-final-step="true"] .form-next {
+  display: none;
+}
+
+.assessment-form[data-final-step="true"] .form-submit {
+  display: inline-grid;
+}
+
+/* ================================================================
+   CONFIRMATION
+   ================================================================ */
+.form-confirmation {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--warm-white);
+}
+
+.form-confirmation span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--lime);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
+.form-confirmation h3 {
+  max-width: 720px;
+  margin-bottom: 12px;
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1;
+}
+
+.form-confirmation p {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(248, 246, 240, 0.74);
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 42px;
+  margin-top: 50px;
+  padding: 48px 0 72px;
+  border-top: 1px solid rgba(11, 14, 18, 0.1);
+}
+
+.footer-brand p {
+  max-width: 460px;
+  margin: 18px 0;
+  color: #5a6470;
+}
+
+.footer-contact {
+  display: inline-grid;
+  place-items: center;
+  min-height: 42px;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: var(--ink);
+  color: var(--warm-white);
+  font: 700 11px/1 "IBM Plex Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.footer-links div {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.footer-links b {
+  font-family: "Sora", sans-serif;
+}
+
+.footer-links a {
+  color: #4b5562;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+.footer-emails {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.footer-emails a {
+  color: #4b5562;
+  font-size: 13px;
+  text-decoration: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+}
+
+.footer-emails a:hover {
+  color: var(--electric);
+}
+
+/* ================================================================
+   RESPONSIVE: TABLET
+   ================================================================ */
+@media (max-width: 980px) {
+  .intake-layout {
+    grid-template-columns: 1fr;
+  }
+  .intake-rail {
+    position: static;
+  }
+  .step-tabs {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .step-tab {
+    min-height: 58px;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .footer {
+    grid-template-columns: 1fr;
+  }
+  .choice-grid.compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ================================================================
+   RESPONSIVE: MOBILE
+   ================================================================ */
+@media (max-width: 640px) {
+  .page-header h1 {
+    font-size: clamp(28px, 10vw, 38px);
+    line-height: 0.96;
+  }
+  .step-tabs {
+    grid-template-columns: 1fr 1fr;
+  }
+  .choice-grid,
+  .choice-grid.compact {
+    grid-template-columns: 1fr;
+  }
+  .form-grid,
+  .range-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+  .form-actions .primary-action,
+  .form-actions .secondary-action {
+    width: 100%;
+    min-height: 48px;
+  }
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#assessment-form">Skip to form</a>
+
+    <!-- ── VERSION BAR ── -->
+    <div class="version-bar">
+      <span class="vb-label">Version</span>
+      <a href="../v1.html">1</a>
+      <a href="../v2/">2</a>
+      <a href="../v3/">3</a>
+      <a href="../v4/">4</a>
+      <a href="../v5/">5</a>
+      <a href="../v6/">6</a>
+      <a href="../v7/">7</a>
+      <a href="../v8/">8</a>
+      <a href="./" class="active">1a</a>
+    </div>
+
+    <!-- ── NAV ── -->
+    <header class="site-nav" aria-label="Primary navigation">
+      <a class="brand-mark" href="index.html" aria-label="Support Wellness Global home">
+        <span>SWG</span>
+      </a>
+      <nav class="nav-links" aria-label="Main links">
+        <a href="index.html#situations">Problems</a>
+        <a href="index.html#operating-system">Process</a>
+        <a href="index.html#implementation">Implementation</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="#assessment-form">Assessment</a>
+      </nav>
+      <a class="nav-button" href="#assessment-form">Start the review</a>
+    </header>
+
+    <main>
+      <!-- ── HEADER ── -->
+      <div class="page-header section-shell">
+        <p class="eyebrow">Business review assessment</p>
+        <h1 id="form-title">Start your business review.</h1>
+        <p>Companies usually come to SWG when growth is no longer a marketing problem alone. This assessment helps us understand your company stage, current bottlenecks, operating maturity, growth goals, and readiness to implement.</p>
+      </div>
+
+      <!-- ── ASSESSMENT FORM SECTION ── -->
+      <section class="section-shell" id="assessment-form" aria-labelledby="form-title">
+        <div class="intake-layout">
+          <!-- SIDEBAR -->
+          <aside class="intake-rail" aria-label="Assessment progress">
+            <div class="rail-card">
+              <span class="rail-kicker">Estimated time</span>
+              <strong>8-10 minutes</strong>
+              <p>If there is a strong fit, we will recommend the best next step: Business Review, Focused Build, or Ongoing Support.</p>
+            </div>
+            <div class="step-progress" aria-hidden="true">
+              <i></i>
+            </div>
+            <div class="step-tabs" role="tablist" aria-label="Assessment sections">
+              <button type="button" class="step-tab is-active" id="step-tab-0" role="tab" aria-selected="true" aria-controls="step-panel-0" tabindex="0" data-step-target="0">01 Company</button>
+              <button type="button" class="step-tab" id="step-tab-1" role="tab" aria-selected="false" aria-controls="step-panel-1" tabindex="-1" data-step-target="1">02 Growth</button>
+              <button type="button" class="step-tab" id="step-tab-2" role="tab" aria-selected="false" aria-controls="step-panel-2" tabindex="-1" data-step-target="2">03 Systems</button>
+              <button type="button" class="step-tab" id="step-tab-3" role="tab" aria-selected="false" aria-controls="step-panel-3" tabindex="-1" data-step-target="3">04 Goals</button>
+              <button type="button" class="step-tab" id="step-tab-4" role="tab" aria-selected="false" aria-controls="step-panel-4" tabindex="-1" data-step-target="4">05 Fit</button>
+            </div>
+          </aside>
+
+          <!-- FORM -->
+          <form class="assessment-form" id="business-review-form" action="https://supportwellnessglobal.com/wp-admin/admin-post.php" method="post">
+            <input type="hidden" name="action" value="swg_business_review" />
+            <input type="hidden" name="swg_business_review_nonce" value="a3d32e22e6" />
+            <input type="hidden" name="swg_form_name" value="Business Review Assessment" />
+            <input class="form-honeypot" name="swg_company_fax" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <!-- STEP 1: Company Snapshot -->
+            <fieldset class="form-step is-active" data-step="0" id="step-panel-0" role="tabpanel" aria-labelledby="step-tab-0">
+              <legend>
+                <span>Section 1</span>
+                Company Snapshot
+              </legend>
+              <p class="step-copy">Help us understand the business, your role, and whether the company is in the stage where SWG can create real leverage.</p>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span>Company name</span>
+                  <input name="company_name" type="text" autocomplete="organization" required />
+                </label>
+                <label class="field">
+                  <span>Website URL</span>
+                  <input name="website_url" type="url" placeholder="https://" required />
+                </label>
+                <label class="field">
+                  <span>Your name</span>
+                  <input name="name" type="text" autocomplete="name" required />
+                </label>
+                <label class="field">
+                  <span>Your email</span>
+                  <input name="email" type="email" autocomplete="email" required />
+                </label>
+                <label class="field">
+                  <span>Your role</span>
+                  <select name="role" required>
+                    <option value="">Select one</option>
+                    <option>Owner / Founder</option>
+                    <option>CEO / President</option>
+                    <option>COO / Operations leader</option>
+                    <option>CMO / Marketing leader</option>
+                    <option>Sales leader</option>
+                    <option>Department lead</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Are you involved in strategic or budget decisions?</span>
+                  <select name="decision_role" required>
+                    <option value="">Select one</option>
+                    <option>Yes, I am the primary decision-maker</option>
+                    <option>Yes, I am part of the decision team</option>
+                    <option>No, but I can introduce the right people</option>
+                    <option>No</option>
+                  </select>
+                </label>
+                <label class="field field-wide">
+                  <span>Who else would approve a strategic engagement?</span>
+                  <input name="approval_team" type="text" placeholder="Names or roles are fine" />
+                </label>
+                <label class="field">
+                  <span>Estimated annual revenue</span>
+                  <select name="annual_revenue" required>
+                    <option value="">Select range</option>
+                    <option>Under $1M</option>
+                    <option>$1M-$5M</option>
+                    <option>$5M-$10M</option>
+                    <option>$10M-$15M</option>
+                    <option>$15M-$25M</option>
+                    <option>$25M+</option>
+                    <option>Prefer to discuss</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Number of employees</span>
+                  <select name="employee_count" required>
+                    <option value="">Select range</option>
+                    <option>1-5</option>
+                    <option>6-15</option>
+                    <option>16-50</option>
+                    <option>51-100</option>
+                    <option>101-250</option>
+                    <option>250+</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Industry</span>
+                  <input name="industry" type="text" required />
+                </label>
+                <label class="field">
+                  <span>How long has the business been operating?</span>
+                  <select name="years_operating" required>
+                    <option value="">Select one</option>
+                    <option>Less than 1 year</option>
+                    <option>1-3 years</option>
+                    <option>4-7 years</option>
+                    <option>8-15 years</option>
+                    <option>15+ years</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- STEP 2: Growth Bottlenecks -->
+            <fieldset class="form-step" data-step="1" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1">
+              <legend>
+                <span>Section 2</span>
+                Growth Bottlenecks
+              </legend>
+              <p class="step-copy">Growth often exposes the gaps between strategy, team structure, operations, marketing, sales, and technology.</p>
+
+              <div class="field field-wide">
+                <span>Which best describes your current situation?</span>
+                <div class="choice-grid">
+                  <label><input type="checkbox" name="current_situation[]" value="Operations struggling" /> We have grown quickly and operations are struggling to keep up.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Revenue plateaued" /> Revenue has plateaued.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Sales slowed" /> Sales growth has slowed.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Marketing unclear" /> Marketing activity is happening, but results are unclear.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Website outdated" /> Our website or positioning no longer reflects the business.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Accountability inconsistent" /> Team accountability is inconsistent.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Lack systems" /> We lack clear systems, processes, or ownership.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Leadership overwhelmed" /> Leadership is overwhelmed or pulled into too many decisions.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Tools messy" /> Our CRM, tools, or reporting are messy.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="AI plan needed" /> We are using or considering AI, but need a practical implementation plan.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Expansion" /> We are preparing for expansion.</label>
+                  <label><input type="checkbox" name="current_situation[]" value="Exit" /> We are preparing for acquisition, succession, or exit.</label>
+                </div>
+              </div>
+
+              <label class="field field-wide">
+                <span>What is the biggest obstacle to growth right now?</span>
+                <textarea name="growth_obstacle" rows="4" required></textarea>
+              </label>
+
+              <div class="field field-wide">
+                <span>Where does the business feel most disconnected?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="disconnects[]" value="Mission and vision" /> Mission and vision</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Brand positioning" /> Brand positioning</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Customer targeting" /> Customer targeting</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Sales process" /> Sales process</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Marketing execution" /> Marketing execution</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Operations and workflows" /> Operations and workflows</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Team accountability" /> Team accountability</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Technology stack" /> Technology stack</label>
+                  <label><input type="checkbox" name="disconnects[]" value="AI adoption" /> AI adoption</label>
+                  <label><input type="checkbox" name="disconnects[]" value="Reporting" /> Reporting and decision-making</label>
+                </div>
+              </div>
+
+              <label class="field field-wide">
+                <span>If nothing changes over the next 12 months, what is at risk?</span>
+                <textarea name="inaction_risk" rows="4" placeholder="Lost revenue, stalled growth, team burnout, missed expansion, customer experience issues, operational waste..." required></textarea>
+              </label>
+            </fieldset>
+
+            <!-- STEP 3: Systems And Structure -->
+            <fieldset class="form-step" data-step="2" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2">
+              <legend>
+                <span>Section 3</span>
+                Systems And Structure
+              </legend>
+              <p class="step-copy">These questions help us understand whether the constraint is strategy, process, people, technology, reporting, or execution.</p>
+
+              <div class="field field-wide">
+                <span>Which of the following do you currently have documented?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="documented_assets[]" value="Strategic plan" /> Strategic plan</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Messaging guide" /> Brand positioning or messaging guide</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="ICP" /> Ideal customer profile</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Org chart" /> Organizational chart</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="KPI dashboard" /> KPI dashboard</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="SOPs" /> SOPs or process documentation</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Sales stages" /> Sales pipeline stages</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Marketing calendar" /> Marketing calendar</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Leadership cadence" /> Leadership meeting cadence</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="Budgeting" /> Budget and forecasting process</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="AI guidelines" /> AI usage policy or workflow guidelines</label>
+                  <label><input type="checkbox" name="documented_assets[]" value="None" /> None of the above</label>
+                </div>
+              </div>
+
+              <div class="field field-wide">
+                <span>Which systems or tools are currently part of your operation?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="current_tools[]" value="CRM" /> CRM</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Email marketing" /> Email marketing platform</label>
+                  <label><input type="checkbox" name="current_tools[]" value="SMS" /> SMS platform</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Project management" /> Project management system</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Analytics dashboard" /> Analytics dashboard</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Website CMS" /> Website CMS</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Ecommerce" /> Ecommerce platform</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Paid ads" /> Paid advertising accounts</label>
+                  <label><input type="checkbox" name="current_tools[]" value="AI tools" /> AI tools used by the team</label>
+                  <label><input type="checkbox" name="current_tools[]" value="Knowledge base" /> Internal knowledge base</label>
+                </div>
+              </div>
+
+              <div class="range-grid">
+                <label class="field range-field">
+                  <span>How effective are your current operations?</span>
+                  <input name="operations_effectiveness" type="range" min="1" max="10" value="5" />
+                  <small><b>1</b> reactive and inconsistent <strong>5</strong> clear, documented, measured, and scalable</small>
+                </label>
+                <label class="field range-field">
+                  <span>How aligned is leadership on the next stage of growth?</span>
+                  <input name="leadership_alignment" type="range" min="1" max="10" value="5" />
+                  <small><b>1</b> unclear priorities <strong>5</strong> clear agreement and ownership</small>
+                </label>
+                <label class="field range-field">
+                  <span>Can your current systems support the next stage?</span>
+                  <input name="systems_confidence" type="range" min="1" max="10" value="5" />
+                  <small><b>1</b> holding us back <strong>5</strong> ready for scale</small>
+                </label>
+              </div>
+
+              <label class="field field-wide">
+                <span>What part of the business depends too heavily on one person or a small group?</span>
+                <textarea name="key_person_dependency" rows="4"></textarea>
+              </label>
+            </fieldset>
+
+            <!-- STEP 4: Goals And Success -->
+            <fieldset class="form-step" data-step="3" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3">
+              <legend>
+                <span>Section 4</span>
+                Goals And Success
+              </legend>
+              <p class="step-copy">Tell us what outcome you actually want, not only which service you think you may need.</p>
+
+              <label class="field field-wide">
+                <span>Where do you want the business to be 24 months from now?</span>
+                <textarea name="twenty_four_month_goal" rows="4" required></textarea>
+              </label>
+
+              <label class="field field-wide">
+                <span>What revenue goal are you working toward?</span>
+                <select name="revenue_goal" required>
+                  <option value="">Select one</option>
+                  <option>Maintain current level with better profitability</option>
+                  <option>25% growth</option>
+                  <option>50% growth</option>
+                  <option>Double revenue</option>
+                  <option>Prepare for expansion</option>
+                  <option>Prepare for acquisition, succession, or exit</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <div class="field field-wide">
+                <span>What would a successful engagement with SWG make possible?</span>
+                <div class="choice-grid compact">
+                  <label><input type="checkbox" name="success_outcomes[]" value="Strategic priorities" /> Clearer strategic priorities</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Positioning" /> Stronger positioning and messaging</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Lead generation" /> Better lead generation or conversion</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Sales process" /> Cleaner sales process</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Marketing execution" /> More consistent marketing execution</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Workflows" /> Better operational workflows</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="AI implementation" /> Practical AI implementation</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Less bottleneck" /> Less founder or leadership bottleneck</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Reporting" /> Better reporting and decision-making</label>
+                  <label><input type="checkbox" name="success_outcomes[]" value="Roadmap" /> A roadmap the team can actually execute</label>
+                </div>
+              </div>
+
+              <label class="field field-wide">
+                <span>In your own words, what would success look like?</span>
+                <textarea name="success_definition" rows="4" required></textarea>
+              </label>
+
+              <label class="field field-wide">
+                <span>Why is now the right time to address this?</span>
+                <textarea name="why_now" rows="4" required></textarea>
+              </label>
+            </fieldset>
+
+            <!-- STEP 5: Fit And Next Step -->
+            <fieldset class="form-step" data-step="4" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4">
+              <legend>
+                <span>Section 5</span>
+                Fit And Next Step
+              </legend>
+              <p class="step-copy">SWG is best suited for companies ready to make decisions, implement changes, and invest in the operating layer behind growth.</p>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span>Have you worked with a consultant, coach, agency, or advisory firm before?</span>
+                  <select name="prior_advisory" required>
+                    <option value="">Select one</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Yes, but not successfully</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>What kind of partner are you looking for?</span>
+                  <select name="partner_type" required>
+                    <option value="">Select one</option>
+                    <option>Strategic diagnosis and roadmap</option>
+                    <option>Strategy plus implementation</option>
+                    <option>Implementation of a known priority</option>
+                    <option>Ongoing operating support</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Do you have the authority and willingness to act on critical recommendations?</span>
+                  <select name="change_authority" required>
+                    <option value="">Select one</option>
+                    <option>Yes</option>
+                    <option>Yes, with leadership alignment</option>
+                    <option>Depends on the recommendation</option>
+                    <option>No</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>What level of investment have you allocated?</span>
+                  <select name="investment_range" required>
+                    <option value="">Select range</option>
+                    <option>Under $7,500</option>
+                    <option>$7,500-$15,000</option>
+                    <option>$15,000-$25,000</option>
+                    <option>$25,000-$75,000</option>
+                    <option>$75,000+</option>
+                    <option>Not finalized yet, but we can invest if there is a clear case</option>
+                  </select>
+                </label>
+                <label class="field field-wide range-field">
+                  <span>How committed are you to implementing recommendations?</span>
+                  <input name="implementation_commitment" type="range" min="1" max="10" value="6" />
+                  <small><b>1</b> exploring ideas <strong>6</strong> ready to make decisions and execute</small>
+                </label>
+                <label class="field field-wide">
+                  <span>Which engagement path seems closest to what you may need?</span>
+                  <select name="engagement_path" required>
+                    <option value="">Select one</option>
+                    <option>Business Review: diagnosis, priorities, next-step plan</option>
+                    <option>Focused Build: website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch</option>
+                    <option>Ongoing Support: execution, optimization, reporting, and support</option>
+                    <option>I am not sure yet</option>
+                  </select>
+                </label>
+                <label class="field field-wide">
+                  <span>Anything else we should know before reviewing your assessment?</span>
+                  <textarea name="additional_context" rows="4"></textarea>
+                </label>
+                <label class="field field-wide">
+                  <span>Optional context link</span>
+                  <input name="context_link" type="url" placeholder="Website, deck, org chart, KPI dashboard, campaign report..." />
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="secondary-action form-back" type="button" disabled>Back</button>
+              <button class="primary-action form-next" type="button">Continue</button>
+              <button class="primary-action form-submit" type="submit">Submit Business Review</button>
+            </div>
+
+            <div class="form-confirmation" role="status" aria-live="polite" hidden>
+              <span>Review received</span>
+              <h3>Thank you. We will review your assessment and determine whether there is a strong strategic fit.</h3>
+              <p>If the fit is clear, we will follow up with the best next step: a Business Review, a Focused Build, or an Ongoing Support conversation.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer section-shell">
+      <div class="footer-brand">
+        <a class="brand-mark" href="index.html" aria-label="Support Wellness Global home">
+          <span>SWG</span>
+        </a>
+        <p>Strategy, operations, technology, and marketing support for growing companies that need the work connected and executed.</p>
+        <a class="footer-contact" href="#assessment-form">Start the review</a>
+        <div class="footer-emails">
+          <a href="mailto:dean@supportwellnessglobal.com">dean@supportwellnessglobal.com</a>
+          <a href="mailto:will@supportwellnessglobal.com">will@supportwellnessglobal.com</a>
+          <a href="mailto:mike@supportwellnessglobal.com">mike@supportwellnessglobal.com</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <b>Essential Links</b>
+          <a href="index.html#situations">Problems</a>
+          <a href="index.html#operating-system">Process</a>
+          <a href="index.html#implementation">Implementation</a>
+        </div>
+        <div>
+          <b>Company</b>
+          <a href="index.html#proof">Outcomes</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="#assessment-form">Assessment</a>
+          <a href="#assessment-form">Contact</a>
+        </div>
+        <div>
+          <b>Next Step</b>
+          <a href="#assessment-form">Start Review</a>
+          <a href="index.html#pricing">Engagement Paths</a>
+          <a href="index.html#implementation">Service Routes</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ── JAVASCRIPT ── -->
+    <script>
+(function () {
+  "use strict";
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setupAssessmentForm() {
+    var form = document.querySelector("#business-review-form");
+    if (!form) return;
+
+    var isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname) || window.location.protocol === "file:";
+    var steps = [].slice.call(form.querySelectorAll(".form-step"));
+    var tabs = [].slice.call(document.querySelectorAll(".step-tab"));
+    var progress = document.querySelector(".step-progress i");
+    var backButton = form.querySelector(".form-back");
+    var nextButton = form.querySelector(".form-next");
+    var confirmation = form.querySelector(".form-confirmation");
+    var currentStep = 0;
+
+    var updateRanges = function () {
+      form.querySelectorAll(".range-field").forEach(function (field) {
+        var input = field.querySelector("input[type='range']");
+        var value = field.querySelector("small strong");
+        if (input && value) value.textContent = input.value;
+      });
+    };
+
+    var setStep = function (index) {
+      currentStep = Math.max(0, Math.min(index, steps.length - 1));
+      steps.forEach(function (step, stepIndex) {
+        step.classList.toggle("is-active", stepIndex === currentStep);
+      });
+      tabs.forEach(function (tab, tabIndex) {
+        var isActive = tabIndex === currentStep;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+      });
+      if (progress) progress.style.width = ((currentStep + 1) / steps.length * 100) + "%";
+      if (backButton) backButton.disabled = currentStep === 0;
+      form.dataset.finalStep = String(currentStep === steps.length - 1);
+      var scrollTarget = document.getElementById("assessment-form");
+      if (scrollTarget) {
+        scrollTarget.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      }
+      var legend = steps[currentStep].querySelector("legend");
+      if (legend) {
+        legend.tabIndex = -1;
+        legend.focus();
+      }
+    };
+
+    var activeRequiredFields = function () {
+      return [].slice.call(steps[currentStep].querySelectorAll("[required]"));
+    };
+
+    var validateCurrentStep = function () {
+      var invalid = activeRequiredFields().find(function (field) { return !field.checkValidity(); });
+      if (invalid) {
+        invalid.reportValidity();
+        return false;
+      }
+      return true;
+    };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var target = Number(tab.dataset.stepTarget);
+        if (target <= currentStep || validateCurrentStep()) setStep(target);
+      });
+    });
+
+    if (nextButton) {
+      nextButton.addEventListener("click", function () {
+        if (validateCurrentStep()) setStep(currentStep + 1);
+      });
+    }
+
+    if (backButton) {
+      backButton.addEventListener("click", function () {
+        setStep(currentStep - 1);
+      });
+    }
+
+    form.querySelectorAll("input[type='range']").forEach(function (input) {
+      input.addEventListener("input", updateRanges);
+    });
+
+    form.addEventListener("submit", function (event) {
+      var allRequired = [].slice.call(form.querySelectorAll("[required]"));
+      var invalid = allRequired.find(function (field) { return !field.checkValidity(); });
+      if (invalid) {
+        event.preventDefault();
+        var step = steps.findIndex(function (next) { return next.contains(invalid); });
+        setStep(step);
+        requestAnimationFrame(function () { invalid.reportValidity(); });
+        return;
+      }
+
+      if (isLocalPreview && confirmation) {
+        event.preventDefault();
+        confirmation.hidden = false;
+        confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+      }
+    });
+
+    updateRanges();
+    setStep(0);
+
+    if (new URLSearchParams(window.location.search).get("swg_review") === "success" && confirmation) {
+      confirmation.hidden = false;
+      confirmation.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupAssessmentForm);
+  } else {
+    setupAssessmentForm();
+  }
+})();
+    </script>
+  </body>
+</html>

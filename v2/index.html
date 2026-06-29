@@ -462,80 +462,6 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 /* ━━ CURSOR GLOW ━━ */
 .glow{display:none}
 
-/* ━━ MODAL ━━ */
-.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(17,24,39,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity 0.3s var(--ease);display:flex;align-items:center;justify-content:center;padding:24px}
-.modal-overlay.open{opacity:1;pointer-events:auto}
-.modal{width:100%;max-width:960px;max-height:75vh;background:var(--ivory);overflow:hidden;position:relative;display:flex;flex-direction:column;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);transform:translateY(30px) scale(0.97);transition:transform 0.4s var(--ease)}
-.modal-overlay.open .modal{transform:none}
-@media(max-width:767px){.modal-overlay{padding:0;align-items:flex-end}.modal{max-height:92vh;max-width:100%;border-radius:var(--radius-md) var(--radius-md) 0 0}}
-.modal-bar{display:none}
-.modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--navy);flex-shrink:0}
-@media(min-width:768px){.modal-head{padding:20px 32px}}
-.modal-head h3{font-size:1rem;color:var(--ivory);font-family:var(--heading);font-weight:700}
-.modal-close{width:48px;height:48px;border-radius:50%;background:rgba(247,245,240,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.3s,transform 0.3s var(--ease);flex-shrink:0;min-width:48px;min-height:48px}
-.modal-close:hover{background:rgba(247,245,240,0.2);transform:rotate(90deg)}
-.modal-close svg{width:16px;height:16px;stroke:var(--ivory)}
-.modal-inner{display:flex;flex:1;overflow:hidden}
-.modal-sidebar{display:none;width:260px;flex-shrink:0;background:var(--slate);padding:32px 24px;border-right:1px solid var(--border);flex-direction:column;gap:24px}
-@media(min-width:768px){.modal-sidebar{display:flex}}
-.modal-sidebar-info{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent)}
-.modal-sidebar-info span{display:block;font-family:var(--heading);font-size:1.6rem;font-weight:800;color:var(--navy);letter-spacing:-0.03em;margin-top:4px;text-transform:none}
-.modal-sidebar-info p{font-size:0.78rem;font-family:var(--sans);color:var(--muted);line-height:1.6;margin-top:8px;text-transform:none;letter-spacing:0;font-weight:400}
-.modal-steps-nav{display:flex;flex-direction:column;gap:4px}
-.modal-step-btn{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--radius-sm);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);cursor:pointer;transition:all 0.3s var(--ease);border:none;background:none;text-align:left;min-height:48px;width:100%}
-.modal-step-btn:hover{background:rgba(17,24,39,0.04)}
-.modal-step-btn.active{background:var(--navy);color:var(--ivory);box-shadow:var(--shadow-sm)}
-.modal-step-btn.done{color:var(--navy)}
-.modal-step-num{width:28px;height:28px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:10px;background:rgba(17,24,39,0.06);color:var(--muted);transition:all 0.3s}
-.modal-step-btn.active .modal-step-num{background:var(--accent);color:#fff}
-.modal-step-btn.done .modal-step-num{background:var(--accent-10);color:var(--accent)}
-.modal-sidebar-progress{margin-top:auto}
-.modal-sidebar-progress-bar{height:4px;border-radius:4px;background:var(--border);overflow:hidden}
-.modal-sidebar-progress-fill{height:100%;border-radius:4px;background:var(--accent);transition:width 0.5s var(--ease);width:20%}
-.modal-sidebar-progress-text{font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted-2);margin-top:6px}
-.modal-body{padding:28px 20px 24px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
-@media(min-width:768px){.modal-body{padding:36px 40px 32px}}
-.modal-progress{display:flex;gap:4px;margin-bottom:20px}
-@media(min-width:768px){.modal-progress{display:none}}
-.modal-progress-dot{flex:1;height:3px;border-radius:3px;background:var(--border);transition:background 0.4s var(--ease)}
-.modal-progress-dot.active{background:var(--accent)}
-.modal-progress-dot.done{background:var(--navy)}
-.m-step{display:none;animation:mStepIn 0.4s var(--ease)}
-.m-step.active{display:block}
-@keyframes mStepIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
-.m-step-header{margin-bottom:24px}
-.m-step-header .m-section-num{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);margin-bottom:8px}
-.m-step-header h4{font-size:clamp(1.2rem,2vw,1.6rem);margin-bottom:6px;font-family:var(--heading);font-weight:800;letter-spacing:-0.03em}
-.m-step-header p{font-size:var(--text-sm);color:var(--muted);line-height:1.6}
-.m-field{margin-bottom:18px}
-.m-field:last-child{margin-bottom:0}
-.m-field label{display:block;font-weight:600;font-size:var(--text-sm);margin-bottom:8px;line-height:1.4;color:var(--navy)}
-.m-field .m-hint{display:block;font-size:0.76rem;color:var(--muted-2);margin-bottom:6px}
-.m-field input[type="text"],.m-field input[type="email"],.m-field input[type="url"],.m-field textarea,.m-field select{width:100%;padding:16px 25px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--white);font-family:var(--sans);font-size:16px;transition:border-color 0.3s,box-shadow 0.3s;-webkit-appearance:none;min-height:48px;color:var(--charcoal)}
-.m-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 4.5l3 3 3-3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
-.m-field input:focus,.m-field textarea:focus,.m-field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,0.12)}
-.m-field textarea{resize:vertical;min-height:80px;line-height:1.6}
-.m-form-grid{display:grid;grid-template-columns:1fr;gap:0}
-@media(min-width:480px){.m-form-grid{grid-template-columns:1fr 1fr;gap:0 16px}}
-.m-opts{display:flex;flex-direction:column;gap:4px}
-.m-opt{display:flex;align-items:center;gap:14px;padding:14px 25px;border-radius:var(--radius-sm);cursor:pointer;transition:all 0.2s;min-height:48px;-webkit-tap-highlight-color:transparent;font-size:var(--text-sm);border:1.5px solid transparent}
-.m-opt:hover{background:rgba(17,24,39,0.03)}
-.m-opt.selected{background:rgba(59,130,246,0.06);border-color:var(--accent)}
-.m-opt input{width:18px;height:18px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
-.m-check-grid{display:grid;grid-template-columns:1fr;gap:4px}
-@media(min-width:480px){.m-check-grid{grid-template-columns:1fr 1fr}}
-.m-scale{display:flex;gap:6px;flex-wrap:wrap}
-.m-scale-btn{padding:10px 16px;border-radius:var(--radius-sm);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;border:1.5px solid var(--border);background:var(--white);cursor:pointer;transition:all 0.2s;min-height:48px;display:inline-flex;align-items:center;justify-content:center;color:var(--charcoal)}
-.m-scale-btn:hover{border-color:var(--accent)}
-.m-scale-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.m-scale-labels{display:flex;justify-content:space-between;font-size:0.7rem;color:var(--muted-2);margin-top:4px;font-family:var(--mono);text-transform:uppercase}
-.modal-nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
-.modal-nav .btn{min-height:48px}
-.m-success{text-align:center;padding:48px 20px}
-.m-success-icon{width:64px;height:64px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
-.m-success-icon svg{width:28px;height:28px;color:#fff}
-.m-success h4{font-size:1.3rem;margin-bottom:10px}
-.m-success p{font-size:0.9rem;color:var(--muted);line-height:1.7;max-width:400px;margin:0 auto}
 /* Focus-visible styles */
 a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
@@ -543,12 +469,8 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 .nav-links a:focus-visible{outline-color:var(--accent);outline-offset:4px}
 .hamburger:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--radius-sm)}
 .faq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:var(--radius-sm)}
-.modal-close:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 /* Reduced motion: pause remaining animations */
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.hero-orb{animation:none}.hero-badge{animation:none}.integ-pulse{animation:none}.integ-line{animation:none}.hero h1 .char{animation:none;transform:none}.hero .eyebrow,.hero .body-lg,.hero-buttons,.hero-visual,.hero-stat{animation:none}}
-.field-invalid{outline:2px solid #EF4444 !important;outline-offset:1px}
-.modal-step-btn{position:relative}
-.modal-step-btn.locked:hover::after{content:attr(data-tooltip);position:absolute;left:105%;top:50%;transform:translateY(-50%);background:rgba(17,24,39,0.95);color:#fff;padding:4px 10px;border-radius:var(--radius-sm);font-size:11px;white-space:nowrap;pointer-events:none;z-index:10}
 /* Version bar sticky */
 .version-bar{position:fixed;top:0;left:0;right:0;z-index:1001}
 body{padding-top:36px}
@@ -787,6 +709,7 @@ body{padding-top:36px}
     <a href="../v6/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">6</a>
     <a href="../v7/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">7</a>
     <a href="../v8/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">8</a>
+    <a href="../v1a/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1a</a>
   </div>
 </div>
 <a href="#main" class="skip-link" style="position:absolute;top:-100px;left:0;padding:12px 24px;background:var(--accent);color:#fff;font-weight:700;z-index:9999;border-radius:0 0 8px 0;transition:top 0.3s" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Skip to content</a>
@@ -1105,162 +1028,8 @@ document.querySelectorAll('.magnetic').forEach(btn=>{
 
 </script>
 
-<!-- Assessment Modal -->
-<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Business Assessment">
-<div class="modal">
-  <div class="modal-head"><h3>Business Assessment</h3><button class="modal-close" onclick="closeModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
-  <div class="modal-inner">
-    <div class="modal-sidebar">
-      <div class="modal-sidebar-info">Estimated time<span>8&ndash;10 min</span><p>If there is a strong fit, we will recommend the best next step: Business Review, Focused Build, or Ongoing Support.</p></div>
-      <div class="modal-steps-nav">
-        <button class="modal-step-btn active" data-sidestep="0"><span class="modal-step-num">01</span> Company</button>
-        <button class="modal-step-btn" data-sidestep="1"><span class="modal-step-num">02</span> Growth</button>
-        <button class="modal-step-btn" data-sidestep="2"><span class="modal-step-num">03</span> Systems</button>
-        <button class="modal-step-btn" data-sidestep="3"><span class="modal-step-num">04</span> Goals</button>
-        <button class="modal-step-btn" data-sidestep="4"><span class="modal-step-num">05</span> Fit</button>
-      </div>
-      <div class="modal-sidebar-progress"><div class="modal-sidebar-progress-bar"><div class="modal-sidebar-progress-fill" id="mProgressFill"></div></div><div class="modal-sidebar-progress-text" id="mProgressText">Step 1 of 5</div></div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-progress"><div class="modal-progress-dot active"></div><div class="modal-progress-dot"></div><div class="modal-progress-dot"></div><div class="modal-progress-dot"></div><div class="modal-progress-dot"></div></div>
-
-      <div class="m-step active">
-        <div class="m-step-header"><div class="m-section-num">Section 1</div><h4>Company Snapshot</h4><p>Help us understand the business, your role, and whether the company is in the stage where SWG can create real leverage.</p></div>
-        <div class="m-form-grid">
-          <div class="m-field"><label>Company name</label><input type="text" name="m_company" autocomplete="organization" required></div>
-          <div class="m-field"><label>Website URL</label><input type="url" name="m_website" placeholder="https://"></div>
-          <div class="m-field"><label>Your name</label><input type="text" name="m_name" autocomplete="name" required></div>
-          <div class="m-field"><label>Your email</label><input type="email" name="m_email" autocomplete="email" required></div>
-        </div>
-        <div class="m-field"><label>Your role</label><select name="m_role"><option value="">Select one</option><option>Owner / Founder</option><option>CEO / President</option><option>COO / Operations leader</option><option>CMO / Marketing leader</option><option>Sales leader</option><option>Department lead</option><option>Other</option></select></div>
-        <div class="m-field"><label>Are you involved in strategic or budget decisions?</label><select name="m_decisions"><option value="">Select one</option><option>Yes, I am the primary decision-maker</option><option>Yes, I am part of the decision team</option><option>No, but I can introduce the right people</option><option>No</option></select></div>
-        <div class="m-form-grid">
-          <div class="m-field"><label>Estimated annual revenue</label><select name="m_rev"><option value="">Select range</option><option>Under $1M</option><option>$1M&ndash;$5M</option><option>$5M&ndash;$10M</option><option>$10M&ndash;$15M</option><option>$15M&ndash;$25M</option><option>$25M+</option><option>Prefer to discuss</option></select></div>
-          <div class="m-field"><label>Number of employees</label><select name="m_employees"><option value="">Select range</option><option>1&ndash;5</option><option>6&ndash;15</option><option>16&ndash;50</option><option>51&ndash;100</option><option>101&ndash;250</option><option>250+</option></select></div>
-        </div>
-        <div class="m-form-grid">
-          <div class="m-field"><label>Industry</label><input type="text" name="m_industry" placeholder="e.g. Health &amp; Wellness, SaaS"></div>
-          <div class="m-field"><label>How long operating?</label><select name="m_age"><option value="">Select one</option><option>Less than 1 year</option><option>1&ndash;3 years</option><option>4&ndash;7 years</option><option>8&ndash;15 years</option><option>15+ years</option></select></div>
-        </div>
-      </div>
-
-      <div class="m-step">
-        <div class="m-step-header"><div class="m-section-num">Section 2</div><h4>Growth Bottlenecks</h4><p>Growth often exposes the gaps between strategy, team structure, operations, marketing, sales, and technology.</p></div>
-        <div class="m-field"><label>Which best describes your current situation?</label><div class="m-check-grid"><label class="m-opt"><input type="checkbox" name="m_sit" value="Grown fast, ops struggling"><span>We have grown quickly and operations are struggling to keep up</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Revenue plateaued"><span>Revenue has plateaued</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Sales slowed"><span>Sales growth has slowed</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Marketing unclear results"><span>Marketing activity is happening, but results are unclear</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Website outdated"><span>Our website or positioning no longer reflects the business</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Team accountability"><span>Team accountability is inconsistent</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="No systems"><span>We lack clear systems, processes, or ownership</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Leadership overwhelmed"><span>Leadership is overwhelmed or pulled into too many decisions</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="CRM messy"><span>Our CRM, tools, or reporting are messy</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="AI needs plan"><span>We are using or considering AI, but need a practical plan</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Preparing expansion"><span>We are preparing for expansion</span></label><label class="m-opt"><input type="checkbox" name="m_sit" value="Preparing exit"><span>We are preparing for acquisition, succession, or exit</span></label></div></div>
-        <div class="m-field"><label>What is the biggest obstacle to growth right now?</label><textarea name="m_obstacle" rows="3" placeholder=""></textarea></div>
-        <div class="m-field"><label>Where does the business feel most disconnected?</label><select name="m_disconnect"><option value="">Select one</option><option>Marketing and sales</option><option>Sales and operations</option><option>Strategy and execution</option><option>Leadership and team</option><option>Technology and process</option><option>Reporting and decision-making</option></select></div>
-        <div class="m-field"><label>If nothing changes over the next 12 months, what is at risk?</label><textarea name="m_risk" rows="3" placeholder="Lost revenue, stalled growth, team burnout, missed expansion, customer experience issues, operational waste..."></textarea></div>
-      </div>
-
-      <div class="m-step">
-        <div class="m-step-header"><div class="m-section-num">Section 3</div><h4>Systems &amp; Structure</h4><p>These questions help us understand whether the constraint is strategy, process, people, technology, reporting, or execution.</p></div>
-        <div class="m-field"><label>Which tools are active? (select all)</label><div class="m-check-grid"><label class="m-opt"><input type="checkbox" name="m_tools" value="CRM"><span>CRM (HubSpot, Salesforce, etc.)</span></label><label class="m-opt"><input type="checkbox" name="m_tools" value="Email marketing"><span>Email marketing</span></label><label class="m-opt"><input type="checkbox" name="m_tools" value="Project management"><span>Project management</span></label><label class="m-opt"><input type="checkbox" name="m_tools" value="Paid ads"><span>Paid advertising</span></label><label class="m-opt"><input type="checkbox" name="m_tools" value="Analytics"><span>Analytics / dashboards</span></label><label class="m-opt"><input type="checkbox" name="m_tools" value="AI tools"><span>AI tools</span></label><label class="m-opt"><input type="checkbox" name="m_tools" value="None"><span>None &mdash; mostly manual</span></label></div></div>
-        <div class="m-field"><label>How connected are your tools?</label><div class="m-scale"><button type="button" class="m-scale-btn" data-val="1">1</button><button type="button" class="m-scale-btn" data-val="2">2</button><button type="button" class="m-scale-btn" data-val="3">3</button><button type="button" class="m-scale-btn" data-val="4">4</button><button type="button" class="m-scale-btn" data-val="5">5</button></div><div class="m-scale-labels"><span>Not at all</span><span>Fully connected</span></div></div>
-        <div class="m-field"><label>What part of the business depends too heavily on one person?</label><textarea name="m_dependency" rows="3" placeholder=""></textarea></div>
-      </div>
-
-      <div class="m-step">
-        <div class="m-step-header"><div class="m-section-num">Section 4</div><h4>Goals &amp; Success</h4><p>Tell us what outcome you actually want, not only which service you think you may need.</p></div>
-        <div class="m-field"><label>Where do you want the business to be 24 months from now?</label><textarea name="m_24month" rows="3" placeholder=""></textarea></div>
-        <div class="m-field"><label>What would make this engagement successful?</label><div class="m-check-grid"><label class="m-opt"><input type="checkbox" name="m_success" value="Growth roadmap"><span>Clear growth roadmap</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="New website"><span>New website</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="Marketing system"><span>Marketing system</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="CRM cleanup"><span>CRM cleanup</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="AI workflows"><span>AI workflows</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="Revenue growth"><span>Revenue growth</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="Operational clarity"><span>Operational clarity</span></label><label class="m-opt"><input type="checkbox" name="m_success" value="Team alignment"><span>Team alignment</span></label></div></div>
-        <div class="m-field"><label>In your own words, what would success look like?</label><textarea name="m_success_words" rows="3" placeholder=""></textarea></div>
-        <div class="m-field"><label>Why is now the right time to address this?</label><textarea name="m_why_now" rows="3" placeholder=""></textarea></div>
-      </div>
-
-      <div class="m-step">
-        <div class="m-step-header"><div class="m-section-num">Section 5</div><h4>Fit &amp; Next Step</h4><p>SWG is best suited for companies ready to make decisions, implement changes, and invest in the operating layer behind growth.</p></div>
-        <div class="m-field"><label>Budget range for this engagement</label><div class="m-opts"><label class="m-opt"><input type="radio" name="m_budget" value="Under $10K"><span>Under $10K</span></label><label class="m-opt"><input type="radio" name="m_budget" value="$10K – $30K"><span>$10K &ndash; $30K</span></label><label class="m-opt"><input type="radio" name="m_budget" value="$30K – $75K"><span>$30K &ndash; $75K</span></label><label class="m-opt"><input type="radio" name="m_budget" value="$75K+"><span>$75K+</span></label></div></div>
-        <div class="m-field"><label>Preferred engagement path</label><div class="m-opts"><label class="m-opt"><input type="radio" name="m_path" value="Business Review"><span>Business Review ($5K&ndash;$10K)</span></label><label class="m-opt"><input type="radio" name="m_path" value="Focused Build"><span>Focused Build ($10K&ndash;$50K+)</span></label><label class="m-opt"><input type="radio" name="m_path" value="Ongoing Support"><span>Ongoing Support (from $7.5K/mo)</span></label><label class="m-opt"><input type="radio" name="m_path" value="Not sure"><span>Not sure &mdash; recommend after review</span></label></div></div>
-        <div class="m-field"><label>Anything else we should know before reviewing your assessment?</label><textarea name="m_notes" rows="3" placeholder="Context, timeline, or questions"></textarea></div>
-      </div>
-
-      <div class="m-step m-success" id="mSuccess">
-        <div class="m-success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <h4>Assessment submitted.</h4>
-        <p>Thank you. We will review your responses and reach out within 2 business days with a recommendation.</p>
-      </div>
-
-      <div class="modal-nav" id="mNav">
-        <button class="btn btn-outline" id="mBack" onclick="mPrevStep()" style="visibility:hidden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> <span>Back</span></button>
-        <button class="btn btn-gold" id="mNext" onclick="mNextStep()"><span>Continue</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
 <script>
-const overlay=document.getElementById('modalOverlay');
-function openModal(){overlay.classList.add('open');document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';mGoStep(0)}
-function closeModal(){overlay.classList.remove('open');document.documentElement.style.overflow='';document.body.style.overflow=''}
-overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(overlay.classList.contains('open')){closeModal()}else if(mm.classList.contains('open')){closeMobile()}}});
-
-let mCurrent=0;const mTotal=5;
-const mSteps=document.querySelectorAll('.m-step');
-const mDots=document.querySelectorAll('.modal-progress-dot');
-const mBack=document.getElementById('mBack');
-const mNext=document.getElementById('mNext');
-const mNav=document.getElementById('mNav');
-const mSideBtns=document.querySelectorAll('.modal-step-btn');
-const mFill=document.getElementById('mProgressFill');
-const mPText=document.getElementById('mProgressText');
-const mCompleted=new Set();
-
-function mGoStep(i){
-  mSteps.forEach(s=>s.classList.remove('active'));
-  mDots.forEach((d,idx)=>{d.classList.remove('active');d.classList.toggle('done',idx<i||mCompleted.has(idx))});
-  mSteps[i].classList.add('active');
-  mDots[i].classList.add('active');
-  mSideBtns.forEach((b,idx)=>{b.classList.remove('active');b.classList.toggle('done',idx<i||mCompleted.has(idx));b.classList.remove('locked');b.removeAttribute('data-tooltip');if(idx>i&&!mCompleted.has(idx)){b.classList.add('locked');b.setAttribute('data-tooltip','Complete Step '+(i+1)+' first')}});
-  mSideBtns[i].classList.add('active');
-  mBack.style.visibility=i===0?'hidden':'visible';
-  mNext.innerHTML=i===mTotal-1?'<span>Submit</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>':'<span>Continue</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-  if(mFill)mFill.style.width=((i+1)/mTotal*100)+'%';
-  if(mPText)mPText.textContent='Step '+(i+1)+' of '+mTotal;
-  mCurrent=i;
-  document.querySelector('.modal-body').scrollTop=0;
-}
-function mValidateStep(si){var step=mSteps[si],ok=true;step.querySelectorAll('.field-invalid').forEach(function(el){el.classList.remove('field-invalid')});step.querySelectorAll('input[type="text"],input[type="email"],input[type="url"]').forEach(function(inp){if(!inp.value.trim()){inp.classList.add('field-invalid');ok=false}});step.querySelectorAll('select').forEach(function(sel){if(!sel.value){sel.classList.add('field-invalid');ok=false}});var cNames={};step.querySelectorAll('input[type="checkbox"]').forEach(function(cb){if(!cNames[cb.name])cNames[cb.name]={any:false,el:cb};if(cb.checked)cNames[cb.name].any=true});for(var n in cNames){if(!cNames[n].any){var ct=cNames[n].el.closest('.m-check-grid')||cNames[n].el.closest('.m-opts');if(ct){ct.classList.add('field-invalid');ok=false}}}return ok}
-function mNextStep(){if(!mValidateStep(mCurrent))return;mCompleted.add(mCurrent);if(mCurrent<mTotal-1){mGoStep(mCurrent+1)}else{mSubmit()}}
-function mPrevStep(){if(mCurrent>0)mGoStep(mCurrent-1)}
-function mSubmit(){
-  mSteps.forEach(s=>s.classList.remove('active'));
-  document.getElementById('mSuccess').classList.add('active');
-  mNav.style.display='none';
-  document.querySelector('.modal-progress').style.display='none';
-  mSideBtns.forEach(b=>{b.classList.remove('active');b.classList.add('done')});
-  if(mFill)mFill.style.width='100%';
-  if(mPText)mPText.textContent='Complete';
-}
-
-mSideBtns.forEach(btn=>{
-  btn.addEventListener('click',function(){
-    const i=parseInt(this.dataset.sidestep);
-    if(i<=mCurrent||this.classList.contains('done'))mGoStep(i);
-  });
-});
-
-document.querySelectorAll('.m-scale-btn').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    this.parentElement.querySelectorAll('.m-scale-btn').forEach(b=>b.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-document.querySelectorAll('.m-opt').forEach(opt=>{
-  opt.addEventListener('click',function(){
-    const input=this.querySelector('input');
-    if(input.type==='radio'){
-      document.querySelectorAll('.m-opt input[name="'+input.name+'"]').forEach(i=>i.closest('.m-opt').classList.remove('selected'));
-      this.classList.add('selected');
-      input.checked=true;
-    }else{
-      input.checked=!input.checked;
-      this.classList.toggle('selected',input.checked);
-    }
-  });
-});
-document.querySelectorAll('.m-step input,.m-step select').forEach(function(el){el.addEventListener('input',function(){this.classList.remove('field-invalid')});el.addEventListener('change',function(){this.classList.remove('field-invalid');var ct=this.closest('.m-check-grid')||this.closest('.m-opts');if(ct)ct.classList.remove('field-invalid')})});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mm.classList.contains('open')){closeMobile()}});
 </script>
 
 
