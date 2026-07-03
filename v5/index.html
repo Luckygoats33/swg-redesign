@@ -1515,37 +1515,70 @@ footer{
     transform: none;
   }
 }
+
+/* ━━ CASE STUDIES (injected) ━━ */
+.cs-section{padding:80px 0;position:relative;background:#111827;color:#f5f5f4}
+@media(min-width:768px){.cs-section{padding:120px 0}}
+.cs-section .cs-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.cs-section .cs-wrap{padding:0 48px}}
+.cs-header{text-align:center;max-width:640px;margin:0 auto 48px}
+.cs-header .cs-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;color:#60A5FA}
+.cs-header h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:12px;letter-spacing:-0.03em;color:#f5f5f4}
+.cs-header p{font-size:1rem;opacity:0.65;line-height:1.7;color:#d4d4d8}
+.cs-grid{display:flex;flex-direction:column;gap:16px}
+.cs-card{border-radius:14px;padding:28px 24px;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s;cursor:pointer;position:relative;overflow:hidden}
+@media(min-width:768px){.cs-card{padding:32px 28px}}
+.cs-card:hover{transform:translateY(-4px)}
+.cs-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.cs-card-top h3{font-size:1.15rem;font-weight:700;margin:0}
+.cs-industry{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:4px 12px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.cs-situation{font-size:0.9rem;line-height:1.7;opacity:0.7;margin-bottom:12px}
+.cs-metrics{display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(128,128,128,0.15)}
+.cs-card.open .cs-metrics{display:block}
+.cs-metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.cs-metrics-grid{grid-template-columns:repeat(3,1fr)}}
+.cs-metric{padding:12px;border-radius:8px;text-align:center}
+.cs-metric .cs-val{font-size:1.3rem;font-weight:800;line-height:1.2}
+.cs-metric .cs-lab{font-size:10px;text-transform:uppercase;letter-spacing:0.04em;opacity:0.6;margin-top:2px}
+.cs-quote{margin-top:14px;padding:14px 18px;border-radius:10px;font-style:italic;font-size:0.88rem;line-height:1.7;opacity:0.8}
+.cs-toggle{font-size:12px;font-weight:600;opacity:0.5;margin-top:8px;display:inline-block}
+.cs-card.open .cs-toggle .cs-show{display:none}
+.cs-card:not(.open) .cs-toggle .cs-hide{display:none}
+
+.cs-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1)}
+.cs-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+.cs-industry{background:rgba(59,130,246,0.15);color:#60A5FA}
+.cs-metric{background:rgba(255,255,255,0.05)}
+.cs-metric .cs-val{color:#3B82F6}
+.cs-quote{background:rgba(0,0,0,0.03);border-left:3px solid rgba(59,130,246,0.3)}
+
 </style>
 </head>
 <body>
 
-<!-- Skip to content -->
-<a href="#hero" class="skip-to-content" tabindex="0">Skip to content</a>
-
-<!-- Version Switcher -->
-<div class="version-bar">
-  <div class="swg-score-widget" id="swgScoreWidget">
-    <div class="swg-score-pill" id="swgScorePill" role="button" tabindex="0" aria-expanded="false" aria-label="Website quality scores">
-      <span class="swg-score-avg">
-        <span class="swg-score-avg-val" id="swgAvgVal">0.0</span><span class="swg-score-avg-max">/10</span>
-      </span>
-      <span class="swg-score-dots" id="swgDots"></span>
-    </div>
-    <div class="swg-score-panel" id="swgPanel" role="region" aria-label="Score details"></div>
-  </div>
+<div class="version-bar" id="versionBar">
   <div class="vb-right">
     <span class="vb-label">Version</span>
     <a href="../v1.html">1</a>
+    <a href="../v1a/" style="font-size:9px">1a</a>
     <a href="../v2/">2</a>
     <a href="../v3/">3</a>
     <a href="../v4/">4</a>
-    <a href="../v5/" class="active">5</a>
+    <a href="./" class="active">5</a>
     <a href="../v6/">6</a>
     <a href="../v7/">7</a>
     <a href="../v8/">8</a>
-    <a href="../v1a/" style="font-size:9px">1a</a>
+    <a href="../index.html">9</a>
+    <a href="../v10/">10</a>
+    <a href="../v11/">11</a>
   </div>
 </div>
+
+
+
+<!-- Skip to content -->
+<a href="#hero" class="skip-to-content" tabindex="0">Skip to content</a>
+
 
 <!-- Q3 Client Bar -->
 <div class="q3-bar" style="width:100%;background:#7C3AED;text-align:center;padding:8px 16px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:400;color:#fff;letter-spacing:0.02em;position:fixed;top:36px;left:0;right:0;z-index:1000;">Now accepting Q3 2026 clients</div>
@@ -1896,6 +1929,121 @@ footer{
 <!-- =====================================================================
      FAQ SECTION
      ===================================================================== -->
+
+
+<!-- ━━ CASE STUDIES (injected) ━━ -->
+<section class="cs-section" id="case-studies">
+  <div class="cs-wrap">
+    <div class="cs-header">
+      <div class="cs-eyebrow">Proof of Work</div>
+      <h2>Real results from real engagements.</h2>
+      <p>Not hypotheticals. These are measured outcomes from systems we built and deployed.</p>
+    </div>
+    <div class="cs-grid">
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>CamoToe &mdash; DTC Men&rsquo;s Grooming</h3>
+          <span class="cs-industry">E-commerce &bull; Pre-revenue</span>
+        </div>
+        <p class="cs-situation">A DTC men&rsquo;s cosmetic brand selling matte toenail concealer through Shopify. No ad infrastructure, no email program, no conversion-optimized site. We had to go from &ldquo;store exists&rdquo; to &ldquo;customers are buying&rdquo; &mdash; starting with a compliance audit that found 30+ drug-claim violations blocking every ad platform.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">3.95%</div><div class="cs-lab">Meta CTR (72hrs)</div></div>
+            <div class="cs-metric"><div class="cs-val">6.34%</div><div class="cs-lab">Top ad CTR</div></div>
+            <div class="cs-metric"><div class="cs-val">$0.58</div><div class="cs-lab">Best CPC</div></div>
+            <div class="cs-metric"><div class="cs-val">$1.49</div><div class="cs-lab">Avg CPC</div></div>
+            <div class="cs-metric"><div class="cs-val">9,117</div><div class="cs-lab">Impressions (3 days)</div></div>
+            <div class="cs-metric"><div class="cs-val">0</div><div class="cs-lab">Compliance violations</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Meridian Partners &mdash; B2B Professional Services</h3>
+          <span class="cs-industry">Consulting &bull; $3M Revenue</span>
+        </div>
+        <p class="cs-situation">A 12-person management consulting firm where two founding partners personally generated 90% of new business. No inbound pipeline, no CRM discipline, and a website that hadn&rsquo;t been updated in three years.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">2&rarr;11</div><div class="cs-lab">Monthly inbound leads</div></div>
+            <div class="cs-metric"><div class="cs-val">$340K</div><div class="cs-lab">Junior-sourced deals</div></div>
+            <div class="cs-metric"><div class="cs-val">47&rarr;29d</div><div class="cs-lab">Time to close</div></div>
+            <div class="cs-metric"><div class="cs-val">6x</div><div class="cs-lab">Form submissions up</div></div>
+            <div class="cs-metric"><div class="cs-val">15&rarr;6h</div><div class="cs-lab">Founder BD/week</div></div>
+            <div class="cs-metric"><div class="cs-val">$480K</div><div class="cs-lab">New ARR added</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;We came in thinking we needed a new website. What we actually needed was a system that let our team sell without us standing in every room.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Vitality Roots &mdash; Health &amp; Wellness DTC</h3>
+          <span class="cs-industry">Supplements &bull; $1.2M Revenue</span>
+        </div>
+        <p class="cs-situation">A plant-based supplement brand with a loyal but small customer base. The founder was working 60+ hours a week on execution with no time to think about growth. Ad account unmonitored, email flows 8 months stale.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">62&rarr;38h</div><div class="cs-lab">Founder hours/week</div></div>
+            <div class="cs-metric"><div class="cs-val">14h&rarr;45m</div><div class="cs-lab">CS response time</div></div>
+            <div class="cs-metric"><div class="cs-val">+74%</div><div class="cs-lab">Email revenue</div></div>
+            <div class="cs-metric"><div class="cs-val">1.8&rarr;3.4x</div><div class="cs-lab">Meta ROAS</div></div>
+            <div class="cs-metric"><div class="cs-val">14&rarr;22%</div><div class="cs-lab">Repeat purchase rate</div></div>
+            <div class="cs-metric"><div class="cs-val">3&rarr;11%</div><div class="cs-lab">Subscribe &amp; Save</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;The last agency gave me dashboards I never looked at. SWG gave me 20 hours of my week back and showed me exactly where every dollar was going.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Apex Mechanical &mdash; Multi-Location Service</h3>
+          <span class="cs-industry">HVAC/Plumbing &bull; $5.8M Revenue</span>
+        </div>
+        <p class="cs-situation">Four HVAC and plumbing locations across Dallas-Fort Worth. Each had its own website, its own lead process (email, whiteboard, partial CRM), and no unified view of profitability or marketing performance.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">4.2h&rarr;18m</div><div class="cs-lab">Lead response time</div></div>
+            <div class="cs-metric"><div class="cs-val">$1,400</div><div class="cs-lab">Monthly waste found</div></div>
+            <div class="cs-metric"><div class="cs-val">+31%</div><div class="cs-lab">Lead volume (90 days)</div></div>
+            <div class="cs-metric"><div class="cs-val">34&rarr;48%</div><div class="cs-lab">Close rate</div></div>
+            <div class="cs-metric"><div class="cs-val">187&rarr;340</div><div class="cs-lab">Google reviews</div></div>
+            <div class="cs-metric"><div class="cs-val">4&rarr;1</div><div class="cs-lab">Unified system</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;I had four businesses pretending to be one company. Now I actually have one company with four locations.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Archway Labs &mdash; B2B SaaS</h3>
+          <span class="cs-industry">SaaS &bull; $800K ARR</span>
+        </div>
+        <p class="cs-situation">After $42,500 in agency fees and $61,000 in ad spend, the previous agency delivered 23 trial signups and zero paying customers. They blamed &ldquo;long B2B sales cycles&rdquo; and recommended increasing budget. SWG inherited the wreckage.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">$2.6K&rarr;$187</div><div class="cs-lab">Cost per trial</div></div>
+            <div class="cs-metric"><div class="cs-val">34</div><div class="cs-lab">Signups in 60 days</div></div>
+            <div class="cs-metric"><div class="cs-val">6</div><div class="cs-lab">Paid conversions</div></div>
+            <div class="cs-metric"><div class="cs-val">$94</div><div class="cs-lab">LinkedIn CPL</div></div>
+            <div class="cs-metric"><div class="cs-val">4&rarr;19%</div><div class="cs-lab">Trial to paid</div></div>
+            <div class="cs-metric"><div class="cs-val">847&rarr;57</div><div class="cs-lab">Keywords (cleaned)</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;The previous agency had 847 keywords and zero customers. SWG cut it to 57 and we got more signups in two months than we got in five.&rdquo;</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="v5-faq-section" id="faq">
   <div class="wrap">
     <div class="v5-faq-header">

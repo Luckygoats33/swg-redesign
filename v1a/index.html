@@ -2194,22 +2194,78 @@ body.nav-open {
     transform: none;
   }
 }
+
+/* ━━ VERSION BAR (standardized) ━━ */
+
+.version-bar{
+  width:100%;
+  background:rgba(15,23,42,0.97);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:2px 0;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1001;
+}
+.vb-right{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px 6px 0;
+}
+.version-bar .vb-label{
+  font-size:9px;font-weight:700;
+  color:rgba(245,245,244,0.35);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-right:6px;
+  font-family:system-ui,sans-serif;
+}
+.version-bar a{
+  width:28px;height:24px;
+  border-radius:5px;
+  display:inline-flex;
+  align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;
+  font-family:system-ui,sans-serif;
+  text-decoration:none;
+  background:rgba(245,245,244,0.06);
+  color:rgba(245,245,244,0.4);
+  transition:background 0.2s,color 0.2s;
+}
+.version-bar a:hover{background:rgba(245,245,244,0.12);color:rgba(245,245,244,0.7)}
+.version-bar a.active{background:#3B82F6;color:#fff}
+@media(max-width:480px){
+  .version-bar{padding:2px 4px;gap:2px;flex-wrap:nowrap}
+  .vb-right{gap:3px;padding:4px 4px 4px 0}
+  .version-bar .vb-label{display:none}
+  .version-bar a{width:24px;height:22px;font-size:10px;border-radius:4px}
+}
 </style>
   </head>
   <body>
+
+<div class="version-bar" id="versionBar">
+  <div class="vb-right">
+    <span class="vb-label">Version</span>
+    <a href="../v1.html">1</a>
+    <a href="./" class="active" style="font-size:9px">1a</a>
+    <a href="../v2/">2</a>
+    <a href="../v3/">3</a>
+    <a href="../v4/">4</a>
+    <a href="../v5/">5</a>
+    <a href="../v6/">6</a>
+    <a href="../v7/">7</a>
+    <a href="../v8/">8</a>
+    <a href="../index.html">9</a>
+    <a href="../v10/">10</a>
+    <a href="../v11/">11</a>
+  </div>
+</div>
+
     <!-- ── Version Bar ── -->
-    <div style="position:fixed;top:0;left:0;right:0;z-index:1001;width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif">
-      <span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span>
-      <a href="../v1.html" aria-label="Version 1" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1</a>
-      <a href="../v2/" aria-label="Version 2" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a>
-      <a href="../v3/" aria-label="Version 3" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">3</a>
-      <a href="../v4/" aria-label="Version 4" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">4</a>
-      <a href="../v5/" aria-label="Version 5" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a>
-      <a href="../v6/" aria-label="Version 6" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">6</a>
-      <a href="../v7/" aria-label="Version 7" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">7</a>
-      <a href="../v8/" aria-label="Version 8" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">8</a>
-      <a href="./" aria-label="Version 1a (current)" aria-current="page" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;background:#3B82F6;color:#fff;text-decoration:none">1a</a>
-    </div>
+    <!-- old inline version bar removed -->
 
     <!-- ── SWG Score Widget ── -->
     <div class="swg-score-widget" id="swgScoreWidget">

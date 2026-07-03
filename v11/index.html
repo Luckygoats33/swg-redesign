@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Wellness Global — Growth Systems for Founder-Led Companies</title>
+<meta name="description" content="SWG diagnoses growth bottlenecks in founder-led companies with $1M+ revenue, then builds the systems — website, CRM, AI workflows, marketing, reporting — connected to one strategy. 117+ projects, 94% retention, avg 6x ROI.">
+<link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/v11/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Support Wellness Global — Growth Systems for Founder-Led Companies">
+<meta property="og:description" content="We diagnose the bottleneck, then build the systems to fix it. 29+ industries, 117+ projects, 94% client retention, avg 6x ROI.">
+<meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v11/">
+<meta property="og:site_name" content="Support Wellness Global">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support Wellness Global — Growth Systems for Founder-Led Companies">
+<meta name="twitter:description" content="We diagnose the bottleneck, then build the systems to fix it. 29+ industries, 117+ projects, 94% client retention, avg 6x ROI.">
+<meta name="theme-color" content="#09090B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Support Wellness Global",
+  "alternateName": "SWG",
+  "url": "https://luckygoats33.github.io/swg-redesign/v11/",
+  "email": "dean@supportwellnessglobal.com",
+  "description": "Business consulting for founder-led companies with $1M+ revenue. SWG diagnoses growth bottlenecks, then builds the systems — website, CRM, AI workflows, marketing, reporting — connected to one strategy.",
+  "knowsAbout": ["Business consulting","Growth strategy","CRM implementation","AI workflows","Marketing systems","Business reporting"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "dean@supportwellnessglobal.com",
+    "contactType": "sales"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Who is SWG for?","acceptedAnswer":{"@type":"Answer","text":"Founder-led companies doing $1M+ in annual revenue where the founder is still the bottleneck — in sales, operations, marketing, or all three. We work across 29+ industries including health and wellness, professional services, real estate, e-commerce, SaaS, agencies, home services, construction, and manufacturing."}},
+    {"@type":"Question","name":"How are you different from a marketing agency?","acceptedAnswer":{"@type":"Answer","text":"Agencies sell channels — ads, SEO, email. We diagnose first, then build only the systems the diagnosis calls for, all connected to one strategy. Sometimes that means ads. Often it means fixing the CRM, the follow-up, or the reporting before spending another dollar on traffic."}},
+    {"@type":"Question","name":"What does an engagement look like?","acceptedAnswer":{"@type":"Answer","text":"Four phases: Diagnose (2–3 weeks of audits and data review), Design (a prioritized system blueprint), Build (we implement the website, CRM, automations, campaigns, and dashboards), and Support (ongoing optimization and reporting). Most engagements run 3–6 months."}},
+    {"@type":"Question","name":"How fast will we see results?","acceptedAnswer":{"@type":"Answer","text":"Operational wins — faster lead response, cleaner pipeline, recovered ad waste — typically land in the first 30–45 days. Revenue results compound after that: our clients average 6x return on the engagement, with measurable movement inside 90 days."}},
+    {"@type":"Question","name":"Do we need to replace our existing tools?","acceptedAnswer":{"@type":"Answer","text":"Rarely. We build on what you have where it works — Shopify, HubSpot, Klaviyo, QuickBooks, Google Workspace — and only replace tools that are actively costing you money. The goal is one connected system, not a new software bill."}},
+    {"@type":"Question","name":"How do we get started?","acceptedAnswer":{"@type":"Answer","text":"Take the free growth assessment. It takes about five minutes, and you'll get a scored snapshot of where your business is leaking revenue. From there we book a review call to walk through the findings — no obligation."}}
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#09090B;
+  --bg-soft:#0E0E12;
+  --card:rgba(255,255,255,0.04);
+  --card-hover:rgba(255,255,255,0.07);
+  --stroke:rgba(255,255,255,0.09);
+  --text:#FAFAFA;
+  --muted:#A1A1AA;
+  --dim:#71717A;
+  --violet:#8B5CF6;
+  --blue:#3B82F6;
+  --amber:#F59E0B;
+  --grad:linear-gradient(135deg,#8B5CF6,#3B82F6);
+  --grad-text:linear-gradient(100deg,#C4B5FD 0%,#8B5CF6 40%,#60A5FA 100%);
+  --radius:16px;
+  --maxw:1100px;
+  --font-head:'Space Grotesk',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.12;letter-spacing:-0.02em;font-weight:700}
+::selection{background:rgba(139,92,246,.4)}
+
+/* ---------- Version bar ---------- */
+.version-bar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:36px;background:rgba(15,23,42,0.97);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.version-bar .vb-brand{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.14em;color:#64748B}
+.vb-right{display:flex;align-items:center;gap:4px}
+.vb-label{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#64748B;margin-right:6px;font-weight:600}
+.vb-link{
+  width:28px;height:24px;border-radius:6px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;text-decoration:none;
+  color:#94A3B8;background:rgba(255,255,255,0.06);
+  transition:background .15s,color .15s;
+}
+.vb-link:hover{background:rgba(255,255,255,0.14);color:#F1F5F9}
+.vb-link.active{background:#8B5CF6;color:#fff}
+@media(max-width:480px){
+  .vb-label{display:none}
+  .vb-link{width:24px;height:22px;font-size:10px}
+  .vb-right{gap:3px}
+}
+
+/* ---------- Scroll progress ---------- */
+.progress{
+  position:fixed;top:36px;left:0;height:2px;width:0;
+  background:var(--grad);z-index:1001;
+  box-shadow:0 0 12px rgba(139,92,246,.7);
+}
+
+/* ---------- Cursor follower ---------- */
+.cursor-dot{
+  position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;
+  background:var(--violet);pointer-events:none;z-index:2000;
+  transform:translate(-50%,-50%);
+}
+.cursor-ring{
+  position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
+  border:1.5px solid rgba(139,92,246,.45);pointer-events:none;z-index:1999;
+  transform:translate(-50%,-50%);
+  transition:width .2s,height .2s,border-color .2s;
+}
+.cursor-ring.is-hover{width:52px;height:52px;border-color:rgba(96,165,250,.7)}
+@media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:fixed;top:36px;left:0;right:0;z-index:900;
+  transition:background .3s,border-color .3s,backdrop-filter .3s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(9,9,11,0.72);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border-bottom-color:var(--stroke);
+}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;
+}
+.logo{
+  font-family:var(--font-head);font-weight:700;font-size:22px;
+  letter-spacing:.04em;text-decoration:none;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;
+  padding:10px 14px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center;
+  transition:color .15s,background .15s;
+}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:0 22px;border-radius:999px;
+  background:var(--grad);color:#fff !important;font-weight:600;font-size:14px;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(139,92,246,.35);
+  transition:transform .15s,box-shadow .15s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 32px rgba(139,92,246,.55);background:var(--grad) !important}
+@media(max-width:768px){
+  .nav-links li:not(.nav-cta-li){display:none}
+  .nav-links{gap:0}
+}
+
+/* ---------- Shared section shell ---------- */
+main{display:block}
+.section{
+  position:relative;
+  padding:110px 24px;
+}
+.section-full{min-height:88vh;display:flex;flex-direction:column;justify-content:center}
+.wrap{max-width:var(--maxw);margin:0 auto;width:100%;position:relative;z-index:2}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--violet);margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--grad)}
+.h2{font-size:clamp(30px,4.4vw,48px);margin-bottom:16px}
+.section-sub{color:var(--muted);font-size:17px;max-width:620px;margin-bottom:52px}
+
+/* ---------- Background art ---------- */
+.grid-bg{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 35%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 35%,#000 30%,transparent 75%);
+}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.55}
+.orb-violet{width:480px;height:480px;background:radial-gradient(circle,rgba(139,92,246,.35),transparent 65%)}
+.orb-blue{width:420px;height:420px;background:radial-gradient(circle,rgba(59,130,246,.3),transparent 65%)}
+.orb-amber{width:320px;height:320px;background:radial-gradient(circle,rgba(245,158,11,.16),transparent 65%)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.08s}
+.reveal[data-delay="2"]{transition-delay:.16s}
+.reveal[data-delay="3"]{transition-delay:.24s}
+.reveal[data-delay="4"]{transition-delay:.32s}
+.reveal[data-delay="5"]{transition-delay:.4s}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:100vh;
+  padding-top:170px;padding-bottom:80px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.hero .wrap{text-align:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500;
+  color:var(--muted);background:var(--card);border:1px solid var(--stroke);
+  margin-bottom:28px;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px rgba(245,158,11,.8)}
+.hero h1{
+  font-size:clamp(40px,7.2vw,84px);
+  max-width:900px;margin:0 auto 24px;
+  letter-spacing:-0.03em;
+}
+.grad-text{
+  background:var(--grad-text);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+  color:var(--muted);font-size:clamp(16px,2vw,19px);
+  max-width:640px;margin:0 auto 40px;
+}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:72px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 30px;border-radius:14px;
+  font-family:var(--font-body);font-size:16px;font-weight:600;text-decoration:none;
+  cursor:pointer;border:1px solid transparent;
+  transition:transform .15s,box-shadow .2s,background .2s,border-color .2s;
+}
+.btn-primary{
+  background:var(--grad);color:#fff;
+  box-shadow:0 8px 30px rgba(139,92,246,.4);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(139,92,246,.6)}
+.btn-ghost{
+  background:var(--card);color:var(--text);border-color:var(--stroke);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{background:var(--card-hover);border-color:rgba(139,92,246,.5)}
+.btn .play{
+  width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.12);
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  max-width:860px;margin:0 auto;
+  background:var(--stroke);border:1px solid var(--stroke);border-radius:var(--radius);
+  overflow:hidden;
+}
+.stat{
+  background:rgba(14,14,18,.85);padding:26px 14px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.stat-num{
+  font-family:var(--font-head);font-weight:700;
+  font-size:clamp(28px,3.6vw,40px);color:var(--amber);
+  letter-spacing:-0.02em;line-height:1;
+}
+.stat-label{font-size:12.5px;color:var(--dim);margin-top:8px;font-weight:500;letter-spacing:.03em}
+@media(max-width:640px){
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- Marquee ---------- */
+.marquee-section{
+  padding:26px 0;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);
+  overflow:hidden;position:relative;background:var(--bg-soft);
+}
+.marquee-section::before,.marquee-section::after{
+  content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
+}
+.marquee-section::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.marquee-section::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.marquee-track{display:flex;gap:14px;width:max-content;animation:marquee 36s linear infinite}
+.marquee-section:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tag-pill{
+  flex:none;display:inline-flex;align-items:center;gap:9px;
+  padding:11px 22px;border-radius:999px;white-space:nowrap;
+  font-size:14px;font-weight:500;color:var(--muted);
+  background:var(--card);border:1px solid var(--stroke);
+}
+.tag-pill span{width:6px;height:6px;border-radius:50%;background:var(--grad);flex:none}
+
+/* ---------- Bento (Problems) ---------- */
+.bento{
+  display:grid;gap:16px;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:minmax(190px,auto);
+}
+.bento-card{
+  position:relative;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--stroke);
+  padding:30px 28px;overflow:hidden;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:transform .25s cubic-bezier(.2,.7,.2,1),background .25s;
+}
+.bento-card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+  background:linear-gradient(135deg,rgba(139,92,246,.9),rgba(59,130,246,.9));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .25s;pointer-events:none;
+}
+.bento-card:hover{transform:translateY(-5px);background:var(--card-hover)}
+.bento-card:hover::before{opacity:1}
+.bento-card.span-4{grid-column:span 4}
+.bento-card.span-3{grid-column:span 3}
+.bento-card.span-2{grid-column:span 2}
+.bento-icon{
+  width:44px;height:44px;border-radius:12px;margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(139,92,246,.18),rgba(59,130,246,.18));
+  border:1px solid rgba(139,92,246,.3);
+  color:#C4B5FD;
+}
+.bento-icon svg{width:22px;height:22px}
+.bento-card h3{font-size:19px;margin-bottom:10px;font-weight:600}
+.bento-card p{color:var(--muted);font-size:14.5px}
+.bento-glow{
+  position:absolute;right:-70px;top:-70px;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.22),transparent 70%);
+  pointer-events:none;
+}
+@media(max-width:900px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .bento-card.span-4,.bento-card.span-3,.bento-card.span-2{grid-column:span 1}
+}
+@media(max-width:560px){
+  .bento{grid-template-columns:1fr}
+}
+
+/* ---------- Process ---------- */
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  counter-reset:phase;
+}
+.phase{
+  position:relative;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--stroke);
+  padding:30px 26px;
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.phase:hover{transform:translateY(-5px);border-color:rgba(139,92,246,.55);background:var(--card-hover)}
+.phase-num{
+  font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.12em;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:14px;display:block;
+}
+.phase-icon{
+  width:44px;height:44px;border-radius:12px;margin-bottom:16px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(245,158,11,.14),rgba(139,92,246,.14));
+  border:1px solid rgba(245,158,11,.3);color:var(--amber);
+}
+.phase-icon svg{width:22px;height:22px}
+.phase h3{font-size:20px;margin-bottom:10px;font-weight:600}
+.phase p{color:var(--muted);font-size:14px;margin-bottom:16px}
+.phase ul{list-style:none;display:grid;gap:8px}
+.phase li{
+  font-size:13.5px;color:var(--muted);display:flex;gap:9px;align-items:flex-start;
+}
+.phase li::before{
+  content:"";width:5px;height:5px;border-radius:50%;flex:none;margin-top:8px;
+  background:var(--grad);
+}
+.process-line{
+  height:2px;background:linear-gradient(90deg,transparent,rgba(139,92,246,.6),rgba(59,130,246,.6),transparent);
+  margin:0 8% 30px;border-radius:2px;
+}
+@media(max-width:1024px){.process-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.process-grid{grid-template-columns:1fr}}
+
+/* ---------- Case studies ---------- */
+.case-tabs{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;
+}
+.case-tab{
+  min-height:44px;padding:10px 20px;border-radius:999px;cursor:pointer;
+  font-family:var(--font-body);font-size:14px;font-weight:600;
+  color:var(--muted);background:var(--card);border:1px solid var(--stroke);
+  transition:all .2s;
+}
+.case-tab:hover{color:var(--text);border-color:rgba(139,92,246,.5)}
+.case-tab[aria-selected="true"]{
+  background:var(--grad);color:#fff;border-color:transparent;
+  box-shadow:0 6px 24px rgba(139,92,246,.4);
+}
+.case-panel{display:none}
+.case-panel.active{display:block;animation:panelIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.case-card{
+  border-radius:20px;border:1px solid var(--stroke);
+  background:linear-gradient(160deg,rgba(139,92,246,.09),rgba(255,255,255,.03) 40%,rgba(59,130,246,.07));
+  padding:44px;position:relative;overflow:hidden;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.case-head{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:30px}
+.case-industry{
+  display:inline-flex;padding:6px 14px;border-radius:999px;
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:#C4B5FD;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.35);
+  margin-bottom:14px;
+}
+.case-card h3{font-size:clamp(24px,3vw,32px);margin-bottom:8px}
+.case-meta{color:var(--dim);font-size:13.5px}
+.case-metric{text-align:right;flex:none}
+.case-metric .big{
+  font-family:var(--font-head);font-weight:700;line-height:1;
+  font-size:clamp(44px,6vw,72px);color:var(--amber);letter-spacing:-0.03em;
+  text-shadow:0 0 40px rgba(245,158,11,.3);
+}
+.case-metric .cap{font-size:13px;color:var(--muted);margin-top:8px;max-width:220px;margin-left:auto}
+.case-situation{color:var(--muted);font-size:15.5px;max-width:680px;margin-bottom:24px}
+.case-highlights{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hl{
+  padding:14px 18px;border-radius:12px;background:rgba(9,9,11,.55);
+  border:1px solid var(--stroke);min-width:150px;flex:1;
+}
+.hl b{display:block;font-family:var(--font-head);font-size:21px;color:var(--text);letter-spacing:-0.01em}
+.hl span{font-size:12.5px;color:var(--dim)}
+.case-details{border-top:1px solid var(--stroke);padding-top:8px}
+.case-details summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+  min-height:44px;font-weight:600;font-size:14.5px;color:#A5B4FC;
+}
+.case-details summary::-webkit-details-marker{display:none}
+.case-details summary .chev{transition:transform .25s;display:inline-flex}
+.case-details[open] summary .chev{transform:rotate(90deg)}
+.case-details ul{list-style:none;display:grid;gap:10px;padding:14px 0 8px;max-width:680px}
+.case-details li{display:flex;gap:11px;font-size:14.5px;color:var(--muted);align-items:flex-start}
+.case-details li::before{
+  content:"";width:16px;height:16px;flex:none;margin-top:3px;border-radius:5px;
+  background:linear-gradient(135deg,rgba(139,92,246,.35),rgba(59,130,246,.35));
+  border:1px solid rgba(139,92,246,.5);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C4B5FD' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+  background-size:10px;background-position:center;background-repeat:no-repeat;
+}
+.case-quote{
+  margin-top:20px;padding:18px 22px;border-left:3px solid;
+  border-image:var(--grad) 1;
+  color:var(--text);font-size:15.5px;font-style:italic;background:rgba(139,92,246,.06);
+  border-radius:0 12px 12px 0;max-width:680px;
+}
+@media(max-width:768px){
+  .case-card{padding:28px 22px}
+  .case-metric{text-align:left}
+  .case-metric .cap{margin-left:0}
+}
+
+/* ---------- Services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{
+  position:relative;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--stroke);padding:30px 26px;
+  overflow:hidden;
+  transition:transform .25s,background .25s;
+}
+.service::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+  background:linear-gradient(135deg,rgba(139,92,246,.85),rgba(59,130,246,.85));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .25s;pointer-events:none;
+}
+.service:hover{transform:translateY(-5px);background:var(--card-hover)}
+.service:hover::before{opacity:1}
+.service h3{font-size:19px;margin-bottom:12px;font-weight:600}
+.service ul{list-style:none;display:grid;gap:8px}
+.service li{font-size:14px;color:var(--muted);display:flex;gap:9px;align-items:flex-start}
+.service li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);flex:none;margin-top:8px}
+.service .bento-icon{margin-bottom:16px}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr}}
+
+/* ---------- Testimonials ---------- */
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.testi{
+  border-radius:var(--radius);background:var(--card);border:1px solid var(--stroke);
+  padding:32px 30px;position:relative;
+  transition:transform .25s,border-color .25s;
+}
+.testi:hover{transform:translateY(-4px);border-color:rgba(139,92,246,.5)}
+.testi .qmark{
+  font-family:var(--font-head);font-size:52px;line-height:1;font-weight:700;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;margin-bottom:10px;
+}
+.testi blockquote{font-size:16.5px;color:var(--text);margin-bottom:20px;font-weight:450}
+.testi figcaption{display:flex;align-items:center;gap:12px}
+.avatar{
+  width:40px;height:40px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;
+  background:var(--grad);
+}
+.testi .who b{display:block;font-size:14px;font-weight:600}
+.testi .who span{font-size:12.5px;color:var(--dim)}
+.testi.wide{grid-column:span 2}
+@media(max-width:768px){
+  .testi-grid{grid-template-columns:1fr}
+  .testi.wide{grid-column:span 1}
+}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:760px;margin:0 auto;display:grid;gap:12px}
+.faq-item{
+  border-radius:14px;border:1px solid var(--stroke);background:var(--card);
+  overflow:hidden;transition:border-color .25s,background .25s;
+}
+.faq-item.open{border-color:rgba(139,92,246,.5);background:var(--card-hover)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:20px 24px;min-height:64px;cursor:pointer;text-align:left;
+  background:none;border:none;color:var(--text);
+  font-family:var(--font-body);font-size:16px;font-weight:600;
+}
+.faq-q .plus{
+  width:26px;height:26px;flex:none;border-radius:8px;position:relative;
+  background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.4);
+  transition:transform .3s;
+}
+.faq-q .plus::before,.faq-q .plus::after{
+  content:"";position:absolute;background:#C4B5FD;left:50%;top:50%;
+}
+.faq-q .plus::before{width:12px;height:2px;transform:translate(-50%,-50%)}
+.faq-q .plus::after{width:2px;height:12px;transform:translate(-50%,-50%);transition:opacity .2s}
+.faq-item.open .plus{transform:rotate(180deg)}
+.faq-item.open .plus::after{opacity:0}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.2,.7,.2,1);
+}
+.faq-a p{padding:0 24px 22px;color:var(--muted);font-size:15px;max-width:660px}
+
+/* ---------- CTA ---------- */
+.cta-section{
+  padding:130px 24px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 110%,rgba(139,92,246,.32),transparent 65%),
+    radial-gradient(ellipse 50% 60% at 80% 0%,rgba(59,130,246,.18),transparent 60%),
+    var(--bg-soft);
+  border-top:1px solid var(--stroke);
+  text-align:center;
+}
+.cta-section h2{font-size:clamp(32px,5vw,58px);max-width:760px;margin:0 auto 20px}
+.cta-section p{color:var(--muted);font-size:17px;max-width:540px;margin:0 auto 40px}
+.cta-note{margin-top:22px;font-size:13.5px;color:var(--dim)}
+.cta-note a{color:#A5B4FC;text-decoration:none}
+.cta-note a:hover{text-decoration:underline}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--stroke);padding:44px 24px;
+  background:var(--bg);
+}
+.footer-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.footer-inner p{color:var(--dim);font-size:13.5px}
+.footer-inner a{color:var(--muted);text-decoration:none;font-size:13.5px;min-height:44px;display:inline-flex;align-items:center}
+.footer-inner a:hover{color:var(--text)}
+
+/* ---------- Reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+  .marquee-track{animation:none;flex-wrap:wrap}
+  .cursor-dot,.cursor-ring{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Version bar -->
+<div class="version-bar" role="navigation" aria-label="Version switcher">
+  <span class="vb-brand">SWG</span>
+  <div class="vb-right">
+    <span class="vb-label">Version</span>
+    <a class="vb-link" href="../v1.html">1</a>
+    <a class="vb-link" href="../v1a/">1a</a>
+    <a class="vb-link" href="../v2/">2</a>
+    <a class="vb-link" href="../v3/">3</a>
+    <a class="vb-link" href="../v4/">4</a>
+    <a class="vb-link" href="../v5/">5</a>
+    <a class="vb-link" href="../v6/">6</a>
+    <a class="vb-link" href="../v7/">7</a>
+    <a class="vb-link" href="../v8/">8</a>
+    <a class="vb-link" href="../">9</a>
+    <a class="vb-link" href="../v10/">10</a>
+    <a class="vb-link active" href="./" aria-current="page">11</a>
+  </div>
+</div>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="SWG home">SWG</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#problems">Problems</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav-cta-li"><a class="nav-cta" href="../assessment.html">Book a Review</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Introduction">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="orb orb-violet" style="top:-120px;left:-140px" aria-hidden="true"></div>
+  <div class="orb orb-blue" style="top:20%;right:-160px" aria-hidden="true"></div>
+  <div class="orb orb-amber" style="bottom:-80px;left:38%" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="hero-badge reveal"><span class="dot" aria-hidden="true"></span> Growth systems for founder-led companies</p>
+    <h1 class="reveal" data-delay="1">Your business outgrew<br>its systems. <span class="grad-text">We fix that.</span></h1>
+    <p class="hero-sub reveal" data-delay="2">SWG diagnoses the bottleneck holding back founder-led companies at $1M+, then builds everything the fix requires — website, CRM, AI workflows, marketing, reporting — connected to one strategy.</p>
+    <div class="hero-actions reveal" data-delay="3">
+      <a class="btn btn-primary" href="../assessment.html">Take the Assessment</a>
+      <a class="btn btn-ghost" href="#" aria-label="Watch demo (coming soon)">
+        <span class="play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        Watch Demo
+      </a>
+    </div>
+    <div class="hero-stats reveal" data-delay="4">
+      <div class="stat"><div class="stat-num"><span class="count" data-target="29">0</span>+</div><div class="stat-label">Industries served</div></div>
+      <div class="stat"><div class="stat-num"><span class="count" data-target="117">0</span>+</div><div class="stat-label">Projects delivered</div></div>
+      <div class="stat"><div class="stat-num"><span class="count" data-target="94">0</span>%</div><div class="stat-label">Client retention</div></div>
+      <div class="stat"><div class="stat-num"><span class="count" data-target="6">0</span>x</div><div class="stat-label">Average ROI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF MARQUEE ============ -->
+<section class="marquee-section" aria-label="Industries we work in">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="tag-pill"><span aria-hidden="true"></span>Health &amp; Wellness</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>SaaS</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>Construction</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>E-commerce</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>Professional Services</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>Real Estate</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>Manufacturing</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>Home Services</span>
+    <span class="tag-pill"><span aria-hidden="true"></span>Agencies</span>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS (BENTO) ============ -->
+<section class="section section-full" id="problems" aria-labelledby="problems-h">
+  <div class="orb orb-violet" style="top:10%;right:-200px;opacity:.35" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">Problems we solve</p>
+    <h2 class="h2 reveal" id="problems-h">Growth stalls for a reason.<br><span class="grad-text">Usually one of these six.</span></h2>
+    <p class="section-sub reveal" data-delay="1">Every engagement starts with a diagnosis — but after 117+ projects, the bottlenecks rhyme.</p>
+    <div class="bento">
+      <article class="bento-card span-4 reveal">
+        <div class="bento-glow" aria-hidden="true"></div>
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/><path d="M12 12v9"/></svg></div>
+        <h3>The founder is the bottleneck</h3>
+        <p>Every sale, every decision, every fire runs through you. The business can't grow past your calendar — 60-hour weeks with no leverage. We build systems that let the company perform without you standing in every room.</p>
+      </article>
+      <article class="bento-card span-2 reveal" data-delay="1">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-7"/></svg></div>
+        <h3>No inbound pipeline</h3>
+        <p>Revenue depends on referrals and the founder's network. Nothing predictable feeds the top of the funnel.</p>
+      </article>
+      <article class="bento-card span-2 reveal">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9.5"/></svg></div>
+        <h3>Wasted ad spend</h3>
+        <p>Money going into channels with no tracking, no strategy, and no idea what's actually converting.</p>
+      </article>
+      <article class="bento-card span-2 reveal" data-delay="1">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Slow lead response</h3>
+        <p>Leads sit for hours — or days — while competitors answer in minutes. Speed-to-lead is revenue.</p>
+      </article>
+      <article class="bento-card span-2 reveal" data-delay="2">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="15" width="7" height="7" rx="1.5"/><rect x="14" y="15" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Disconnected tools</h3>
+        <p>Website, CRM, email, and ads all live in silos. Data doesn't flow, so nothing compounds.</p>
+      </article>
+      <article class="bento-card span-3 reveal">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V4M16 19v-8M21 19H3"/></svg></div>
+        <h3>Flying blind on numbers</h3>
+        <p>No dashboard, no unified reporting, decisions made on gut feel. You can't fix what you can't see — we make every dollar traceable.</p>
+      </article>
+      <article class="bento-card span-3 reveal" data-delay="1">
+        <div class="bento-glow" aria-hidden="true"></div>
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L19 9.5l-4.1 1.9L12 16l-1.9-4.6L6 9.5l5.1-1.9z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></div>
+        <h3>Missing the AI advantage</h3>
+        <p>Competitors are automating support, follow-up, and content while your team does it all by hand. We implement AI workflows that pay for themselves in weeks.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section section-full" id="process" aria-labelledby="process-h">
+  <div class="orb orb-blue" style="bottom:0;left:-200px;opacity:.35" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">How we work</p>
+    <h2 class="h2 reveal" id="process-h">One strategy. <span class="grad-text">Four phases.</span></h2>
+    <p class="section-sub reveal" data-delay="1">No retainers for activity. Every phase produces something you keep — and every build traces back to the diagnosis.</p>
+    <div class="process-line reveal" aria-hidden="true"></div>
+    <div class="process-grid">
+      <article class="phase reveal">
+        <span class="phase-num">PHASE 01</span>
+        <div class="phase-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg></div>
+        <h3>Diagnose</h3>
+        <p>We audit the whole operation and find where revenue is actually leaking — not where it feels like it is.</p>
+        <ul>
+          <li>Full funnel &amp; analytics audit</li>
+          <li>Ad account and spend review</li>
+          <li>Ops &amp; founder-time analysis</li>
+          <li>Scored bottleneck report</li>
+        </ul>
+      </article>
+      <article class="phase reveal" data-delay="1">
+        <span class="phase-num">PHASE 02</span>
+        <div class="phase-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>Design</h3>
+        <p>The diagnosis becomes a blueprint: what to build, in what order, and what each piece must return.</p>
+        <ul>
+          <li>Prioritized system roadmap</li>
+          <li>Channel &amp; budget strategy</li>
+          <li>Tech stack architecture</li>
+          <li>KPI targets per system</li>
+        </ul>
+      </article>
+      <article class="phase reveal" data-delay="2">
+        <span class="phase-num">PHASE 03</span>
+        <div class="phase-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0 6 6l-3.2 3.2a4.5 4.5 0 0 1-6-6z" transform="rotate(180 12 12)"/><path d="M7 15l-4 4M14.5 3.5l6 6-9 9-6-6z"/></svg></div>
+        <h3>Build</h3>
+        <p>Our team implements everything — no handoffs to a "partner agency," no half-finished projects.</p>
+        <ul>
+          <li>Website &amp; conversion pages</li>
+          <li>CRM, pipeline &amp; automation</li>
+          <li>Ad campaigns &amp; email flows</li>
+          <li>AI workflows &amp; dashboards</li>
+        </ul>
+      </article>
+      <article class="phase reveal" data-delay="3">
+        <span class="phase-num">PHASE 04</span>
+        <div class="phase-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Support</h3>
+        <p>Systems drift without an owner. We stay on to optimize, report, and train your team to run it.</p>
+        <ul>
+          <li>Weekly performance reporting</li>
+          <li>Ongoing campaign optimization</li>
+          <li>Team training &amp; SOPs</li>
+          <li>Quarterly strategy reviews</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section class="section section-full" id="results" aria-labelledby="results-h">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="orb orb-amber" style="top:5%;right:-120px;opacity:.5" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">Featured results</p>
+    <h2 class="h2 reveal" id="results-h">Real companies. <span class="grad-text">Real numbers.</span></h2>
+    <p class="section-sub reveal" data-delay="1">Five engagements across five industries. Same method: diagnose the bottleneck, build the system, measure everything.</p>
+
+    <div class="case-tabs reveal" role="tablist" aria-label="Case studies">
+      <button class="case-tab" role="tab" id="tab-1" aria-selected="true" aria-controls="case-1">CamoToe</button>
+      <button class="case-tab" role="tab" id="tab-2" aria-selected="false" aria-controls="case-2" tabindex="-1">Meridian Partners</button>
+      <button class="case-tab" role="tab" id="tab-3" aria-selected="false" aria-controls="case-3" tabindex="-1">Vitality Roots</button>
+      <button class="case-tab" role="tab" id="tab-4" aria-selected="false" aria-controls="case-4" tabindex="-1">Apex Mechanical</button>
+      <button class="case-tab" role="tab" id="tab-5" aria-selected="false" aria-controls="case-5" tabindex="-1">Archway Labs</button>
+    </div>
+
+    <!-- Case 1: CamoToe -->
+    <article class="case-panel active" id="case-1" role="tabpanel" aria-labelledby="tab-1">
+      <div class="case-card">
+        <div class="case-head">
+          <div>
+            <span class="case-industry">DTC E-commerce · Men's Personal Care</span>
+            <h3>CamoToe</h3>
+            <p class="case-meta">Pre-revenue to early-stage ($0–500K) · 4+ months, ongoing</p>
+          </div>
+          <div class="case-metric">
+            <div class="big">3.95%</div>
+            <div class="cap">CTR on Meta ads in the first 72 hours — vs. a 1–2% industry average</div>
+          </div>
+        </div>
+        <p class="case-situation">A DTC men's cosmetic brand selling matte toenail concealer through Shopify. No ad infrastructure, no email program, no conversion-optimized site — starting from zero.</p>
+        <div class="case-highlights">
+          <div class="hl"><b>6.34%</b><span>CTR on top ad at $0.58 CPC</span></div>
+          <div class="hl"><b>$1.49</b><span>Avg CPC across all ad sets</span></div>
+          <div class="hl"><b>201</b><span>Link clicks in 3 days (9,117 impressions)</span></div>
+        </div>
+        <details class="case-details">
+          <summary><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>Full results</summary>
+          <ul>
+            <li>3.95% CTR on Meta ads in first 72 hours (industry avg 1–2%)</li>
+            <li>Top ad: 6.34% CTR at $0.58 CPC</li>
+            <li>$1.49 avg CPC across all ad sets</li>
+            <li>9,117 impressions and 201 link clicks in 3 days</li>
+            <li>Zero compliance violations remaining</li>
+            <li>Complete ad infrastructure built from zero</li>
+          </ul>
+        </details>
+      </div>
+    </article>
+
+    <!-- Case 2: Meridian -->
+    <article class="case-panel" id="case-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+      <div class="case-card">
+        <div class="case-head">
+          <div>
+            <span class="case-industry">B2B Professional Services · Management Consulting</span>
+            <h3>Meridian Partners</h3>
+            <p class="case-meta">$3M annual revenue · 6-month engagement</p>
+          </div>
+          <div class="case-metric">
+            <div class="big">5.5x</div>
+            <div class="cap">Inbound leads — from 2/month to 11/month in 4 months</div>
+          </div>
+        </div>
+        <p class="case-situation">A 12-person firm where the 2 founding partners personally generated 90% of new business. No inbound pipeline, no CRM — growth capped at the partners' calendars.</p>
+        <div class="case-highlights">
+          <div class="hl"><b>$480K</b><span>New ARR within the engagement</span></div>
+          <div class="hl"><b>29 days</b><span>Time-to-close, down from 47</span></div>
+          <div class="hl"><b>6 hrs/wk</b><span>Founder BD time, down from 15</span></div>
+        </div>
+        <details class="case-details">
+          <summary><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>Full results</summary>
+          <ul>
+            <li>Inbound leads: 2/month → 11/month in 4 months</li>
+            <li>Junior consultants sourced 3 deals ($340K combined)</li>
+            <li>Time-to-close: 47 days → 29 days</li>
+            <li>Contact form submissions up 6x</li>
+            <li>Founders' BD time: 15 hrs/week → 6 hrs/week</li>
+            <li>$480K new ARR within the engagement</li>
+          </ul>
+        </details>
+        <blockquote class="case-quote">"We came in thinking we needed a new website. What we actually needed was a system that let our team sell without us standing in every room."</blockquote>
+      </div>
+    </article>
+
+    <!-- Case 3: Vitality Roots -->
+    <article class="case-panel" id="case-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+      <div class="case-card">
+        <div class="case-head">
+          <div>
+            <span class="case-industry">Health &amp; Wellness · DTC Supplements</span>
+            <h3>Vitality Roots</h3>
+            <p class="case-meta">$1.2M annual revenue · 4-month engagement</p>
+          </div>
+          <div class="case-metric">
+            <div class="big">3.4x</div>
+            <div class="cap">Meta ROAS, up from 1.8x — on the same ad spend</div>
+          </div>
+        </div>
+        <p class="case-situation">A plant-based supplement brand with a founder working 60+ hours a week — all of it in operations, none of it on growth.</p>
+        <div class="case-highlights">
+          <div class="hl"><b>38 hrs</b><span>Founder work week, down from 62</span></div>
+          <div class="hl"><b>+74%</b><span>Email revenue ($8,200 → $14,300/mo)</span></div>
+          <div class="hl"><b>45 min</b><span>Customer service response, down from 14 hrs</span></div>
+        </div>
+        <details class="case-details">
+          <summary><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>Full results</summary>
+          <ul>
+            <li>Founder hours: 62/week → 38/week</li>
+            <li>Customer service response: 14 hours → 45 minutes</li>
+            <li>Email revenue up 74% ($8,200 → $14,300/month)</li>
+            <li>Meta ROAS: 1.8x → 3.4x on the same spend</li>
+            <li>Repeat purchase rate: 14% → 22%</li>
+            <li>Subscribe &amp; Save adoption: 3% → 11%</li>
+          </ul>
+        </details>
+        <blockquote class="case-quote">"SWG gave me 20 hours of my week back and showed me exactly where every dollar was going."</blockquote>
+      </div>
+    </article>
+
+    <!-- Case 4: Apex Mechanical -->
+    <article class="case-panel" id="case-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+      <div class="case-card">
+        <div class="case-head">
+          <div>
+            <span class="case-industry">Home Services · HVAC &amp; Plumbing, 4 Locations</span>
+            <h3>Apex Mechanical</h3>
+            <p class="case-meta">$5.8M annual revenue · 5-month engagement</p>
+          </div>
+          <div class="case-metric">
+            <div class="big">18 min</div>
+            <div class="cap">Lead response time — down from 4.2 hours</div>
+          </div>
+        </div>
+        <p class="case-situation">Four locations, each with different websites and its own way of handling leads. No unified view of the business — four companies pretending to be one.</p>
+        <div class="case-highlights">
+          <div class="hl"><b>48%</b><span>Close rate, up from 34%</span></div>
+          <div class="hl"><b>+31%</b><span>Lead volume in 90 days</span></div>
+          <div class="hl"><b>$1,400/mo</b><span>Saved by fixing misconfigured ads</span></div>
+        </div>
+        <details class="case-details">
+          <summary><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>Full results</summary>
+          <ul>
+            <li>Lead response time: 4.2 hours → 18 minutes</li>
+            <li>Saved $1,400/month by fixing misconfigured ads</li>
+            <li>Lead volume up 31% in 90 days</li>
+            <li>Close rate: 34% → 48%</li>
+            <li>Google reviews: 187 → 340 in 4 months</li>
+          </ul>
+        </details>
+        <blockquote class="case-quote">"I had four businesses pretending to be one company. Now I actually have one company with four locations."</blockquote>
+      </div>
+    </article>
+
+    <!-- Case 5: Archway Labs -->
+    <article class="case-panel" id="case-5" role="tabpanel" aria-labelledby="tab-5" hidden>
+      <div class="case-card">
+        <div class="case-head">
+          <div>
+            <span class="case-industry">B2B SaaS · Construction Project Management</span>
+            <h3>Archway Labs</h3>
+            <p class="case-meta">$800K ARR · 3-month engagement</p>
+          </div>
+          <div class="case-metric">
+            <div class="big">$187</div>
+            <div class="cap">Cost per trial signup — down from $2,652</div>
+          </div>
+        </div>
+        <p class="case-situation">After $42,500 in agency fees and $61,000 in ad spend, they had 23 trial signups and zero converted customers. The funnel wasn't underperforming — it was pointed at the wrong people.</p>
+        <div class="case-highlights">
+          <div class="hl"><b>19%</b><span>Trial-to-paid conversion, up from 4%</span></div>
+          <div class="hl"><b>34</b><span>Qualified signups in 60 days on $4,200/mo</span></div>
+          <div class="hl"><b>$86K</b><span>New ARR (6 conversions at $14,400 each)</span></div>
+        </div>
+        <details class="case-details">
+          <summary><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>Full results</summary>
+          <ul>
+            <li>Cost per trial: $2,652 → $187</li>
+            <li>34 qualified signups in 60 days on $4,200/month spend</li>
+            <li>6 conversions at $14,400 ARR each</li>
+            <li>LinkedIn: 18 demos booked at $94 CPL</li>
+            <li>Trial-to-paid conversion: 4% → 19%</li>
+          </ul>
+        </details>
+        <blockquote class="case-quote">"The previous agency had 847 keywords and zero customers. SWG cut it to 57 and we got more signups in two months than we got in five."</blockquote>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section section-full" id="services" aria-labelledby="services-h">
+  <div class="orb orb-violet" style="bottom:-100px;right:-180px;opacity:.3" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">What we build</p>
+    <h2 class="h2 reveal" id="services-h">Every system your growth needs.<br><span class="grad-text">One connected strategy.</span></h2>
+    <p class="section-sub reveal" data-delay="1">We don't sell channels. The diagnosis decides which of these get built — and they all report to the same scoreboard.</p>
+    <div class="services-grid">
+      <article class="service reveal">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg></div>
+        <h3>Strategy</h3>
+        <ul>
+          <li>Growth bottleneck diagnosis</li>
+          <li>Positioning &amp; offer architecture</li>
+          <li>Prioritized 90-day roadmaps</li>
+          <li>Budget &amp; channel allocation</li>
+        </ul>
+      </article>
+      <article class="service reveal" data-delay="1">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.01a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.01a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg></div>
+        <h3>Operations</h3>
+        <ul>
+          <li>CRM setup &amp; pipeline design</li>
+          <li>Lead routing &amp; follow-up automation</li>
+          <li>SOPs &amp; team workflows</li>
+          <li>Founder time reclamation</li>
+        </ul>
+      </article>
+      <article class="service reveal" data-delay="2">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Technology</h3>
+        <ul>
+          <li>Conversion-optimized websites</li>
+          <li>E-commerce &amp; landing pages</li>
+          <li>Integrations across your stack</li>
+          <li>Tracking &amp; attribution setup</li>
+        </ul>
+      </article>
+      <article class="service reveal">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l17-6v14L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <h3>Marketing</h3>
+        <ul>
+          <li>Meta &amp; Google ad campaigns</li>
+          <li>Email flows &amp; campaigns</li>
+          <li>SEO &amp; content systems</li>
+          <li>Creative testing frameworks</li>
+        </ul>
+      </article>
+      <article class="service reveal" data-delay="1">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M8 4h8"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/><path d="M9 17h6"/></svg></div>
+        <h3>AI Implementation</h3>
+        <ul>
+          <li>Customer service automation</li>
+          <li>AI-assisted content pipelines</li>
+          <li>Lead qualification workflows</li>
+          <li>Internal copilots &amp; agents</li>
+        </ul>
+      </article>
+      <article class="service reveal" data-delay="2">
+        <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 16v-5M12 16V8M16 16v-3"/></svg></div>
+        <h3>Reporting</h3>
+        <ul>
+          <li>Unified KPI dashboards</li>
+          <li>Weekly performance reports</li>
+          <li>Full-funnel attribution</li>
+          <li>ROI tracking per system</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" id="testimonials" aria-labelledby="testimonials-h">
+  <div class="wrap">
+    <p class="eyebrow reveal">What clients say</p>
+    <h2 class="h2 reveal" id="testimonials-h">In their <span class="grad-text">own words.</span></h2>
+    <p class="section-sub reveal" data-delay="1">Pulled directly from the case studies above.</p>
+    <div class="testi-grid">
+      <figure class="testi wide reveal">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <blockquote>We came in thinking we needed a new website. What we actually needed was a system that let our team sell without us standing in every room.</blockquote>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">MP</span>
+          <span class="who"><b>Founding Partner</b><span>Meridian Partners · Management Consulting</span></span>
+        </figcaption>
+      </figure>
+      <figure class="testi reveal" data-delay="1">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <blockquote>SWG gave me 20 hours of my week back and showed me exactly where every dollar was going.</blockquote>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">VR</span>
+          <span class="who"><b>Founder</b><span>Vitality Roots · Wellness DTC</span></span>
+        </figcaption>
+      </figure>
+      <figure class="testi reveal" data-delay="2">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <blockquote>I had four businesses pretending to be one company. Now I actually have one company with four locations.</blockquote>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">AM</span>
+          <span class="who"><b>Owner</b><span>Apex Mechanical · HVAC &amp; Plumbing</span></span>
+        </figcaption>
+      </figure>
+      <figure class="testi wide reveal">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <blockquote>The previous agency had 847 keywords and zero customers. SWG cut it to 57 and we got more signups in two months than we got in five.</blockquote>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">AL</span>
+          <span class="who"><b>CEO</b><span>Archway Labs · B2B SaaS</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" aria-labelledby="faq-h">
+  <div class="orb orb-blue" style="top:20%;left:-200px;opacity:.3" aria-hidden="true"></div>
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="eyebrow reveal" style="justify-content:center">FAQ</p>
+      <h2 class="h2 reveal" id="faq-h">Questions, <span class="grad-text">answered.</span></h2>
+      <p class="section-sub reveal" data-delay="1" style="margin-left:auto;margin-right:auto">Everything founders usually ask before booking a review.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Who is SWG for?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+          <p>Founder-led companies doing $1M+ in annual revenue where the founder is still the bottleneck — in sales, operations, marketing, or all three. We work across 29+ industries including health &amp; wellness, professional services, real estate, e-commerce, SaaS, agencies, home services, construction, and manufacturing.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="1">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">How are you different from a marketing agency?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+          <p>Agencies sell channels — ads, SEO, email. We diagnose first, then build only the systems the diagnosis calls for, all connected to one strategy. Sometimes that means ads. Often it means fixing the CRM, the follow-up, or the reporting before spending another dollar on traffic.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="2">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">What does an engagement look like?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+          <p>Four phases: Diagnose (2–3 weeks of audits and data review), Design (a prioritized system blueprint), Build (we implement the website, CRM, automations, campaigns, and dashboards), and Support (ongoing optimization and reporting). Most engagements run 3–6 months.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="3">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">How fast will we see results?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+          <p>Operational wins — faster lead response, cleaner pipeline, recovered ad waste — typically land in the first 30–45 days. Revenue results compound after that: our clients average 6x return on the engagement, with measurable movement inside 90 days.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="4">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Do we need to replace our existing tools?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+          <p>Rarely. We build on what you have where it works — Shopify, HubSpot, Klaviyo, QuickBooks, Google Workspace — and only replace tools that are actively costing you money. The goal is one connected system, not a new software bill.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="5">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">How do we get started?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+          <p>Take the free growth assessment. It takes about five minutes, and you'll get a scored snapshot of where your business is leaking revenue. From there we book a review call to walk through the findings — no obligation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section" id="assessment" aria-labelledby="cta-h">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal" style="justify-content:center">Free growth assessment</p>
+    <h2 class="reveal" id="cta-h">Find out where your business is <span class="grad-text">leaking revenue.</span></h2>
+    <p class="reveal" data-delay="1">Five minutes. A scored snapshot of your growth systems. And a clear picture of the one bottleneck worth fixing first.</p>
+    <div class="reveal" data-delay="2">
+      <a class="btn btn-primary" href="../assessment.html" style="min-height:58px;padding:0 40px;font-size:17px">Take the Assessment</a>
+    </div>
+    <p class="cta-note reveal" data-delay="3">Prefer to talk first? Email <a href="mailto:dean@supportwellnessglobal.com">dean@supportwellnessglobal.com</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <p><strong style="color:var(--muted);font-family:var(--font-head)">SWG</strong> &nbsp;·&nbsp; Support Wellness Global — growth systems for founder-led companies.</p>
+    <a href="mailto:dean@supportwellnessglobal.com">dean@supportwellnessglobal.com</a>
+    <p>&copy; 2026 Support Wellness Global. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Nav glass on scroll + progress bar ---- */
+  var nav = document.getElementById("nav");
+  var progress = document.querySelector(".progress");
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    nav.classList.toggle("scrolled", y > 24);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  /* ---- Cursor follower (desktop, fine pointer only) ---- */
+  if (window.matchMedia("(hover:hover) and (pointer:fine)").matches && !reduceMotion){
+    var dot = document.querySelector(".cursor-dot");
+    var ring = document.querySelector(".cursor-ring");
+    var mx = -100, my = -100, rx = -100, ry = -100;
+    document.addEventListener("mousemove", function(e){
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = "translate(" + (mx-4) + "px," + (my-4) + "px)";
+    }, {passive:true});
+    (function loop(){
+      rx += (mx - rx) * 0.16;
+      ry += (my - ry) * 0.16;
+      ring.style.transform = "translate(" + (rx-17) + "px," + (ry-17) + "px)";
+      requestAnimationFrame(loop);
+    })();
+    document.addEventListener("mouseover", function(e){
+      var t = e.target.closest("a,button,summary,.case-tab");
+      ring.classList.toggle("is-hover", !!t);
+    }, {passive:true});
+  } else {
+    var cd = document.querySelector(".cursor-dot");
+    var cr = document.querySelector(".cursor-ring");
+    if (cd) cd.style.display = "none";
+    if (cr) cr.style.display = "none";
+  }
+
+  /* ---- Scroll reveals ---- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold: 0.12, rootMargin: "0px 0px -40px 0px"});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---- Animated stat counters ---- */
+  var counted = false;
+  function runCounters(){
+    if (counted) return;
+    counted = true;
+    document.querySelectorAll(".count").forEach(function(el){
+      var target = parseInt(el.getAttribute("data-target"), 10);
+      if (reduceMotion){ el.textContent = target; return; }
+      var dur = 1400, start = null;
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var statsBox = document.querySelector(".hero-stats");
+  if (statsBox && "IntersectionObserver" in window){
+    var sio = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting){ runCounters(); sio.disconnect(); }
+    }, {threshold: 0.3});
+    sio.observe(statsBox);
+  } else {
+    runCounters();
+  }
+
+  /* ---- Marquee: duplicate track for seamless loop ---- */
+  var track = document.getElementById("marqueeTrack");
+  if (track){
+    track.innerHTML += track.innerHTML;
+    track.setAttribute("aria-hidden", "false");
+  }
+
+  /* ---- Case study tabs ---- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".case-tab"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".case-panel"));
+  function selectTab(tab){
+    tabs.forEach(function(t){
+      var active = t === tab;
+      t.setAttribute("aria-selected", active ? "true" : "false");
+      t.tabIndex = active ? 0 : -1;
+    });
+    panels.forEach(function(p){
+      var active = p.id === tab.getAttribute("aria-controls");
+      p.classList.toggle("active", active);
+      if (active) p.removeAttribute("hidden"); else p.setAttribute("hidden", "");
+    });
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener("click", function(){ selectTab(tab); });
+    tab.addEventListener("keydown", function(e){
+      var idx = -1;
+      if (e.key === "ArrowRight") idx = (i + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") idx = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === "Home") idx = 0;
+      else if (e.key === "End") idx = tabs.length - 1;
+      if (idx > -1){ e.preventDefault(); tabs[idx].focus(); selectTab(tabs[idx]); }
+    });
+  });
+
+  /* ---- FAQ accordion (smooth height) ---- */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    var btn = item.querySelector(".faq-q");
+    var panel = item.querySelector(".faq-a");
+    btn.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      // close others
+      document.querySelectorAll(".faq-item.open").forEach(function(other){
+        if (other !== item){
+          other.classList.remove("open");
+          other.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+          other.querySelector(".faq-a").style.maxHeight = "0px";
+        }
+      });
+      if (isOpen){
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        panel.style.maxHeight = "0px";
+      } else {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  });
+  window.addEventListener("resize", function(){
+    document.querySelectorAll(".faq-item.open .faq-a").forEach(function(p){
+      p.style.maxHeight = p.scrollHeight + "px";
+    });
+  }, {passive:true});
+
+  /* ---- Subtle parallax on orbs ---- */
+  if (!reduceMotion){
+    var orbs = document.querySelectorAll(".orb");
+    window.addEventListener("scroll", function(){
+      var y = window.scrollY;
+      orbs.forEach(function(orb, i){
+        var speed = 0.03 + (i % 3) * 0.02;
+        orb.style.marginTop = (y * speed * (i % 2 === 0 ? -1 : 1)) + "px";
+      });
+    }, {passive:true});
+  }
+})();
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 <meta name="robots" content="index, follow">
 <title>Business Growth Consulting &amp; Strategy | SWG &mdash; Support Wellness Global</title>
 <meta name="description" content="SWG is a business consulting firm for founder-led companies with $1M+ revenue. We diagnose growth bottlenecks, then build the systems — website, CRM, AI workflows, marketing, and reporting — connected to one strategy.">
-<link rel="canonical" href="https://supportwellnessglobal.com/">
+<link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Growth Consulting &amp; Strategy | SWG">
 <meta property="og:description" content="We solve the business problems behind growth. Strategy, operations, technology, and marketing support for founder-led companies.">
@@ -535,35 +535,138 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 .field-invalid{outline:2px solid #EF4444 !important;outline-offset:1px}
 .modal-step-btn{position:relative}
 .modal-step-btn.locked:hover::after{content:attr(data-tooltip);position:absolute;left:105%;top:50%;transform:translateY(-50%);background:rgba(17,24,39,0.95);color:#fff;padding:4px 10px;border-radius:6px;font-size:11px;white-space:nowrap;pointer-events:none;z-index:10}
+
+/* ━━ VERSION BAR (standardized) ━━ */
+
+.version-bar{
+  width:100%;
+  background:rgba(15,23,42,0.97);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:2px 0;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1001;
+}
+.vb-right{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px 6px 0;
+}
+.version-bar .vb-label{
+  font-size:9px;font-weight:700;
+  color:rgba(245,245,244,0.35);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-right:6px;
+  font-family:system-ui,sans-serif;
+}
+.version-bar a{
+  width:28px;height:24px;
+  border-radius:5px;
+  display:inline-flex;
+  align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;
+  font-family:system-ui,sans-serif;
+  text-decoration:none;
+  background:rgba(245,245,244,0.06);
+  color:rgba(245,245,244,0.4);
+  transition:background 0.2s,color 0.2s;
+}
+.version-bar a:hover{background:rgba(245,245,244,0.12);color:rgba(245,245,244,0.7)}
+.version-bar a.active{background:#3B82F6;color:#fff}
+@media(max-width:480px){
+  .version-bar{padding:2px 4px;gap:2px;flex-wrap:nowrap}
+  .vb-right{gap:3px;padding:4px 4px 4px 0}
+  .version-bar .vb-label{display:none}
+  .version-bar a{width:24px;height:22px;font-size:10px;border-radius:4px}
+}
+
+/* ━━ CASE STUDIES (injected) ━━ */
+.cs-section{padding:80px 0;position:relative;background:#111827;color:#f5f5f4}
+@media(min-width:768px){.cs-section{padding:120px 0}}
+.cs-section .cs-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.cs-section .cs-wrap{padding:0 48px}}
+.cs-header{text-align:center;max-width:640px;margin:0 auto 48px}
+.cs-header .cs-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;color:#60A5FA}
+.cs-header h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:12px;letter-spacing:-0.03em;color:#f5f5f4}
+.cs-header p{font-size:1rem;opacity:0.65;line-height:1.7;color:#d4d4d8}
+.cs-grid{display:flex;flex-direction:column;gap:16px}
+.cs-card{border-radius:14px;padding:28px 24px;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s;cursor:pointer;position:relative;overflow:hidden}
+@media(min-width:768px){.cs-card{padding:32px 28px}}
+.cs-card:hover{transform:translateY(-4px)}
+.cs-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.cs-card-top h3{font-size:1.15rem;font-weight:700;margin:0}
+.cs-industry{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:4px 12px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.cs-situation{font-size:0.9rem;line-height:1.7;opacity:0.7;margin-bottom:12px}
+.cs-metrics{display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(128,128,128,0.15)}
+.cs-card.open .cs-metrics{display:block}
+.cs-metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.cs-metrics-grid{grid-template-columns:repeat(3,1fr)}}
+.cs-metric{padding:12px;border-radius:8px;text-align:center}
+.cs-metric .cs-val{font-size:1.3rem;font-weight:800;line-height:1.2}
+.cs-metric .cs-lab{font-size:10px;text-transform:uppercase;letter-spacing:0.04em;opacity:0.6;margin-top:2px}
+.cs-quote{margin-top:14px;padding:14px 18px;border-radius:10px;font-style:italic;font-size:0.88rem;line-height:1.7;opacity:0.8}
+.cs-toggle{font-size:12px;font-weight:600;opacity:0.5;margin-top:8px;display:inline-block}
+.cs-card.open .cs-toggle .cs-show{display:none}
+.cs-card:not(.open) .cs-toggle .cs-hide{display:none}
+
+.cs-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1)}
+.cs-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+.cs-industry{background:rgba(59,130,246,0.15);color:#60A5FA}
+.cs-metric{background:rgba(255,255,255,0.05)}
+.cs-metric .cs-val{color:#3B82F6}
+.cs-quote{background:rgba(0,0,0,0.03);border-left:3px solid rgba(59,130,246,0.3)}
+
 </style>
 </head>
 <body>
 
-<div style="position:fixed;top:0;left:0;right:0;z-index:1001;width:100%;background:rgba(10,10,10,0.97);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0;font-family:sans-serif"><span style="font-size:9px;font-weight:700;color:rgba(250,250,247,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-right:6px">Version</span><a href="v1.html" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:#3B82F6;color:#fff;text-decoration:none">1</a><a href="v2/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">2</a><a href="v3/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">3</a><a href="v4/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">4</a><a href="v5/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">5</a><a href="v6/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">6</a><a href="v7/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">7</a><a href="v8/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">8</a><a href="v1a/" style="width:28px;height:24px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;background:rgba(250,250,247,0.08);color:rgba(250,250,247,0.45);text-decoration:none">1a</a></div>
+<div class="version-bar" id="versionBar">
+  <div class="vb-right">
+    <span class="vb-label">Version</span>
+    <a href="./v1.html">1</a>
+    <a href="./v1a/" style="font-size:9px">1a</a>
+    <a href="./v2/">2</a>
+    <a href="./v3/">3</a>
+    <a href="./v4/">4</a>
+    <a href="./v5/">5</a>
+    <a href="./v6/">6</a>
+    <a href="./v7/">7</a>
+    <a href="./v8/">8</a>
+    <a href="./" class="active">9</a>
+    <a href="./v10/">10</a>
+    <a href="./v11/">11</a>
+  </div>
+</div>
+
+<!-- old inline version bar removed -->
 <a href="#main" class="skip-link" style="position:absolute;top:-100px;left:0;padding:12px 24px;background:var(--accent);color:#fff;font-weight:700;z-index:9999;border-radius:0 0 8px 0;transition:top 0.3s" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Skip to content</a>
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="glow" id="glow"></div>
 
 <header>
-<div class="announce">Now accepting Q3 2026 clients<a href="#" onclick="openModal();return false">Book your review &rarr;</a></div>
+<div class="announce">Now accepting Q3 2026 clients<a href="assessment.html" onclick="openModal();return false">Book your review &rarr;</a></div>
 
 <nav class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="logo"><div class="logo-mark">SWG</div><span class="logo-text">Support Wellness Global</span></a>
-    <div class="nav-links"><a href="#problems">Problems</a><a href="#process">Process</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#" onclick="openModal();return false">Assessment</a></div>
-    <a href="#" onclick="openModal();return false" class="btn btn-gold nav-cta"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="nav-links"><a href="#problems">Problems</a><a href="#process">Process</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="assessment.html" onclick="openModal();return false">Assessment</a></div>
+    <a href="assessment.html" onclick="openModal();return false" class="btn btn-gold nav-cta"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#problems" onclick="closeMobile()">Problems</a><a href="#process" onclick="closeMobile()">Process</a><a href="#services" onclick="closeMobile()">Services</a><a href="#pricing" onclick="closeMobile()">Pricing</a><a href="#" onclick="closeMobile();openModal();return false">Assessment</a>
-  <a href="#" onclick="closeMobile();openModal();return false" class="btn btn-gold"><span>Start the review</span></a>
+  <a href="#problems" onclick="closeMobile()">Problems</a><a href="#process" onclick="closeMobile()">Process</a><a href="#services" onclick="closeMobile()">Services</a><a href="#pricing" onclick="closeMobile()">Pricing</a><a href="assessment.html" onclick="closeMobile();openModal();return false">Assessment</a>
+  <a href="assessment.html" onclick="closeMobile();openModal();return false" class="btn btn-gold"><span>Start the review</span></a>
 </div>
 
 <main id="main">
 <section class="hero" id="hero">
-  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop" alt="" loading="eager"></div>
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop" alt="" role="presentation" loading="eager"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
   <div class="hero-inner"><div class="wrap">
@@ -573,7 +676,7 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
         <h1 id="heroTitle">We solve the business problems behind <span class="gold">growth.</span></h1>
         <p class="body-lg">SWG comes in when paid media is not converting, teams are still working manually, and the website, CRM, AI tools, and reporting are not connected to one strategy.</p>
         <div class="hero-buttons">
-          <a href="#" onclick="openModal();return false" class="btn btn-gold magnetic"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="assessment.html" onclick="openModal();return false" class="btn btn-gold magnetic"><span>Start the review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="#pricing" class="btn btn-outline-light"><span>See engagement paths</span></a>
         </div>
       </div>
@@ -621,7 +724,7 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
 </section>
 
 <section class="showcase">
-  <div class="showcase-bg"><img src="https://images.unsplash.com/photo-1545987796-200677ee1011?w=1920&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="showcase-bg"><img src="https://images.unsplash.com/photo-1545987796-200677ee1011?w=1920&q=80&auto=format&fit=crop" alt="" role="presentation" loading="lazy"></div>
   <div class="wrap"><div class="showcase-grid">
     <div class="showcase-text r"><div class="eyebrow">Connected systems</div><h2>Your website, CRM, ads, AI, and reporting — working as <span style="color:var(--accent)">one system.</span></h2><p class="body-lg">Most companies buy tools. We connect them to strategy, then connect them to each other.</p>
       <div class="showcase-metrics"><div class="showcase-metric"><span class="num" data-target="7" data-suffix="">0</span><span class="label">Avg systems connected</span></div><div class="showcase-metric"><span class="num" data-target="40" data-suffix="%">0</span><span class="label">Less manual work</span></div><div class="showcase-metric"><span class="num" data-target="3" data-suffix="x">0</span><span class="label">Faster reporting</span></div><div class="showcase-metric"><span class="num" data-target="100" data-suffix="%">0</span><span class="label">Visibility</span></div></div>
@@ -717,13 +820,13 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
       <div class="leak-card r d4"><h4>Tech exists, but it is not connected to strategy.</h4><p>The website, CRM, AI tools, dashboards, and ad platforms were added over time without supporting the growth plan.</p></div>
       <div class="leak-card r d5"><h4>Leads leak between people and tools.</h4><p>A form, call, ad click, or campaign reply comes in, and the next step depends on memory instead of a clean route.</p></div>
       <div class="leak-card r d6"><h4>Reporting creates more questions.</h4><p>The numbers exist, but leadership still cannot see what to fix next, what to stop, or where spend is working.</p></div>
-      <div class="rescue r"><div class="dots"></div><div><div class="eyebrow">Rescue mode</div><h3>The last tech build needs a rescue.</h3></div><div><p>If five or six figures went into a website, app, CRM, or automation build and the result is not usable, SWG diagnoses what failed and salvages what can still work.</p><a href="#" onclick="openModal();return false" class="btn btn-gold"><span>Talk to us</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></div>
+      <div class="rescue r"><div class="dots"></div><div><div class="eyebrow">Rescue mode</div><h3>The last tech build needs a rescue.</h3></div><div><p>If five or six figures went into a website, app, CRM, or automation build and the result is not usable, SWG diagnoses what failed and salvages what can still work.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-gold"><span>Talk to us</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></div>
     </div>
   </div>
 </section>
 
 <section class="services sec sec-dark" id="services">
-  <div class="services-bg"><img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1920&q=60&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="services-bg"><img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1920&q=60&auto=format&fit=crop" alt="" role="presentation" loading="lazy"></div>
   <div class="dots" style="position:absolute;inset:0"></div>
   <div class="wrap">
     <div class="services-header"><div class="eyebrow r">What we build</div><h2 class="r d1">Every service is connected to strategy, not sold in <span style="color:var(--accent)">isolation.</span></h2><p class="body-lg r d2">The build follows the diagnosis. Each service supports the growth plan.</p></div>
@@ -750,6 +853,121 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
   </div>
 </section>
 
+
+
+<!-- ━━ CASE STUDIES (injected) ━━ -->
+<section class="cs-section" id="case-studies">
+  <div class="cs-wrap">
+    <div class="cs-header">
+      <div class="cs-eyebrow">Proof of Work</div>
+      <h2>Real results from real engagements.</h2>
+      <p>Not hypotheticals. These are measured outcomes from systems we built and deployed.</p>
+    </div>
+    <div class="cs-grid">
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>CamoToe &mdash; DTC Men&rsquo;s Grooming</h3>
+          <span class="cs-industry">E-commerce &bull; Pre-revenue</span>
+        </div>
+        <p class="cs-situation">A DTC men&rsquo;s cosmetic brand selling matte toenail concealer through Shopify. No ad infrastructure, no email program, no conversion-optimized site. We had to go from &ldquo;store exists&rdquo; to &ldquo;customers are buying&rdquo; &mdash; starting with a compliance audit that found 30+ drug-claim violations blocking every ad platform.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">3.95%</div><div class="cs-lab">Meta CTR (72hrs)</div></div>
+            <div class="cs-metric"><div class="cs-val">6.34%</div><div class="cs-lab">Top ad CTR</div></div>
+            <div class="cs-metric"><div class="cs-val">$0.58</div><div class="cs-lab">Best CPC</div></div>
+            <div class="cs-metric"><div class="cs-val">$1.49</div><div class="cs-lab">Avg CPC</div></div>
+            <div class="cs-metric"><div class="cs-val">9,117</div><div class="cs-lab">Impressions (3 days)</div></div>
+            <div class="cs-metric"><div class="cs-val">0</div><div class="cs-lab">Compliance violations</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Meridian Partners &mdash; B2B Professional Services</h3>
+          <span class="cs-industry">Consulting &bull; $3M Revenue</span>
+        </div>
+        <p class="cs-situation">A 12-person management consulting firm where two founding partners personally generated 90% of new business. No inbound pipeline, no CRM discipline, and a website that hadn&rsquo;t been updated in three years.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">2&rarr;11</div><div class="cs-lab">Monthly inbound leads</div></div>
+            <div class="cs-metric"><div class="cs-val">$340K</div><div class="cs-lab">Junior-sourced deals</div></div>
+            <div class="cs-metric"><div class="cs-val">47&rarr;29d</div><div class="cs-lab">Time to close</div></div>
+            <div class="cs-metric"><div class="cs-val">6x</div><div class="cs-lab">Form submissions up</div></div>
+            <div class="cs-metric"><div class="cs-val">15&rarr;6h</div><div class="cs-lab">Founder BD/week</div></div>
+            <div class="cs-metric"><div class="cs-val">$480K</div><div class="cs-lab">New ARR added</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;We came in thinking we needed a new website. What we actually needed was a system that let our team sell without us standing in every room.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Vitality Roots &mdash; Health &amp; Wellness DTC</h3>
+          <span class="cs-industry">Supplements &bull; $1.2M Revenue</span>
+        </div>
+        <p class="cs-situation">A plant-based supplement brand with a loyal but small customer base. The founder was working 60+ hours a week on execution with no time to think about growth. Ad account unmonitored, email flows 8 months stale.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">62&rarr;38h</div><div class="cs-lab">Founder hours/week</div></div>
+            <div class="cs-metric"><div class="cs-val">14h&rarr;45m</div><div class="cs-lab">CS response time</div></div>
+            <div class="cs-metric"><div class="cs-val">+74%</div><div class="cs-lab">Email revenue</div></div>
+            <div class="cs-metric"><div class="cs-val">1.8&rarr;3.4x</div><div class="cs-lab">Meta ROAS</div></div>
+            <div class="cs-metric"><div class="cs-val">14&rarr;22%</div><div class="cs-lab">Repeat purchase rate</div></div>
+            <div class="cs-metric"><div class="cs-val">3&rarr;11%</div><div class="cs-lab">Subscribe &amp; Save</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;The last agency gave me dashboards I never looked at. SWG gave me 20 hours of my week back and showed me exactly where every dollar was going.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Apex Mechanical &mdash; Multi-Location Service</h3>
+          <span class="cs-industry">HVAC/Plumbing &bull; $5.8M Revenue</span>
+        </div>
+        <p class="cs-situation">Four HVAC and plumbing locations across Dallas-Fort Worth. Each had its own website, its own lead process (email, whiteboard, partial CRM), and no unified view of profitability or marketing performance.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">4.2h&rarr;18m</div><div class="cs-lab">Lead response time</div></div>
+            <div class="cs-metric"><div class="cs-val">$1,400</div><div class="cs-lab">Monthly waste found</div></div>
+            <div class="cs-metric"><div class="cs-val">+31%</div><div class="cs-lab">Lead volume (90 days)</div></div>
+            <div class="cs-metric"><div class="cs-val">34&rarr;48%</div><div class="cs-lab">Close rate</div></div>
+            <div class="cs-metric"><div class="cs-val">187&rarr;340</div><div class="cs-lab">Google reviews</div></div>
+            <div class="cs-metric"><div class="cs-val">4&rarr;1</div><div class="cs-lab">Unified system</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;I had four businesses pretending to be one company. Now I actually have one company with four locations.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="this.classList.toggle('open')">
+        <div class="cs-card-top">
+          <h3>Archway Labs &mdash; B2B SaaS</h3>
+          <span class="cs-industry">SaaS &bull; $800K ARR</span>
+        </div>
+        <p class="cs-situation">After $42,500 in agency fees and $61,000 in ad spend, the previous agency delivered 23 trial signups and zero paying customers. They blamed &ldquo;long B2B sales cycles&rdquo; and recommended increasing budget. SWG inherited the wreckage.</p>
+        <div class="cs-toggle"><span class="cs-show">Show results &darr;</span><span class="cs-hide">Hide results &uarr;</span></div>
+        <div class="cs-metrics">
+          <div class="cs-metrics-grid">
+            <div class="cs-metric"><div class="cs-val">$2.6K&rarr;$187</div><div class="cs-lab">Cost per trial</div></div>
+            <div class="cs-metric"><div class="cs-val">34</div><div class="cs-lab">Signups in 60 days</div></div>
+            <div class="cs-metric"><div class="cs-val">6</div><div class="cs-lab">Paid conversions</div></div>
+            <div class="cs-metric"><div class="cs-val">$94</div><div class="cs-lab">LinkedIn CPL</div></div>
+            <div class="cs-metric"><div class="cs-val">4&rarr;19%</div><div class="cs-lab">Trial to paid</div></div>
+            <div class="cs-metric"><div class="cs-val">847&rarr;57</div><div class="cs-lab">Keywords (cleaned)</div></div>
+          </div>
+          <div class="cs-quote">&ldquo;The previous agency had 847 keywords and zero customers. SWG cut it to 57 and we got more signups in two months than we got in five.&rdquo;</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="faq sec" id="faq">
   <div class="wrap faq-grid">
     <div class="faq-left r"><div class="eyebrow">FAQ</div><h2>Questions before the first review.</h2><p class="body-lg">We lead with the business problem, then recommend the clearest next step.</p></div>
@@ -768,22 +986,22 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
   <div class="wrap">
     <div class="pricing-header"><div class="eyebrow r">Ways to work together</div><h2 class="r d1">Build only what the business actually <span style="color:var(--accent)">needs.</span></h2><p class="body-lg r d2">SWG diagnoses the business, finds the operating gaps, builds the roadmap, then implements the right systems in the right order.</p></div>
     <div class="price-grid">
-      <div class="price-card r d1"><div class="price-label">Business Review</div><div class="price-amount">$5K &ndash; $10K</div><p class="price-desc">Diagnosis, priorities, roadmap, recommended sequence. The business review is the starting point for every engagement.</p><a href="#" onclick="openModal();return false" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-      <div class="price-card feat r d2"><div class="price-label">Focused Build</div><div class="price-amount">$10K &ndash; $50K+</div><p class="price-desc">Website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch.</p><a href="#" onclick="openModal();return false" class="btn btn-gold"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-      <div class="price-card r d3"><div class="price-label">Ongoing Support</div><div class="price-amount">From $7.5K/mo</div><p class="price-desc">Ongoing execution, reporting, optimization, campaign management, and strategic support.</p><a href="#" onclick="openModal();return false" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="price-card r d1"><div class="price-label">Business Review</div><div class="price-amount">$5K &ndash; $10K</div><p class="price-desc">Diagnosis, priorities, roadmap, recommended sequence. The business review is the starting point for every engagement.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="price-card feat r d2"><div class="price-label">Focused Build</div><div class="price-amount">$10K &ndash; $50K+</div><p class="price-desc">Website, CRM, AI workflows, marketing, paid advertising, social campaigns, AI image generation, reporting, launch.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-gold"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="price-card r d3"><div class="price-label">Ongoing Support</div><div class="price-amount">From $7.5K/mo</div><p class="price-desc">Ongoing execution, reporting, optimization, campaign management, and strategic support.</p><a href="assessment.html" onclick="openModal();return false" class="btn btn-outline"><span>Start Review</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     </div>
     <p class="price-note r">Larger operating-system, company ERP, or custom app builds are scoped separately.</p>
   </div>
 </section>
 
 <section class="cta">
-  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80&auto=format&fit=crop" alt="" role="presentation" loading="lazy"></div>
   <div class="dots"></div>
   <div class="wrap">
     <h2 class="r" style="color:var(--ivory)">Start your <span style="color:var(--accent)">business review.</span></h2>
     <p class="body-lg r d1">Companies usually come to SWG when growth is no longer a marketing problem alone. This assessment takes 8&ndash;10 minutes and helps us understand your company stage, current bottlenecks, and readiness to implement.</p>
     <div class="cta-buttons r d2">
-      <a href="#" onclick="openModal();return false" class="btn btn-gold magnetic"><span>Begin assessment</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="assessment.html" onclick="openModal();return false" class="btn btn-gold magnetic"><span>Begin assessment</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="mailto:dean@supportwellnessglobal.com,will@supportwellnessglobal.com,mike@supportwellnessglobal.com" class="btn btn-outline-light"><span>Contact us</span></a>
     </div>
   </div>
@@ -795,8 +1013,8 @@ h4{font-size:1.05rem;font-weight:700;letter-spacing:-0.02em}
     <div class="footer-grid">
       <div class="footer-brand"><div class="logo"><div class="logo-mark">SWG</div></div><p>Strategy, operations, technology, and marketing support for growing companies that need the work connected and executed.</p></div>
       <div class="footer-col"><h5>Essentials</h5><a href="#problems">Problems</a><a href="#process">Process</a><a href="#services">Services</a></div>
-      <div class="footer-col"><h5>Company</h5><a href="#outcomes">Outcomes</a><a href="#pricing">Pricing</a><a href="#" onclick="openModal();return false">Assessment</a></div>
-      <div class="footer-col"><h5>Next Step</h5><a href="#" onclick="openModal();return false">Start Review</a><a href="#pricing">Engagement Paths</a><a href="#services">Service Routes</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="#outcomes">Outcomes</a><a href="#pricing">Pricing</a><a href="assessment.html" onclick="openModal();return false">Assessment</a></div>
+      <div class="footer-col"><h5>Next Step</h5><a href="assessment.html" onclick="openModal();return false">Start Review</a><a href="#pricing">Engagement Paths</a><a href="#services">Service Routes</a></div>
     </div>
     <div class="footer-bottom"><p>&copy; 2026 Support Wellness Global</p><p>Built around the real problem.</p></div>
   </div>

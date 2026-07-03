@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Wellness Global — Growth Systems for Founder-Led Companies</title>
+<meta name="description" content="SWG diagnoses the bottleneck holding your $1M+ company back, then builds the systems to fix it — website, CRM, AI workflows, marketing, and reporting, connected to one strategy. 117+ projects across 29+ industries. 94% client retention.">
+<link rel="canonical" href="https://luckygoats33.github.io/swg-redesign/v10/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luckygoats33.github.io/swg-redesign/v10/">
+<meta property="og:title" content="Support Wellness Global — Growth Systems for Founder-Led Companies">
+<meta property="og:description" content="We diagnose the bottleneck, then build the system that fixes it. 117+ projects, 29+ industries, 94% retention, 6x average ROI.">
+<meta property="og:site_name" content="Support Wellness Global">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support Wellness Global — Growth Systems for Founder-Led Companies">
+<meta name="twitter:description" content="We diagnose the bottleneck, then build the system that fixes it. 117+ projects, 29+ industries, 94% retention, 6x average ROI.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Support Wellness Global",
+  "alternateName": "SWG",
+  "url": "https://luckygoats33.github.io/swg-redesign/v10/",
+  "email": "dean@supportwellnessglobal.com",
+  "description": "Business consulting for founder-led companies with $1M+ revenue. SWG diagnoses growth bottlenecks, then builds the systems — website, CRM, AI workflows, marketing, reporting — connected to one strategy.",
+  "knowsAbout": ["Business consulting", "CRM implementation", "Marketing systems", "AI workflow automation", "Business reporting and analytics", "Website development"],
+  "areaServed": "Worldwide",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "dean@supportwellnessglobal.com",
+    "contactType": "sales"
+  }
+}
+</script>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is SWG a fit for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Founder-led companies doing $1M+ in annual revenue that have outgrown duct-tape operations. If growth depends on you personally being in every room, every inbox, and every decision, that is the exact problem we solve. We work across 29+ industries including health and wellness, professional services, real estate, e-commerce, SaaS, agencies, home services, construction, and manufacturing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is SWG different from a marketing agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agencies sell channels — ads, email, SEO — in isolation. We start with diagnosis: finding the actual bottleneck in your business, which is often not where you think it is. Then we build the connected system to fix it: website, CRM, AI workflows, marketing, and reporting tied to one strategy. One of our clients spent $103,500 with an agency for 23 trial signups. We rebuilt the system and cut their cost per trial from $2,652 to $187."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an engagement look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every engagement follows four phases: Diagnose, Design, Build, Support. Most engagements run 3 to 6 months for the core build, and 94% of clients stay with us for ongoing support after the initial engagement. It starts with the assessment — a structured review of your business that identifies where growth is actually stuck."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly will we see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the bottleneck. Some fixes move numbers in weeks — one client's lead response time went from 4.2 hours to 18 minutes, and another saw a 3.95% CTR on new ads within the first 72 hours. Structural work like CRM adoption and pipeline systems typically shows compounding results over 60 to 120 days. Our clients average a 6x return on their engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with the tools we already have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, whenever the tools are sound. Most founder-led companies do not have a tool problem — they have a connection problem. We audit what you have, keep what works, replace only what is genuinely broken, and connect everything so data flows into one view of the business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after the build is done?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Support. Systems drift without stewardship, so we stay on as an ongoing partner — monitoring performance, iterating on campaigns, maintaining automations, and delivering the reporting you actually read. This is why our client retention is 94%: the relationship gets more valuable over time, not less."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   RESET & TOKENS
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FAF9F6;
+  --bg-alt: #F3F1EB;
+  --surface: #FFFFFF;
+  --ink: #0C1222;
+  --ink-soft: #3D4354;
+  --ink-faint: #6B7080;
+  --accent: #0D9488;
+  --accent-deep: #0B6E66;
+  --accent-tint: #E4F2F0;
+  --rule: rgba(12, 18, 34, 0.12);
+  --rule-strong: rgba(12, 18, 34, 0.22);
+  --dark: #0F172A;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vbar-h: 36px;
+  --nav-h: 68px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--vbar-h) + var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  padding-top: var(--vbar-h);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+::selection { background: var(--accent); color: #fff; }
+
+.wrap {
+  width: min(1180px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+@media (min-width: 768px) { .wrap { width: min(1180px, 100% - 4rem); } }
+
+/* ============================================================
+   VERSION BAR
+   ============================================================ */
+.vbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--vbar-h);
+  background: rgba(15, 23, 42, 0.97);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 8px;
+}
+.vbar__brand {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.vbar__right { display: flex; align-items: center; gap: 4px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.vbar__right::-webkit-scrollbar { display: none; }
+.vbar__label {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+.vbar__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 24px;
+  flex: 0 0 auto;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.vbar__link:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.vbar__link[aria-current="page"] { background: var(--accent); color: #fff; }
+@media (max-width: 480px) {
+  .vbar__label, .vbar__brand { display: none; }
+  .vbar__link { width: 24px; height: 22px; }
+}
+
+/* ============================================================
+   SCROLL PROGRESS
+   ============================================================ */
+.progress {
+  position: fixed;
+  top: var(--vbar-h); left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: var(--accent);
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* ============================================================
+   ANNOUNCEMENT BAR
+   ============================================================ */
+.announce {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.25rem;
+}
+.announce strong { color: #5EEAD4; font-weight: 600; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: var(--vbar-h);
+  z-index: 900;
+  background: rgba(250, 249, 246, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+  transition: box-shadow 0.3s ease;
+}
+.nav.is-scrolled { box-shadow: 0 8px 30px -18px rgba(12, 18, 34, 0.28); }
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-h);
+  gap: 1rem;
+}
+.nav__logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-height: 44px;
+  align-items: center;
+}
+.nav__logo em {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.nav__links { display: none; }
+@media (min-width: 768px) {
+  .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav__links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  .nav__links a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0.15rem;
+    width: 100%; height: 1.5px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: transform 0.35s var(--ease);
+  }
+  .nav__links a:hover { color: var(--ink); }
+  .nav__links a:hover::after { transform: scaleX(1); transform-origin: 0 50%; }
+}
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1.35rem;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s var(--ease);
+  white-space: nowrap;
+}
+.nav__cta:hover { background: var(--accent-deep); transform: translateY(-1px); }
+@media (max-width: 380px) { .nav__cta { padding: 0 1rem; font-size: 0.8125rem; } }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 52px;
+  padding: 0 1.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease);
+}
+.btn--primary { background: var(--accent); color: #fff; }
+.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); }
+.btn--ghost { border: 1.5px solid var(--rule-strong); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+.btn--dark { background: var(--ink); color: #fff; }
+.btn--dark:hover { background: var(--accent-deep); transform: translateY(-2px); }
+.btn .arrow { transition: transform 0.25s var(--ease); }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ============================================================
+   EDITORIAL PRIMITIVES
+   ============================================================ */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 1.5rem;
+}
+.eyebrow .no { font-family: var(--serif); font-weight: 500; font-size: 0.85rem; color: var(--ink-faint); letter-spacing: 0.05em; }
+.eyebrow::after { content: ""; height: 1px; width: 3.5rem; background: var(--rule-strong); }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance; }
+
+.section { padding: 5rem 0; }
+@media (min-width: 768px) { .section { padding: 7.5rem 0; } }
+
+.section-head { max-width: 46rem; margin-bottom: 3.5rem; }
+.section-head h2 { font-size: clamp(2rem, 5vw, 3.1rem); margin-bottom: 1.1rem; }
+.section-head p { font-size: 1.125rem; color: var(--ink-soft); }
+
+.rule-top { border-top: 1px solid var(--rule); }
+
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition-delay: var(--d, 0s);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: 5rem 0 4.5rem;
+  overflow: hidden;
+}
+@media (min-width: 768px) { .hero { padding: 7.5rem 0 6.5rem; } }
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.hero__bg::before {
+  content: "";
+  position: absolute;
+  top: -22rem; right: -20rem;
+  width: 52rem; height: 52rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(13, 148, 136, 0.13), rgba(13, 148, 136, 0.04) 45%, transparent 68%);
+}
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  bottom: -14rem; left: -16rem;
+  width: 38rem; height: 38rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(12, 18, 34, 0.06), transparent 65%);
+}
+.hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  border: 1px solid rgba(13, 148, 136, 0.35);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  margin-bottom: 2.25rem;
+  background: rgba(228, 242, 240, 0.6);
+}
+.hero__kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.hero h1 {
+  font-size: clamp(2.6rem, 7.2vw, 5rem);
+  font-weight: 400;
+  max-width: 17ch;
+  margin-bottom: 1.75rem;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-deep);
+}
+.hero__lede {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 4.5rem; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--rule-strong);
+}
+@media (min-width: 768px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+.stat { padding: 1.75rem 1.25rem 0.5rem 0; }
+.stat + .stat { border-left: 1px solid var(--rule); padding-left: 1.5rem; }
+@media (max-width: 767px) {
+  .stat:nth-child(odd) { border-left: none; padding-left: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; }
+}
+.stat__num {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat__num sup { font-size: 0.5em; color: var(--accent); top: -0.7em; position: relative; }
+.stat__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.55rem;
+}
+
+/* ============================================================
+   PROBLEMS
+   ============================================================ */
+.problems { background: var(--bg); }
+.problems__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+@media (min-width: 640px) { .problems__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .problems__grid { grid-template-columns: repeat(3, 1fr); } }
+.problem {
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 2.25rem 2rem 2.5rem;
+  position: relative;
+  transition: background 0.3s ease;
+}
+.problem:hover { background: var(--surface); }
+.problem::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.4s var(--ease);
+}
+.problem:hover::after { transform: scaleX(1); }
+.problem__no {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: 1.4rem;
+}
+.problem h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+.problem p { font-size: 0.95rem; color: var(--ink-soft); }
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process { background: var(--ink); color: #EDEBE4; }
+.process .eyebrow { color: #5EEAD4; }
+.process .eyebrow .no { color: rgba(237, 235, 228, 0.5); }
+.process .eyebrow::after { background: rgba(237, 235, 228, 0.25); }
+.process .section-head p { color: rgba(237, 235, 228, 0.72); }
+.process__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(237, 235, 228, 0.18);
+}
+@media (min-width: 768px) { .process__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .process__grid { grid-template-columns: repeat(4, 1fr); } }
+.step {
+  padding: 2.5rem 2rem 2.75rem 0;
+  border-bottom: 1px solid rgba(237, 235, 228, 0.14);
+}
+@media (min-width: 1024px) {
+  .step { border-bottom: none; }
+  .step + .step { border-left: 1px solid rgba(237, 235, 228, 0.14); padding-left: 2rem; }
+}
+.step__no {
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(94, 234, 212, 0.75);
+  display: block;
+  margin-bottom: 1.6rem;
+}
+.step h3 { font-size: 1.55rem; color: #FAF9F6; margin-bottom: 0.85rem; }
+.step h3 .arrow-sm { color: #5EEAD4; font-family: var(--sans); font-size: 1rem; }
+.step p { font-size: 0.95rem; color: rgba(237, 235, 228, 0.72); }
+
+/* ============================================================
+   CASE STUDIES
+   ============================================================ */
+.cases { background: var(--bg-alt); }
+.case {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.case.is-open { border-color: rgba(13, 148, 136, 0.45); box-shadow: 0 24px 60px -34px rgba(12, 18, 34, 0.3); }
+.case__toggle {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.6rem 1.5rem;
+  text-align: left;
+  min-height: 44px;
+}
+@media (min-width: 768px) { .case__toggle { padding: 2rem 2.5rem; gap: 2rem; } }
+.case__index {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--accent-deep);
+  border: 1px solid rgba(13, 148, 136, 0.35);
+  border-radius: 50%;
+  width: 2.6rem; height: 2.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.case__meta { min-width: 0; }
+.case__name { font-family: var(--serif); font-size: clamp(1.25rem, 2.6vw, 1.7rem); font-weight: 500; line-height: 1.2; }
+.case__tags {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.4rem;
+}
+.case__headline-metric {
+  display: none;
+  text-align: right;
+}
+@media (min-width: 900px) { .case__headline-metric { display: block; } }
+.case__headline-metric .m {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+.case__headline-metric .l {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.3rem;
+}
+.case__chev {
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--rule-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.4s var(--ease), background 0.25s ease, border-color 0.25s ease;
+}
+.case__chev svg { width: 14px; height: 14px; stroke: currentColor; }
+.case.is-open .case__chev { transform: rotate(45deg); background: var(--accent); border-color: var(--accent); color: #fff; }
+.case__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s var(--ease);
+}
+.case.is-open .case__body { grid-template-rows: 1fr; }
+.case__body-inner { overflow: hidden; }
+.case__content {
+  padding: 0 1.5rem 2.25rem;
+  border-top: 1px solid var(--rule);
+}
+@media (min-width: 768px) { .case__content { padding: 0 2.5rem 2.75rem; } }
+.case__cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  padding-top: 2rem;
+}
+@media (min-width: 900px) { .case__cols { grid-template-columns: 1.05fr 1fr; gap: 3.5rem; } }
+.case__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 0.9rem;
+}
+.case__situation p { font-size: 0.98rem; color: var(--ink-soft); }
+.case__situation p + p { margin-top: 0.9rem; }
+.case__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.case__facts span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+}
+.case__results { list-style: none; }
+.case__results li {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  align-items: baseline;
+}
+.case__results li:last-child { border-bottom: none; }
+.case__results .val {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  min-width: 6.2rem;
+}
+.case__quote {
+  margin-top: 2.25rem;
+  padding: 1.75rem 1.75rem 1.75rem 2rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-tint);
+  border-radius: 0 12px 12px 0;
+}
+.case__quote p {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.case__quote cite {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 640px) { .services__grid { grid-template-columns: repeat(2, 1fr); column-gap: 3.5rem; } }
+@media (min-width: 1024px) { .services__grid { grid-template-columns: repeat(3, 1fr); } }
+.service {
+  padding: 2rem 0 2.25rem;
+  border-top: 1px solid var(--rule-strong);
+}
+.service h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.service h3::before {
+  content: attr(data-no);
+  font-size: 0.8rem;
+  color: var(--accent-deep);
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.service p { font-size: 0.94rem; color: var(--ink-soft); }
+
+/* Pull quote band */
+.pullquote {
+  padding: 4.5rem 0;
+  background: var(--bg);
+}
+.pullquote blockquote {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+  position: relative;
+}
+.pullquote blockquote::before {
+  content: "\201C";
+  font-family: var(--serif);
+  font-size: 6rem;
+  line-height: 0;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 2.2rem;
+}
+.pullquote p {
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 3.4vw, 2.15rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.pullquote cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq { background: var(--bg); }
+.faq__list { max-width: 50rem; }
+.faq__item { border-bottom: 1px solid var(--rule-strong); }
+.faq__item:first-child { border-top: 1px solid var(--rule-strong); }
+.faq__q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  text-align: left;
+  padding: 1.5rem 0.25rem;
+  min-height: 44px;
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.faq__q:hover { color: var(--accent-deep); }
+.faq__icon {
+  flex-shrink: 0;
+  width: 1.6rem; height: 1.6rem;
+  position: relative;
+}
+.faq__icon::before, .faq__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  background: var(--ink);
+  transition: transform 0.35s var(--ease), background 0.2s ease;
+}
+.faq__icon::before { width: 15px; height: 1.5px; transform: translate(-50%, -50%); }
+.faq__icon::after { width: 1.5px; height: 15px; transform: translate(-50%, -50%); }
+.faq__item.is-open .faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq__item.is-open .faq__icon::before, .faq__item.is-open .faq__icon::after { background: var(--accent); }
+.faq__a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s var(--ease);
+}
+.faq__item.is-open .faq__a { grid-template-rows: 1fr; }
+.faq__a-inner { overflow: hidden; }
+.faq__a p {
+  padding: 0 0.25rem 1.75rem;
+  max-width: 44rem;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   ASSESSMENT CTA
+   ============================================================ */
+.cta {
+  background: var(--ink);
+  color: #EDEBE4;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -18rem; right: -14rem;
+  width: 44rem; height: 44rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(13, 148, 136, 0.28), transparent 62%);
+  pointer-events: none;
+}
+.cta::after {
+  content: "";
+  position: absolute;
+  bottom: -16rem; left: -10rem;
+  width: 34rem; height: 34rem;
+  border-radius: 50%;
+  border: 1px solid rgba(94, 234, 212, 0.16);
+  pointer-events: none;
+}
+.cta__inner {
+  position: relative;
+  max-width: 46rem;
+  text-align: center;
+  margin-inline: auto;
+}
+.cta .eyebrow { justify-content: center; color: #5EEAD4; }
+.cta .eyebrow::after { display: none; }
+.cta h2 {
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  color: #FAF9F6;
+  margin-bottom: 1.25rem;
+}
+.cta h2 em { font-style: italic; color: #5EEAD4; }
+.cta p { color: rgba(237, 235, 228, 0.75); font-size: 1.1rem; max-width: 36rem; margin: 0 auto 2.5rem; }
+.cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.cta .btn--primary { background: var(--accent); }
+.cta .btn--primary:hover { background: #14B8A6; }
+.cta__note { margin-top: 1.75rem; font-size: 0.82rem; color: rgba(237, 235, 228, 0.5); }
+.cta__note a { color: #5EEAD4; text-decoration: none; border-bottom: 1px solid rgba(94, 234, 212, 0.4); }
+.cta__note a:hover { border-bottom-color: #5EEAD4; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--rule);
+  padding: 4rem 0 2.5rem;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) { .footer__grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; } }
+.footer__brand .logo {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+.footer__brand p { font-size: 0.9rem; color: var(--ink-soft); max-width: 24rem; }
+.footer h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1.1rem;
+}
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 0.35rem; }
+.footer ul a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  position: relative;
+}
+.footer ul a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 6px;
+  width: 100%; height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: transform 0.3s var(--ease);
+}
+.footer ul a:hover { color: var(--ink); }
+.footer ul a:hover::after { transform: scaleX(1); transform-origin: 0 50%; }
+.footer__bottom {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== VERSION BAR ==================== -->
+<div class="vbar" role="navigation" aria-label="Design versions">
+  <span class="vbar__brand">SWG</span>
+  <div class="vbar__right">
+    <span class="vbar__label">Version</span>
+    <a class="vbar__link" href="../v1.html">1</a>
+    <a class="vbar__link" href="../v1a/">1a</a>
+    <a class="vbar__link" href="../v2/">2</a>
+    <a class="vbar__link" href="../v3/">3</a>
+    <a class="vbar__link" href="../v4/">4</a>
+    <a class="vbar__link" href="../v5/">5</a>
+    <a class="vbar__link" href="../v6/">6</a>
+    <a class="vbar__link" href="../v7/">7</a>
+    <a class="vbar__link" href="../v8/">8</a>
+    <a class="vbar__link" href="../">9</a>
+    <a class="vbar__link" href="./" aria-current="page">10</a>
+    <a class="vbar__link" href="../v11/">11</a>
+  </div>
+</div>
+
+<!-- Scroll progress -->
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ==================== ANNOUNCEMENT ==================== -->
+<div class="announce"><strong>Q3 2026</strong> &nbsp;—&nbsp; Now accepting new clients</div>
+
+<!-- ==================== NAV ==================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__logo" href="./">SWG <em>Support Wellness Global</em></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#problems">Problems</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#assessment">Assessment</a></li>
+      </ul>
+    </nav>
+    <a class="nav__cta" href="../assessment.html">Start the Review</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="hero__kicker reveal">Consulting for founder-led companies</p>
+    <h1 class="reveal" style="--d:.08s">Your business isn't stuck.<br>Your <em>systems</em> are.</h1>
+    <p class="hero__lede reveal" style="--d:.16s">You crossed $1M on instinct, hustle, and a stack of tools that don't talk to each other. SWG diagnoses the bottleneck holding you back — then builds the website, CRM, AI workflows, marketing, and reporting to fix it. Connected to one strategy. Run by one team.</p>
+    <div class="hero__actions reveal" style="--d:.24s">
+      <a class="btn btn--primary" href="../assessment.html">Take the Assessment <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn--ghost" href="#problems">Learn More</a>
+    </div>
+    <div class="stats reveal" style="--d:.32s">
+      <div class="stat">
+        <div class="stat__num">29<sup>+</sup></div>
+        <div class="stat__label">Industries</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">117<sup>+</sup></div>
+        <div class="stat__label">Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">94<sup>%</sup></div>
+        <div class="stat__label">Client Retention</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">6<sup>x</sup></div>
+        <div class="stat__label">Avg. ROI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROBLEMS ==================== -->
+<section class="section rule-top problems" id="problems">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="no">01</span> Problems We Solve</p>
+      <h2>Six ways growing companies quietly bleed money</h2>
+      <p>Most founders don't have a growth problem. They have one of these six problems wearing a growth problem's clothes.</p>
+    </div>
+    <div class="problems__grid">
+      <article class="problem reveal">
+        <span class="problem__no">No. 1</span>
+        <h3>Fragmented marketing</h3>
+        <p>Ads in one place, email in another, a freelancer running social. Nothing shares data, nothing compounds, and nobody owns the outcome.</p>
+      </article>
+      <article class="problem reveal" style="--d:.06s">
+        <span class="problem__no">No. 2</span>
+        <h3>No real CRM</h3>
+        <p>Leads live in inboxes, spreadsheets, and someone's memory. Follow-up depends on who remembered — and deals die in the gaps.</p>
+      </article>
+      <article class="problem reveal" style="--d:.12s">
+        <span class="problem__no">No. 3</span>
+        <h3>The founder bottleneck</h3>
+        <p>Every sale, every decision, every fire runs through you. The business grows exactly as fast as your calendar allows — and no faster.</p>
+      </article>
+      <article class="problem reveal" style="--d:.06s">
+        <span class="problem__no">No. 4</span>
+        <h3>Wasted ad spend</h3>
+        <p>Budget goes out, "impressions" come back. Misconfigured targeting, bloated keywords, and no tracking that ties spend to revenue.</p>
+      </article>
+      <article class="problem reveal" style="--d:.12s">
+        <span class="problem__no">No. 5</span>
+        <h3>No reporting you trust</h3>
+        <p>You're making six-figure decisions off gut feel because the dashboards contradict each other — or don't exist at all.</p>
+      </article>
+      <article class="problem reveal" style="--d:.18s">
+        <span class="problem__no">No. 6</span>
+        <h3>Disconnected systems</h3>
+        <p>Website, store, CRM, email, accounting — nine tools, zero handshakes. Your team re-types data all day and customers feel the seams.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROCESS ==================== -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="no">02</span> The Process</p>
+      <h2 style="color:#FAF9F6">Diagnosis first. Always.</h2>
+      <p>We never start by building. We start by finding the real constraint — because the fastest way to waste a year is to solve the wrong problem beautifully.</p>
+    </div>
+    <div class="process__grid">
+      <article class="step reveal">
+        <span class="step__no" aria-hidden="true">01</span>
+        <h3>Diagnose</h3>
+        <p>A structured review of your funnel, systems, and numbers. We map where revenue actually comes from, where leads actually die, and which constraint is really governing growth.</p>
+      </article>
+      <article class="step reveal" style="--d:.08s">
+        <span class="step__no" aria-hidden="true">02</span>
+        <h3>Design</h3>
+        <p>One strategy on one page: the systems to build, the order to build them in, and the metric each one must move. You approve the plan before anything gets built.</p>
+      </article>
+      <article class="step reveal" style="--d:.16s">
+        <span class="step__no" aria-hidden="true">03</span>
+        <h3>Build</h3>
+        <p>Website, CRM, AI workflows, campaigns, reporting — built by one team so everything connects from day one. Shipped in weeks, measured from launch.</p>
+      </article>
+      <article class="step reveal" style="--d:.24s">
+        <span class="step__no" aria-hidden="true">04</span>
+        <h3>Support</h3>
+        <p>Systems drift without stewardship. We stay on to monitor, iterate, and compound results — which is why 94% of clients keep working with us after the build.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CASE STUDIES ==================== -->
+<section class="section cases" id="results">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="no">03</span> Results</p>
+      <h2>Five companies. Five bottlenecks. Real numbers.</h2>
+      <p>No composite clients, no vanity metrics. Here's the work — what we found, what we built, and what it changed.</p>
+    </div>
+
+    <!-- Case 1: CamoToe -->
+    <article class="case reveal" id="case-1">
+      <h3 style="display:contents">
+        <button class="case__toggle" aria-expanded="false" aria-controls="case-1-body">
+          <span class="case__index" aria-hidden="true">I</span>
+          <span class="case__meta">
+            <span class="case__name" style="display:block">CamoToe</span>
+            <span class="case__tags">DTC Men's Grooming &middot; E-commerce &middot; 4+ months, ongoing</span>
+          </span>
+          <span class="case__headline-metric" aria-hidden="true">
+            <span class="m" style="display:block">3.95%</span>
+            <span class="l" style="display:block">CTR in first 72 hrs</span>
+          </span>
+          <span class="case__chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span>
+        </button>
+      </h3>
+      <div class="case__body" id="case-1-body">
+        <div class="case__body-inner">
+          <div class="case__content">
+            <div class="case__cols">
+              <div class="case__situation">
+                <p class="case__label">The Situation</p>
+                <p>A DTC men's cosmetic brand selling matte toenail concealer through Shopify. No ad infrastructure, no email program, no conversion-optimized site. The job: go from "store exists" to "customers are buying."</p>
+                <p>The constraint made it harder — the site was saturated with medical and drug-claim language that violated Google Ads, Meta, and FTC policies. Nothing could launch until every surface was audited and rewritten, all on roughly $1,000/month.</p>
+                <div class="case__facts">
+                  <span>Consumer products / men's personal care</span>
+                  <span>Pre-revenue to early-stage ($0&ndash;500K)</span>
+                  <span>Compliance-constrained launch</span>
+                </div>
+              </div>
+              <div>
+                <p class="case__label">The Results</p>
+                <ul class="case__results">
+                  <li><span class="val">3.95%</span> CTR on Meta ads in the first 72 hours (industry avg 1&ndash;2%)</li>
+                  <li><span class="val">6.34%</span> CTR on the top ad, at $0.58 CPC</li>
+                  <li><span class="val">$1.49</span> average CPC across all ad sets</li>
+                  <li><span class="val">9,117</span> impressions and 201 link clicks in 3 days</li>
+                  <li><span class="val">Zero</span> compliance violations remaining</li>
+                  <li><span class="val">0 &rarr; 1</span> complete ad infrastructure built from nothing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case 2: Meridian Partners -->
+    <article class="case reveal" id="case-2">
+      <h3 style="display:contents">
+        <button class="case__toggle" aria-expanded="false" aria-controls="case-2-body">
+          <span class="case__index" aria-hidden="true">II</span>
+          <span class="case__meta">
+            <span class="case__name" style="display:block">Meridian Partners</span>
+            <span class="case__tags">Management Consulting &middot; $3M Revenue &middot; 6 months</span>
+          </span>
+          <span class="case__headline-metric" aria-hidden="true">
+            <span class="m" style="display:block">$480K</span>
+            <span class="l" style="display:block">New ARR</span>
+          </span>
+          <span class="case__chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span>
+        </button>
+      </h3>
+      <div class="case__body" id="case-2-body">
+        <div class="case__body-inner">
+          <div class="case__content">
+            <div class="case__cols">
+              <div class="case__situation">
+                <p class="case__label">The Situation</p>
+                <p>A 12-person management consulting firm where the two founding partners personally generated 90% of new business. No inbound pipeline, no CRM discipline, and a website three years out of date.</p>
+                <p>The firm didn't need a rebrand. It needed a sales system that worked when the founders weren't in the room.</p>
+                <div class="case__facts">
+                  <span>B2B professional services</span>
+                  <span>$3M annual revenue</span>
+                  <span>Founder-dependent pipeline</span>
+                </div>
+              </div>
+              <div>
+                <p class="case__label">The Results</p>
+                <ul class="case__results">
+                  <li><span class="val">2 &rarr; 11</span> inbound leads per month within 4 months</li>
+                  <li><span class="val">$340K</span> in deals sourced by junior consultants (3 deals)</li>
+                  <li><span class="val">47 &rarr; 29</span> days time-to-close</li>
+                  <li><span class="val">6x</span> increase in contact form submissions</li>
+                  <li><span class="val">15 &rarr; 6</span> founder BD hours per week</li>
+                  <li><span class="val">$480K</span> new ARR within the engagement</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case__quote">
+              <p>&ldquo;We came in thinking we needed a new website. What we actually needed was a system that let our team sell without us standing in every room.&rdquo;</p>
+              <cite>Founding Partner, Meridian Partners</cite>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case 3: Vitality Roots -->
+    <article class="case reveal" id="case-3">
+      <h3 style="display:contents">
+        <button class="case__toggle" aria-expanded="false" aria-controls="case-3-body">
+          <span class="case__index" aria-hidden="true">III</span>
+          <span class="case__meta">
+            <span class="case__name" style="display:block">Vitality Roots</span>
+            <span class="case__tags">Health &amp; Wellness DTC &middot; $1.2M Revenue &middot; 4 months</span>
+          </span>
+          <span class="case__headline-metric" aria-hidden="true">
+            <span class="m" style="display:block">1.8 &rarr; 3.4x</span>
+            <span class="l" style="display:block">Meta ROAS, same spend</span>
+          </span>
+          <span class="case__chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span>
+        </button>
+      </h3>
+      <div class="case__body" id="case-3-body">
+        <div class="case__body-inner">
+          <div class="case__content">
+            <div class="case__cols">
+              <div class="case__situation">
+                <p class="case__label">The Situation</p>
+                <p>A plant-based supplements brand with a loyal but small customer base. The founder was working 60+ hours a week on execution — customer service, fulfillment, ad tweaks — with no time left for actual growth.</p>
+                <p>The bottleneck wasn't the market. It was that the business consumed its own founder.</p>
+                <div class="case__facts">
+                  <span>Health &amp; wellness supplements</span>
+                  <span>$1.2M annual revenue</span>
+                  <span>Founder at capacity</span>
+                </div>
+              </div>
+              <div>
+                <p class="case__label">The Results</p>
+                <ul class="case__results">
+                  <li><span class="val">62 &rarr; 38</span> founder hours per week, in 8 weeks</li>
+                  <li><span class="val">14h &rarr; 45m</span> customer service response time</li>
+                  <li><span class="val">+74%</span> email revenue ($8,200 &rarr; $14,300/month)</li>
+                  <li><span class="val">1.8 &rarr; 3.4x</span> Meta ROAS on the same spend</li>
+                  <li><span class="val">14 &rarr; 22%</span> repeat purchase rate</li>
+                  <li><span class="val">3 &rarr; 11%</span> of orders on Subscribe &amp; Save</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case__quote">
+              <p>&ldquo;The last agency gave me dashboards I never looked at. SWG gave me 20 hours of my week back and showed me exactly where every dollar was going.&rdquo;</p>
+              <cite>Founder, Vitality Roots</cite>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case 4: Apex Mechanical -->
+    <article class="case reveal" id="case-4">
+      <h3 style="display:contents">
+        <button class="case__toggle" aria-expanded="false" aria-controls="case-4-body">
+          <span class="case__index" aria-hidden="true">IV</span>
+          <span class="case__meta">
+            <span class="case__name" style="display:block">Apex Mechanical</span>
+            <span class="case__tags">HVAC &amp; Plumbing, 4 Locations &middot; $5.8M Revenue &middot; 5 months</span>
+          </span>
+          <span class="case__headline-metric" aria-hidden="true">
+            <span class="m" style="display:block">4.2h &rarr; 18m</span>
+            <span class="l" style="display:block">Lead response time</span>
+          </span>
+          <span class="case__chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span>
+        </button>
+      </h3>
+      <div class="case__body" id="case-4-body">
+        <div class="case__body-inner">
+          <div class="case__content">
+            <div class="case__cols">
+              <div class="case__situation">
+                <p class="case__label">The Situation</p>
+                <p>Four locations, each with its own website and its own way of handling leads — email at one, a whiteboard at another, a half-adopted CRM at a third. Ownership had no unified view of profitability or marketing performance across the company.</p>
+                <p>Four businesses pretending to be one company, leaking leads at every seam.</p>
+                <div class="case__facts">
+                  <span>Local multi-location service</span>
+                  <span>$5.8M annual revenue</span>
+                  <span>4 locations, 4 systems</span>
+                </div>
+              </div>
+              <div>
+                <p class="case__label">The Results</p>
+                <ul class="case__results">
+                  <li><span class="val">4.2h &rarr; 18m</span> lead response time</li>
+                  <li><span class="val">$1,400/mo</span> saved by fixing a misconfigured ad service area</li>
+                  <li><span class="val">+31%</span> lead volume in 90 days</li>
+                  <li><span class="val">34 &rarr; 48%</span> close rate</li>
+                  <li><span class="val">187 &rarr; 340</span> Google reviews in 4 months</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case__quote">
+              <p>&ldquo;I had four businesses pretending to be one company. Now I actually have one company with four locations.&rdquo;</p>
+              <cite>Owner, Apex Mechanical</cite>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Case 5: Archway Labs -->
+    <article class="case reveal" id="case-5">
+      <h3 style="display:contents">
+        <button class="case__toggle" aria-expanded="false" aria-controls="case-5-body">
+          <span class="case__index" aria-hidden="true">V</span>
+          <span class="case__meta">
+            <span class="case__name" style="display:block">Archway Labs</span>
+            <span class="case__tags">B2B SaaS &middot; $800K ARR &middot; 3 months, post-failed agency</span>
+          </span>
+          <span class="case__headline-metric" aria-hidden="true">
+            <span class="m" style="display:block">$2,652 &rarr; $187</span>
+            <span class="l" style="display:block">Cost per trial</span>
+          </span>
+          <span class="case__chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span>
+        </button>
+      </h3>
+      <div class="case__body" id="case-5-body">
+        <div class="case__body-inner">
+          <div class="case__content">
+            <div class="case__cols">
+              <div class="case__situation">
+                <p class="case__label">The Situation</p>
+                <p>A B2B SaaS building project management software for construction. After $42,500 in agency fees plus $61,000 in ad spend, they had 23 trial signups and zero customers. The agency blamed &ldquo;long B2B cycles.&rdquo;</p>
+                <p>SWG inherited the wreckage — 847 keywords, no qualification logic, and a funnel that treated every click the same.</p>
+                <div class="case__facts">
+                  <span>B2B SaaS (construction PM)</span>
+                  <span>$800K ARR</span>
+                  <span>$103,500 spent, zero customers</span>
+                </div>
+              </div>
+              <div>
+                <p class="case__label">The Results</p>
+                <ul class="case__results">
+                  <li><span class="val">$2,652 &rarr; $187</span> cost per trial</li>
+                  <li><span class="val">34</span> qualified signups in 60 days on $4,200/month (vs 23 in 5 months at $12,200/month)</li>
+                  <li><span class="val">6</span> trial users converted, at $14,400 ARR each</li>
+                  <li><span class="val">18</span> LinkedIn demo requests at $94 CPL</li>
+                  <li><span class="val">4 &rarr; 19%</span> trial-to-paid conversion</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case__quote">
+              <p>&ldquo;The previous agency had 847 keywords and zero customers. SWG cut it to 57 keywords and we got more signups in two months than we got in five.&rdquo;</p>
+              <cite>Co-founder, Archway Labs</cite>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="no">04</span> What We Build</p>
+      <h2>Every capability, one connected system</h2>
+      <p>These aren't six separate services. They're six parts of one machine — designed together, built together, and measured against the same strategy.</p>
+    </div>
+    <div class="services__grid">
+      <article class="service reveal">
+        <h3 data-no="S.1">Strategy</h3>
+        <p>The diagnosis, the plan, and the sequence. We define the constraint, the target metrics, and the order of operations — before a single tool gets touched.</p>
+      </article>
+      <article class="service reveal" style="--d:.06s">
+        <h3 data-no="S.2">Operations</h3>
+        <p>CRM implementation, pipeline design, lead routing, and the process discipline that gets your team off spreadsheets and whiteboards for good.</p>
+      </article>
+      <article class="service reveal" style="--d:.12s">
+        <h3 data-no="S.3">Technology</h3>
+        <p>Websites and stores built to convert, integrated with everything behind them. The stack gets simpler, faster, and connected — not bigger.</p>
+      </article>
+      <article class="service reveal">
+        <h3 data-no="S.4">Marketing</h3>
+        <p>Paid media, email, and content run against real revenue data — with compliance handled, tracking wired end-to-end, and spend accountable to results.</p>
+      </article>
+      <article class="service reveal" style="--d:.06s">
+        <h3 data-no="S.5">AI Implementation</h3>
+        <p>Practical AI workflows that give hours back — customer service triage, follow-up automation, content operations — deployed where they pay for themselves.</p>
+      </article>
+      <article class="service reveal" style="--d:.12s">
+        <h3 data-no="S.6">Reporting &amp; Analytics</h3>
+        <p>One view of the business you actually read: what you spent, what it returned, and what to do next. Decisions off data, not gut feel.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PULL QUOTE ==================== -->
+<section class="pullquote rule-top" aria-label="Client quote">
+  <div class="wrap">
+    <blockquote class="reveal">
+      <p>The fastest way to waste a year is to solve the wrong problem beautifully. Diagnosis first. Always.</p>
+      <cite>The SWG operating principle</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="section rule-top faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="no">05</span> Questions</p>
+      <h2>Asked before every engagement</h2>
+    </div>
+    <div class="faq__list reveal">
+      <div class="faq__item">
+        <h3 style="display:contents">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a1">
+            Who is SWG a fit for?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq__a" id="faq-a1">
+          <div class="faq__a-inner">
+            <p>Founder-led companies doing $1M+ in annual revenue that have outgrown duct-tape operations. If growth depends on you personally being in every room, every inbox, and every decision — that's the exact problem we solve. We've worked across 29+ industries: health and wellness, professional services, real estate, e-commerce, SaaS, agencies, home services, construction, and manufacturing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 style="display:contents">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a2">
+            How is SWG different from a marketing agency?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq__a" id="faq-a2">
+          <div class="faq__a-inner">
+            <p>Agencies sell channels — ads, email, SEO — in isolation. We start with diagnosis: finding the actual bottleneck, which is often not where you think it is. Then we build the connected system to fix it. One of our clients spent $103,500 with an agency for 23 trial signups and zero customers. We rebuilt the system and cut their cost per trial from $2,652 to $187.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 style="display:contents">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a3">
+            What does an engagement look like?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq__a" id="faq-a3">
+          <div class="faq__a-inner">
+            <p>Every engagement follows four phases: Diagnose, Design, Build, Support. Most core builds run three to six months, and 94% of clients stay on for ongoing support afterward. It all starts with the assessment — a structured review of your business that identifies where growth is actually stuck.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 style="display:contents">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a4">
+            How quickly will we see results?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq__a" id="faq-a4">
+          <div class="faq__a-inner">
+            <p>It depends on the bottleneck. Some fixes move numbers in weeks — one client's lead response time went from 4.2 hours to 18 minutes; another saw a 3.95% CTR on brand-new ads within 72 hours. Structural work like CRM adoption and pipeline systems typically compounds over 60 to 120 days. Across all engagements, clients average a 6x return.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 style="display:contents">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a5">
+            Do you work with the tools we already have?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq__a" id="faq-a5">
+          <div class="faq__a-inner">
+            <p>Yes, whenever the tools are sound. Most founder-led companies don't have a tool problem — they have a connection problem. We audit what you have, keep what works, replace only what's genuinely broken, and connect everything so data flows into one view of the business.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 style="display:contents">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a6">
+            What happens after the build is done?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq__a" id="faq-a6">
+          <div class="faq__a-inner">
+            <p>Support. Systems drift without stewardship, so we stay on as an ongoing partner — monitoring performance, iterating on campaigns, maintaining automations, and delivering reporting you actually read. That's why our client retention is 94%: the relationship gets more valuable over time, not less.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ASSESSMENT CTA ==================== -->
+<section class="section cta" id="assessment">
+  <div class="wrap">
+    <div class="cta__inner reveal">
+      <p class="eyebrow">The Business Assessment</p>
+      <h2>Find out what's <em>actually</em> holding you back.</h2>
+      <p>A structured review of your marketing, operations, and systems. You'll walk away knowing your bottleneck, what it's costing you, and what to fix first — whether you hire us or not.</p>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="../assessment.html">Start the Assessment <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn--ghost" href="mailto:dean@supportwellnessglobal.com" style="border-color:rgba(237,235,228,.35);color:#EDEBE4">Email Dean Directly</a>
+      </div>
+      <p class="cta__note">Takes about 10 minutes. No sales call required. Or write to <a href="mailto:dean@supportwellnessglobal.com">dean@supportwellnessglobal.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="logo">SWG</p>
+        <p>Support Wellness Global builds growth systems for founder-led companies with $1M+ revenue — website, CRM, AI workflows, marketing, and reporting, connected to one strategy.</p>
+      </div>
+      <nav aria-label="Footer — site">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#problems">Problems We Solve</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#results">Case Studies</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer — contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:dean@supportwellnessglobal.com">dean@supportwellnessglobal.com</a></li>
+          <li><a href="../assessment.html">Start the Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Support Wellness Global. All rights reserved.</span>
+      <span>Serving 29+ industries worldwide.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Scroll progress bar ---------- */
+  var progress = document.getElementById("progress");
+  var ticking = false;
+  function updateProgress() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var ratio = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+    progress.style.transform = "scaleX(" + ratio + ")";
+    document.getElementById("nav").classList.toggle("is-scrolled", window.scrollY > 8);
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive: true });
+  updateProgress();
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px 60px 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+    setTimeout(function () {
+      revealEls.forEach(function (el) {
+        if (!el.classList.contains("is-visible")) el.classList.add("is-visible");
+      });
+    }, 2500);
+  }
+
+  /* ---------- Case study accordion ---------- */
+  document.querySelectorAll(".case__toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var card = btn.closest(".case");
+      var open = card.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".faq__q").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq__item");
+      var isOpen = item.classList.contains("is-open");
+      // close others for a tidy reading experience
+      document.querySelectorAll(".faq__item.is-open").forEach(function (other) {
+        other.classList.remove("is-open");
+        other.querySelector(".faq__q").setAttribute("aria-expanded", "false");
+      });
+      if (!isOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
