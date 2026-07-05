@@ -3,199 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Wellness Global — Business Growth Consulting for $1M–$15M Companies</title>
+<title>Support Wellness Global — Premium Business Growth Systems</title>
 <meta name="description" content="SWG diagnoses the bottleneck holding your $1M–$15M company back, then builds the system that fixes it. 117+ projects, 29+ industries, 94% retention, 6x average ROI.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Growth isn't the problem. Your systems are. — Support Wellness Global">
-<meta property="og:description" content="Business growth consulting for founder-led companies doing $1M–$15M. One connected strategy. Measurable results in 30 days.">
-<meta property="og:image" content="img/hero-light.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"Organization","name":"Support Wellness Global","description":"Business growth consulting for founder-led companies doing $1M–$15M in revenue.","email":"hello@supportwellnessglobal.com","knowsAbout":["Business growth consulting","CRM systems","Marketing systems","Conversion optimization"]},
-{"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Who is SWG built for?","acceptedAnswer":{"@type":"Answer","text":"Founder-led companies doing $1M–$15M in revenue. You have real traction, but growth has slowed and the founder is still the engine."}},
-{"@type":"Question","name":"How are you different from a marketing agency?","acceptedAnswer":{"@type":"Answer","text":"Agencies sell channels — ads, email, SEO. We start with diagnosis, then build the connected system that makes every channel work together."}},
-{"@type":"Question","name":"What happens during the business review?","acceptedAnswer":{"@type":"Answer","text":"A two-week audit of your funnel, website, ads, email, tools, and operations. You get written findings and a sequenced fix list, prioritized by impact."}},
-{"@type":"Question","name":"How quickly will we see results?","acceptedAnswer":{"@type":"Answer","text":"Quick wins land in the first 30 days. Structural changes compound over the quarter. Everything is measured against your baseline."}},
-{"@type":"Question","name":"What does an engagement cost?","acceptedAnswer":{"@type":"Answer","text":"The business review is a fixed fee. Build work is scoped per phase, approved before it starts. No open-ended retainers."}},
-{"@type":"Question","name":"Do you replace our team or tools?","acceptedAnswer":{"@type":"Answer","text":"Neither, unless something is genuinely broken. We work inside your existing stack, document everything we build, and train your team to run it."}}
-]}]}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0a0a0a;--paper:#f8f6f3;--gold:#c9a84c;--card:#1a1a1a;--line:#2a2a2a;--mut:#888}
+:root{
+  --bg:#050505;
+  --fg:#f0ede8;
+  --accent:#7b61ff;
+  --accent2:#00d4aa;
+  --accent3:#ff6b9d;
+  --glass:rgba(255,255,255,.04);
+  --glass-border:rgba(255,255,255,.08);
+  --muted:rgba(240,237,232,.45);
+  --radius:20px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--paper);line-height:1.8;padding-top:36px;-webkit-font-smoothing:antialiased}
-img{max-width:100%}
-h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.15}
-a{color:inherit}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-section{padding:120px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.75rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold);flex:none}
-h2{font-size:clamp(2rem,3.5vw,2.8rem);max-width:18em;margin-bottom:20px}
-.lead{color:var(--mut);max-width:38em}
-.light{background:var(--paper);color:var(--ink)}
-.light .lead{color:#5a5650}
-.btn{display:inline-block;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.02em;text-decoration:none;background:var(--gold);color:var(--ink);padding:17px 36px;border:1px solid var(--gold);border-radius:2px;min-height:48px;transition:background .25s,color .25s,transform .25s}
-.btn:hover{background:transparent;color:var(--gold)}
-.btn-ghost{background:transparent;color:var(--gold);padding:11px 22px;font-size:.9rem}
-.btn-ghost:hover{background:var(--gold);color:var(--ink)}
-/* ---------- version bar ---------- */
-.vbar{position:fixed;top:0;left:0;right:0;height:36px;background:#000;border-bottom:1px solid var(--line);z-index:200;font-size:.72rem}
-.vbar-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;gap:16px;overflow-x:auto;scrollbar-width:none}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--fg);line-height:1.7;overflow-x:hidden;padding-top:36px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Syne',sans-serif;font-weight:700;line-height:1.05}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+
+/* ===== VERSION BAR ===== */
+.vbar{position:fixed;top:0;left:0;right:0;height:36px;background:#000;border-bottom:1px solid rgba(255,255,255,.06);z-index:9999;font-size:.72rem}
+.vbar-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;gap:16px;overflow-x:auto;scrollbar-width:none}
 .vbar-inner::-webkit-scrollbar{display:none}
-.vbar-label{letter-spacing:3px;color:var(--mut);font-weight:700;flex:none}
+.vbar-label{letter-spacing:3px;color:rgba(255,255,255,.35);font-weight:700;flex:none}
 .vbar-nav{display:flex;gap:4px}
-.vbar-nav a{color:var(--mut);text-decoration:none;padding:2px 8px;border-radius:2px;line-height:1.4}
-.vbar-nav a:hover{color:var(--paper)}
-.vbar-nav a[aria-current]{background:var(--gold);color:var(--ink);font-weight:700}
-/* ---------- nav ---------- */
-.nav{position:sticky;top:36px;z-index:150;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1100px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{font-family:'DM Serif Display',serif;font-size:1.7rem;text-decoration:none;letter-spacing:.04em}
-.logo em{font-style:normal;color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{text-decoration:none;font-size:.92rem;color:#ccc;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
-.burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;padding:12px}
-.burger span{display:block;height:2px;background:var(--paper);margin:6px 0;transition:transform .3s,opacity .3s}
-.nav.open .burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.nav.open .burger span:nth-child(2){opacity:0}
-.nav.open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:calc(100vh - 108px);display:flex;align-items:center;padding:100px 0;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:url(img/hero-light.webp) center/cover no-repeat;opacity:.3}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.2),rgba(10,10,10,.7) 85%)}
-.hero .wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(3rem,6vw,5rem);max-width:11em;margin-bottom:28px}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero .sub{font-size:1.15rem;color:#cfcac2;max-width:34em;margin-bottom:44px}
-.proof{display:flex;flex-wrap:wrap;gap:10px 0;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,.25);font-size:.88rem;color:var(--mut);letter-spacing:.06em}
-.proof span{padding-right:20px;margin-right:20px;border-right:1px solid var(--line)}
-.proof span:last-child{border:0;margin:0;padding:0}
-.proof strong{color:var(--paper);font-weight:700}
-.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:1px;height:52px;background:linear-gradient(180deg,var(--gold),transparent);z-index:1;animation:cue 2.2s ease-in-out infinite}
-@keyframes cue{0%,100%{opacity:.25;transform:translateX(-50%) scaleY(.6);transform-origin:top}50%{opacity:1;transform:translateX(-50%) scaleY(1);transform-origin:top}}
-/* ---------- problem ---------- */
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
-.pcard{background:#fff;border:1px solid #e7e2d9;border-top:2px solid var(--gold);padding:40px 32px;transition:transform .3s,box-shadow .3s}
-.pcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(10,10,10,.28)}
-.pcard h3{font-size:1.35rem;margin:22px 0 12px}
-.pcard p{font-size:.96rem;color:#5a5650}
-.icon{width:46px;height:46px;color:var(--gold)}
-.closing{font-family:'DM Serif Display',serif;font-size:clamp(1.25rem,2.2vw,1.6rem);max-width:26em;margin:72px auto 0;text-align:center;line-height:1.5}
-.closing em{font-style:italic;color:var(--gold);-webkit-text-stroke:.2px}
-.light .closing em{color:#a5832e}
-/* ---------- process ---------- */
-.process{position:relative;overflow:hidden}
-.process::before{content:"";position:absolute;inset:0;background:url(img/texture.webp) center/cover no-repeat;opacity:.07;pointer-events:none}
-.process .wrap{position:relative}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line)}
-.step{padding:44px 28px 8px 0;border-right:1px solid var(--line);position:relative}
-.step:last-child{border-right:0}
-.step::before{content:"";position:absolute;top:-1px;left:0;width:44px;height:1px;background:var(--gold)}
-.step .num{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--gold);line-height:1;display:block}
-.step h3{font-size:.85rem;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:4px;margin:18px 0 14px}
-.step p{font-size:.93rem;color:#b6b1a8}
-/* ---------- results ---------- */
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
-.metric{background:#fff;border:1px solid #e7e2d9;border-top:2px solid var(--gold);padding:38px 26px;text-align:center}
-.metric .val{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,4vw,3.2rem);color:var(--ink);display:block;line-height:1;font-variant-numeric:tabular-nums}
-.metric p{font-size:.88rem;color:#5a5650;margin-top:14px}
-/* ---------- case studies ---------- */
-.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
-.cs{background:var(--card);border:1px solid var(--line);transition:border-color .3s}
-.cs:hover,.cs.open{border-color:rgba(201,168,76,.5)}
-.cs-h{margin:0}
-.cs-h button{width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:34px 32px 0;min-height:48px}
-.cs-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:5px 12px;margin-bottom:18px}
-.cs-title{display:block;font-family:'DM Serif Display',serif;font-size:1.45rem;line-height:1.25;padding-right:36px;position:relative}
-.cs-title::after{content:"+";position:absolute;right:0;top:0;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--gold);font-size:1.6rem;line-height:1;transition:transform .35s}
-.cs.open .cs-title::after{transform:rotate(45deg)}
-.cs-sit{padding:14px 32px 30px;font-size:.94rem;color:#b6b1a8}
-.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
-.panel-in{overflow:hidden;min-height:0}
-.cs.open .panel,.faq.open .panel{grid-template-rows:1fr}
-.cs-detail{padding:0 32px 36px;border-top:1px solid var(--line)}
-.cs-nums{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:26px 0 4px}
-.cs-nums li{background:#111;border:1px solid var(--line);padding:9px 14px;font-size:.8rem;color:#b6b1a8;line-height:1.5}
-.cs-nums strong{color:var(--gold);font-weight:700;display:block;font-size:.95rem}
-.cs-method{font-size:.92rem;color:#b6b1a8;margin-top:20px}
-.cs-method strong{color:var(--paper)}
-.cs blockquote{margin-top:22px;padding-left:18px;border-left:2px solid var(--gold);font-family:'DM Serif Display',serif;font-size:1.08rem;font-style:italic;color:var(--paper);line-height:1.5}
-/* ---------- about ---------- */
-.about-body{font-size:1.1rem;max-width:42em;color:#3d3a35}
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;border-top:1px solid #ddd6c9;padding-top:48px}
-.trust .val{font-family:'DM Serif Display',serif;font-size:2.4rem;line-height:1;display:block}
-.trust p{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:#8a8478;margin-top:10px;font-weight:700}
-/* ---------- faq ---------- */
-.faqs{margin-top:56px;border-top:1px solid var(--line)}
-.faq{border-bottom:1px solid var(--line)}
-.faq h3{margin:0}
-.faq h3 button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;color:inherit;cursor:pointer;padding:26px 4px;min-height:48px;font-family:'DM Serif Display',serif;font-size:1.2rem}
-.faq h3 button::after{content:"+";color:var(--gold);font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:400;flex:none;transition:transform .35s}
-.faq.open h3 button::after{transform:rotate(45deg)}
-.faq .panel-in p{padding:0 4px 28px;color:#b6b1a8;max-width:44em}
-/* ---------- cta ---------- */
-.cta{position:relative;text-align:center;overflow:hidden}
-.cta::before{content:"";position:absolute;inset:0;background:url(img/hero-alt.webp) center/cover no-repeat;opacity:.25}
-.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent,rgba(10,10,10,.75))}
-.cta .wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
-.cta h2{font-size:clamp(2.2rem,4vw,3.2rem);max-width:15em;margin:0 auto 20px}
-.cta .lead{margin:0 auto 40px}
-.cta .fine{margin-top:26px;font-size:.85rem;color:var(--mut)}
-.btn-lg{font-size:1.1rem;padding:20px 48px}
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:44px 0}
-.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;font-size:.85rem;color:var(--mut)}
-.foot a{color:var(--mut);text-decoration:none}
-.foot a:hover{color:var(--gold)}
-/* ---------- reveal ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.vbar-nav a{color:rgba(255,255,255,.35);text-decoration:none;padding:2px 8px;border-radius:3px;line-height:1.4;transition:all .2s}
+.vbar-nav a:hover{color:#fff}
+.vbar-nav a[aria-current]{background:var(--accent);color:#fff;font-weight:700}
+
+/* ===== ANIMATED BACKGROUND ===== */
+.bg-mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;animation:float 20s ease-in-out infinite}
+.blob-1{width:600px;height:600px;background:var(--accent);top:-200px;left:-100px;animation-delay:0s}
+.blob-2{width:500px;height:500px;background:var(--accent2);bottom:-150px;right:-100px;animation-delay:-7s}
+.blob-3{width:400px;height:400px;background:var(--accent3);top:40%;left:50%;animation-delay:-14s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-50px) scale(1.1)}66%{transform:translate(-20px,30px) scale(.9)}}
+
+/* ===== DOT GRID ===== */
+.dot-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:40px 40px}
+
+/* ===== NAVIGATION ===== */
+.nav{position:sticky;top:36px;z-index:500;padding:16px 0;transition:background .4s}
+.nav.scrolled{background:rgba(5,5,5,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
+.nav-in{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.logo span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .3s}
+.nav-links a:hover{color:var(--fg)}
+.nav-cta{padding:10px 24px;border-radius:100px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;font-size:.85rem;transition:transform .3s,box-shadow .3s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(123,97,255,.4)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+.burger span{display:block;width:24px;height:2px;background:var(--fg);position:absolute;left:10px;transition:all .3s}
+.burger span:nth-child(1){top:15px}
+.burger span:nth-child(2){top:21px}
+.burger span:nth-child(3){top:27px}
+
+/* ===== HERO — SPLIT SCREEN ===== */
+.hero{min-height:calc(100vh - 36px);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;padding:80px 40px;max-width:1400px;margin:0 auto;position:relative}
+.hero-content{position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:100px;background:var(--glass);border:1px solid var(--glass-border);font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:32px;backdrop-filter:blur(10px)}
+.hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.hero h1{font-size:clamp(3.2rem,7vw,5.5rem);letter-spacing:-.03em;margin-bottom:28px}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;transform:translateY(110%);animation:slideUp .8s cubic-bezier(.16,1,.3,1) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) span{animation-delay:.24s}
+@keyframes slideUp{to{transform:translateY(0)}}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gradient 6s ease infinite}
+@keyframes gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:28em;margin-bottom:44px;line-height:1.8}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{padding:16px 36px;border-radius:100px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;font-size:1rem;transition:all .3s;position:relative;overflow:hidden}
+.btn-primary::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent2),var(--accent3));opacity:0;transition:opacity .3s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(123,97,255,.4)}
+.btn-primary:hover::before{opacity:1}
+.btn-primary span{position:relative;z-index:1}
+.btn-outline{padding:16px 36px;border-radius:100px;border:1px solid var(--glass-border);color:var(--fg);font-weight:500;font-size:1rem;transition:all .3s;backdrop-filter:blur(10px)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+
+/* Hero visual side */
+.hero-visual{position:relative;height:580px;display:flex;align-items:center;justify-content:center}
+.hero-orb{position:absolute;width:420px;height:420px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),var(--accent2),var(--accent3),var(--accent));opacity:.15;animation:spin 20s linear infinite;filter:blur(60px)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-stats{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:380px}
+.stat-card{padding:32px 24px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.stat-card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--accent);box-shadow:0 20px 60px rgba(123,97,255,.15)}
+.stat-card .num{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.stat-card p{font-size:.78rem;color:var(--muted);margin-top:8px;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+
+/* Hero scroll indicator */
+.scroll-ind{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-ind span{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ===== SECTION UTILITIES ===== */
+.section{padding:140px 40px;max-width:1400px;margin:0 auto;position:relative}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--glass-border),transparent);max-width:1400px;margin:0 auto}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:24px;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.section h2{font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.02em;margin-bottom:24px;max-width:14em}
+.section .lead{font-size:1.1rem;color:var(--muted);max-width:36em;line-height:1.8}
+
+/* ===== PROBLEMS — MAGAZINE LAYOUT ===== */
+.problems-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;margin-top:80px;align-items:start}
+.problems-grid .big-card{grid-row:span 2;padding:60px;border-radius:var(--radius);background:linear-gradient(145deg,rgba(123,97,255,.08),rgba(0,212,170,.04));border:1px solid var(--glass-border);position:relative;overflow:hidden;transition:all .5s}
+.problems-grid .big-card::before{content:"";position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(123,97,255,.1),transparent 70%);animation:floatGlow 8s ease-in-out infinite}
+@keyframes floatGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,20px)}}
+.big-card .num-big{font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent),transparent 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.5;position:absolute;top:20px;right:30px}
+.big-card h3{font-size:2rem;margin-bottom:16px;position:relative}
+.big-card p{font-size:1.05rem;color:var(--muted);position:relative;line-height:1.9}
+.small-cards{display:flex;flex-direction:column;gap:24px}
+.sm-card{padding:36px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(10px);transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.sm-card::after{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:linear-gradient(135deg,var(--accent),var(--accent2),transparent,transparent);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
+.sm-card:hover{transform:translateX(8px);border-color:transparent}
+.sm-card:hover::after{opacity:1}
+.sm-card h3{font-size:1.3rem;margin-bottom:10px}
+.sm-card p{font-size:.92rem;color:var(--muted)}
+.sm-card .card-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;position:absolute;top:20px;right:24px;background:linear-gradient(135deg,rgba(123,97,255,.2),transparent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ===== PROCESS — HORIZONTAL SCROLL ===== */
+.process-section{padding:140px 0;position:relative;overflow:hidden}
+.process-header{max-width:1400px;margin:0 auto;padding:0 40px 60px}
+.process-track{display:flex;gap:32px;padding:0 40px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+.process-track::-webkit-scrollbar{display:none}
+.phase-card{flex:none;width:380px;scroll-snap-align:start;padding:48px 36px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.phase-card:hover{transform:translateY(-12px) rotateX(2deg);border-color:var(--accent);box-shadow:0 30px 80px rgba(123,97,255,.12)}
+.phase-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.phase-card:hover::before{transform:scaleX(1)}
+.phase-num{font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.6}
+.phase-card h3{font-size:1.5rem;margin:16px 0 14px}
+.phase-card p{color:var(--muted);font-size:.95rem;line-height:1.8}
+.phase-tag{display:inline-block;margin-top:20px;padding:6px 14px;border-radius:100px;background:rgba(123,97,255,.1);border:1px solid rgba(123,97,255,.2);font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+.scroll-hint{max-width:1400px;margin:32px auto 0;padding:0 40px;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.scroll-hint::before{content:"";width:20px;height:1px;background:var(--accent)}
+
+/* ===== RESULTS — ANIMATED COUNTERS ===== */
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
+.result-card{padding:44px 28px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(10px);text-align:center;position:relative;overflow:hidden;transition:all .4s}
+.result-card::before{content:"";position:absolute;inset:-1px;border-radius:var(--radius);padding:1px;background:conic-gradient(from var(--angle,0deg),var(--accent),var(--accent2),var(--accent3),transparent,transparent,var(--accent));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .5s;animation:rotate 4s linear infinite}
+@keyframes rotate{to{--angle:360deg}}
+@property --angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+.result-card:hover::before{opacity:1}
+.result-card:hover{transform:translateY(-6px)}
+.result-num{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,4vw,3.4rem);font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.result-card p{font-size:.82rem;color:var(--muted);margin-top:12px;letter-spacing:.5px}
+
+/* ===== CASE STUDIES — 3D TILT CARDS ===== */
+.cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:64px;perspective:1000px}
+.case-card{padding:40px 36px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all .5s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d;position:relative;overflow:hidden;cursor:pointer}
+.case-card::before{content:"";position:absolute;inset:0;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(123,97,255,.06),transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}
+.case-card:hover::before{opacity:1}
+.case-card:hover{border-color:rgba(123,97,255,.3);box-shadow:0 25px 50px rgba(0,0,0,.3)}
+.case-tag{display:inline-block;padding:5px 14px;border-radius:100px;background:rgba(123,97,255,.1);border:1px solid rgba(123,97,255,.2);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.case-card h3{font-size:1.4rem;margin-bottom:12px;line-height:1.25}
+.case-brief{font-size:.9rem;color:var(--muted);margin-bottom:20px}
+.case-metrics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.case-metrics span{padding:6px 12px;border-radius:8px;background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.15);font-size:.78rem;font-weight:600;color:var(--accent2)}
+.case-expand{padding:0;border:0;background:none;color:var(--accent);font-size:.82rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:gap .3s}
+.case-expand:hover{gap:10px}
+.case-expand::after{content:"→";transition:transform .3s}
+.case-expand:hover::after{transform:translateX(3px)}
+.case-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.16,1,.3,1)}
+.case-detail-in{overflow:hidden;min-height:0}
+.case-card.open .case-detail{grid-template-rows:1fr}
+.case-detail-content{padding-top:24px;border-top:1px solid var(--glass-border);margin-top:20px}
+.case-detail-content p{font-size:.92rem;color:var(--muted);line-height:1.8}
+.case-detail-content blockquote{margin-top:16px;padding:16px 20px;border-left:2px solid var(--accent);font-style:italic;color:var(--fg);font-size:1rem;background:rgba(123,97,255,.03);border-radius:0 var(--radius) var(--radius) 0}
+
+/* ===== ABOUT — SPLIT ===== */
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
+.about-text{font-size:1.05rem;color:var(--muted);line-height:2}
+.about-text strong{color:var(--fg)}
+.about-numbers{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-num{padding:32px 24px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--glass-border);text-align:center;transition:all .4s}
+.about-num:hover{border-color:var(--accent);transform:scale(1.03)}
+.about-num .val{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.about-num p{font-size:.75rem;color:var(--muted);margin-top:8px;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+
+/* ===== FAQ — MODERN ACCORDION ===== */
+.faqs{margin-top:64px;max-width:800px}
+.faq-item{border-bottom:1px solid var(--glass-border);overflow:hidden}
+.faq-item h3{margin:0}
+.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;padding:28px 0;background:none;border:0;color:var(--fg);cursor:pointer;font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;transition:color .3s}
+.faq-btn:hover{color:var(--accent)}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;flex:none;transition:all .4s;font-size:1.2rem;color:var(--accent)}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--accent);color:#fff;border-color:var(--accent)}
+.faq-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.16,1,.3,1)}
+.faq-panel-in{overflow:hidden;min-height:0}
+.faq-item.open .faq-panel{grid-template-rows:1fr}
+.faq-answer{padding-bottom:28px;font-size:.95rem;color:var(--muted);max-width:600px;line-height:1.8}
+
+/* ===== CTA — DRAMATIC ===== */
+.cta-section{padding:180px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(123,97,255,.12),transparent 70%)}
+.cta-section h2{font-size:clamp(2.6rem,5.5vw,4.5rem);letter-spacing:-.03em;max-width:12em;margin:0 auto 24px}
+.cta-section .lead{max-width:32em;margin:0 auto 48px;color:var(--muted);font-size:1.1rem}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;border-radius:100px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:700;font-size:1.1rem;transition:all .4s;position:relative;overflow:hidden}
+.cta-btn::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent3),var(--accent));opacity:0;transition:opacity .4s}
+.cta-btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 60px rgba(123,97,255,.4)}
+.cta-btn:hover::before{opacity:1}
+.cta-btn span{position:relative;z-index:1}
+.cta-fine{margin-top:28px;font-size:.82rem;color:var(--muted)}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--glass-border);padding:44px 40px;max-width:1400px;margin:0 auto}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;font-size:.82rem;color:var(--muted)}
+.foot a{transition:color .3s}
+.foot a:hover{color:var(--accent)}
+
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
-.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--ink);padding:12px 20px;z-index:300;font-weight:700}
-.skip:focus{left:12px;top:48px}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-/* ---------- responsive ---------- */
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-left.in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-right.in{opacity:1;transform:none}
+.reveal-scale{opacity:0;transform:scale(.9);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-scale.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
-.steps{grid-template-columns:1fr 1fr}
-.step{border:0;padding:44px 20px 8px 0;border-top:1px solid var(--line);margin-top:-1px}
-.metrics{grid-template-columns:1fr 1fr}
+  .hero{grid-template-columns:1fr;text-align:center;padding:60px 24px 100px}
+  .hero-sub{margin:0 auto 44px}
+  .hero-actions{justify-content:center}
+  .hero-visual{height:360px;margin-top:40px}
+  .hero-orb{width:300px;height:300px}
+  .problems-grid{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .about-split{grid-template-columns:1fr;gap:48px}
+  .section{padding:100px 24px}
 }
 @media(max-width:768px){
-section{padding:80px 0}
-.nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,10,10,.97);border-bottom:1px solid var(--line);padding:12px 24px 28px;display:none}
-.nav.open .nav-links{display:flex}
-.nav-links a{display:block;padding:15px 4px;font-size:1.05rem;border-bottom:1px solid var(--line)}
-.nav-links li:last-child a{border:0;margin-top:16px;text-align:center}
-.burger{display:block}
-.cards3,.cs-grid{grid-template-columns:1fr}
-.hero{min-height:auto;padding:110px 0 130px}
-.proof span{display:block;border:0;margin:0;padding:3px 0}
-.trust{grid-template-columns:1fr 1fr;gap:36px 20px}
-.cs-h button{padding:28px 24px 0}
-.cs-sit{padding:12px 24px 26px}
-.cs-detail{padding:0 24px 30px}
+  .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;flex-direction:column;align-items:center;justify-content:center;gap:24px;background:rgba(5,5,5,.97);backdrop-filter:blur(20px);display:none;z-index:400}
+  .nav.open .nav-links{display:flex}
+  .burger{display:block;z-index:500}
+  .hero h1{font-size:clamp(2.5rem,10vw,3.5rem)}
+  .cases-grid{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{grid-template-columns:1fr 1fr;max-width:280px}
+  .stat-card{padding:20px 16px}
+  .process-section{padding:100px 0}
+  .phase-card{width:300px}
+  .about-numbers{grid-template-columns:1fr 1fr}
+  .cta-section{padding:120px 24px}
 }
 @media(max-width:480px){
-.steps,.metrics{grid-template-columns:1fr}
-.hero h1{font-size:clamp(2.5rem,11vw,3rem)}
-.btn-lg{width:100%;text-align:center}
+  .results-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;width:100%}
+  .btn-primary,.btn-outline{width:100%;text-align:center;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){
-*,*::before,*::after{animation:none!important;transition:none!important}
-html{scroll-behavior:auto}
-.reveal{opacity:1;transform:none}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none}
+  .hero h1 .line span{transform:none}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
 
+<!-- Background effects -->
+<div class="bg-mesh" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+<div class="dot-grid" aria-hidden="true"></div>
+
+<!-- Version Bar -->
 <div class="vbar">
   <div class="vbar-inner">
     <span class="vbar-label">VERSION</span>
@@ -218,379 +304,441 @@ html{scroll-behavior:auto}
   </div>
 </div>
 
+<!-- Navigation -->
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="logo" href="#top">SWG<em>.</em></a>
-    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+    <a class="logo" href="#top"><span>SWG</span></a>
+    <button class="burger" aria-expanded="false" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="menu">
       <li><a href="#problems">Problems</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#results">Results</a></li>
-      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a class="btn btn-ghost" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Your Assessment &rarr;</a></li>
+      <li><a class="nav-cta" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Free Assessment →</a></li>
     </ul>
   </div>
 </header>
 
-<main id="main">
-
+<!-- Hero -->
 <section class="hero" id="top">
-  <div class="wrap">
-    <p class="eyebrow">Business Growth Consulting</p>
-    <h1>Growth isn't the problem. <em>Your systems are.</em></h1>
-    <p class="sub">We diagnose the bottleneck holding your $1M&ndash;$15M company back, then build the system that fixes it. One connected strategy. Measurable results in 30 days.</p>
-    <a class="btn btn-lg" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Your Free Assessment &rarr;</a>
-    <p class="proof"><span><strong>117+</strong> projects</span><span><strong>29+</strong> industries</span><span><strong>94%</strong> retention</span><span><strong>6x</strong> avg ROI</span></p>
+  <div class="hero-content">
+    <div class="hero-tag"><span>Business Growth Systems</span></div>
+    <h1>
+      <span class="line"><span>Growth isn't</span></span>
+      <span class="line"><span>the problem.</span></span>
+      <span class="line"><span><em>Your systems are.</em></span></span>
+    </h1>
+    <p class="hero-sub">We diagnose the bottleneck holding your $1M–$15M company back, then build the connected system that fixes it. Measurable results in 30 days.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment"><span>Start Free Assessment →</span></a>
+      <a class="btn-outline" href="#work">See Our Work</a>
+    </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true"></div>
+  <div class="hero-visual">
+    <div class="hero-orb" aria-hidden="true"></div>
+    <div class="hero-stats">
+      <div class="stat-card"><span class="num">117+</span><p>Projects</p></div>
+      <div class="stat-card"><span class="num">29+</span><p>Industries</p></div>
+      <div class="stat-card"><span class="num">94%</span><p>Retention</p></div>
+      <div class="stat-card"><span class="num">6x</span><p>Avg ROI</p></div>
+    </div>
+  </div>
+  <div class="scroll-ind" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
-<section class="light" id="problems">
-  <div class="wrap">
-    <p class="eyebrow reveal">The Real Problem</p>
-    <h2 class="reveal">You don't have a marketing problem. You have a systems problem.</h2>
-    <div class="cards3">
-      <div class="pcard reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="7" r="3.5"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/><path d="M2 3l20 18" stroke-width="1.2"/></svg>
-        <h3>The Founder Bottleneck</h3>
-        <p>You're in every meeting, every deal, every decision. The business can't grow past you.</p>
-      </div>
-      <div class="pcard reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="13" width="8" height="8" rx="1"/><path d="M10 7h2m2 0h-2m0 0v6" stroke-dasharray="2 2.5"/></svg>
+<div class="section-divider"></div>
+
+<!-- Problems -->
+<section class="section" id="problems">
+  <p class="eyebrow reveal">The Real Problem</p>
+  <h2 class="reveal">You don't have a marketing problem.<br>You have a <em>systems</em> problem.</h2>
+  <div class="problems-grid">
+    <div class="big-card reveal-left">
+      <span class="num-big" aria-hidden="true">01</span>
+      <h3>The Founder Bottleneck</h3>
+      <p>You're in every meeting, every deal, every decision. The business literally cannot grow past you. Your calendar is a prison. Your team waits for permission. Revenue plateaus because there's only one of you.</p>
+    </div>
+    <div class="small-cards">
+      <div class="sm-card reveal-right">
+        <span class="card-num" aria-hidden="true">02</span>
         <h3>Disconnected Tools</h3>
-        <p>Your CRM doesn't talk to your email. Your ads don't talk to your website. Data lives in 12 places.</p>
+        <p>Your CRM doesn't talk to your email. Your ads don't talk to your website. Data lives in 12 places and none of them agree.</p>
       </div>
-      <div class="pcard reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 20L8 9l4 6 3-9 6 14" stroke-linejoin="round" stroke-linecap="round"/><path d="M3 20h18"/></svg>
+      <div class="sm-card reveal-right" style="transition-delay:.12s">
+        <span class="card-num" aria-hidden="true">03</span>
         <h3>Random Acts of Marketing</h3>
-        <p>You've tried agencies, freelancers, courses. Nothing compounds because nothing connects.</p>
+        <p>You've tried agencies, freelancers, courses. Nothing compounds because nothing connects. Every new hire starts from scratch.</p>
       </div>
     </div>
-    <p class="closing reveal">These aren't three problems. They're one problem &mdash; <em>a business that outgrew its infrastructure.</em></p>
   </div>
 </section>
 
-<section class="process" id="process">
-  <div class="wrap">
+<div class="section-divider"></div>
+
+<!-- Process -->
+<section class="process-section" id="process">
+  <div class="process-header">
     <p class="eyebrow reveal">The Method</p>
-    <h2 class="reveal">Four phases. One connected strategy.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="num" aria-hidden="true">01</span>
-        <h3>DIAGNOSE</h3>
-        <p>Two-week deep audit. We map your funnel, review every tool, interview your team, and find where revenue actually leaks.</p>
-      </div>
-      <div class="step reveal">
-        <span class="num" aria-hidden="true">02</span>
-        <h3>SEQUENCE</h3>
-        <p>We prioritize fixes by impact and speed. Quick wins first, structural changes second. You approve each phase.</p>
-      </div>
-      <div class="step reveal">
-        <span class="num" aria-hidden="true">03</span>
-        <h3>BUILD</h3>
-        <p>Website, CRM, email flows, ad systems, AI workflows, reporting &mdash; built and connected to one strategy.</p>
-      </div>
-      <div class="step reveal">
-        <span class="num" aria-hidden="true">04</span>
-        <h3>SUPPORT</h3>
-        <p>Ongoing optimization. We monitor, iterate, and report. This is why 94% of clients stay.</p>
-      </div>
+    <h2 class="reveal" style="font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.02em">Four phases. One connected strategy.</h2>
+  </div>
+  <div class="process-track">
+    <div class="phase-card reveal-scale">
+      <span class="phase-num">01</span>
+      <h3>Diagnose</h3>
+      <p>Two-week deep audit. We map your funnel, review every tool, interview your team, and find exactly where revenue leaks.</p>
+      <span class="phase-tag">Weeks 1–2</span>
+    </div>
+    <div class="phase-card reveal-scale" style="transition-delay:.1s">
+      <span class="phase-num">02</span>
+      <h3>Sequence</h3>
+      <p>We prioritize fixes by impact and speed. Quick wins first, structural changes second. You approve each phase before we touch anything.</p>
+      <span class="phase-tag">Week 3</span>
+    </div>
+    <div class="phase-card reveal-scale" style="transition-delay:.2s">
+      <span class="phase-num">03</span>
+      <h3>Build</h3>
+      <p>Website, CRM, email flows, ad systems, AI workflows, reporting — built and connected to one strategy. No loose ends.</p>
+      <span class="phase-tag">Weeks 4–12</span>
+    </div>
+    <div class="phase-card reveal-scale" style="transition-delay:.3s">
+      <span class="phase-num">04</span>
+      <h3>Support</h3>
+      <p>Ongoing optimization. We monitor, iterate, and report. This is why 94% of clients stay — the relationship compounds.</p>
+      <span class="phase-tag">Ongoing</span>
+    </div>
+  </div>
+  <p class="scroll-hint">Drag to explore phases</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Results -->
+<section class="section" id="results">
+  <p class="eyebrow reveal">The Evidence</p>
+  <h2 class="reveal">Numbers that moved because systems changed.</h2>
+  <div class="results-grid">
+    <div class="result-card reveal-scale">
+      <span class="result-num" data-target="3.95" data-suffix="%" data-decimals="2">0%</span>
+      <p>Avg conversion rate after CRO</p>
+    </div>
+    <div class="result-card reveal-scale" style="transition-delay:.08s">
+      <span class="result-num" data-target="6" data-suffix="x">0x</span>
+      <p>Pipeline increase in Q1</p>
+    </div>
+    <div class="result-card reveal-scale" style="transition-delay:.16s">
+      <span class="result-num" data-target="480" data-prefix="$" data-suffix="K">$0K</span>
+      <p>New ARR for one client</p>
+    </div>
+    <div class="result-card reveal-scale" style="transition-delay:.24s">
+      <span class="result-num" data-target="79">0</span>
+      <p>Fixes deployed in one sprint</p>
     </div>
   </div>
 </section>
 
-<section class="light" id="results">
-  <div class="wrap">
-    <p class="eyebrow reveal">The Evidence</p>
-    <h2 class="reveal">Numbers that moved because systems changed.</h2>
-    <div class="metrics">
-      <div class="metric reveal"><span class="val" data-count="3.95" data-dec="2" data-suffix="%">0%</span><p>Avg conversion rate after CRO</p></div>
-      <div class="metric reveal"><span class="val" data-count="6" data-suffix="x">0x</span><p>Pipeline increase in Q1</p></div>
-      <div class="metric reveal"><span class="val" data-count="480" data-prefix="$" data-suffix="K">$0K</span><p>New ARR for one client</p></div>
-      <div class="metric reveal"><span class="val" data-count="79">0</span><p>Fixes deployed in one sprint</p></div>
+<div class="section-divider"></div>
+
+<!-- Case Studies -->
+<section class="section" id="work">
+  <p class="eyebrow reveal">Proof of Work</p>
+  <h2 class="reveal">Real businesses. Real constraints. Real numbers.</h2>
+  <p class="lead reveal">Every engagement starts different. Every outcome speaks for itself.</p>
+  <div class="cases-grid">
+
+    <div class="case-card reveal-scale">
+      <span class="case-tag">Political Consulting</span>
+      <h3>Digital Advertising in a Major City's Mayoral Race</h3>
+      <p class="case-brief">Strategic budget allocation across diverse voter segments while maintaining ad compliance in a highly competitive municipal race.</p>
+      <div class="case-metrics">
+        <span>340% visibility</span>
+        <span>12x traffic</span>
+        <span>+67% donations</span>
+        <span>Won by 6pts</span>
+      </div>
+      <button class="case-expand">View full case study</button>
+      <div class="case-detail"><div class="case-detail-in"><div class="case-detail-content">
+        <p><strong>Method:</strong> CTV and Display Programmatic with precision dayparting. Messaging focused on public safety and community-first initiatives across diverse demographic segments.</p>
+        <blockquote>"They turned our digital presence from invisible to inevitable."</blockquote>
+      </div></div></div>
+    </div>
+
+    <div class="case-card reveal-scale" style="transition-delay:.08s">
+      <span class="case-tag">Cannabis & Retail</span>
+      <h3>Revolutionizing the Cannabis Industry in Oregon</h3>
+      <p class="case-brief">Navigating complex regulations while scaling from one location, balancing visibility with community integration.</p>
+      <div class="case-metrics">
+        <span>1→33 locations</span>
+        <span>$15K daily/store</span>
+        <span>300% revenue</span>
+        <span>22 acres</span>
+      </div>
+      <button class="case-expand">View full case study</button>
+      <div class="case-detail"><div class="case-detail-in"><div class="case-detail-content">
+        <p><strong>Method:</strong> Strategic location selection, compliance tech (Metrc), HR management (Gusto), CRM, community engagement, and sustainable practices across all 33 dispensaries.</p>
+        <blockquote>"SWG didn't just grow our business — they made us part of the community fabric."</blockquote>
+      </div></div></div>
+    </div>
+
+    <div class="case-card reveal-scale" style="transition-delay:.16s">
+      <span class="case-tag">Health Supplements</span>
+      <h3>Scaling an Online Health Supplement Provider</h3>
+      <p class="case-brief">From $2M to market leadership across multiple international markets in under a decade.</p>
+      <div class="case-metrics">
+        <span>$2M→$300M+</span>
+        <span>500+ writers</span>
+        <span>Top 500 site</span>
+        <span>9yr retention</span>
+      </div>
+      <button class="case-expand">View full case study</button>
+      <div class="case-detail"><div class="case-detail-in"><div class="case-detail-content">
+        <p><strong>Method:</strong> Managed a top-500 website, $7M in international events, a 500+ writer team, celebrity content, and talent acquisition across the UK, Germany, Brazil, and Canada.</p>
+        <blockquote>"From a garage startup to a global powerhouse. SWG was the catalyst at every stage."</blockquote>
+      </div></div></div>
+    </div>
+
+    <div class="case-card reveal-scale" style="transition-delay:.24s">
+      <span class="case-tag">Insurance Education</span>
+      <h3>Revolutionizing Pre-Licensing Insurance Education with AI</h3>
+      <p class="case-brief">Launching pre-licensing courses across all 50 states plus DC in 10 months — traditionally a multi-year project.</p>
+      <div class="case-metrics">
+        <span>51 state books</span>
+        <span>10 months</span>
+        <span>60% time saved</span>
+        <span>4-person team</span>
+      </div>
+      <button class="case-expand">View full case study</button>
+      <div class="case-detail"><div class="case-detail-in"><div class="case-detail-content">
+        <p><strong>Method:</strong> AI-powered content creation (ChatGPT, Bard, Claude), custom workflow automations, and API integrations connecting disparate systems into a unified publishing pipeline.</p>
+        <blockquote>"What should have taken years took months. AI was the multiplier, SWG was the architect."</blockquote>
+      </div></div></div>
+    </div>
+
+    <div class="case-card reveal-scale" style="transition-delay:.32s">
+      <span class="case-tag">Commercial Real Estate</span>
+      <h3>Apex Commercial Group</h3>
+      <p class="case-brief">A mid-market CRE firm stuck at $4.2M with 1.8% conversion. The founder was handling 70% of client relationships personally.</p>
+      <div class="case-metrics">
+        <span>6x pipeline</span>
+        <span>4.1% conversion</span>
+        <span>$480K new ARR</span>
+        <span>94→51 day cycle</span>
+      </div>
+      <button class="case-expand">View full case study</button>
+      <div class="case-detail"><div class="case-detail-in"><div class="case-detail-content">
+        <p><strong>Method:</strong> Full-funnel diagnostic, CRM rebuild, automated lead scoring, sales team restructure, and a content-driven authority strategy that freed the founder from 70% to 25% of daily operations.</p>
+        <blockquote>"They gave me my time back and doubled our pipeline."</blockquote>
+      </div></div></div>
+    </div>
+
+    <div class="case-card reveal-scale" style="transition-delay:.4s">
+      <span class="case-tag">EdTech</span>
+      <h3>Archway Education</h3>
+      <p class="case-brief">An education provider with 14 courses, 34% completion, 8.2% churn, and zero organic traffic. Stuck at $890K for three years.</p>
+      <div class="case-metrics">
+        <span>34→71% completion</span>
+        <span>+420% organic</span>
+        <span>$890K→$1.6M</span>
+        <span>79 fixes deployed</span>
+      </div>
+      <button class="case-expand">View full case study</button>
+      <div class="case-detail"><div class="case-detail-in"><div class="case-detail-content">
+        <p><strong>Method:</strong> Platform migration, UX redesign, a 21-touchpoint email system, SEO strategy, and a referral engine. 79 fixes deployed in the initial two-week sprint alone.</p>
+        <blockquote>"They found 79 things wrong with our funnel in two weeks. Every fix moved the needle."</blockquote>
+      </div></div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- About -->
+<section class="section" id="about">
+  <p class="eyebrow reveal">Who We Are</p>
+  <h2 class="reveal">Built for the stage between<br>traction and scale.</h2>
+  <div class="about-split">
+    <div class="about-text reveal-left">
+      <p>SWG works with <strong>founder-led and operator-led companies</strong> doing $1M–$15M in revenue. You've proven the model works. Now the systems that got you here are the systems holding you back.</p>
+      <br>
+      <p>We've shipped <strong>117+ projects across 29+ industries</strong> — health & wellness, professional services, real estate, e-commerce, SaaS, agencies, and more. Our client retention is 94% because the relationship gets more valuable over time, not less.</p>
+    </div>
+    <div class="about-numbers reveal-right">
+      <div class="about-num"><span class="val">117+</span><p>Projects</p></div>
+      <div class="about-num"><span class="val">29+</span><p>Industries</p></div>
+      <div class="about-num"><span class="val">94%</span><p>Retention</p></div>
+      <div class="about-num"><span class="val">6x</span><p>Avg ROI</p></div>
     </div>
   </div>
 </section>
 
-<section id="work">
-  <div class="wrap">
-    <p class="eyebrow reveal">Proof of Work</p>
-    <h2 class="reveal">Real businesses. Real constraints. Real numbers.</h2>
-    <div class="cs-grid">
+<div class="section-divider"></div>
 
-      <article class="cs reveal">
-        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs1">
-          <span class="cs-tag">Political Consulting</span>
-          <span class="cs-title">Digital Advertising in a Major City's Mayoral Race</span>
-        </button></h3>
-        <p class="cs-sit">A major city mayoral campaign needed strategic budget allocation across diverse voter segments while maintaining ad compliance.</p>
-        <div class="panel" id="cs1"><div class="panel-in"><div class="cs-detail">
-          <ul class="cs-nums">
-            <li><strong>340%</strong>visibility increase</li>
-            <li><strong>12x</strong>website traffic</li>
-            <li><strong>67%</strong>donation increase</li>
-            <li><strong>+6 pts</strong>won the race</li>
-          </ul>
-          <p class="cs-method"><strong>Method.</strong> CTV and Display Programmatic with precision dayparting. Messaging focused on public safety and community-first initiatives.</p>
-          <blockquote>&ldquo;They turned our digital presence from invisible to inevitable.&rdquo;</blockquote>
-        </div></div></div>
-      </article>
-
-      <article class="cs reveal">
-        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs2">
-          <span class="cs-tag">Cannabis &amp; Retail</span>
-          <span class="cs-title">Revolutionizing the Cannabis Industry in Oregon</span>
-        </button></h3>
-        <p class="cs-sit">An Oregon cannabis brand navigating regulations while scaling from one location, balancing visibility with community integration.</p>
-        <div class="panel" id="cs2"><div class="panel-in"><div class="cs-detail">
-          <ul class="cs-nums">
-            <li><strong>1&rarr;33</strong>dispensaries</li>
-            <li><strong>$15K</strong>avg daily sales/store</li>
-            <li><strong>300%</strong>annual revenue</li>
-            <li><strong>22 acres</strong>farm operation</li>
-            <li><strong>+45%</strong>community support</li>
-          </ul>
-          <p class="cs-method"><strong>Method.</strong> Strategic location selection, compliance tech (Metrc), HR management (Gusto), CRM, community engagement, and sustainable practices.</p>
-          <blockquote>&ldquo;SWG didn't just grow our business &mdash; they made us part of the community fabric.&rdquo;</blockquote>
-        </div></div></div>
-      </article>
-
-      <article class="cs reveal">
-        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs3">
-          <span class="cs-tag">Health Supplements</span>
-          <span class="cs-title">Scaling an Online Health Supplement Provider</span>
-        </button></h3>
-        <p class="cs-sit">An online health supplement provider scaling from $2M to market leadership across multiple international markets.</p>
-        <div class="panel" id="cs3"><div class="panel-in"><div class="cs-detail">
-          <ul class="cs-nums">
-            <li><strong>$2M&rarr;$300M+</strong>in 7 years</li>
-            <li><strong>500+</strong>writer team</li>
-            <li><strong>Top 500</strong>global site</li>
-            <li><strong>1</strong>departure in 9 years</li>
-            <li><strong>$7M</strong>events budget</li>
-          </ul>
-          <p class="cs-method"><strong>Method.</strong> Managed a top-500 website, $7M in international events, a 500+ writer team, celebrity content, and talent acquisition across the UK, Germany, Brazil, and Canada.</p>
-          <blockquote>&ldquo;From a garage startup to a global powerhouse. SWG was the catalyst at every stage.&rdquo;</blockquote>
-        </div></div></div>
-      </article>
-
-      <article class="cs reveal">
-        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs4">
-          <span class="cs-tag">Insurance Education</span>
-          <span class="cs-title">Revolutionizing Pre-Licensing Insurance Education with AI</span>
-        </button></h3>
-        <p class="cs-sit">Launch pre-licensing insurance courses across all 50 states plus DC in 10 months &mdash; traditionally a multi-year project.</p>
-        <div class="panel" id="cs4"><div class="panel-in"><div class="cs-detail">
-          <ul class="cs-nums">
-            <li><strong>51</strong>state books</li>
-            <li><strong>10 months</strong>vs 2+ years</li>
-            <li><strong>60%+</strong>time reduction</li>
-            <li><strong>4-person</strong>team</li>
-            <li><strong>$M&rarr;$K</strong>cost</li>
-            <li><strong>100%</strong>compliance</li>
-          </ul>
-          <p class="cs-method"><strong>Method.</strong> AI-powered content creation (ChatGPT, Bard, Claude), custom workflow automations, and API integrations connecting disparate systems.</p>
-          <blockquote>&ldquo;What should have taken years took months. AI was the multiplier, SWG was the architect.&rdquo;</blockquote>
-        </div></div></div>
-      </article>
-
-      <article class="cs reveal">
-        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs5">
-          <span class="cs-tag">Commercial Real Estate</span>
-          <span class="cs-title">Apex Commercial Group</span>
-        </button></h3>
-        <p class="cs-sit">A mid-market CRE firm stuck at $4.2M with 1.8% conversion. The founder was handling 70% of client relationships.</p>
-        <div class="panel" id="cs5"><div class="panel-in"><div class="cs-detail">
-          <ul class="cs-nums">
-            <li><strong>6x</strong>pipeline</li>
-            <li><strong>4.1%</strong>conversion, was 1.8%</li>
-            <li><strong>$480K</strong>new ARR</li>
-            <li><strong>70&rarr;25%</strong>founder load</li>
-            <li><strong>94&rarr;51 days</strong>deal cycle</li>
-          </ul>
-          <p class="cs-method"><strong>Method.</strong> Full-funnel diagnostic, CRM rebuild, automated lead scoring, sales team restructure, and a content-driven authority strategy.</p>
-          <blockquote>&ldquo;They gave me my time back and doubled our pipeline.&rdquo;</blockquote>
-        </div></div></div>
-      </article>
-
-      <article class="cs reveal">
-        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs6">
-          <span class="cs-tag">EdTech</span>
-          <span class="cs-title">Archway Education</span>
-        </button></h3>
-        <p class="cs-sit">An education provider with 14 courses, 34% completion, 8.2% churn, and zero organic traffic. Stuck at $890K for three years.</p>
-        <div class="panel" id="cs6"><div class="panel-in"><div class="cs-detail">
-          <ul class="cs-nums">
-            <li><strong>34&rarr;71%</strong>completion</li>
-            <li><strong>8.2&rarr;2.9%</strong>churn</li>
-            <li><strong>+420%</strong>organic traffic</li>
-            <li><strong>$890K&rarr;$1.6M</strong>revenue</li>
-            <li><strong>79</strong>fixes deployed</li>
-            <li><strong>31&rarr;67</strong>NPS</li>
-          </ul>
-          <p class="cs-method"><strong>Method.</strong> Platform migration, UX redesign, a 21-touchpoint email system, SEO strategy, and a referral engine. 79 fixes in the initial sprint.</p>
-          <blockquote>&ldquo;They found 79 things wrong with our funnel in two weeks. Every fix moved the needle.&rdquo;</blockquote>
-        </div></div></div>
-      </article>
-
+<!-- FAQ -->
+<section class="section" id="faq">
+  <p class="eyebrow reveal">Questions</p>
+  <h2 class="reveal">The stuff you actually want to know.</h2>
+  <div class="faqs">
+    <div class="faq-item reveal">
+      <h3><button class="faq-btn" aria-expanded="false">Who is SWG built for?<span class="faq-icon">+</span></button></h3>
+      <div class="faq-panel"><div class="faq-panel-in"><p class="faq-answer">Founder-led companies doing $1M–$15M in revenue. You have real traction, but growth has slowed and the founder is still the engine driving everything.</p></div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.06s">
+      <h3><button class="faq-btn" aria-expanded="false">How are you different from a marketing agency?<span class="faq-icon">+</span></button></h3>
+      <div class="faq-panel"><div class="faq-panel-in"><p class="faq-answer">Agencies sell channels — ads, email, SEO. We start with diagnosis, then build the connected system that makes every channel work together. We're the architect, not the plumber.</p></div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.12s">
+      <h3><button class="faq-btn" aria-expanded="false">What happens during the business review?<span class="faq-icon">+</span></button></h3>
+      <div class="faq-panel"><div class="faq-panel-in"><p class="faq-answer">A two-week audit of your funnel, website, ads, email, tools, and operations. You get written findings and a sequenced fix list, prioritized by impact and speed.</p></div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.18s">
+      <h3><button class="faq-btn" aria-expanded="false">How quickly will we see results?<span class="faq-icon">+</span></button></h3>
+      <div class="faq-panel"><div class="faq-panel-in"><p class="faq-answer">Quick wins land in the first 30 days. Structural changes compound over the quarter. Everything is measured against your baseline from day one.</p></div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.24s">
+      <h3><button class="faq-btn" aria-expanded="false">What does an engagement cost?<span class="faq-icon">+</span></button></h3>
+      <div class="faq-panel"><div class="faq-panel-in"><p class="faq-answer">The business review is a fixed fee. Build work is scoped per phase, approved before it starts. No open-ended retainers, no surprises.</p></div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.3s">
+      <h3><button class="faq-btn" aria-expanded="false">Do you replace our team or tools?<span class="faq-icon">+</span></button></h3>
+      <div class="faq-panel"><div class="faq-panel-in"><p class="faq-answer">Neither, unless something is genuinely broken. We work inside your existing stack, document everything we build, and train your team to run it independently.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="light" id="about">
-  <div class="wrap">
-    <p class="eyebrow reveal">Who We Are</p>
-    <h2 class="reveal">Built for the stage between traction and scale.</h2>
-    <p class="about-body reveal">SWG works with founder-led and operator-led companies doing $1M&ndash;$15M in revenue. You've proven the model works. Now the systems that got you here are the systems holding you back. We've shipped 117+ projects across 29+ industries &mdash; health &amp; wellness, professional services, real estate, e-commerce, SaaS, agencies, and more. Our client retention is 94% because the relationship gets more valuable over time, not less.</p>
-    <div class="trust reveal">
-      <div><span class="val">117+</span><p>Projects</p></div>
-      <div><span class="val">29+</span><p>Industries</p></div>
-      <div><span class="val">94%</span><p>Retention</p></div>
-      <div><span class="val">6x</span><p>Avg ROI</p></div>
-    </div>
-  </div>
+<!-- CTA -->
+<section class="cta-section">
+  <p class="eyebrow reveal">Ready?</p>
+  <h2 class="reveal">Stop guessing.<br>Start building <em>systems</em>.</h2>
+  <p class="lead reveal">The free assessment takes 30 minutes. You'll leave with clarity on what's actually holding you back — whether we work together or not.</p>
+  <a class="cta-btn reveal-scale" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment"><span>Start Your Free Assessment →</span></a>
+  <p class="cta-fine reveal">No obligation. No pitch deck. Just diagnosis.</p>
 </section>
 
-<section id="faq">
-  <div class="wrap">
-    <p class="eyebrow reveal">Common Questions</p>
-    <h2 class="reveal">Straight answers.</h2>
-    <div class="faqs reveal">
-      <div class="faq">
-        <h3><button aria-expanded="false" aria-controls="fq1">Who is SWG built for?</button></h3>
-        <div class="panel" id="fq1"><div class="panel-in"><p>Founder-led companies doing $1M&ndash;$15M in revenue. You have real traction, but growth has slowed and the founder is still the engine.</p></div></div>
-      </div>
-      <div class="faq">
-        <h3><button aria-expanded="false" aria-controls="fq2">How are you different from a marketing agency?</button></h3>
-        <div class="panel" id="fq2"><div class="panel-in"><p>Agencies sell channels &mdash; ads, email, SEO. We start with diagnosis, then build the connected system that makes every channel work together.</p></div></div>
-      </div>
-      <div class="faq">
-        <h3><button aria-expanded="false" aria-controls="fq3">What happens during the business review?</button></h3>
-        <div class="panel" id="fq3"><div class="panel-in"><p>A two-week audit of your funnel, website, ads, email, tools, and operations. You get written findings and a sequenced fix list, prioritized by impact.</p></div></div>
-      </div>
-      <div class="faq">
-        <h3><button aria-expanded="false" aria-controls="fq4">How quickly will we see results?</button></h3>
-        <div class="panel" id="fq4"><div class="panel-in"><p>Quick wins land in the first 30 days. Structural changes compound over the quarter. Everything is measured against your baseline.</p></div></div>
-      </div>
-      <div class="faq">
-        <h3><button aria-expanded="false" aria-controls="fq5">What does an engagement cost?</button></h3>
-        <div class="panel" id="fq5"><div class="panel-in"><p>The business review is a fixed fee. Build work is scoped per phase, approved before it starts. No open-ended retainers.</p></div></div>
-      </div>
-      <div class="faq">
-        <h3><button aria-expanded="false" aria-controls="fq6">Do you replace our team or tools?</button></h3>
-        <div class="panel" id="fq6"><div class="panel-in"><p>Neither, unless something is genuinely broken. We work inside your existing stack, document everything we build, and train your team to run it.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="contact">
-  <div class="wrap">
-    <h2 class="reveal">Ready to find out what's actually holding you back?</h2>
-    <p class="lead reveal">The assessment is free. The clarity is immediate. Start now.</p>
-    <a class="btn btn-lg reveal" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Your Free Assessment &rarr;</a>
-    <p class="fine reveal">No commitment. No generic playbook. Just a clear view of what to fix first.</p>
-  </div>
-</section>
-
-</main>
-
+<!-- Footer -->
 <footer>
-  <div class="wrap foot">
-    <a class="logo" href="#top">SWG<em>.</em></a>
-    <p>&copy; 2026 Support Wellness Global. All rights reserved.</p>
+  <div class="foot">
+    <span>&copy; 2026 Support Wellness Global. All rights reserved.</span>
     <a href="mailto:hello@supportwellnessglobal.com">hello@supportwellnessglobal.com</a>
   </div>
 </footer>
 
 <script>
-(function(){
-"use strict";
-var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive: true});
 
-/* mobile nav */
-var nav=document.getElementById("nav"),burger=nav.querySelector(".burger");
-burger.addEventListener("click",function(){
-  var open=nav.classList.toggle("open");
-  burger.setAttribute("aria-expanded",open);
+// Mobile menu
+const burger = document.querySelector('.burger');
+burger.addEventListener('click', () => {
+  const expanded = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
 });
-nav.querySelectorAll(".nav-links a").forEach(function(a){
-  a.addEventListener("click",function(){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  });
 });
 
-/* counters */
-var counted=false;
-function setFinal(el){
-  el.textContent=(el.dataset.prefix||"")+el.dataset.count+(el.dataset.suffix||"");
-}
-function runCounters(){
-  if(counted)return;counted=true;
-  document.querySelectorAll(".val[data-count]").forEach(function(el){
-    if(reduce){setFinal(el);return;}
-    var end=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||"0",10),
-        pre=el.dataset.prefix||"",suf=el.dataset.suffix||"",t0=null,dur=1400;
-    function frame(t){
-      if(!t0)t0=t;
-      var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);
-      el.textContent=pre+(end*e).toFixed(dec)+suf;
-      if(p<1)requestAnimationFrame(frame);else setFinal(el);
+// Intersection Observer for reveals
+const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold: 0.1, rootMargin: '0px 0px -60px 0px'});
+revealEls.forEach(el => io.observe(el));
+// Safety timeout
+setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 2500);
+
+// Animated counters
+const counters = document.querySelectorAll('.result-num');
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || '0');
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    let start = 0;
+    const duration = 1800;
+    const startTime = performance.now();
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 4);
+      const current = start + (target - start) * eased;
+      el.textContent = prefix + current.toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
     }
-    requestAnimationFrame(frame);
+    requestAnimationFrame(tick);
+    counterIO.unobserve(el);
   });
-}
+}, {threshold: 0.5});
+counters.forEach(el => counterIO.observe(el));
 
-/* scroll reveals */
-var revs=document.querySelectorAll(".reveal");
-function showAll(){
-  revs.forEach(function(e){e.classList.add("in");});
-  runCounters();
-}
-if(reduce||!("IntersectionObserver" in window)){
-  showAll();
-}else{
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){
-        en.target.classList.add("in");
-        if(en.target.closest("#results"))runCounters();
-        io.unobserve(en.target);
-      }
-    });
-  },{threshold:.12,rootMargin:"0px 0px -40px 0px"});
-  revs.forEach(function(e){io.observe(e);});
-  /* SAFETY: force everything visible after 2.5s no matter what */
-  setTimeout(showAll,2500);
-}
-
-/* expandable case studies (multi-open) */
-document.querySelectorAll(".cs").forEach(function(cs){
-  var btn=cs.querySelector(".cs-h button");
-  btn.addEventListener("click",function(){
-    var open=cs.classList.toggle("open");
-    btn.setAttribute("aria-expanded",open);
+// Case study expand/collapse
+document.querySelectorAll('.case-expand').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.case-card');
+    const isOpen = card.classList.contains('open');
+    card.classList.toggle('open');
+    btn.textContent = isOpen ? 'View full case study' : 'Close case study';
   });
 });
 
-/* FAQ accordion (single-open) */
-var faqs=document.querySelectorAll(".faq");
-faqs.forEach(function(f){
-  var btn=f.querySelector("h3 button");
-  btn.addEventListener("click",function(){
-    var wasOpen=f.classList.contains("open");
-    faqs.forEach(function(o){
-      o.classList.remove("open");
-      o.querySelector("h3 button").setAttribute("aria-expanded","false");
-    });
-    if(!wasOpen){
-      f.classList.add("open");
-      btn.setAttribute("aria-expanded","true");
-    }
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', !isOpen);
   });
 });
-})();
+
+// 3D tilt effect on case cards
+document.querySelectorAll('.case-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const rotateX = (y - .5) * -8;
+    const rotateY = (x - .5) * 8;
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
+    card.style.setProperty('--mouse-x', x * 100 + '%');
+    card.style.setProperty('--mouse-y', y * 100 + '%');
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+// Parallax blobs on scroll
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  const blobs = document.querySelectorAll('.blob');
+  blobs[0].style.transform = `translate(${Math.sin(y*.002)*30}px, ${y*0.15}px) scale(1)`;
+  blobs[1].style.transform = `translate(${Math.cos(y*.003)*20}px, ${-y*0.1}px) scale(1)`;
+  blobs[2].style.transform = `translate(${Math.sin(y*.001)*40}px, ${y*0.08}px) scale(1)`;
+}, {passive: true});
+
+// Process track drag scroll
+const track = document.querySelector('.process-track');
+let isDown = false, startX, scrollLeft;
+track.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; track.style.cursor = 'grabbing'; });
+track.addEventListener('mouseleave', () => { isDown = false; track.style.cursor = 'grab'; });
+track.addEventListener('mouseup', () => { isDown = false; track.style.cursor = 'grab'; });
+track.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; track.scrollLeft = scrollLeft - (x - startX) * 1.5; });
 </script>
 </body>
 </html>
