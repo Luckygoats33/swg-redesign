@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Wellness Global — Business Growth Consulting for $1M–$15M Companies</title>
+<meta name="description" content="SWG diagnoses the bottleneck holding your $1M–$15M company back, then builds the system that fixes it. 117+ projects, 29+ industries, 94% retention, 6x average ROI.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Growth isn't the problem. Your systems are. — Support Wellness Global">
+<meta property="og:description" content="Business growth consulting for founder-led companies doing $1M–$15M. One connected strategy. Measurable results in 30 days.">
+<meta property="og:image" content="img/hero-light.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","name":"Support Wellness Global","description":"Business growth consulting for founder-led companies doing $1M–$15M in revenue.","email":"hello@supportwellnessglobal.com","knowsAbout":["Business growth consulting","CRM systems","Marketing systems","Conversion optimization"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Who is SWG built for?","acceptedAnswer":{"@type":"Answer","text":"Founder-led companies doing $1M–$15M in revenue. You have real traction, but growth has slowed and the founder is still the engine."}},
+{"@type":"Question","name":"How are you different from a marketing agency?","acceptedAnswer":{"@type":"Answer","text":"Agencies sell channels — ads, email, SEO. We start with diagnosis, then build the connected system that makes every channel work together."}},
+{"@type":"Question","name":"What happens during the business review?","acceptedAnswer":{"@type":"Answer","text":"A two-week audit of your funnel, website, ads, email, tools, and operations. You get written findings and a sequenced fix list, prioritized by impact."}},
+{"@type":"Question","name":"How quickly will we see results?","acceptedAnswer":{"@type":"Answer","text":"Quick wins land in the first 30 days. Structural changes compound over the quarter. Everything is measured against your baseline."}},
+{"@type":"Question","name":"What does an engagement cost?","acceptedAnswer":{"@type":"Answer","text":"The business review is a fixed fee. Build work is scoped per phase, approved before it starts. No open-ended retainers."}},
+{"@type":"Question","name":"Do you replace our team or tools?","acceptedAnswer":{"@type":"Answer","text":"Neither, unless something is genuinely broken. We work inside your existing stack, document everything we build, and train your team to run it."}}
+]}]}
+</script>
+<style>
+:root{--ink:#0a0a0a;--paper:#f8f6f3;--gold:#c9a84c;--card:#1a1a1a;--line:#2a2a2a;--mut:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--paper);line-height:1.8;padding-top:36px;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.15}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:120px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.75rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold);flex:none}
+h2{font-size:clamp(2rem,3.5vw,2.8rem);max-width:18em;margin-bottom:20px}
+.lead{color:var(--mut);max-width:38em}
+.light{background:var(--paper);color:var(--ink)}
+.light .lead{color:#5a5650}
+.btn{display:inline-block;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.02em;text-decoration:none;background:var(--gold);color:var(--ink);padding:17px 36px;border:1px solid var(--gold);border-radius:2px;min-height:48px;transition:background .25s,color .25s,transform .25s}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn-ghost{background:transparent;color:var(--gold);padding:11px 22px;font-size:.9rem}
+.btn-ghost:hover{background:var(--gold);color:var(--ink)}
+/* ---------- version bar ---------- */
+.vbar{position:fixed;top:0;left:0;right:0;height:36px;background:#000;border-bottom:1px solid var(--line);z-index:200;font-size:.72rem}
+.vbar-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;gap:16px;overflow-x:auto;scrollbar-width:none}
+.vbar-inner::-webkit-scrollbar{display:none}
+.vbar-label{letter-spacing:3px;color:var(--mut);font-weight:700;flex:none}
+.vbar-nav{display:flex;gap:4px}
+.vbar-nav a{color:var(--mut);text-decoration:none;padding:2px 8px;border-radius:2px;line-height:1.4}
+.vbar-nav a:hover{color:var(--paper)}
+.vbar-nav a[aria-current]{background:var(--gold);color:var(--ink);font-weight:700}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:36px;z-index:150;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1100px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:'DM Serif Display',serif;font-size:1.7rem;text-decoration:none;letter-spacing:.04em}
+.logo em{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;font-size:.92rem;color:#ccc;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;padding:12px}
+.burger span{display:block;height:2px;background:var(--paper);margin:6px 0;transition:transform .3s,opacity .3s}
+.nav.open .burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:calc(100vh - 108px);display:flex;align-items:center;padding:100px 0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/hero-light.webp) center/cover no-repeat;opacity:.3}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.2),rgba(10,10,10,.7) 85%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(3rem,6vw,5rem);max-width:11em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .sub{font-size:1.15rem;color:#cfcac2;max-width:34em;margin-bottom:44px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 0;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,.25);font-size:.88rem;color:var(--mut);letter-spacing:.06em}
+.proof span{padding-right:20px;margin-right:20px;border-right:1px solid var(--line)}
+.proof span:last-child{border:0;margin:0;padding:0}
+.proof strong{color:var(--paper);font-weight:700}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:1px;height:52px;background:linear-gradient(180deg,var(--gold),transparent);z-index:1;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.25;transform:translateX(-50%) scaleY(.6);transform-origin:top}50%{opacity:1;transform:translateX(-50%) scaleY(1);transform-origin:top}}
+/* ---------- problem ---------- */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.pcard{background:#fff;border:1px solid #e7e2d9;border-top:2px solid var(--gold);padding:40px 32px;transition:transform .3s,box-shadow .3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(10,10,10,.28)}
+.pcard h3{font-size:1.35rem;margin:22px 0 12px}
+.pcard p{font-size:.96rem;color:#5a5650}
+.icon{width:46px;height:46px;color:var(--gold)}
+.closing{font-family:'DM Serif Display',serif;font-size:clamp(1.25rem,2.2vw,1.6rem);max-width:26em;margin:72px auto 0;text-align:center;line-height:1.5}
+.closing em{font-style:italic;color:var(--gold);-webkit-text-stroke:.2px}
+.light .closing em{color:#a5832e}
+/* ---------- process ---------- */
+.process{position:relative;overflow:hidden}
+.process::before{content:"";position:absolute;inset:0;background:url(img/texture.webp) center/cover no-repeat;opacity:.07;pointer-events:none}
+.process .wrap{position:relative}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line)}
+.step{padding:44px 28px 8px 0;border-right:1px solid var(--line);position:relative}
+.step:last-child{border-right:0}
+.step::before{content:"";position:absolute;top:-1px;left:0;width:44px;height:1px;background:var(--gold)}
+.step .num{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--gold);line-height:1;display:block}
+.step h3{font-size:.85rem;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:4px;margin:18px 0 14px}
+.step p{font-size:.93rem;color:#b6b1a8}
+/* ---------- results ---------- */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.metric{background:#fff;border:1px solid #e7e2d9;border-top:2px solid var(--gold);padding:38px 26px;text-align:center}
+.metric .val{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,4vw,3.2rem);color:var(--ink);display:block;line-height:1;font-variant-numeric:tabular-nums}
+.metric p{font-size:.88rem;color:#5a5650;margin-top:14px}
+/* ---------- case studies ---------- */
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.cs{background:var(--card);border:1px solid var(--line);transition:border-color .3s}
+.cs:hover,.cs.open{border-color:rgba(201,168,76,.5)}
+.cs-h{margin:0}
+.cs-h button{width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:34px 32px 0;min-height:48px}
+.cs-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:5px 12px;margin-bottom:18px}
+.cs-title{display:block;font-family:'DM Serif Display',serif;font-size:1.45rem;line-height:1.25;padding-right:36px;position:relative}
+.cs-title::after{content:"+";position:absolute;right:0;top:0;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--gold);font-size:1.6rem;line-height:1;transition:transform .35s}
+.cs.open .cs-title::after{transform:rotate(45deg)}
+.cs-sit{padding:14px 32px 30px;font-size:.94rem;color:#b6b1a8}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.panel-in{overflow:hidden;min-height:0}
+.cs.open .panel,.faq.open .panel{grid-template-rows:1fr}
+.cs-detail{padding:0 32px 36px;border-top:1px solid var(--line)}
+.cs-nums{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:26px 0 4px}
+.cs-nums li{background:#111;border:1px solid var(--line);padding:9px 14px;font-size:.8rem;color:#b6b1a8;line-height:1.5}
+.cs-nums strong{color:var(--gold);font-weight:700;display:block;font-size:.95rem}
+.cs-method{font-size:.92rem;color:#b6b1a8;margin-top:20px}
+.cs-method strong{color:var(--paper)}
+.cs blockquote{margin-top:22px;padding-left:18px;border-left:2px solid var(--gold);font-family:'DM Serif Display',serif;font-size:1.08rem;font-style:italic;color:var(--paper);line-height:1.5}
+/* ---------- about ---------- */
+.about-body{font-size:1.1rem;max-width:42em;color:#3d3a35}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;border-top:1px solid #ddd6c9;padding-top:48px}
+.trust .val{font-family:'DM Serif Display',serif;font-size:2.4rem;line-height:1;display:block}
+.trust p{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:#8a8478;margin-top:10px;font-weight:700}
+/* ---------- faq ---------- */
+.faqs{margin-top:56px;border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq h3{margin:0}
+.faq h3 button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;color:inherit;cursor:pointer;padding:26px 4px;min-height:48px;font-family:'DM Serif Display',serif;font-size:1.2rem}
+.faq h3 button::after{content:"+";color:var(--gold);font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:400;flex:none;transition:transform .35s}
+.faq.open h3 button::after{transform:rotate(45deg)}
+.faq .panel-in p{padding:0 4px 28px;color:#b6b1a8;max-width:44em}
+/* ---------- cta ---------- */
+.cta{position:relative;text-align:center;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:url(img/hero-alt.webp) center/cover no-repeat;opacity:.25}
+.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent,rgba(10,10,10,.75))}
+.cta .wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.cta h2{font-size:clamp(2.2rem,4vw,3.2rem);max-width:15em;margin:0 auto 20px}
+.cta .lead{margin:0 auto 40px}
+.cta .fine{margin-top:26px;font-size:.85rem;color:var(--mut)}
+.btn-lg{font-size:1.1rem;padding:20px 48px}
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;font-size:.85rem;color:var(--mut)}
+.foot a{color:var(--mut);text-decoration:none}
+.foot a:hover{color:var(--gold)}
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--ink);padding:12px 20px;z-index:300;font-weight:700}
+.skip:focus{left:12px;top:48px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* ---------- responsive ---------- */
+@media(max-width:1024px){
+.steps{grid-template-columns:1fr 1fr}
+.step{border:0;padding:44px 20px 8px 0;border-top:1px solid var(--line);margin-top:-1px}
+.metrics{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+section{padding:80px 0}
+.nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,10,10,.97);border-bottom:1px solid var(--line);padding:12px 24px 28px;display:none}
+.nav.open .nav-links{display:flex}
+.nav-links a{display:block;padding:15px 4px;font-size:1.05rem;border-bottom:1px solid var(--line)}
+.nav-links li:last-child a{border:0;margin-top:16px;text-align:center}
+.burger{display:block}
+.cards3,.cs-grid{grid-template-columns:1fr}
+.hero{min-height:auto;padding:110px 0 130px}
+.proof span{display:block;border:0;margin:0;padding:3px 0}
+.trust{grid-template-columns:1fr 1fr;gap:36px 20px}
+.cs-h button{padding:28px 24px 0}
+.cs-sit{padding:12px 24px 26px}
+.cs-detail{padding:0 24px 30px}
+}
+@media(max-width:480px){
+.steps,.metrics{grid-template-columns:1fr}
+.hero h1{font-size:clamp(2.5rem,11vw,3rem)}
+.btn-lg{width:100%;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation:none!important;transition:none!important}
+html{scroll-behavior:auto}
+.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="vbar">
+  <div class="vbar-inner">
+    <span class="vbar-label">VERSION</span>
+    <nav class="vbar-nav" aria-label="Version selector">
+      <a href="../v1.html">1</a>
+      <a href="../v1a/">1a</a>
+      <a href="../v2/">2</a>
+      <a href="../v3/">3</a>
+      <a href="../v4/">4</a>
+      <a href="../v5/">5</a>
+      <a href="../v6/">6</a>
+      <a href="../v7/">7</a>
+      <a href="../v8/">8</a>
+      <a href="../">9</a>
+      <a href="../v10/">10</a>
+      <a href="../v11/">11</a>
+      <a href="../v12/">12</a>
+      <a href="./" aria-current="page">13</a>
+    </nav>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top">SWG<em>.</em></a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="menu">
+      <li><a href="#problems">Problems</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="btn btn-ghost" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Your Assessment &rarr;</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Business Growth Consulting</p>
+    <h1>Growth isn't the problem. <em>Your systems are.</em></h1>
+    <p class="sub">We diagnose the bottleneck holding your $1M&ndash;$15M company back, then build the system that fixes it. One connected strategy. Measurable results in 30 days.</p>
+    <a class="btn btn-lg" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Your Free Assessment &rarr;</a>
+    <p class="proof"><span><strong>117+</strong> projects</span><span><strong>29+</strong> industries</span><span><strong>94%</strong> retention</span><span><strong>6x</strong> avg ROI</span></p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<section class="light" id="problems">
+  <div class="wrap">
+    <p class="eyebrow reveal">The Real Problem</p>
+    <h2 class="reveal">You don't have a marketing problem. You have a systems problem.</h2>
+    <div class="cards3">
+      <div class="pcard reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="7" r="3.5"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/><path d="M2 3l20 18" stroke-width="1.2"/></svg>
+        <h3>The Founder Bottleneck</h3>
+        <p>You're in every meeting, every deal, every decision. The business can't grow past you.</p>
+      </div>
+      <div class="pcard reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="13" width="8" height="8" rx="1"/><path d="M10 7h2m2 0h-2m0 0v6" stroke-dasharray="2 2.5"/></svg>
+        <h3>Disconnected Tools</h3>
+        <p>Your CRM doesn't talk to your email. Your ads don't talk to your website. Data lives in 12 places.</p>
+      </div>
+      <div class="pcard reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 20L8 9l4 6 3-9 6 14" stroke-linejoin="round" stroke-linecap="round"/><path d="M3 20h18"/></svg>
+        <h3>Random Acts of Marketing</h3>
+        <p>You've tried agencies, freelancers, courses. Nothing compounds because nothing connects.</p>
+      </div>
+    </div>
+    <p class="closing reveal">These aren't three problems. They're one problem &mdash; <em>a business that outgrew its infrastructure.</em></p>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <p class="eyebrow reveal">The Method</p>
+    <h2 class="reveal">Four phases. One connected strategy.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num" aria-hidden="true">01</span>
+        <h3>DIAGNOSE</h3>
+        <p>Two-week deep audit. We map your funnel, review every tool, interview your team, and find where revenue actually leaks.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num" aria-hidden="true">02</span>
+        <h3>SEQUENCE</h3>
+        <p>We prioritize fixes by impact and speed. Quick wins first, structural changes second. You approve each phase.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num" aria-hidden="true">03</span>
+        <h3>BUILD</h3>
+        <p>Website, CRM, email flows, ad systems, AI workflows, reporting &mdash; built and connected to one strategy.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num" aria-hidden="true">04</span>
+        <h3>SUPPORT</h3>
+        <p>Ongoing optimization. We monitor, iterate, and report. This is why 94% of clients stay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="results">
+  <div class="wrap">
+    <p class="eyebrow reveal">The Evidence</p>
+    <h2 class="reveal">Numbers that moved because systems changed.</h2>
+    <div class="metrics">
+      <div class="metric reveal"><span class="val" data-count="3.95" data-dec="2" data-suffix="%">0%</span><p>Avg conversion rate after CRO</p></div>
+      <div class="metric reveal"><span class="val" data-count="6" data-suffix="x">0x</span><p>Pipeline increase in Q1</p></div>
+      <div class="metric reveal"><span class="val" data-count="480" data-prefix="$" data-suffix="K">$0K</span><p>New ARR for one client</p></div>
+      <div class="metric reveal"><span class="val" data-count="79">0</span><p>Fixes deployed in one sprint</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow reveal">Proof of Work</p>
+    <h2 class="reveal">Real businesses. Real constraints. Real numbers.</h2>
+    <div class="cs-grid">
+
+      <article class="cs reveal">
+        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs1">
+          <span class="cs-tag">Political Consulting</span>
+          <span class="cs-title">Digital Advertising in a Major City's Mayoral Race</span>
+        </button></h3>
+        <p class="cs-sit">A major city mayoral campaign needed strategic budget allocation across diverse voter segments while maintaining ad compliance.</p>
+        <div class="panel" id="cs1"><div class="panel-in"><div class="cs-detail">
+          <ul class="cs-nums">
+            <li><strong>340%</strong>visibility increase</li>
+            <li><strong>12x</strong>website traffic</li>
+            <li><strong>67%</strong>donation increase</li>
+            <li><strong>+6 pts</strong>won the race</li>
+          </ul>
+          <p class="cs-method"><strong>Method.</strong> CTV and Display Programmatic with precision dayparting. Messaging focused on public safety and community-first initiatives.</p>
+          <blockquote>&ldquo;They turned our digital presence from invisible to inevitable.&rdquo;</blockquote>
+        </div></div></div>
+      </article>
+
+      <article class="cs reveal">
+        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs2">
+          <span class="cs-tag">Cannabis &amp; Retail</span>
+          <span class="cs-title">Revolutionizing the Cannabis Industry in Oregon</span>
+        </button></h3>
+        <p class="cs-sit">An Oregon cannabis brand navigating regulations while scaling from one location, balancing visibility with community integration.</p>
+        <div class="panel" id="cs2"><div class="panel-in"><div class="cs-detail">
+          <ul class="cs-nums">
+            <li><strong>1&rarr;33</strong>dispensaries</li>
+            <li><strong>$15K</strong>avg daily sales/store</li>
+            <li><strong>300%</strong>annual revenue</li>
+            <li><strong>22 acres</strong>farm operation</li>
+            <li><strong>+45%</strong>community support</li>
+          </ul>
+          <p class="cs-method"><strong>Method.</strong> Strategic location selection, compliance tech (Metrc), HR management (Gusto), CRM, community engagement, and sustainable practices.</p>
+          <blockquote>&ldquo;SWG didn't just grow our business &mdash; they made us part of the community fabric.&rdquo;</blockquote>
+        </div></div></div>
+      </article>
+
+      <article class="cs reveal">
+        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs3">
+          <span class="cs-tag">Health Supplements</span>
+          <span class="cs-title">Scaling an Online Health Supplement Provider</span>
+        </button></h3>
+        <p class="cs-sit">An online health supplement provider scaling from $2M to market leadership across multiple international markets.</p>
+        <div class="panel" id="cs3"><div class="panel-in"><div class="cs-detail">
+          <ul class="cs-nums">
+            <li><strong>$2M&rarr;$300M+</strong>in 7 years</li>
+            <li><strong>500+</strong>writer team</li>
+            <li><strong>Top 500</strong>global site</li>
+            <li><strong>1</strong>departure in 9 years</li>
+            <li><strong>$7M</strong>events budget</li>
+          </ul>
+          <p class="cs-method"><strong>Method.</strong> Managed a top-500 website, $7M in international events, a 500+ writer team, celebrity content, and talent acquisition across the UK, Germany, Brazil, and Canada.</p>
+          <blockquote>&ldquo;From a garage startup to a global powerhouse. SWG was the catalyst at every stage.&rdquo;</blockquote>
+        </div></div></div>
+      </article>
+
+      <article class="cs reveal">
+        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs4">
+          <span class="cs-tag">Insurance Education</span>
+          <span class="cs-title">Revolutionizing Pre-Licensing Insurance Education with AI</span>
+        </button></h3>
+        <p class="cs-sit">Launch pre-licensing insurance courses across all 50 states plus DC in 10 months &mdash; traditionally a multi-year project.</p>
+        <div class="panel" id="cs4"><div class="panel-in"><div class="cs-detail">
+          <ul class="cs-nums">
+            <li><strong>51</strong>state books</li>
+            <li><strong>10 months</strong>vs 2+ years</li>
+            <li><strong>60%+</strong>time reduction</li>
+            <li><strong>4-person</strong>team</li>
+            <li><strong>$M&rarr;$K</strong>cost</li>
+            <li><strong>100%</strong>compliance</li>
+          </ul>
+          <p class="cs-method"><strong>Method.</strong> AI-powered content creation (ChatGPT, Bard, Claude), custom workflow automations, and API integrations connecting disparate systems.</p>
+          <blockquote>&ldquo;What should have taken years took months. AI was the multiplier, SWG was the architect.&rdquo;</blockquote>
+        </div></div></div>
+      </article>
+
+      <article class="cs reveal">
+        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs5">
+          <span class="cs-tag">Commercial Real Estate</span>
+          <span class="cs-title">Apex Commercial Group</span>
+        </button></h3>
+        <p class="cs-sit">A mid-market CRE firm stuck at $4.2M with 1.8% conversion. The founder was handling 70% of client relationships.</p>
+        <div class="panel" id="cs5"><div class="panel-in"><div class="cs-detail">
+          <ul class="cs-nums">
+            <li><strong>6x</strong>pipeline</li>
+            <li><strong>4.1%</strong>conversion, was 1.8%</li>
+            <li><strong>$480K</strong>new ARR</li>
+            <li><strong>70&rarr;25%</strong>founder load</li>
+            <li><strong>94&rarr;51 days</strong>deal cycle</li>
+          </ul>
+          <p class="cs-method"><strong>Method.</strong> Full-funnel diagnostic, CRM rebuild, automated lead scoring, sales team restructure, and a content-driven authority strategy.</p>
+          <blockquote>&ldquo;They gave me my time back and doubled our pipeline.&rdquo;</blockquote>
+        </div></div></div>
+      </article>
+
+      <article class="cs reveal">
+        <h3 class="cs-h"><button aria-expanded="false" aria-controls="cs6">
+          <span class="cs-tag">EdTech</span>
+          <span class="cs-title">Archway Education</span>
+        </button></h3>
+        <p class="cs-sit">An education provider with 14 courses, 34% completion, 8.2% churn, and zero organic traffic. Stuck at $890K for three years.</p>
+        <div class="panel" id="cs6"><div class="panel-in"><div class="cs-detail">
+          <ul class="cs-nums">
+            <li><strong>34&rarr;71%</strong>completion</li>
+            <li><strong>8.2&rarr;2.9%</strong>churn</li>
+            <li><strong>+420%</strong>organic traffic</li>
+            <li><strong>$890K&rarr;$1.6M</strong>revenue</li>
+            <li><strong>79</strong>fixes deployed</li>
+            <li><strong>31&rarr;67</strong>NPS</li>
+          </ul>
+          <p class="cs-method"><strong>Method.</strong> Platform migration, UX redesign, a 21-touchpoint email system, SEO strategy, and a referral engine. 79 fixes in the initial sprint.</p>
+          <blockquote>&ldquo;They found 79 things wrong with our funnel in two weeks. Every fix moved the needle.&rdquo;</blockquote>
+        </div></div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="light" id="about">
+  <div class="wrap">
+    <p class="eyebrow reveal">Who We Are</p>
+    <h2 class="reveal">Built for the stage between traction and scale.</h2>
+    <p class="about-body reveal">SWG works with founder-led and operator-led companies doing $1M&ndash;$15M in revenue. You've proven the model works. Now the systems that got you here are the systems holding you back. We've shipped 117+ projects across 29+ industries &mdash; health &amp; wellness, professional services, real estate, e-commerce, SaaS, agencies, and more. Our client retention is 94% because the relationship gets more valuable over time, not less.</p>
+    <div class="trust reveal">
+      <div><span class="val">117+</span><p>Projects</p></div>
+      <div><span class="val">29+</span><p>Industries</p></div>
+      <div><span class="val">94%</span><p>Retention</p></div>
+      <div><span class="val">6x</span><p>Avg ROI</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow reveal">Common Questions</p>
+    <h2 class="reveal">Straight answers.</h2>
+    <div class="faqs reveal">
+      <div class="faq">
+        <h3><button aria-expanded="false" aria-controls="fq1">Who is SWG built for?</button></h3>
+        <div class="panel" id="fq1"><div class="panel-in"><p>Founder-led companies doing $1M&ndash;$15M in revenue. You have real traction, but growth has slowed and the founder is still the engine.</p></div></div>
+      </div>
+      <div class="faq">
+        <h3><button aria-expanded="false" aria-controls="fq2">How are you different from a marketing agency?</button></h3>
+        <div class="panel" id="fq2"><div class="panel-in"><p>Agencies sell channels &mdash; ads, email, SEO. We start with diagnosis, then build the connected system that makes every channel work together.</p></div></div>
+      </div>
+      <div class="faq">
+        <h3><button aria-expanded="false" aria-controls="fq3">What happens during the business review?</button></h3>
+        <div class="panel" id="fq3"><div class="panel-in"><p>A two-week audit of your funnel, website, ads, email, tools, and operations. You get written findings and a sequenced fix list, prioritized by impact.</p></div></div>
+      </div>
+      <div class="faq">
+        <h3><button aria-expanded="false" aria-controls="fq4">How quickly will we see results?</button></h3>
+        <div class="panel" id="fq4"><div class="panel-in"><p>Quick wins land in the first 30 days. Structural changes compound over the quarter. Everything is measured against your baseline.</p></div></div>
+      </div>
+      <div class="faq">
+        <h3><button aria-expanded="false" aria-controls="fq5">What does an engagement cost?</button></h3>
+        <div class="panel" id="fq5"><div class="panel-in"><p>The business review is a fixed fee. Build work is scoped per phase, approved before it starts. No open-ended retainers.</p></div></div>
+      </div>
+      <div class="faq">
+        <h3><button aria-expanded="false" aria-controls="fq6">Do you replace our team or tools?</button></h3>
+        <div class="panel" id="fq6"><div class="panel-in"><p>Neither, unless something is genuinely broken. We work inside your existing stack, document everything we build, and train your team to run it.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Ready to find out what's actually holding you back?</h2>
+    <p class="lead reveal">The assessment is free. The clarity is immediate. Start now.</p>
+    <a class="btn btn-lg reveal" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Your Free Assessment &rarr;</a>
+    <p class="fine reveal">No commitment. No generic playbook. Just a clear view of what to fix first.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top">SWG<em>.</em></a>
+    <p>&copy; 2026 Support Wellness Global. All rights reserved.</p>
+    <a href="mailto:hello@supportwellnessglobal.com">hello@supportwellnessglobal.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* mobile nav */
+var nav=document.getElementById("nav"),burger=nav.querySelector(".burger");
+burger.addEventListener("click",function(){
+  var open=nav.classList.toggle("open");
+  burger.setAttribute("aria-expanded",open);
+});
+nav.querySelectorAll(".nav-links a").forEach(function(a){
+  a.addEventListener("click",function(){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");});
+});
+
+/* counters */
+var counted=false;
+function setFinal(el){
+  el.textContent=(el.dataset.prefix||"")+el.dataset.count+(el.dataset.suffix||"");
+}
+function runCounters(){
+  if(counted)return;counted=true;
+  document.querySelectorAll(".val[data-count]").forEach(function(el){
+    if(reduce){setFinal(el);return;}
+    var end=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||"0",10),
+        pre=el.dataset.prefix||"",suf=el.dataset.suffix||"",t0=null,dur=1400;
+    function frame(t){
+      if(!t0)t0=t;
+      var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);
+      el.textContent=pre+(end*e).toFixed(dec)+suf;
+      if(p<1)requestAnimationFrame(frame);else setFinal(el);
+    }
+    requestAnimationFrame(frame);
+  });
+}
+
+/* scroll reveals */
+var revs=document.querySelectorAll(".reveal");
+function showAll(){
+  revs.forEach(function(e){e.classList.add("in");});
+  runCounters();
+}
+if(reduce||!("IntersectionObserver" in window)){
+  showAll();
+}else{
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add("in");
+        if(en.target.closest("#results"))runCounters();
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+  revs.forEach(function(e){io.observe(e);});
+  /* SAFETY: force everything visible after 2.5s no matter what */
+  setTimeout(showAll,2500);
+}
+
+/* expandable case studies (multi-open) */
+document.querySelectorAll(".cs").forEach(function(cs){
+  var btn=cs.querySelector(".cs-h button");
+  btn.addEventListener("click",function(){
+    var open=cs.classList.toggle("open");
+    btn.setAttribute("aria-expanded",open);
+  });
+});
+
+/* FAQ accordion (single-open) */
+var faqs=document.querySelectorAll(".faq");
+faqs.forEach(function(f){
+  var btn=f.querySelector("h3 button");
+  btn.addEventListener("click",function(){
+    var wasOpen=f.classList.contains("open");
+    faqs.forEach(function(o){
+      o.classList.remove("open");
+      o.querySelector("h3 button").setAttribute("aria-expanded","false");
+    });
+    if(!wasOpen){
+      f.classList.add("open");
+      btn.setAttribute("aria-expanded","true");
+    }
+  });
+});
+})();
+</script>
+</body>
+</html>
