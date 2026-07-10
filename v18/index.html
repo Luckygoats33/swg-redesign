@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWG — Growth Systems That Actually Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet:#7c3aed;
+  --indigo:#6366f1;
+  --sky:#38bdf8;
+  --rose:#f43f5e;
+  --amber:#fbbf24;
+  --emerald:#34d399;
+  --fg:#0f172a;
+  --fg-muted:#64748b;
+  --white:#ffffff;
+  --glass:rgba(255,255,255,.55);
+  --glass-border:rgba(255,255,255,.35);
+  --glass-strong:rgba(255,255,255,.72);
+  --glass-hover:rgba(255,255,255,.68);
+  --shadow:0 8px 32px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.1);
+  --radius:20px;
+  --radius-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:#f0eef5;color:var(--fg);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:36px;position:relative}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--violet);color:#fff}
+
+/* === ANIMATED GRADIENT MESH BACKGROUND === */
+.mesh-bg{position:fixed;inset:0;z-index:0;overflow:hidden}
+.mesh-blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.5;animation:meshDrift 20s ease-in-out infinite}
+.mb-1{width:800px;height:800px;background:linear-gradient(135deg,#c084fc,#818cf8);top:-200px;left:-200px;animation-duration:22s}
+.mb-2{width:700px;height:700px;background:linear-gradient(135deg,#38bdf8,#34d399);bottom:-200px;right:-200px;animation-duration:26s;animation-delay:-5s}
+.mb-3{width:600px;height:600px;background:linear-gradient(135deg,#f43f5e,#fbbf24);top:40%;left:50%;animation-duration:30s;animation-delay:-10s}
+.mb-4{width:500px;height:500px;background:linear-gradient(135deg,#818cf8,#38bdf8);bottom:30%;left:10%;animation-duration:24s;animation-delay:-8s}
+.mb-5{width:550px;height:550px;background:linear-gradient(135deg,#f0abfc,#c084fc);top:10%;right:20%;animation-duration:28s;animation-delay:-3s}
+@keyframes meshDrift{
+  0%,100%{transform:translate(0,0) scale(1)}
+  25%{transform:translate(80px,-60px) scale(1.08)}
+  50%{transform:translate(-40px,80px) scale(.95)}
+  75%{transform:translate(60px,30px) scale(1.04)}
+}
+.mesh-grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.35;mix-blend-mode:overlay;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* === SCROLL PROGRESS === */
+.scroll-progress{position:fixed;top:36px;left:0;height:3px;z-index:10001;width:0;background:linear-gradient(90deg,var(--violet),var(--indigo),var(--sky),var(--emerald));border-radius:0 3px 3px 0;transition:none}
+
+/* === VERSION BAR === */
+.vbar{position:fixed;top:0;left:0;right:0;height:36px;background:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.5);z-index:10000;font-size:.72rem;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.vbar-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;gap:16px;overflow-x:auto;scrollbar-width:none}
+.vbar-inner::-webkit-scrollbar{display:none}
+.vbar-label{letter-spacing:3px;color:var(--fg-muted);font-weight:700;flex:none;opacity:.4;font-size:.65rem}
+.vbar-nav{display:flex;gap:4px}
+.vbar-nav a{color:var(--fg-muted);padding:2px 8px;border-radius:6px;transition:.2s;font-weight:500;opacity:.4}
+.vbar-nav a:hover{opacity:1;color:var(--fg)}
+.vbar-nav a[aria-current]{background:var(--violet);color:#fff;font-weight:700;opacity:1}
+
+/* === NAV === */
+.nav{position:fixed;top:44px;left:50%;transform:translateX(-50%);z-index:9000;padding:12px 8px;display:flex;align-items:center;gap:8px;transition:all .5s cubic-bezier(.16,1,.3,1);background:var(--glass-strong);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:16px;border:1px solid var(--glass-border);box-shadow:var(--shadow);max-width:95vw}
+.nav.scrolled{box-shadow:var(--shadow-lg)}
+.logo{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:900;letter-spacing:-.03em;padding:0 16px}
+.logo span{background:linear-gradient(135deg,var(--violet),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:4px;align-items:center;list-style:none}
+.nav-links a{font-size:.78rem;font-weight:500;color:var(--fg-muted);padding:8px 14px;border-radius:10px;transition:.3s}
+.nav-links a:hover{color:var(--fg);background:rgba(0,0,0,.04)}
+.nav-cta{padding:10px 24px;background:var(--violet);color:#fff;font-weight:700;font-size:.75rem;letter-spacing:.5px;border-radius:10px;border:none;transition:all .3s;box-shadow:0 4px 16px rgba(124,58,237,.25)}
+.nav-cta:hover{background:var(--indigo);transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;position:relative;border-radius:10px}
+.burger i{display:block;width:20px;height:2px;background:var(--fg);position:absolute;left:10px;transition:.3s;border-radius:1px}
+.burger i:nth-child(1){top:14px}
+.burger i:nth-child(2){top:19px}
+.burger i:nth-child(3){top:24px}
+
+/* === GLASS CARD === */
+.glass{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--shadow);transition:all .5s cubic-bezier(.16,1,.3,1)}
+.glass:hover{background:var(--glass-hover);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.glass-sm{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius-sm);box-shadow:var(--shadow);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.glass-sm:hover{background:var(--glass-hover);box-shadow:var(--shadow-lg)}
+
+/* === HERO === */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:2;padding:160px 32px 120px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15);border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:1px;color:var(--violet);margin-bottom:36px}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--emerald);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(3rem,9vw,7rem);font-weight:900;line-height:1;letter-spacing:-.05em;margin-bottom:28px;max-width:14em}
+.hero h1 .grad{background:linear-gradient(135deg,var(--violet),var(--indigo),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .word{display:inline-block;overflow:hidden;vertical-align:top;margin-right:.08em}
+.hero h1 .word span{display:inline-block;transform:translateY(115%);animation:popUp 1s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes popUp{to{transform:none}}
+.hero h1 .w2 span{animation-delay:.06s}.hero h1 .w3 span{animation-delay:.12s}.hero h1 .w4 span{animation-delay:.18s}.hero h1 .w5 span{animation-delay:.24s}
+.hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);color:var(--fg-muted);max-width:520px;line-height:1.9;margin-bottom:44px;font-weight:400}
+.hero-cta-wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn-violet{padding:16px 40px;background:var(--violet);color:#fff;font-weight:700;font-size:.88rem;border-radius:14px;border:none;transition:all .3s;box-shadow:0 6px 24px rgba(124,58,237,.3);letter-spacing:.3px}
+.btn-violet:hover{background:var(--indigo);transform:translateY(-3px);box-shadow:0 12px 40px rgba(124,58,237,.4)}
+.btn-outline{padding:16px 40px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);color:var(--fg);font-weight:600;font-size:.88rem;border-radius:14px;transition:all .3s;letter-spacing:.3px}
+.btn-outline:hover{background:var(--glass-hover);transform:translateY(-3px);box-shadow:var(--shadow)}
+
+/* === STATS STRIP === */
+.stats-strip{display:flex;justify-content:center;gap:16px;padding:80px 32px 40px;position:relative;z-index:2;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.stat-chip{padding:16px 28px;display:flex;align-items:center;gap:12px}
+.stat-chip .num{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:900;letter-spacing:-.03em;background:linear-gradient(135deg,var(--violet),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-chip p{font-size:.72rem;color:var(--fg-muted);letter-spacing:1px;text-transform:uppercase;font-weight:600;line-height:1.3}
+
+/* === SECTIONS === */
+.sec{padding:100px 32px;max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.sec-label{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.1);border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:20px}
+.sec h2{font-family:'Outfit',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-.04em;margin-bottom:16px}
+.sec h2 .grad{background:linear-gradient(135deg,var(--violet),var(--indigo),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec .lead{font-size:1rem;color:var(--fg-muted);max-width:480px;line-height:1.9;margin-bottom:48px;font-weight:400}
+
+/* === PROBLEMS — GLASS CARDS === */
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prob-glass{padding:40px 32px;position:relative;overflow:hidden}
+.prob-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px;font-weight:800;color:#fff}
+.pi-1{background:linear-gradient(135deg,var(--rose),#fb7185)}
+.pi-2{background:linear-gradient(135deg,var(--amber),#fcd34d)}
+.pi-3{background:linear-gradient(135deg,var(--indigo),#818cf8)}
+.prob-glass h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:12px;letter-spacing:-.02em}
+.prob-glass p{font-size:.88rem;color:var(--fg-muted);line-height:1.9;font-weight:400}
+.prob-synth{margin-top:16px;padding:32px 40px;text-align:center}
+.prob-synth p{font-family:'Outfit',sans-serif;font-size:clamp(1rem,2vw,1.4rem);font-weight:600;line-height:1.6;color:var(--fg)}
+.prob-synth .grad{background:linear-gradient(135deg,var(--violet),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* === PROCESS — STEPS === */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step-card{padding:36px 28px;position:relative;overflow:hidden}
+.step-num{font-family:'Outfit',sans-serif;font-size:3.5rem;font-weight:900;line-height:1;background:linear-gradient(180deg,var(--violet),rgba(124,58,237,.1));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.step-card h3{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px;letter-spacing:-.02em}
+.step-card p{font-size:.82rem;color:var(--fg-muted);line-height:1.9}
+.step-tag{display:inline-block;margin-top:14px;padding:4px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.1);border-radius:100px;font-size:.62rem;color:var(--violet);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+
+/* === RESULTS — BIG NUMBERS === */
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.res-glass{padding:48px 24px;text-align:center}
+.res-glass .big{font-family:'Outfit',sans-serif;font-size:clamp(2.4rem,4.5vw,3.5rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--violet),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;letter-spacing:-.03em}
+.res-glass p{font-size:.68rem;color:var(--fg-muted);margin-top:12px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+
+/* === CASE STUDIES — STACKED GLASS === */
+.cases-stack{display:flex;flex-direction:column;gap:12px}
+.case-glass{padding:0;overflow:hidden;cursor:pointer}
+.case-top{display:grid;grid-template-columns:1fr auto;gap:20px;padding:32px 36px;align-items:center}
+.case-ind{font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:8px}
+.case-top h3{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;line-height:1.3}
+.case-top>div:first-child p{font-size:.82rem;color:var(--fg-muted);line-height:1.7}
+.case-metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;align-content:center}
+.metric-chip{padding:6px 14px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.1);border-radius:100px;font-size:.68rem;font-weight:600;color:var(--violet);white-space:nowrap;transition:all .3s}
+.case-glass:hover .metric-chip{background:rgba(124,58,237,.1);border-color:rgba(124,58,237,.2)}
+.case-detail{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.16,1,.3,1)}
+.case-glass.open .case-detail{max-height:220px}
+.case-detail-inner{padding:0 36px 32px;border-top:1px solid rgba(0,0,0,.04)}
+.case-detail-inner p{font-size:.88rem;color:var(--fg-muted);line-height:2;padding-top:24px;margin-bottom:12px}
+.case-detail-inner blockquote{padding-left:16px;border-left:3px solid var(--violet);font-style:italic;font-size:1rem;color:var(--fg);line-height:1.7;font-weight:500}
+.case-toggle{width:32px;height:32px;border-radius:50%;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--violet);transition:all .4s;flex:none;align-self:center}
+.case-glass.open .case-toggle{background:var(--violet);color:#fff;transform:rotate(45deg)}
+
+/* === ABOUT === */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.about-text{font-size:1rem;color:var(--fg-muted);line-height:2.2;font-weight:400}
+.about-text strong{color:var(--fg);font-weight:600}
+.about-nums{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about-num{padding:32px 20px;text-align:center}
+.about-num .val{font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:900;background:linear-gradient(135deg,var(--violet),var(--indigo));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.about-num p{font-size:.6rem;color:var(--fg-muted);margin-top:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+
+/* === FAQ === */
+.faq-list{max-width:700px;display:flex;flex-direction:column;gap:8px}
+.faq-glass{overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;padding:20px 28px;background:none;border:0;color:var(--fg);font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:600;transition:color .3s;letter-spacing:-.02em}
+.faq-q:hover{color:var(--violet)}
+.faq-ico{width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.1);display:flex;align-items:center;justify-content:center;flex:none;font-size:.9rem;color:var(--violet);transition:all .3s}
+.faq-glass.open .faq-ico{background:var(--violet);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1)}
+.faq-glass.open .faq-a{max-height:180px}
+.faq-a p{padding:0 28px 24px;font-size:.88rem;color:var(--fg-muted);max-width:540px;line-height:2}
+
+/* === CTA === */
+.cta-sec{padding:140px 32px;text-align:center;position:relative;z-index:2}
+.cta-glass{max-width:800px;margin:0 auto;padding:80px 60px;position:relative;overflow:hidden}
+.cta-glass::before{content:"";position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,var(--violet),var(--indigo),var(--sky),var(--emerald),var(--amber),var(--rose));background-size:300% 300%;animation:gradBorder 6s ease infinite;z-index:-2}
+.cta-glass::after{content:"";position:absolute;inset:1px;border-radius:20px;background:rgba(255,255,255,.7);backdrop-filter:blur(20px);z-index:-1}
+@keyframes gradBorder{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.cta-sec h2{font-family:'Outfit',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;margin-bottom:16px;position:relative;z-index:1}
+.cta-sec .cta-sub{color:var(--fg-muted);margin-bottom:36px;font-size:1rem;position:relative;z-index:1}
+.cta-btn{display:inline-block;padding:18px 52px;background:var(--violet);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.9rem;border-radius:14px;letter-spacing:.5px;transition:all .3s;box-shadow:0 8px 32px rgba(124,58,237,.3);position:relative;z-index:1}
+.cta-btn:hover{background:var(--indigo);transform:translateY(-3px);box-shadow:0 16px 48px rgba(124,58,237,.4)}
+.cta-fine{margin-top:24px;font-size:.72rem;color:var(--fg-muted);opacity:.5;position:relative;z-index:1}
+
+/* === FOOTER === */
+footer{position:relative;z-index:2;padding:40px 32px;max-width:1200px;margin:0 auto}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;font-size:.75rem;color:var(--fg-muted);opacity:.4}
+.foot a:hover{opacity:1;color:var(--violet)}
+
+/* === REVEALS === */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv-r.in{opacity:1;transform:none}
+.rv-s{opacity:0;transform:scale(.9);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv-s.in{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}[data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}[data-d="5"]{transition-delay:.4s}
+
+/* === RESPONSIVE === */
+@media(max-width:1024px){
+  .problems-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .case-top{grid-template-columns:1fr}
+  .case-metrics{justify-content:flex-start}
+}
+@media(max-width:768px){
+  .nav{top:40px;left:8px;right:8px;transform:none;padding:8px;border-radius:14px}
+  .nav-links{position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:24px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);display:none;z-index:9000;border-radius:0}
+  .nav.open .nav-links{display:flex}
+  .burger{display:block}
+  .hero{padding:140px 24px 80px}
+  .sec{padding:80px 20px}
+  .process-steps{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr}
+  .stats-strip{gap:10px}
+  .stat-chip{padding:12px 20px}
+  .cta-sec{padding:100px 20px}
+  .cta-glass{padding:48px 28px}
+}
+@media(max-width:480px){
+  .hero-cta-wrap{flex-direction:column;width:100%}
+  .btn-violet,.btn-outline{width:100%;text-align:center}
+  .about-nums{grid-template-columns:1fr 1fr}
+  .hero-stats{flex-direction:column;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.rv-l,.rv-r,.rv-s{opacity:1;transform:none}
+  .hero h1 .word span{transform:none}
+  .mesh-blob{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Gradient Mesh Background -->
+<div class="mesh-bg" aria-hidden="true">
+  <div class="mesh-blob mb-1"></div>
+  <div class="mesh-blob mb-2"></div>
+  <div class="mesh-blob mb-3"></div>
+  <div class="mesh-blob mb-4"></div>
+  <div class="mesh-blob mb-5"></div>
+</div>
+<div class="mesh-grain" aria-hidden="true"></div>
+
+<div class="scroll-progress" id="scrollProg"></div>
+
+<!-- Version Bar -->
+<div class="vbar"><div class="vbar-inner">
+  <span class="vbar-label">VERSION</span>
+  <nav class="vbar-nav" aria-label="Versions">
+    <a href="../v1.html">1</a><a href="../v1a/">1a</a><a href="../v2/">2</a><a href="../v3/">3</a><a href="../v4/">4</a><a href="../v5/">5</a><a href="../v6/">6</a><a href="../v7/">7</a><a href="../v8/">8</a><a href="../">9</a><a href="../v10/">10</a><a href="../v11/">11</a><a href="../v12/">12</a><a href="../v13/">13</a><a href="../v15/">15</a><a href="../v16/">16</a><a href="../v17/">17</a><a href="./" aria-current="page">18</a>
+  </nav>
+</div></div>
+
+<!-- Floating Nav -->
+<header class="nav" id="nav">
+  <a class="logo" href="#top">SWG<span>.</span></a>
+  <button class="burger" aria-expanded="false" aria-label="Menu"><i></i><i></i><i></i></button>
+  <ul class="nav-links" id="menu">
+    <li><a href="#problems-sec">Problems</a></li>
+    <li><a href="#process-sec">Process</a></li>
+    <li><a href="#results-sec">Results</a></li>
+    <li><a href="#work-sec">Work</a></li>
+    <li><a href="#about-sec">About</a></li>
+    <li><a class="nav-cta" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Get Assessment</a></li>
+  </ul>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-badge"><span class="dot"></span> Growth Systems Architecture</div>
+  <h1>
+    <span class="word w1"><span>Your</span></span>
+    <span class="word w2"><span>systems</span></span>
+    <span class="word w3"><span>are</span></span>
+    <span class="word w4"><span>the</span></span>
+    <span class="word w5"><span class="grad">problem.</span></span>
+  </h1>
+  <p class="hero-sub">We diagnose the bottleneck holding your $1M&ndash;$15M company back, then build the connected system that fixes it. Measurable results in 30 days.</p>
+  <div class="hero-cta-wrap">
+    <a class="btn-violet" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Free Assessment &rarr;</a>
+    <a class="btn-outline" href="#work-sec">See Our Work</a>
+  </div>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="stat-chip glass-sm rv-s"><span class="num" data-target="117" data-suffix="+">0</span><p>Projects<br>delivered</p></div>
+  <div class="stat-chip glass-sm rv-s" data-d="1"><span class="num" data-target="6" data-suffix="x">0</span><p>Average<br>ROI</p></div>
+  <div class="stat-chip glass-sm rv-s" data-d="2"><span class="num" data-target="94" data-suffix="%">0</span><p>Client<br>retention</p></div>
+  <div class="stat-chip glass-sm rv-s" data-d="3"><span class="num" data-target="29" data-suffix="+">0</span><p>Industries<br>served</p></div>
+</div>
+
+<!-- Problems -->
+<section class="sec" id="problems-sec">
+  <div class="sec-label rv">The Problem</div>
+  <h2 class="rv">You don't have a marketing problem.<br>You have a <span class="grad">systems problem.</span></h2>
+  <p class="lead rv">Three symptoms of a business that outgrew its infrastructure.</p>
+  <div class="problems-grid">
+    <div class="prob-glass glass rv-s">
+      <div class="prob-icon pi-1">01</div>
+      <h3>Founder Bottleneck</h3>
+      <p>You're in every meeting, every deal, every decision. The business cannot grow past you. Revenue plateaus because there's only one of you.</p>
+    </div>
+    <div class="prob-glass glass rv-s" data-d="1">
+      <div class="prob-icon pi-2">02</div>
+      <h3>Disconnected Tools</h3>
+      <p>Your CRM doesn't talk to your email. Your ads don't talk to your website. Data lives in 12 places and none of them agree.</p>
+    </div>
+    <div class="prob-glass glass rv-s" data-d="2">
+      <div class="prob-icon pi-3">03</div>
+      <h3>Random Acts of Marketing</h3>
+      <p>Agencies, freelancers, courses &mdash; nothing compounds because nothing connects. Every new hire starts from scratch.</p>
+    </div>
+  </div>
+  <div class="prob-synth glass rv">
+    <p>These aren't three problems. They're one problem &mdash; <span class="grad">a business that outgrew its infrastructure.</span></p>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="sec" id="process-sec">
+  <div class="sec-label rv">The Method</div>
+  <h2 class="rv">Four phases. <span class="grad">One strategy.</span></h2>
+  <p class="lead rv">Each phase builds on the last. Nothing ships until you approve it.</p>
+  <div class="process-steps">
+    <div class="step-card glass rv-s">
+      <div class="step-num">01</div>
+      <h3>Diagnose</h3>
+      <p>Two-week deep audit. We map your funnel, review every tool, interview your team, and find exactly where revenue leaks.</p>
+      <span class="step-tag">Weeks 1&ndash;2</span>
+    </div>
+    <div class="step-card glass rv-s" data-d="1">
+      <div class="step-num">02</div>
+      <h3>Sequence</h3>
+      <p>Prioritize fixes by impact and speed. Quick wins first, structural changes second. You approve each phase.</p>
+      <span class="step-tag">Week 3</span>
+    </div>
+    <div class="step-card glass rv-s" data-d="2">
+      <div class="step-num">03</div>
+      <h3>Build</h3>
+      <p>Website, CRM, email flows, ad systems, AI workflows, reporting &mdash; built and connected to one strategy.</p>
+      <span class="step-tag">Weeks 4&ndash;12</span>
+    </div>
+    <div class="step-card glass rv-s" data-d="3">
+      <div class="step-num">04</div>
+      <h3>Support</h3>
+      <p>Ongoing optimization. We monitor, iterate, and report. 94% of clients stay &mdash; the relationship compounds.</p>
+      <span class="step-tag">Ongoing</span>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="sec" id="results-sec">
+  <div class="sec-label rv">The Evidence</div>
+  <h2 class="rv">Numbers don't <span class="grad">negotiate.</span></h2>
+  <p class="lead rv">Aggregate metrics across 117+ engagements.</p>
+  <div class="results-grid">
+    <div class="res-glass glass rv-s"><span class="big" data-target="3.95" data-suffix="%" data-dec="2">0%</span><p>Avg conversion after CRO</p></div>
+    <div class="res-glass glass rv-s" data-d="1"><span class="big" data-target="6" data-suffix="x">0x</span><p>Pipeline increase Q1</p></div>
+    <div class="res-glass glass rv-s" data-d="2"><span class="big" data-target="480" data-prefix="$" data-suffix="K">$0K</span><p>New ARR, one client</p></div>
+    <div class="res-glass glass rv-s" data-d="3"><span class="big" data-target="79">0</span><p>Fixes in one sprint</p></div>
+  </div>
+</section>
+
+<!-- Case Studies -->
+<section class="sec" id="work-sec">
+  <div class="sec-label rv">Case Studies</div>
+  <h2 class="rv">Real businesses. <span class="grad">Real numbers.</span></h2>
+  <p class="lead rv">Click any case to read the full story.</p>
+  <div class="cases-stack">
+    <div class="case-glass glass rv">
+      <div class="case-top">
+        <div><span class="case-ind">Political Consulting</span><h3>Digital Advertising in a Major City's Mayoral Race</h3><p>Strategic budget allocation across diverse voter segments with full ad compliance.</p></div>
+        <div style="display:flex;align-items:center;gap:12px"><div class="case-metrics"><span class="metric-chip">340% visibility</span><span class="metric-chip">12x traffic</span><span class="metric-chip">+67% donations</span><span class="metric-chip">Won by 6pts</span></div><span class="case-toggle">+</span></div>
+      </div>
+      <div class="case-detail"><div class="case-detail-inner"><p>CTV and Display Programmatic with precision dayparting. Messaging focused on public safety and community-first initiatives.</p><blockquote>&ldquo;They turned our digital presence from invisible to inevitable.&rdquo;</blockquote></div></div>
+    </div>
+    <div class="case-glass glass rv" data-d="1">
+      <div class="case-top">
+        <div><span class="case-ind">Cannabis &amp; Retail</span><h3>Revolutionizing the Cannabis Industry in Oregon</h3><p>Navigating regulations while scaling from one location to market dominance.</p></div>
+        <div style="display:flex;align-items:center;gap:12px"><div class="case-metrics"><span class="metric-chip">1&rarr;33 locations</span><span class="metric-chip">$15K daily/store</span><span class="metric-chip">300% revenue</span></div><span class="case-toggle">+</span></div>
+      </div>
+      <div class="case-detail"><div class="case-detail-inner"><p>Strategic location selection, compliance tech (Metrc), HR management (Gusto), CRM, community engagement, and sustainable practices.</p><blockquote>&ldquo;SWG didn't just grow our business &mdash; they made us part of the community fabric.&rdquo;</blockquote></div></div>
+    </div>
+    <div class="case-glass glass rv" data-d="2">
+      <div class="case-top">
+        <div><span class="case-ind">Health Supplements</span><h3>Scaling an Online Health Supplement Provider</h3><p>From $2M to global market leadership across multiple international markets.</p></div>
+        <div style="display:flex;align-items:center;gap:12px"><div class="case-metrics"><span class="metric-chip">$2M&rarr;$300M+</span><span class="metric-chip">500+ writers</span><span class="metric-chip">Top 500 site</span><span class="metric-chip">9yr retention</span></div><span class="case-toggle">+</span></div>
+      </div>
+      <div class="case-detail"><div class="case-detail-inner"><p>Managed a top-500 website, $7M in international events, 500+ writer team, celebrity content, talent across UK, Germany, Brazil, Canada.</p><blockquote>&ldquo;From a garage startup to a global powerhouse. SWG was the catalyst at every stage.&rdquo;</blockquote></div></div>
+    </div>
+    <div class="case-glass glass rv" data-d="3">
+      <div class="case-top">
+        <div><span class="case-ind">Insurance Education</span><h3>Pre-Licensing Education with AI &mdash; All 50 States</h3><p>Launching courses across all states in 10 months &mdash; traditionally a multi-year project.</p></div>
+        <div style="display:flex;align-items:center;gap:12px"><div class="case-metrics"><span class="metric-chip">51 books</span><span class="metric-chip">10 months</span><span class="metric-chip">60% time saved</span></div><span class="case-toggle">+</span></div>
+      </div>
+      <div class="case-detail"><div class="case-detail-inner"><p>AI-powered content creation, custom workflow automations, API integrations connecting disparate systems into a unified pipeline.</p><blockquote>&ldquo;What should have taken years took months. AI was the multiplier, SWG was the architect.&rdquo;</blockquote></div></div>
+    </div>
+    <div class="case-glass glass rv" data-d="4">
+      <div class="case-top">
+        <div><span class="case-ind">Commercial Real Estate</span><h3>Apex Commercial Group &mdash; Founder Unlock</h3><p>Stuck at $4.2M with 1.8% conversion. Founder handling 70% of relationships.</p></div>
+        <div style="display:flex;align-items:center;gap:12px"><div class="case-metrics"><span class="metric-chip">6x pipeline</span><span class="metric-chip">$480K new ARR</span><span class="metric-chip">94&rarr;51 day cycle</span></div><span class="case-toggle">+</span></div>
+      </div>
+      <div class="case-detail"><div class="case-detail-inner"><p>Full-funnel diagnostic, CRM rebuild, automated lead scoring, sales team restructure, content-driven authority strategy.</p><blockquote>&ldquo;They gave me my time back and doubled our pipeline.&rdquo;</blockquote></div></div>
+    </div>
+    <div class="case-glass glass rv" data-d="5">
+      <div class="case-top">
+        <div><span class="case-ind">EdTech</span><h3>Archway Education &mdash; From Stuck to Scaled</h3><p>14 courses, 34% completion, 8.2% churn, zero organic traffic. Stuck at $890K for three years.</p></div>
+        <div style="display:flex;align-items:center;gap:12px"><div class="case-metrics"><span class="metric-chip">34&rarr;71% completion</span><span class="metric-chip">+420% organic</span><span class="metric-chip">$890K&rarr;$1.6M</span><span class="metric-chip">79 fixes</span></div><span class="case-toggle">+</span></div>
+      </div>
+      <div class="case-detail"><div class="case-detail-inner"><p>Platform migration, UX redesign, 21-touchpoint email system, SEO strategy, referral engine. 79 fixes in the initial sprint.</p><blockquote>&ldquo;They found 79 things wrong with our funnel in two weeks. Every fix moved the needle.&rdquo;</blockquote></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="sec" id="about-sec">
+  <div class="sec-label rv">Who We Are</div>
+  <h2 class="rv">Built for the stage between traction and <span class="grad">scale.</span></h2>
+  <p class="lead rv"></p>
+  <div class="about-grid">
+    <div class="about-text rv-l">
+      <p><strong>SWG works with founder-led companies doing $1M&ndash;$15M.</strong> You've proven the model works. Now the systems that got you here are the systems holding you back.</p>
+      <br>
+      <p>117+ projects across 29+ industries &mdash; health & wellness, real estate, e-commerce, SaaS, agencies, and more. <strong>94% retention because it compounds.</strong></p>
+    </div>
+    <div class="about-nums rv-r">
+      <div class="about-num glass-sm"><span class="val">117+</span><p>Projects</p></div>
+      <div class="about-num glass-sm"><span class="val">29+</span><p>Industries</p></div>
+      <div class="about-num glass-sm"><span class="val">94%</span><p>Retention</p></div>
+      <div class="about-num glass-sm"><span class="val">6x</span><p>Avg ROI</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq-sec">
+  <div class="sec-label rv">FAQ</div>
+  <h2 class="rv">Straight <span class="grad">answers.</span></h2>
+  <p class="lead rv"></p>
+  <div class="faq-list">
+    <div class="faq-glass glass-sm rv"><button class="faq-q">Who is SWG built for?<span class="faq-ico">+</span></button><div class="faq-a"><p>Founder-led companies doing $1M&ndash;$15M. You have real traction, but growth has slowed and the founder is still the engine.</p></div></div>
+    <div class="faq-glass glass-sm rv" data-d="1"><button class="faq-q">How are you different from a marketing agency?<span class="faq-ico">+</span></button><div class="faq-a"><p>Agencies sell channels. We start with diagnosis, then build the connected system that makes every channel work together.</p></div></div>
+    <div class="faq-glass glass-sm rv" data-d="2"><button class="faq-q">What happens during the business review?<span class="faq-ico">+</span></button><div class="faq-a"><p>Two-week audit of your funnel, website, ads, email, tools, operations. Written findings. Sequenced fix list. Prioritized by impact.</p></div></div>
+    <div class="faq-glass glass-sm rv" data-d="3"><button class="faq-q">How quickly will we see results?<span class="faq-ico">+</span></button><div class="faq-a"><p>Quick wins in 30 days. Structural changes compound over the quarter. Everything measured against your baseline.</p></div></div>
+    <div class="faq-glass glass-sm rv" data-d="4"><button class="faq-q">What does an engagement cost?<span class="faq-ico">+</span></button><div class="faq-a"><p>Business review is a fixed fee. Build work scoped per phase, approved before it starts. No open-ended retainers.</p></div></div>
+    <div class="faq-glass glass-sm rv"><button class="faq-q">Do you replace our team or tools?<span class="faq-ico">+</span></button><div class="faq-a"><p>Neither, unless broken. We work inside your stack, document everything, train your team to run it.</p></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-glass glass rv-s">
+    <h2>Stop <span class="grad">guessing.</span></h2>
+    <p class="cta-sub">30-minute assessment. Leave with clarity.</p>
+    <a class="cta-btn" href="mailto:hello@supportwellnessglobal.com?subject=Free%20Assessment">Start Free Assessment &rarr;</a>
+    <p class="cta-fine">No obligation. No pitch deck. Just diagnosis.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer><div class="foot">
+  <span>&copy; 2026 Support Wellness Global</span>
+  <a href="mailto:hello@supportwellnessglobal.com">hello@supportwellnessglobal.com</a>
+</div></footer>
+
+<script>
+// ======== SCROLL PROGRESS ========
+addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-innerHeight;
+  document.getElementById('scrollProg').style.width=(scrollY/h*100)+'%';
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>60);
+},{passive:true});
+
+// ======== MOBILE MENU ========
+document.querySelector('.burger').addEventListener('click',()=>{
+  const n=document.getElementById('nav');
+  n.classList.toggle('open');
+  document.querySelector('.burger').setAttribute('aria-expanded',n.classList.contains('open'));
+});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('nav').classList.remove('open');
+  document.querySelector('.burger').setAttribute('aria-expanded','false');
+}));
+
+// ======== REVEALS ========
+const rvs=document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s');
+const rio=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target)}});
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+rvs.forEach(el=>rio.observe(el));
+setTimeout(()=>rvs.forEach(el=>el.classList.add('in')),3000);
+
+// ======== ANIMATED COUNTERS ========
+document.querySelectorAll('[data-target]').forEach(el=>{
+  const cio=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const t=parseFloat(el.dataset.target),d=parseInt(el.dataset.dec||'0'),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+      const dur=2000,s=performance.now();
+      function tick(n){
+        const p=Math.min((n-s)/dur,1);
+        const eased=1-Math.pow(1-p,4);
+        el.textContent=pre+(t*eased).toFixed(d)+suf;
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=pre+t.toFixed(d)+suf;
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  },{threshold:.5});
+  cio.observe(el);
+});
+
+// ======== CASE EXPAND ========
+document.querySelectorAll('.case-glass').forEach(c=>{
+  c.addEventListener('click',()=>c.classList.toggle('open'));
+});
+
+// ======== FAQ ========
+document.querySelectorAll('.faq-q').forEach(b=>{
+  b.addEventListener('click',()=>b.closest('.faq-glass').classList.toggle('open'));
+});
+
+// ======== GLASS CARD SHINE ========
+document.querySelectorAll('.glass,.glass-sm').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width*100).toFixed(1);
+    const y=((e.clientY-r.top)/r.height*100).toFixed(1);
+    card.style.background=`radial-gradient(circle at ${x}% ${y}%,rgba(255,255,255,.7),rgba(255,255,255,.5) 60%)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.background=''});
+});
+
+// ======== PARALLAX MESH ========
+addEventListener('scroll',()=>{
+  const y=scrollY;
+  const blobs=document.querySelectorAll('.mesh-blob');
+  blobs[0].style.transform=`translate(${Math.sin(y*.001)*40}px,${y*.06}px) scale(1)`;
+  blobs[1].style.transform=`translate(${Math.cos(y*.0012)*35}px,${-y*.05}px) scale(1)`;
+  blobs[2].style.transform=`translate(${Math.sin(y*.0008)*50}px,${y*.04}px) scale(1)`;
+  blobs[3].style.transform=`translate(${Math.cos(y*.001)*30}px,${-y*.03}px) scale(1)`;
+  blobs[4].style.transform=`translate(${Math.sin(y*.0015)*25}px,${y*.035}px) scale(1)`;
+},{passive:true});
+</script>
+</body>
+</html>
